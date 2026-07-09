@@ -41,7 +41,7 @@ class LoginController extends Controller
              
                 // Update last login
                 $user->update(['last_login' => Carbon::now()]);
-                return redirect()->intended('details')->with('success', 'Login successfully :)'); 
+                return redirect()->intended('clientlist')->with('success', 'Login successfully :)'); 
             }
             return redirect('login')->with('error', 'Wrong Username or Password');
         } catch (\Exception $e) {

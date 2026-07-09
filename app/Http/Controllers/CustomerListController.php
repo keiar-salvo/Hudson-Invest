@@ -4,16 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class FormController extends Controller
+class CustomerListController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-        public function personaldetails()
+        public function customerlist()
     {
-        return view('forms.personaldetails');
+        return view('list.customerlist');
     }
-
 }

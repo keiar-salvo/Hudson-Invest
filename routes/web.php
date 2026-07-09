@@ -41,6 +41,29 @@ Route::group(['namespace' => 'App\Http\Controllers'],function()
        Route::controller(FormController::class)->group(function () {
              Route::get('details', 'personaldetails')->name('details');
        });
+        Route::controller(CustomerListController::class)->group(function () {
+             Route::get('clientlist', 'customerlist')->name('clientlist');
+       });
+        Route::controller(FinancialIndependenceController::class)->group(function () {
+             Route::get('financialindependence', 'financialindependence')->name('financialindependence');
+       });
+        Route::controller(IncomeController::class)->group(function () {
+             Route::get('income', 'income')->name('income');
+       });
+  
+        Route::controller(SuperannuationController::class)->group(function () {
+             Route::get('contribution', 'contribution')->name('contribution');
+       });
+         Route::controller(AssetsLiabilitiesController::class)->group(function () {
+             Route::get('assets-liabilities', 'assetsliabilities')->name('assets-liabilities');
+       });
+        Route::controller(EstimationController::class)->group(function () {
+             Route::get('estimation', 'estimation')->name('estimation');
+       });
+        Route::controller(DebtRatesController::class)->group(function () {
+             Route::get('debt-rates', 'debtrates')->name('debt-rates');
+       });
+  
   
  
         // --------------------- main dashboard ------------------//
