@@ -40,6 +40,7 @@ Route::group(['namespace' => 'App\Http\Controllers'],function()
     //-----------------------------------Form------------------//
        Route::controller(FormController::class)->group(function () {
              Route::get('details', 'personaldetails')->name('details');
+             Route::post('details','storePersonalDetails')->name('details');    
        });
         Route::controller(CustomerListController::class)->group(function () {
              Route::get('clientlist', 'customerlist')->name('clientlist');
