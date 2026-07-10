@@ -21,24 +21,33 @@ class PersonalDetails extends Model
     ];
     public function savePersonDetails(Request $request)
     {
-        // $validator = Validator::make($request->all(), [
-        //     'name' => 'required',
-        //     'residential_address' => 'required',
-        //     'phone_home'  => 'required',
-        //     'phone_mobile'  => 'required',
-        //     'email'  => 'required',
-        //     'age_client'  => 'required',
-        //     'age_partner'  => 'required',
-        //     'age_average'  => 'required',
-        //     'amount_per_week'  => 'required',
-        //     'initial_appointment_date'  => 'required',
-        // ]);
+      $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'residential_address' => 'required|string|max:255',
+            'phone_home'  => 'required|string|max:255',
+            'phone_mobile'  => 'required|string|max:255',
+            'email'  => 'required|string|max:255',
+            'age_client'  => 'required|string|max:255',
+            'age_partner'  => 'required|string|max:255',
+            'age_average'  => 'required|string|max:255',
+            'amount_per_week'  => 'required|string|max:255',
+            'initial_appointment_date'  => 'required|string|max:255',
+            'desired_retirement_age'  => 'required|string|max:255',
+            'in_seven_years'  => 'required|string|max:255',
+            'in_fourteen_years'  => 'required|string|max:255',
+            'in_twenty_one_years'  => 'required|string|max:255',
+        ]);
 
-        //   if ($validator->fails()) {
-        //     return response()->json(['Please fix the errors below.']);
-        // }
-        // else{
- try {
+          if ($validator->fails()) {
+            //  return response()->json("200");
+            return response()->json([
+            'status' => 'error',
+            'errors' => $validator->errors()
+        ], 400); // Or redirect back with error
+        }
+       
+    
+  try {
         
             $save  = new PersonalDetails;
       
@@ -66,7 +75,10 @@ class PersonalDetails extends Model
         } catch (Exception $e) {
             return response()->json(['Error saving']);
         }
-        //}
+        
+        
+          
+        
 
        
     }

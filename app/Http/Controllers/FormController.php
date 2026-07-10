@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\PersonalDetails;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Validator;
 use Hash;
 use DB;
 
@@ -24,8 +25,9 @@ class FormController extends Controller
     {
          try {
         
+
+           
             $details = new PersonalDetails();
-    
             return $details->savePersonDetails($request);
             // return response()->json($request->all());
          

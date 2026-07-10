@@ -42,6 +42,10 @@
 
     <div class="col-span-1 md:col-span-3">
       <label >Phone (Home)</label>
+      <input type="text" class="mt-1 form-input phone_mobile" name="phone_home" id="">
+    </div>
+    <div>
+       <label >Phone (Mobile)</label>
       <input type="text" class="mt-1 form-input phone_mobile" name="phone_mobile" id="">
     </div>
 
@@ -124,6 +128,7 @@
          $(document).ready(function(){
          
          $(".btn-details").click(function(event){
+          
           event.preventDefault();
           var formData = new FormData($('#personaldetails').get(0))
           formData.append('_method','POST');
@@ -140,29 +145,26 @@
           contentType: false,
     
           success: function(response)
-    
             {
-              console.log(response);
           
-                 Swal.fire({
-            title: "Successfully Saved!",
-            icon: "success",
-            draggable: true
-            });
-    
-           
-             //alert("Data Saved");
+                Swal.fire({
+                title: "Successfully Saved!",
+                icon: "success",
+                draggable: true
+                 });
+        
       
             },  
           error: function(error)
             {
                console.log(error);
-          Swal.fire({
-  icon: "error",
-  title: "Oops...",
-  text: "Something went wrong!"
+             
+                 Swal.fire({
+                icon: "error",
+                title: "Please provide all requested details",
+        
 
-});
+                          });
     
             }
           });
