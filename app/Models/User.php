@@ -48,22 +48,22 @@ class User extends Authenticatable
     ];
 
     /** generate id */
-    protected static function boot()
-    {
-        parent::boot();
+    // protected static function boot()
+    // {
+    //     parent::boot();
 
-        self::creating(function ($model) {
-            $latestUser = self::orderBy('user_id', 'desc')->first();
-            $nextID = $latestUser ? intval(substr($latestUser->user_id, 9)) + 1 : 1;
-            $model->user_id = 'HHHI' . sprintf("%010d", $nextID);
+    //     self::creating(function ($model) {
+    //         $latestUser = self::orderBy('user_id', 'desc')->first();
+    //         $nextID = $latestUser ? intval(substr($latestUser->user_id, 9)) + 1 : 1;
+    //         $model->user_id = 'HHHI' . sprintf("%010d", $nextID);
 
-            // Ensure the user_id is unique
-            while (self::where('user_id', $model->user_id)->exists()) {
-                $nextID++;
-                $model->user_id = 'HHHI' . sprintf("%010d", $nextID);
-            }
-        });
-    }
+    //         // Ensure the user_id is unique
+    //         while (self::where('user_id', $model->user_id)->exists()) {
+    //             $nextID++;
+    //             $model->user_id = 'HHHI' . sprintf("%010d", $nextID);
+    //         }
+    //     });
+    // }
 
     /** Insert New Users */
     public function saveNewuser(Request $request)
@@ -83,6 +83,7 @@ class User extends Authenticatable
         try {
             $todayDate = Carbon::now()->toDayDateTimeString();
             $save             = new User;
+            $save->user_id = "SIP-". uniqid();
             $save->name       = $request->name;
             $save->avatar     = $request->image;
             $save->email      = $request->email;

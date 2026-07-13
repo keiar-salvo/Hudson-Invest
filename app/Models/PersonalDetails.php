@@ -35,7 +35,10 @@ class PersonalDetails extends Model
             'desired_retirement_age'  => 'required|string|max:255',
             'in_seven_years'  => 'required|string|max:255',
             'in_fourteen_years'  => 'required|string|max:255',
-            'in_twenty_one_years'  => 'required|string|max:255',
+            'target_age'  => 'required|string|max:255',
+            'years_to_target_age'  => 'required|string|max:255',
+            'desired_retirement_date'  => 'required|string|max:255',
+            'current_income_required_in_retirement'  => 'required|string|max:255',
         ]);
 
           if ($validator->fails()) {
@@ -70,16 +73,32 @@ class PersonalDetails extends Model
             $save->in_twenty_one_years   = $request->input('in_twenty_one_years');
             $save->date_encoded = Carbon::now()->toDateString();
             $save->save();
+
+            $financeData = new FinancialIndependence;
+            $financeData->user_id = $request->input('user_id');
+            $financeData->financial_id = uniqid();
+            $financeData->target_age = $request->input('target_age');
+            $financeData->years_to_target_age = $request->input('years_to_target_age');
+            $financeData->desired_retirement_date = $request->input('desired_retirement_date');
+            $financeData->current_income_required_in_retirement= $request->input('current_income_required_in_retirement');
+            $financeData->date_encoded = Carbon::now()->toDateString();
+            $financeData->save();
+
             return response()->json(['Successfully saved']);
             // return response()->json($request->all());
         } catch (Exception $e) {
             return response()->json(['Error saving']);
         }
-        
-        
-          
-        
+     }
 
-       
-    }
+     public function userVerifyData($id){
+        try {
+            $getData  = PersonalDetails::where('user_id',$id)->get();
+        return response()->json($getData);
+    
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+      
+     }
 }

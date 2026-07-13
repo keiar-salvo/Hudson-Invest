@@ -30,6 +30,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Auth'],function()
     Route::controller(RegisterController::class)->group(function () {
         Route::get('register', 'register')->name('register');
         Route::post('register','storeUser')->name('register');    
+       
     });
 });
 
@@ -41,6 +42,7 @@ Route::group(['namespace' => 'App\Http\Controllers'],function()
        Route::controller(FormController::class)->group(function () {
              Route::get('details', 'personaldetails')->name('details');
              Route::post('details','storePersonalDetails')->name('details');    
+             Route::get('details/{id}','verifyDataUserExist')->name('details');  
        });
         Route::controller(CustomerListController::class)->group(function () {
              Route::get('clientlist', 'customerlist')->name('clientlist');

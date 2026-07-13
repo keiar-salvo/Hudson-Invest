@@ -37,4 +37,13 @@ class FormController extends Controller
         }
     }
 
+    public function verifyDataUserExist($id){
+            try {
+                $getDetails = new PersonalDetails();
+                return $getDetails->userVerifyData($id);
+            } catch (Exception $e) {
+                return response()->json(['Something went wrong!']);
+            }
+    }
+
 }
