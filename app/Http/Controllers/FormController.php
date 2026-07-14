@@ -45,5 +45,14 @@ class FormController extends Controller
                 return response()->json(['Something went wrong!']);
             }
     }
+    public function updateData(Request $request,$id)
+    {
+        try {
+                $getDetails = new PersonalDetails();
+                return $getDetails->updatePersonalDetails($request,$id);
+            } catch (Exception $e) {
+                return response()->json(['Something went wrong!']);
+            }
+    }
 
 }

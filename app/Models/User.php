@@ -70,6 +70,7 @@ class User extends Authenticatable
     {
         $validator = Validator::make($request->all(), [
             'name'      => 'required|string|max:255',
+            'username'      => 'required|string|max:255',
             'email'     => 'required|string|email|max:255|unique:users,email',
             'password'  => 'required|string|min:8|confirmed',
         ], [
@@ -77,25 +78,30 @@ class User extends Authenticatable
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput()->with('error', 'Please fix the errors below.');
+             return redirect()->back()->withErrors($validator)->withInput()->with('error', 'Please fix the errors below.');
+        //       return response()->json([
+        //     'status' => 'error',
+        //     'errors' => $validator->errors()
+        // ], 400); // Or redirect back with error
+        
         }
 
         try {
             $todayDate = Carbon::now()->toDayDateTimeString();
             $save             = new User;
-            $save->user_id = "SIP-". uniqid();
+            $save->user_id = "sip-". uniqid();
             $save->name       = $request->name;
-            $save->avatar     = $request->image;
             $save->email      = $request->email;
-            $save->join_date  = $todayDate;
-            $save->role_name  = 'User';
             $save->status     = 'Active';
+            $save->role_name  = 'User';
+            $save->username     = $request->username;
             $save->password   = Hash::make($request->password);
             $save->save();
             return redirect('login')->with('success', 'Account created successfully :)');
-        } catch (\Exception $e) {
-            \Log::error($e);
-            return redirect()->back()->with('error', 'Failed to Create Account. Please try again.');
+        } catch (QueryException $e) {
+             $errorMessage = $e->getMessage(); 
+            // return response()->json($errorMessage);
+             return redirect()->back()->with('error', 'Failed to Create Account. Please try again.');
         }
     }
 }

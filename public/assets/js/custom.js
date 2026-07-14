@@ -1,4 +1,5 @@
 (function () {
+
     const $themeConfig = {
         locale: 'en', // en, da, de, el, es, fr, hu, it, ja, pl, pt, ru, sv, tr, kh
         theme: 'light', // light, dark, system
@@ -20,7 +21,7 @@
         }
 
         // set rtl layout
-        Alpine.store('app').setRTLLayout();
+        // Alpine.store('app').setRTLLayout();
     });
 
     // set current year in footer

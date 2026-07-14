@@ -26,9 +26,10 @@ class RegisterController extends Controller
             // Call the saveNewuser method
             return $users->saveNewuser($request);
             return redirect('login');
-        } catch (\Exception $e) {
-            \Log::error($e);
+        } catch (QueryException $e) {
+             $errorMessage = $e->getMessage(); 
             return redirect()->back();
+          
         }
     }
 }

@@ -67,7 +67,13 @@
         <script defer="" src="{{ URL::to('assets/js/alpine-ui.min.js') }}"></script>
         <script defer="" src="{{ URL::to('assets/js/alpine-focus.min.js') }}"></script>
         <script defer="" src="{{ URL::to('assets/js/alpine.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.js') }}"></script>
+        <script defer="" src="{{ asset('assets/js/verifier.js') }}"></script>
         <script src="{{ URL::to('assets/js/custom.js') }}"></script>
+      
+
+        <script  src="{{ asset('assets/js/load-custom-functions.js') }}"></script>
+    
 
         <script>
             // main section

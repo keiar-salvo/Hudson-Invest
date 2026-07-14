@@ -30,20 +30,24 @@ class LoginController extends Controller
     public function authenticate(Request $request)
     {
         $request->validate([
-            'email'    => 'required|string',
+            'username'    => 'required|string',
             'password' => 'required|string',
         ]);
         try {
-            $credentials = $request->only('email', 'password') + ['status' => 'Active'];
+            $credentials = $request->only('username', 'password') + ['status' => 'Active'];
             if (Auth::attempt($credentials)) {
                 $user = Auth::user();
                 Session::put($this->getUserSessionData($user));
              
                 // Update last login
-                $user->update(['last_login' => Carbon::now()]);
-                return redirect()->intended('clientlist')->with('success', 'Login successfully :)'); 
+                // $user->update(['last_login' => Carbon::now()]);
+                return redirect()->to('clientlist');
             }
             return redirect('login')->with('error', 'Wrong Username or Password');
+                     return response()->json([
+            'status' => 'error',
+            'errors' => $validator->errors()
+        ], 400); // Or redirect back with error
         } catch (\Exception $e) {
             \Log::info($e);
             return redirect()->back()->with('error', 'Login failed. Please try again.');
@@ -57,15 +61,9 @@ class LoginController extends Controller
             'name'                => $user->name,
             'email'               => $user->email,
             'user_id'             => $user->user_id,
-            'join_date'           => $user->join_date,
-            'phone_number'        => $user->phone_number,
             'status'              => $user->status,
             'role_name'           => $user->role_name,
-            'avatar'              => $user->avatar,
-            'position'            => $user->position,
-            'department'          => $user->department,
-            'line_manager'        => $user->line_manager,
-            'second_line_manager' => $user->second_line_manager,
+            'username'             => $user->username,
         ];
     }
 

@@ -62,8 +62,8 @@
                                 </div>
                             </a>
                      </li> -->
-                      <li class="nav-item">
-                         <a href="{{ route('income') }}" class="{{ set_active(['income']) }}">
+                      <li class="nav-item verifiedToOpen">
+                         <a href="{{ route('income') }}" class="{{ set_active(['income']) }} m-income">
                                 <div class="flex items-center">
                                      <svg class="shrink-0 group-hover:!text-primary" width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path opacity="0.5" d="M3 10C3 6.22876 3 4.34315 4.17157 3.17157C5.34315 2 7.22876 2 11 2H13C16.7712 2 18.6569 2 19.8284 3.17157C21 4.34315 21 6.22876 21 10V14C21 17.7712 21 19.6569 19.8284 20.8284C18.6569 22 16.7712 22 13 22H11C7.22876 22 5.34315 22 4.17157 20.8284C3 19.6569 3 17.7712 3 14V10Z" fill="currentColor"></path>
@@ -73,7 +73,7 @@
                                 </div>
                             </a>
                      </li>
-                       <li class="nav-item">
+                       <li class="nav-item verifiedToOpen">
                          <a href="{{ route('contribution') }}" class="{{ set_active(['contribution']) }}">
                                 <div class="flex items-center">
                                      <svg class="shrink-0 group-hover:!text-primary" width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -84,7 +84,7 @@
                                 </div>
                             </a>
                      </li>
-                     <li class="nav-item">
+                     <li class="nav-item verifiedToOpen">
                          <a href="{{ route('assets-liabilities') }}" class="{{ set_active(['assets-liabilities']) }}">
                                 <div class="flex items-center">
                                      <svg class="shrink-0 group-hover:!text-primary" width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -95,7 +95,7 @@
                                 </div>
                             </a>
                      </li>
-                      <li class="nav-item">
+                      <li class="nav-item verifiedToOpen">
                          <a href="{{ route('estimation') }}" class="{{ set_active(['estimation']) }}">
                                 <div class="flex items-center">
                                      <svg class="shrink-0 group-hover:!text-primary" width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -106,7 +106,7 @@
                                 </div>
                             </a>
                      </li>
-                                <li class="nav-item">
+                    <li class="nav-item verifiedToOpen">
                          <a href="{{ route('debt-rates') }}" class="{{ set_active(['debt-rates']) }}">
                                 <div class="flex items-center">
                                      <svg class="shrink-0 group-hover:!text-primary" width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -131,7 +131,7 @@
                 <li class=" nav-item">
                     <ul>
                         <li class="nav-item">
-                            <a href="{{ route('apps/chat') }}" class="{{ set_active(['apps/chat']) }} group">
+                            <a href="#" class=" group">
                                 <div class="flex items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart" viewBox="0 0 16 16">
                                         <path d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"/>
@@ -141,7 +141,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('apps/mailbox') }}" class="{{ set_active(['apps/mailbox']) }} group">
+                            <a href="#" class=" group">
                                 <div class="flex items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
                                         <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z"/>
@@ -152,7 +152,7 @@
                         </li>
                         
                             <li class="nav-item">
-                            <a href="{{ route('apps/mailbox') }}" class="{{ set_active(['apps/mailbox']) }} group">
+                            <a href="#" class=" group">
                                 <div class="flex items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bezier2" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M1 2.5A1.5 1.5 0 0 1 2.5 1h1A1.5 1.5 0 0 1 5 2.5h4.134a1 1 0 1 1 0 1h-2.01q.269.27.484.605C8.246 5.097 8.5 6.459 8.5 8c0 1.993.257 3.092.713 3.7.356.476.895.721 1.787.784A1.5 1.5 0 0 1 12.5 11h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5H6.866a1 1 0 1 1 0-1h1.711a3 3 0 0 1-.165-.2C7.743 11.407 7.5 10.007 7.5 8c0-1.46-.246-2.597-.733-3.355-.39-.605-.952-1-1.767-1.112A1.5 1.5 0 0 1 3.5 5h-1A1.5 1.5 0 0 1 1 3.5zM2.5 2a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm10 10a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z"/>
