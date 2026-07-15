@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('financial_independences', function (Blueprint $table) {
-            $table->string('user_id');
-            $table->string('financial_id');
+       	 Schema::create('financial_independences', function (Blueprint $table) {
+         
+            $table->string('details_id');
             $table->integer('target_age');
             $table->integer('years_to_target_age');
             $table->string('desired_retirement_date');
             $table->string('current_income_required_in_retirement');
+            $table->string('encoded_by');
             $table->string('date_encoded');
             $table->timestamps();
         });
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('financial_independences');
+        Schema::dropIfExists('financail_independence');
     }
 };

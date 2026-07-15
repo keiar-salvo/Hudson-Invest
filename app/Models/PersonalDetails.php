@@ -54,9 +54,8 @@ class PersonalDetails extends Model
         
             $save  = new PersonalDetails;
       
-            $save->user_id    = $request->input('user_id');
-            $save->details_id = uniqid();
-             $save->name   = $request->input('name');
+            $save->details_id   = $request->input('details_id');
+            $save->name   = $request->input('name');
             $save->residential_address   = $request->input('residential_address');
             $save->phone_home  = $request->input('phone_home');
             $save->phone_mobile  = $request->input('phone_mobile');
@@ -71,16 +70,17 @@ class PersonalDetails extends Model
             $save->in_seven_years   = $request->input('in_seven_years');
             $save->in_fourteen_years   = $request->input('in_fourteen_years');
             $save->in_twenty_one_years   = $request->input('in_twenty_one_years');
+            $save->encoded_by   = $request->input('encoded_by');
             $save->date_encoded = Carbon::now()->toDateString();
             $save->save();
 
             $financeData = new FinancialIndependence;
-            $financeData->user_id = $request->input('user_id');
-            $financeData->financial_id = uniqid();
+            $financeData->details_id   = $request->input('details_id');
             $financeData->target_age = $request->input('target_age');
             $financeData->years_to_target_age = $request->input('years_to_target_age');
             $financeData->desired_retirement_date = $request->input('desired_retirement_date');
             $financeData->current_income_required_in_retirement= $request->input('current_income_required_in_retirement');
+            $financeData->encoded_by   = $request->input('encoded_by');
             $financeData->date_encoded = Carbon::now()->toDateString();
             $financeData->save();
 
@@ -93,8 +93,8 @@ class PersonalDetails extends Model
 
      public function userVerifyData($id){
         try {
-            $getPersonalDetails  = PersonalDetails::where('user_id',$id)->first();
-            $getFinancialDetails  = FinancialIndependence::where('user_id',$id)->first();
+            $getPersonalDetails  = PersonalDetails::where('details_id',$id)->first();
+            $getFinancialDetails  = FinancialIndependence::where('details_id',$id)->first();
             $result = [];
                 if(is_null($getPersonalDetails ) && is_null($getFinancialDetails))
                     {
@@ -117,7 +117,7 @@ class PersonalDetails extends Model
         }
       
      }
-       public function updatePersonalDetails(Request $request,$id)
+    public function updatePersonalDetails(Request $request,$id)
     {
       $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
@@ -150,7 +150,7 @@ class PersonalDetails extends Model
     
   try {
         
-            $updatePD  =  PersonalDetails::where('user_id',$id)->update([
+            $updatePD  =  PersonalDetails::where('details_id',$id)->update([
                 'name' => $request->input('name'),
                 'residential_address'=> $request->input('residential_address'),
                 'phone_home'=> $request->input('phone_home'),
@@ -169,7 +169,7 @@ class PersonalDetails extends Model
             
             ]);
 
-            $updateFI = FinancialIndependence::where('user_id',$id)->update([
+            $updateFI = FinancialIndependence::where('details_id',$id)->update([
                 'target_age' => $request->input('target_age'),
                 'years_to_target_age' => $request->input('years_to_target_age'),
                 'desired_retirement_date' => $request->input('desired_retirement_date'),
@@ -211,6 +211,18 @@ class PersonalDetails extends Model
         } catch (Exception $e) {
             return response()->json(['Error saving']);
         }
+     }
+
+     public function getClientCollection(Request $request){
+        $collection = PersonalDetails::orderBy('name')->get();
+         if ($request->ajax()) {
+        return response()->json($collection);
+    }
+
+    return view('list.customerlist', [
+       'proc' => $collection
+    ]);
+        // return response()->json($collection);
      }
 
 }

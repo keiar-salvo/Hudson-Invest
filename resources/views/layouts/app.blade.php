@@ -14,6 +14,8 @@
         <link rel="stylesheet" type="text/css" media="screen" href="{{ URL::to('assets/css/perfect-scrollbar.min.css') }}">
         <link rel="stylesheet" type="text/css" media="screen" href="{{ URL::to('assets/css/style.css') }}">
         <link defer="" rel="stylesheet" type="text/css" media="screen" href="{{ URL::to('assets/css/animate.css') }}">
+         <link defer="" rel="stylesheet" type="text/css" media="screen" href="{{ asset('assets/css/datatables.min.css') }}">
+           
           
         <script src="{{ URL::to('assets/js/perfect-scrollbar.min.js') }}"></script>
         <script defer="" src="{{ URL::to('assets/js/popper.min.js') }}"></script>
@@ -23,6 +25,8 @@
         <link rel="stylesheet" href="{{ URL::to('assets/css/toastr.min.css') }}">
         <script src="{{ URL::to('assets/js/toastr_jquery.min.js') }}"></script>
         <script src="{{ URL::to('assets/js/toastr.min.js') }}"></script>
+     
+
       
      
 
@@ -71,7 +75,7 @@
         <script defer="" src="{{ asset('assets/js/verifier.js') }}"></script>
         <script src="{{ URL::to('assets/js/custom.js') }}"></script>
       
-
+        <script defer="" src="{{ asset('assets/js/datatables.min.js') }}"></script>
         <script  src="{{ asset('assets/js/load-custom-functions.js') }}"></script>
     
 

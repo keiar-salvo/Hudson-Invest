@@ -10259,3 +10259,70 @@ pre {
     pointer-events: none; /* Blocks all mouse click events */
     opacity: 0.5;        /* Visual cue showing it is disabled */
 }
+
+#search-table_wrapper > div.dt-search > input:focus{
+    outline:whitesmoke!important;
+    
+}
+#search-table_wrapper > div.dt-search > input.dt-input{
+     width: 300px !important;
+     float:right;
+     border-radius: 6px;
+}
+#search-table{
+    padding-top:20px!important;
+}
+table.dataTable > thead > tr > th, table.dataTable > thead > tr > td{
+  border-bottom: none!important;
+}
+div.dt-container.dt-empty-footer tbody > tr:last-child > * {
+      border-bottom: 1px solid #00a0df!important;
+}
+table tfoot tr, table thead tr{
+    background-color: #00a0df!important;
+}
+.dt-column-title{
+    color:white;
+}
+.current{
+     background-color: #00a0df!important;
+     border-radius: 20px!important;
+  
+     border:none!important;
+}
+table.dataTable th.dt-type-numeric, table.dataTable th.dt-type-date, table.dataTable td.dt-type-numeric, table.dataTable td.dt-type-date{
+    text-align: left!important;
+}
+td{
+    text-align: justify!important;
+}
+table {
+  table-layout: fixed!important;
+}
+div.dt-container .dt-paging .dt-paging-button.current, div.dt-container .dt-paging .dt-paging-button.current:hover{
+    color:white!important;
+}
+.dt-paging{
+    padding-top:10px!important;
+    text-align: center!important;
+}
+.dt-info{
+    display:none!important;
+}
+#search-table tbody tr:hover {
+    cursor: pointer!important;
+    background-color: #00a0df!important;
+    color:whitesmoke!important;
+}
+
+#search-table tbody tr:hover {
+    cursor: pointer!important;
+    background-color: #00a0df!important;
+    color:whitesmoke!important;
+     font-weight: 600!important;
+}
+.client-selected{
+    background-color: #00a0df!important;
+    color:whitesmoke!important;
+    font-weight: 600!important;
+}

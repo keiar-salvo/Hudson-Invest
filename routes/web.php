@@ -46,7 +46,9 @@ Route::group(['namespace' => 'App\Http\Controllers'],function()
              Route::post('details/{id}','updateData')->name('details');    
        });
         Route::controller(CustomerListController::class)->group(function () {
-             Route::get('clientlist', 'customerlist')->name('clientlist');
+        Route::get('clientlist', 'customerlist')->name('clientlist');
+        Route::get('clientlist', 'clientCollections')->name('clientlist');
+
        });
         Route::controller(FinancialIndependenceController::class)->group(function () {
              Route::get('financialindependence', 'financialindependence')->name('financialindependence');

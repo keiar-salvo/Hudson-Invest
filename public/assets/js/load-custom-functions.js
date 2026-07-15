@@ -28,14 +28,39 @@
   $('.current_income_required_in_retirement').val(response['financialDetails']['current_income_required_in_retirement']);
  
 }
+
+
+function transactionID(length = 10) {
+    const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        result += letters.charAt(Math.floor(Math.random() * letters.length));
+    }
+    return result;
+}
+// const lastSegment = appURL.substring(appURL.lastIndexOf('/') + 1);
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const product = urlParams.get('id')
+if(product != null)
+{
+  $('.details_id').val(product);
+}
+else{
+$('.details_id').val(transactionID());
+}
+
+
+
      var appURL = window.location.origin;
-     var user_id =  $('.user_id').val();
+     var details_id =  $('.details_id').val();
 
 
          $(".btn-details").click(function(event){
           
           event.preventDefault();
-          var formData = new FormData($('#personaldetails').get(0))
+          var formData = new FormData($('#clientdetails').get(0))
           formData.append('_method','POST');
           console.log(formData);
           $.ajax({
@@ -51,45 +76,32 @@
     
           success: function(response)
             {
-                $('input').each(function(){
-              if($(this).val() != ""){
-                $(this).css('border-color','inherit');
-              }
-              });
+              //   $('input').each(function(){
+              // if($(this).val() != ""){
+              //   $(this).css('border-color','inherit');
+              // }
+              // });
           
-                // Swal.fire({
-                // title: "You can now proceed with other Forms",
-                // icon: "success",
-                // draggable: true
-                //  });
-Swal.fire({
-
-  title: "Successfully Saved!",
-  icon: "success",
-  html: `
-   <br/>
-   You can now proceed with other <b>Forms</b>
-  `,
-  showCloseButton: true,
-  confirmButtonText: `
-    <button class="btn-primary">Okay</button>
-  `,
-});
-                $('.btn-details').css('display','none');
-                $('.btn-update-details').css('display','block');
-                $('.verifiedToOpen').removeClass('div-disabled');
-        
+            // $('.btn-details').css('display','none');
+            // $('.btn-update-details').css('display','block');
+      
+            Swal.fire({
+            title: "Client Details successfully saved",
+            icon: "success",
+            draggable: true
+            });
+            $('.details_id').val(transactionID());
       
             },  
           error: function(error)
             {
                console.log(error);
-             $('input').each(function(){
-              if($(this).val() == ""){
-                $(this).css('border-color','red');
-              }
+            //  $('input').each(function(){
+            //   if($(this).val() == ""){
+            //     $(this).css('border-color','red');
+            //   }
                 
-             });
+            //  });
                  Swal.fire({
                 icon: "error",
                 title: "Please provide all requested details",
@@ -106,7 +118,7 @@ Swal.fire({
       $(".btn-update-details").click(function(event){
           
           event.preventDefault();
-          var formData = new FormData($('#personaldetails').get(0))
+          var formData = new FormData($('#clientdetails').get(0))
           formData.append('_method','POST');
           console.log(formData);
           $.ajax({
@@ -114,7 +126,7 @@ Swal.fire({
           'X-CSRF-TOKEN': "{{ csrf_token() }}"
           },
           
-          url: appURL + "/details/" + user_id,
+          url: appURL + "/details/" + details_id,
           method: "POST",
           data:formData,       
           processData: false,
@@ -122,18 +134,31 @@ Swal.fire({
     
           success: function(response)
             {
-                $('input').each(function(){
-              if($(this).val() != ""){
-                $(this).css('border-color','inherit');
-              }
-              });
+              //   $('input').each(function(){
+              // if($(this).val() != ""){
+              //   $(this).css('border-color','inherit');
+              // }
+              // });
           
-                Swal.fire({
-                title: "Changes Saved!",
-                icon: "success",
-                draggable: true
-                 });
-        
+               Swal.fire({
+  title: 'Changes successfully saved',
+  icon: 'success',
+  confirmButtonText: 'OK'
+}).then((result) => {
+  // This block runs after the alert closes
+  if (result.isConfirmed) {
+window.opener.location.reload();
+    window.top.close();
+
+   
+  
+  }
+});
+                 
+            setTimeout(function () {
+               
+            }, 10000);
+
       
             },  
           error: function(error)
@@ -426,7 +451,7 @@ $('.in_twenty_one_years').on('keydown', function (e) {
 
   
                 $.ajax({
-                    url: appURL + "/details/" + user_id,
+                    url: appURL + "/details/" + details_id,
                     type: "GET",
                     dataType: "json",
                     success: function(response) {
