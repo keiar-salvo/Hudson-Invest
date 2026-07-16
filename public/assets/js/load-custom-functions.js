@@ -28,6 +28,52 @@
   $('.current_income_required_in_retirement').val(response['financialDetails']['current_income_required_in_retirement']);
  
 }
+function addHTML(count){
+      let rowIdx = count;
+        var add_investment_html = `<div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
+
+<div>
+    <label>Investment Property</label>
+    <select name="row[${rowIdx}][non_investment_owner]"  id="non-investment-owner" class="investment_property block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
+    <option value="Owner">Owner</option>
+    <option value="Client">Client</option>
+    <option value="Partner">Partner</option>
+    <option value="Joint">Joint</option>
+    <option value="Other">Other</option>
+  </select>
+  </div>
+  
+  <div>
+   <label >Client Percentage</label>
+    <input type="text"  class="mt-1 form-input client_percentage"  placeholder="0%" name="row[${rowIdx}][client_percentage]">
+  </div>
+
+  <div>
+   <label >Partner Percentage</label>
+    <input type="email"  class="mt-1 form-input partner_percentage"  placeholder="0%" name="row[${rowIdx}][partner_percentage]">
+  </div>
+
+  <div>
+   <label >Market Value</label>
+    <input type="tel"  class="mt-1 form-input market_value"  placeholder="0.00" name="row[${rowIdx}][market_value]">
+  </div>
+
+  <div>
+   <label >Client </label>
+    <input type="text" class="mt-1 form-input client"  placeholder="0.00" name="row[${rowIdx}][client]">
+  </div>
+    <div>
+   <label >Partner</label>
+    <input type="text" class="mt-1 form-input partner"  placeholder="0.00" name="row[${rowIdx}][partner]">
+  </div>
+ <div style="display:none;">
+   <label >ID</label>
+    <input type="text" class="mt-1 form-input investment_id"  placeholder="0.00" name="row[${rowIdx}][investment_id]" >
+  </div>
+  <div>`;
+               $('.investment-property').append(add_investment_html);
+                  rowIdx++;
+}
 
 
 function transactionID(length = 10) {
@@ -51,7 +97,11 @@ else{
 $('.details_id').val(transactionID());
 }
 
-
+  $('.add-investment-property').click(function(e){
+                  e.preventDefault();
+var x = 1;
+              addHTML(x);
+                });
 
      var appURL = window.location.origin;
      var details_id =  $('.details_id').val();
@@ -60,7 +110,7 @@ $('.details_id').val(transactionID());
          $(".btn-details").click(function(event){
           
           event.preventDefault();
-          var formData = new FormData($('#clientdetails').get(0))
+          var formData = new FormData($('.clientdetails').get(0))
           formData.append('_method','POST');
           console.log(formData);
           $.ajax({
@@ -118,9 +168,10 @@ $('.details_id').val(transactionID());
       $(".btn-update-details").click(function(event){
           
           event.preventDefault();
-          var formData = new FormData($('#clientdetails').get(0))
+          var formData = new FormData($('.clientdetails').get(0));
           formData.append('_method','POST');
-          console.log(formData);
+        
+
           $.ajax({
           headers: {
           'X-CSRF-TOKEN': "{{ csrf_token() }}"
@@ -140,18 +191,14 @@ $('.details_id').val(transactionID());
               // }
               // });
           
-               Swal.fire({
-  title: 'Changes successfully saved',
-  icon: 'success',
-  confirmButtonText: 'OK'
-}).then((result) => {
-  // This block runs after the alert closes
-  if (result.isConfirmed) {
-window.opener.location.reload();
-    window.top.close();
-
-   
-  
+              Swal.fire({
+              title: 'Changes successfully saved',
+              icon: 'success',
+              confirmButtonText: 'OK'
+              }).then((result) => {
+             if (result.isConfirmed) {
+              window.opener.location.reload();
+                // window.top.close();
   }
 });
                  
@@ -179,9 +226,12 @@ window.opener.location.reload();
     
             }
           });
-
+  
     
          });
+       
+           
+       
 
 
 $('.age_client').keypress(function (e) {
@@ -461,13 +511,32 @@ $('.in_twenty_one_years').on('keydown', function (e) {
                       {
                         $('.btn-update-details').css('display','none');
                         $('.btn-details').css('display','block');
-                        // $('.verifiedToOpen').addClass('div-disabled');
+                        
                       }
                       else{
                         FillForms(response);
+                        $('.add-investment-property').css('display','none');
                      
                         $('.btn-details').css('display','none');
                        $('.btn-update-details').css('display','block');
+                       var  investment_asset = (response['InvestmentAssetDetails']).length;
+                       for(var x = 1; x < investment_asset; x++)
+                       {
+                          addHTML(x);
+                       }
+                       var get;
+                    
+                          response['InvestmentAssetDetails'].forEach((element,index) => {
+                            $('.investment_property').eq(index).val(element.investment_property);
+                            $('.client_percentage').eq(index).val(element.client_percentage);
+                            $('.partner_percentage').eq(index).val(element.partner_percentage);
+                            $('.market_value').eq(index).val(element.market_value);
+                            $('.client').eq(index).val(element.client);
+                            $('.partner').eq(index).val(element.partner);
+                            $('.investment_id').eq(index).val(element.id)
+                            
+                       });
+                     
                       }
                       
                     },
@@ -475,7 +544,10 @@ $('.in_twenty_one_years').on('keydown', function (e) {
                         console.error("AJAX Error: " + error);
                     }
                 });
+
+              
          });
+         
 
 
 

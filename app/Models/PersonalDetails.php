@@ -84,8 +84,38 @@ class PersonalDetails extends Model
             $financeData->date_encoded = Carbon::now()->toDateString();
             $financeData->save();
 
-            return response()->json(['Successfully saved']);
-            // return response()->json($request->all());
+        
+          
+
+             foreach ($request->input('row') as $value) {
+                if(isset($value['non_investment_owner']) && isset($value['client_percentage']) && isset($value['partner_percentage']) && isset($value['market_value']) && isset($value['client']) && isset($value['partner']))
+                    {
+                $investment = new InvestmentAsset;
+                $investment->details_id   = $request->input('details_id');
+                $investment->investment_property = $value['non_investment_owner'];
+                $investment->client_percentage = $value['client_percentage'];
+                $investment->partner_percentage = $value['partner_percentage'];
+                $investment->market_value = $value['market_value'];
+                $investment->client = $value['client'];
+                $investment->partner = $value['partner'];
+                $investment->encoded_by   = $request->input('encoded_by');
+                $investment->date_encoded = Carbon::now()->toDateString();
+                $investment->save();
+
+             
+                    }
+                
+                    //   return response()->json($request->all()); 
+      
+             }
+  
+      
+
+
+             return response()->json(['Successfully saved']);
+
+        
+             
         } catch (Exception $e) {
             return response()->json(['Error saving']);
         }
@@ -95,6 +125,7 @@ class PersonalDetails extends Model
         try {
             $getPersonalDetails  = PersonalDetails::where('details_id',$id)->first();
             $getFinancialDetails  = FinancialIndependence::where('details_id',$id)->first();
+            $getInvestAsset = InvestmentAsset::where('details_id',$id)->get();
             $result = [];
                 if(is_null($getPersonalDetails ) && is_null($getFinancialDetails))
                     {
@@ -104,7 +135,9 @@ class PersonalDetails extends Model
                     else{
                          $result = [
                             "personalDetails" => $getPersonalDetails,
-                            "financialDetails" => $getFinancialDetails
+                            "financialDetails" => $getFinancialDetails,
+                            "InvestmentAssetDetails" => $getInvestAsset
+                    
                      ];
                         return response()->json($result);
                     }
@@ -176,37 +209,38 @@ class PersonalDetails extends Model
                 'current_income_required_in_retirement' => $request->input('current_income_required_in_retirement'),
                 'current_income_required_in_retirement' => $request->input('current_income_required_in_retirement')
   ]);
-      
+
+            foreach ($request->input('row') as $value) {
+                if(isset($value['non_investment_owner']) && isset($value['client_percentage']) && isset($value['partner_percentage']) && isset($value['market_value']) && isset($value['client']) && isset($value['partner']) && isset($value['investment_id']))
+                    {
+                // $investment = new InvestmentAsset;
+                // $investment->details_id   = $request->input('details_id');
+                // $investment->investment_property = $value['non_investment_owner'];
+                // $investment->client_percentage = $value['client_percentage'];
+                // $investment->partner_percentage = $value['partner_percentage'];
+                // $investment->market_value = $value['market_value'];
+                // $investment->client = $value['client'];
+                // $investment->partner = $value['partner'];
+                // $investment->encoded_by   = $request->input('encoded_by');
+                // $investment->date_encoded = Carbon::now()->toDateString();
+                // $investment->save();
+                
+                $updateInvestment = InvestmentAsset::where('id',$value['investment_id'])->update([
+                'investment_property' => $value['non_investment_owner'],
+                'client_percentage' => $value['client_percentage'],
+                'partner_percentage' => $value['partner_percentage'],
+                'market_value' => $value['market_value'],
+                'client' => $value['client'],
+                'partner' => $value['partner'],
+                     ]);
+             
+                    }
+                //  return response()->json($request->all());
+            }
+            
          
-            // $save->name   = $request->input('name');
-            // $save->residential_address   = $request->input('residential_address');
-            // $save->phone_home  = $request->input('phone_home');
-            // $save->phone_mobile  = $request->input('phone_mobile');
-            // $save->email     = $request->input('email');
-            // $save->age_client   = $request->input('age_client');
-            // $save->age_partner   = $request->input('age_partner');
-            // $save->age_average   = $request->input('age_average');
-            // $save->amount_per_week   = $request->input('amount_per_week');
-            // $save->initial_appointment_date   = $request->input('initial_appointment_date');
-            // $save->desired_retirement_age   = $request->input('desired_retirement_age');
-     
-            // $save->in_seven_years   = $request->input('in_seven_years');
-            // $save->in_fourteen_years   = $request->input('in_fourteen_years');
-            // $save->in_twenty_one_years   = $request->input('in_twenty_one_years');
-            // $save->date_encoded = Carbon::now()->toDateString();
-            // $save->save();
 
-            // $financeData = FinancialIndependence::find($id);
-            // $financeData->user_id = $request->input('user_id');
-            // $financeData->financial_id = uniqid();
-            // $financeData->target_age = $request->input('target_age');
-            // $financeData->years_to_target_age = $request->input('years_to_target_age');
-            // $financeData->desired_retirement_date = $request->input('desired_retirement_date');
-            // $financeData->current_income_required_in_retirement= $request->input('current_income_required_in_retirement');
-            // $financeData->date_encoded = Carbon::now()->toDateString();
-            // $financeData->save();
-
-            return response()->json(['Changes saved!']);
+            return response()->json(['Investment Asssets changes saved!']);
             // return response()->json($request->all());
         } catch (Exception $e) {
             return response()->json(['Error saving']);

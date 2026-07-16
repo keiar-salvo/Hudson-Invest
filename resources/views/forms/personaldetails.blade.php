@@ -2,7 +2,7 @@
 @section('content')
     <div class="animate__animated p-6" :class="[$store.app.animation]">
         <!-- start main content section -->
-        <div x-data="personaldetails">
+        <div x-data="">
             <ul class="flex space-x-2 rtl:space-x-reverse">
                 <li>
                     <a href="javascript:;" class="text-primary hover:underline"><b>Forms / Client Details</b></a>
@@ -15,7 +15,7 @@
          <br/>
 <div class="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow">
   
-    <form  method="POST" id="clientdetails">
+    <form  method="POST" id="" class="clientdetails">
           
         	@method('POST')
         <fieldset class="group-box">
@@ -879,7 +879,7 @@
   </div>
 </div>
   <br/>
-  <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
+  <!-- <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6" >
 
 <div>
     <label>Investment Property 1</label>
@@ -915,9 +915,9 @@
    <label >Partner</label>
     <input type="text" class="mt-1 form-input"  placeholder="0.00">
   </div>
-</div>
-<br/>
-<div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
+</div> -->
+
+<!-- <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
 
 <div>
     <label>Investment Property 2</label>
@@ -953,46 +953,64 @@
    <label >Partner</label>
     <input type="text" class="mt-1 form-input"  placeholder="0.00">
   </div>
-</div>
-<br/>
+</div> -->
+
 <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
 
 <div>
-    <label>Investment Property 3 & beyond</label>
-    <select  id="non-investment-owner" class="block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
-    <option selected disabled>Owner</option>
-    <option value="client">Client</option>
-    <option value="partner">Partner</option>
-    <option value="joint">Joint</option>
+    <label>Investment Property</label>
+    <select name="row[0][non_investment_owner]"  id="non-investment-owner" class="investment_property block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
+    <option value="Owner">Owner</option>
+    <option value="Client">Client</option>
+    <option value="Partner">Partner</option>
+    <option value="Joint">Joint</option>
     <option value="Other">Other</option>
   </select>
   </div>
   
   <div>
    <label >Client Percentage</label>
-    <input type="text"  class="mt-1 form-input"  placeholder="0%">
+    <input type="text"  class="mt-1 form-input client_percentage"  placeholder="0%" name="row[0][client_percentage]">
   </div>
 
   <div>
    <label >Partner Percentage</label>
-    <input type="email"  class="mt-1 form-input"  placeholder="0%">
+    <input type="email"  class="mt-1 form-input partner_percentage"  placeholder="0%" name="row[0][partner_percentage]">
   </div>
 
   <div>
    <label >Market Value</label>
-    <input type="tel"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="tel"  class="mt-1 form-input market_value"   placeholder="0.00" name="row[0][market_value]">
   </div>
 
   <div>
    <label >Client </label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+    <input type="text" class="mt-1 form-input client"  placeholder="0.00" name="row[0][client]">
   </div>
     <div>
    <label >Partner</label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+    <input type="text" class="mt-1 form-input partner"  placeholder="0.00" name="row[0][partner]">
   </div>
+     <div style="display:none;">
+   <label >ID</label>
+    <input type="text" class="mt-1 form-input investment_id"  placeholder="0.00" name="row[0][investment_id]">
+  </div>
+
   <div>
-   <label style=" color: #bd0c1d">Total Non-Investment Assets</label>
+
+
+
+    
+  </div>
+  </div>
+  
+    <div class="investment-property grid"></div>
+    <button class="btn btn-info add-investment-property" style="width:50px;">Add</button>
+
+<br/>
+  <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
+<div>
+   <label style=" color: #bd0c1d">Total Investment Assets</label>
    <label>Market Value</label>
 <input type="text"  class="mt-1 form-input"  placeholder="0.00">
   </div>
@@ -1006,9 +1024,9 @@
     <label>Partner</label>
     <input type="text"  class="mt-1 form-input"  placeholder="0.00">
   </div>
-    
-  </div>
-  <br/>
+
+</div>
+     <br/>
   <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
 <div>
    <label style=" color: #bd0c1d">Total Assets</label>

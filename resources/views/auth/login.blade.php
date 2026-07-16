@@ -53,7 +53,7 @@
                                     Sign in
                                 </button>
                             </form>
-                            <a href="{{route('register')}}">Register</a>
+                            <!-- <a href="{{route('register')}}">Register</a> -->
 
                   
                 
