@@ -160,33 +160,33 @@
 
 <div>
     <label style=" color: #bd0c1d">Salary</label>
-    <select  id="frequency" class="block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
+    <select  id="salary_frequency" name="salary_frequency" class="salary_frequency' block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
     <option selected disabled>Frequency</option>
-    <option value="weekly">Weekly</option>
-    <option value="fortnightly">Fortnightly</option>
-    <option value="monthly">Monthly</option>
-    <option value="annual">Monthly</option>
+    <option value="Weekly">Weekly</option>
+    <option value="Fortnightly">Fortnightly</option>
+    <option value="Monthly">Monthly</option>
+    <option value="Annual">Annual</option>
   </select>
   </div>
   
   <div>
    <label >Client</label>
-    <input type="text"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="text"  class="mt-1 form-input salary_client"  placeholder="0.00" name="salary_client">
   </div>
 
   <div>
    <label >Partner</label>
-    <input type="email"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="email"  class="mt-1 form-input salary_partner"  placeholder="0.00" name="salary_partner">
   </div>
 
   <div>
    <label >Client Annual</label>
-    <input type="tel"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="tel"  class="mt-1 form-input salary_client_annual"  placeholder="0.00" name="salary_client_annual">
   </div>
 
   <div>
    <label >Partner Annual</label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+    <input type="text" class="mt-1 form-input salary_partner_annual"  placeholder="0.00" name="salary_partner_annual">
   </div>
 
 
@@ -197,33 +197,33 @@
 
 <div>
     <label style=" color: #bd0c1d">Bonus / Commission</label>
-    <select  id="frequency" class="block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
+    <select  id="bonus_frequency" name="bonus_frequency" class="bonus_frequency block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
     <option selected disabled>Frequency</option>
-    <option value="weekly">Weekly</option>
-    <option value="fortnightly">Fortnightly</option>
-    <option value="monthly">Monthly</option>
-    <option value="annual">Monthly</option>
+    <option value="Weekly">Weekly</option>
+    <option value="Fortnightly">Fortnightly</option>
+    <option value="Monthly">Monthly</option>
+    <option value="Annual">Annual</option>
   </select>
   </div>
   
   <div>
    <label >Client</label>
-    <input type="text"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="text"  class="mt-1 form-input bonus_client"  placeholder="0.00" name="bonus_client">
   </div>
 
   <div>
    <label >Partner</label>
-    <input type="email"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="email"  class="mt-1 form-input bonus_partner"  placeholder="0.00" name="bonus_partner">
   </div>
 
   <div>
    <label >Client Annual</label>
-    <input type="tel"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="tel"  class="mt-1 form-input bonus_client_annual"  placeholder="0.00" name="bonus_client_annual">
   </div>
 
   <div>
    <label >Partner Annual</label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+    <input type="text" class="mt-1 form-input bonus_partner_annual"  placeholder="0.00" name="bonus_partner_annual">
   </div>
 
 
@@ -234,33 +234,33 @@
 
 <div>
    <label style=" color: #bd0c1d">Inerest Income</label>
-    <select  id="frequency" class="block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
+    <select  id="interest_income_frequency" name="interest_income_frequency" class="interest_income_frequency block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
     <option selected disabled>Frequency</option>
-    <option value="weekly">Weekly</option>
-    <option value="fortnightly">Fortnightly</option>
-    <option value="monthly">Monthly</option>
-    <option value="annual">Monthly</option>
+   <option value="Weekly">Weekly</option>
+    <option value="Fortnightly">Fortnightly</option>
+    <option value="Monthly">Monthly</option>
+    <option value="Annual">Annual</option>
   </select>
   </div>
   
   <div>
    <label >Client</label>
-    <input type="text"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="text"  class="mt-1 form-input interest_income_client"  placeholder="0.00" name="interest_income_client">
   </div>
 
   <div>
    <label >Partner</label>
-    <input type="email"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="email"  class="mt-1 form-input interest_income_partner"  placeholder="0.00" name="interest_income_partner">
   </div>
 
   <div>
    <label >Client Annual</label>
-    <input type="tel"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="tel"  class="mt-1 form-input interest_income_client_annual"  placeholder="0.00" name="interest_income_client_annual">
   </div>
 
   <div>
   <label>Partner Annual</label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+    <input type="text" class="mt-1 form-input interest_income_partner_annual"  placeholder="0.00" name="interest_income_partner_annual">
   </div>
 
    
@@ -271,33 +271,33 @@
 
 <div>
     <label style=" color: #bd0c1d">Rental Income</label>
-    <select  id="frequency" class="block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
+    <select  id="rental_income_frequency" name="rental_income_frequency" class="rental_income_frequency block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
     <option selected disabled>Frequency</option>
-    <option value="weekly">Weekly</option>
-    <option value="fortnightly">Fortnightly</option>
-    <option value="monthly">Monthly</option>
-    <option value="annual">Monthly</option>
+    <option value="Weekly">Weekly</option>
+    <option value="Fortnightly">Fortnightly</option>
+    <option value="Monthly">Monthly</option>
+    <option value="Annual">Annual</option>
   </select>
   </div>
   
   <div>
    <label >Client</label>
-    <input type="text"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="text"  class="mt-1 form-input rental_income_client"  placeholder="0.00" name="rental_income_client">
   </div>
 
   <div>
    <label >Partner</label>
-    <input type="email"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="email"  class="mt-1 form-input rental_income_partner"  placeholder="0.00" name="rental_income_partner">
   </div>
 
   <div>
    <label >Client Annual</label>
-    <input type="tel"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="tel"  class="mt-1 form-input rental_income_client_annual"  placeholder="0.00" name="rental_income_client_annual">
   </div>
 
   <div>
    <label >Partner Annual</label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+    <input type="text" class="mt-1 form-input rental_income_partner_annual"  placeholder="0.00" name="rental_income_partner_annual">
   </div>
 
 
@@ -308,33 +308,33 @@
 
 <div>
     <label style=" color: #bd0c1d">Dividend Income</label>
-    <select  id="frequency" class="block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
+    <select  id="dividend_income_frequency" name="dividend_income_frequency" class="dividend_income_frequency block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
     <option selected disabled>Frequency</option>
-    <option value="weekly">Weekly</option>
-    <option value="fortnightly">Fortnightly</option>
-    <option value="monthly">Monthly</option>
-    <option value="annual">Monthly</option>
+    <option value="Weekly">Weekly</option>
+    <option value="Fortnightly">Fortnightly</option>
+    <option value="Monthly">Monthly</option>
+    <option value="Annual">Annual</option>
   </select>
   </div>
   
   <div>
    <label >Client</label>
-    <input type="text"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="text"  class="mt-1 form-input dividend_income_client"  placeholder="0.00" name="dividend_income_client">
   </div>
 
   <div>
    <label >Partner</label>
-    <input type="email"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="email"  class="mt-1 form-input dividend_income_partner"  placeholder="0.00" name="dividend_income_partner">
   </div>
 
   <div>
    <label >Client Annual</label>
-    <input type="tel"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="tel"  class="mt-1 form-input dividend_income_client_annual"  placeholder="0.00" name="dividend_income_client_annual">
   </div>
 
   <div>
    <label >Partner Annual</label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+    <input type="text" class="mt-1 form-input dividend_income_partner_annual"  placeholder="0.00" name="dividend_income_partner_annual">
   </div>
 
 
@@ -345,33 +345,33 @@
 
 <div>
  <label style=" color: #bd0c1d">Social Security Income</label>
-    <select  id="frequency" class="block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
+    <select  id="ss_income_frequency" name="ss_income_frequency" class="ss_income_frequency block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
     <option selected disabled>Frequency</option>
-    <option value="weekly">Weekly</option>
-    <option value="fortnightly">Fortnightly</option>
-    <option value="monthly">Monthly</option>
-    <option value="annual">Monthly</option>
+    <option value="Weekly">Weekly</option>
+    <option value="Fortnightly">Fortnightly</option>
+    <option value="Monthly">Monthly</option>
+    <option value="Annual">Annual</option>
   </select>
   </div>
   
   <div>
    <label >Client</label>
-    <input type="text"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="text"  class="mt-1 form-input ss_income_client"  placeholder="0.00" name="ss_income_client">
   </div>
 
   <div>
    <label >Partner</label>
-    <input type="email"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="email"  class="mt-1 form-input ss_income_partner"  placeholder="0.00" name="ss_income_partner">
   </div>
 
   <div>
    <label >Client Annual</label>
-    <input type="tel"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="tel"  class="mt-1 form-input ss_income_client_annual"  placeholder="0.00" name="ss_income_client_annual">
   </div>
 
   <div>
    <label >Partner Annual</label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+    <input type="text" class="mt-1 form-input ss_income_partner_annual"  placeholder="0.00" name="ss_income_partner_annual">
   </div>
 
   
@@ -382,33 +382,33 @@
 
 <div>
     <label style=" color: #bd0c1d">Business Income</label>
-    <select  id="frequency" class="block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
+    <select  id="business_income_frequency" name="business_income_frequency" class="business_income_frequency block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
     <option selected disabled>Frequency</option>
-    <option value="weekly">Weekly</option>
-    <option value="fortnightly">Fortnightly</option>
-    <option value="monthly">Monthly</option>
-    <option value="annual">Monthly</option>
+     <option value="Weekly">Weekly</option>
+    <option value="Fortnightly">Fortnightly</option>
+    <option value="Monthly">Monthly</option>
+    <option value="Annual">Annual</option>
   </select>
   </div>
   
   <div>
    <label >Client</label>
-    <input type="text"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="text"  class="mt-1 form-input business_income_client"  placeholder="0.00" name="business_income_client">
   </div>
 
   <div>
    <label >Partner</label>
-    <input type="email"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="email"  class="mt-1 form-input business_income_partner"  placeholder="0.00" name="business_income_partner">
   </div>
 
   <div>
    <label >Client Annual</label>
-    <input type="tel"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="tel"  class="mt-1 form-input business_income_client_annual"  placeholder="0.00" name="business_income_client_annual">
   </div>
 
   <div>
    <label >Partner Annual</label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+    <input type="text" class="mt-1 form-input business_income_partner_annual"  placeholder="0.00" name="business_income_partner_annual">
   </div>
      
   </div>
@@ -417,39 +417,39 @@
 
 <div>
    <label style=" color: #bd0c1d">Other Income</label>
-    <select  id="frequency" class="block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
+    <select  id="other_income_frequency" name="other_income_frequency" class="other_income_frequency block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
     <option selected disabled>Frequency</option>
-    <option value="weekly">Weekly</option>
-    <option value="fortnightly">Fortnightly</option>
-    <option value="monthly">Monthly</option>
-    <option value="annual">Monthly</option>
+    <option value="Weekly">Weekly</option>
+    <option value="Fortnightly">Fortnightly</option>
+    <option value="Monthly">Monthly</option>
+    <option value="Annual">Annual</option>
   </select>
   </div>
   
   <div>
    <label >Client</label>
-    <input type="text"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="text"  class="mt-1 form-input other_income_client"  placeholder="0.00" name="other_income_client">
   </div>
 
   <div>
    <label >Partner</label>
-    <input type="email"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="email"  class="mt-1 form-input other_income_partner"  placeholder="0.00" name="other_income_partner">
   </div>
 
   <div>
    <label >Client Annual</label>
-    <input type="tel"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="tel"  class="mt-1 form-input other_income_client_annual"  placeholder="0.00" name="other_income_client_annual">
   </div>
 
   <div>
    <label >Partner Annual</label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+    <input type="text" class="mt-1 form-input other_income_partner_annual"  placeholder="0.00" name="other_income_partner_annual">
   </div>
 
      
   </div>
     <br/>
-  <div class="grid grid-cols-1 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-5 gap-5">
+  <!-- <div class="grid grid-cols-1 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-5 gap-5">
 
 <div>
     <label style=" color: #bd0c1d">Business Income</label>
@@ -482,28 +482,22 @@
     <input type="text" class="mt-1 form-input"  placeholder="0.00">
   </div>
 
-  </div>
+  </div> -->
     <br/>
   <div class="grid grid-cols-1 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-5 gap-5">
 
 <div>
    <label style=" color: #bd0c1d">Total Income</label>
    <label>Client Annual</label>
-<input type="text"  class="mt-1 form-input"  placeholder="0.00">
+<input type="text"  class="mt-1 form-input total_income_client_annual"  placeholder="0.00" name="total_income_client_annual">
   </div>
   
   <div style="padding-top: 26px;">
   
    <label>Partner Annual</label>
-    <input type="text"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="text"  class="mt-1 form-input total_income_partner_annual"  placeholder="0.00" name="total_income_partner_annual">
   </div>
-
- 
-
-     
   </div>
-
-  
     </fieldset>
      <fieldset class="group-box">
         <legend class="group-title">Superannuation Contributions</legend>
@@ -514,25 +508,25 @@
 
     <div class="col-span-1 md:col-span-3">
       <label >Gross Salary</label>
-      <input type="text" class="mt-1 form-input">
+      <input type="text" class="mt-1 form-input gross_salary" name ="gross_salary">
     </div>
 
 
     <div class="col-span-1 md:col-span-3">
       <label >SG Rate</label>
-      <input type="text" class="mt-1 form-input" placeholder="0%">
+      <input type="text" class="mt-1 form-input sg_rate" placeholder="0%" name="sg_rate">
     </div>
 
 
     <div class="col-span-1 md:col-span-6">
       <label >Annual Contribution</label>
-      <input type="email" class="mt-1 form-input">
+      <input type="email" class="mt-1 form-input annual_contribution" name="annual_contribution">
     </div>
 
 
     <div class="col-span-1 md:col-span-3">
       <label >Quarterly Contribution</label>
-      <input type="text" class="mt-1 form-input">
+      <input type="text" class="mt-1 form-input quarterly_contribution" name="quarterly_contribution">
  
 
     <div class="col-span-1 md:col-span-6 text-right mt-2">
@@ -555,47 +549,48 @@
 <div>
     <label style=" color: #bd0c1d">Assets (Non-Investment)</label>
        <label >Principle Residence</label>
-    <select  id="non-investment-owner" class="block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
+    <select  id="principle_residence" name="principle_residence" class="principle_residence block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
     <option selected disabled>Owner</option>
-    <option value="client">Client</option>
-    <option value="partner">Partner</option>
-    <option value="joint">Joint</option>
+    <option value="Client">Client</option>
+    <option value="Partner">Partner</option>
+    <option value="Joint">Joint</option>
     <option value="Other">Other</option>
   </select>
   </div>
   
   <div style="margin-top:23px;">
    <label >Client Percentage</label>
-    <input type="text"  class="mt-1 form-input"  placeholder="0%">
+    <input type="text" name="principle_client_percentage" class="mt-1 form-input principle_client_percentage"  placeholder="0%">
   </div>
 
  <div style="margin-top:23px;">
    <label >Partner Percentage</label>
-    <input type="email"  class="mt-1 form-input"  placeholder="0%">
+    <input type="email" name="principle_partner_percentage" class="mt-1 form-input principle_partner_percentage"  placeholder="0%">
   </div>
 
  <div style="margin-top:23px;">
    <label >Market Value</label>
-    <input type="tel"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="tel"  name="principle_market_value" class="mt-1 form-input principle_market_value"  placeholder="0.00">
   </div>
 
  <div style="margin-top:23px;">
    <label >Client </label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+    <input type="text" name="principle_client" class="mt-1 form-input principle_client"  placeholder="0.00">
   </div>
   <div style="margin-top:23px;">
    <label >Partner</label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+    <input type="text" name="principle_partner" class="mt-1 form-input principle_partner"  placeholder="0.00">
   </div>
-
+ 
   </div>
+    
   <br/>
 
   <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
 
 <div>
     <label>Cash (everyday)</label>
-    <select  id="non-investment-owner" class="block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
+    <select  id="cash_everyday" name="cash_everyday" class="cash_everyday block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
     <option selected disabled>Owner</option>
     <option value="client">Client</option>
     <option value="partner">Partner</option>
@@ -606,36 +601,37 @@
   
   <div>
    <label >Client Percentage</label>
-    <input type="text"  class="mt-1 form-input"  placeholder="0%">
+    <input type="text"  name="cash_client_percentage" class="mt-1 form-input cash_client_percentage"  placeholder="0%">
   </div>
 
   <div>
    <label >Partner Percentage</label>
-    <input type="email"  class="mt-1 form-input"  placeholder="0%">
+    <input type="email" name="cash_partner_percentage" class="mt-1 form-input cash_partner_percentage"  placeholder="0%">
   </div>
 
   <div>
    <label >Market Value</label>
-    <input type="tel"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="tel"  class="mt-1 form-input cash_market_value" name="cash_market_value" placeholder="0.00">
   </div>
 
   <div>
    <label >Client </label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+    <input type="text" class="mt-1 form-input cash_client" name="cash_client" placeholder="0.00">
   </div>
     <div>
    <label >Partner</label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+    <input type="text" class="mt-1 form-input cash_partner" name="cash_partner"  placeholder="0.00">
   </div>
 
   </div>
+ 
 <br/>
   <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
 
 <div>
     <label>Other Personal Assets</label>
-    <select  id="non-investment-owner" class="block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
-    <option selected disabled>Owner</option>
+    <select  id="non-investment-owner-asset" name="noninvestmentasset[0][other_personal_asset] "class="block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select non-investment-owner-asset ">
+    <option selected>Owner</option>
     <option value="client">Client</option>
     <option value="partner">Partner</option>
     <option value="joint">Joint</option>
@@ -645,28 +641,40 @@
   
   <div>
    <label >Client Percentage</label>
-    <input type="text"  class="mt-1 form-input"  placeholder="0%">
+    <input type="text"  class="mt-1 form-input non_investment_asset_client_percentage"  placeholder="0%" name="noninvestmentasset[0][non_investment_asset_client_percentage]">
   </div>
 
   <div>
    <label >Partner Percentage</label>
-    <input type="email"  class="mt-1 form-input"  placeholder="0%">
+    <input type="email"  class="mt-1 form-input non_investment_asset_partner_percentage"  name="noninvestmentasset[0][non_investment_asset_partner_percentage]" placeholder="0%">
   </div>
 
   <div>
    <label >Market Value</label>
-    <input type="tel"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="tel"  class="mt-1 form-input non_investment_asset_market_value" name="noninvestmentasset[0][non_investment_asset_market_value]"  placeholder="0.00">
   </div>
 
   <div>
    <label >Client </label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+    <input type="text" class="mt-1 form-input non_investment_asset_client"  name="noninvestmentasset[0][non_investment_asset_client]" placeholder="0.00">
   </div>
     <div>
    <label >Partner</label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+    <input type="text" class="mt-1 form-input non_investment_asset_partner" name="noninvestmentasset[0][non_investment_asset_partner]"  placeholder="0.00">
   </div>
-<div>
+<div style="display:none;">
+   <label >ID</label>
+    <input type="text" class="mt-1 form-input others_id" name="noninvestmentasset[0][others_id]"  placeholder="0.00">
+  </div>
+
+
+  </div>
+  <br/>
+  <div class="div-non-investment-property"></div>
+     <button class="btn btn-info add-non-investment-property" style="width:50px;">Add</button>
+  <br/>
+    <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
+  <div>
    <label style=" color: #bd0c1d">Total Non-Investment Assets</label>
    <label>Market Value</label>
 <input type="text"  class="mt-1 form-input"  placeholder="0.00">
@@ -681,9 +689,7 @@
     <label>Partner</label>
     <input type="text"  class="mt-1 form-input"  placeholder="0.00">
   </div>
-
-  </div>
-
+</div>
     <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
 
 <div>
@@ -1816,6 +1822,9 @@
 
     </div>
         <script defer="" src="{{ asset('assets/js/load-custom-functions.js') }}"></script>
+         <script defer="" src="{{ asset('assets/js/form-validation-input.js') }}"></script>
+
+        
       @section('scripts')
 
       @endsection

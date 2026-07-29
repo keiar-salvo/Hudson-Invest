@@ -8,7 +8,7 @@
 
   function FillForms(response)
 {
-   $('.name').val(response['personalDetails']['name']);
+  $('.name').val(response['personalDetails']['name']);
   $('.residential_address').val(response['personalDetails']['residential_address']);
   $('.phone_home').val(response['personalDetails']['phone_home']);
   $('.phone_mobile').val(response['personalDetails']['phone_mobile']);
@@ -28,10 +28,87 @@
   $('.current_income_required_in_retirement').val(response['financialDetails']['current_income_required_in_retirement']);
  
 }
+
+function Fill_Income(response){
+  $('#salary_frequency').val(response['IncomeDetails']['salary_frequency']);
+  $('.salary_client').val(response['IncomeDetails']['salary_client']);
+  $('.salary_partner').val(response['IncomeDetails']['salary_partner']);
+  $('.salary_client_annual').val(response['IncomeDetails']['salary_client_annual']);
+  $('.salary_partner_annual').val(response['IncomeDetails']['salary_partner_annual']);
+
+  $('#bonus_frequency').val(response['IncomeDetails']['bonus_frequency']);
+  $('.bonus_client').val(response['IncomeDetails']['bonus_client']);
+  $('.bonus_partner').val(response['IncomeDetails']['bonus_partner']);
+  $('.bonus_client_annual').val(response['IncomeDetails']['bonus_client_annual']);
+  $('.bonus_partner_annual').val(response['IncomeDetails']['bonus_partner_annual']);
+
+  $('#interest_income_frequency').val(response['IncomeDetails']['interest_income_frequency']);
+  $('.interest_income_client').val(response['IncomeDetails']['interest_income_client']);
+  $('.interest_income_partner').val(response['IncomeDetails']['interest_income_partner']);
+  $('.interest_income_client_annual').val(response['IncomeDetails']['interest_income_client_annual']);
+  $('.interest_income_partner_annual').val(response['IncomeDetails']['interest_income_partner_annual']);
+
+  $('#rental_income_frequency').val(response['IncomeDetails']['rental_income_frequency']);
+  $('.rental_income_client').val(response['IncomeDetails']['rental_income_client']);
+  $('.rental_income_partner').val(response['IncomeDetails']['rental_income_partner']);
+  $('.rental_income_client_annual').val(response['IncomeDetails']['rental_income_client_annual']);
+  $('.rental_income_partner_annual').val(response['IncomeDetails']['rental_income_partner_annual']);
+
+  $('#dividend_income_frequency').val(response['IncomeDetails']['dividend_income_frequency']);
+  $('.dividend_income_client').val(response['IncomeDetails']['dividend_income_client']);
+  $('.dividend_income_partner').val(response['IncomeDetails']['dividend_income_partner']);
+  $('.dividend_income_client_annual').val(response['IncomeDetails']['dividend_income_client_annual']);
+  $('.dividend_income_partner_annual').val(response['IncomeDetails']['dividend_income_partner_annual']);
+
+  $('#ss_income_frequency').val(response['IncomeDetails']['ss_income_frequency']);
+  $('.ss_income_client').val(response['IncomeDetails']['ss_income_client']);
+  $('.ss_income_partner').val(response['IncomeDetails']['ss_income_partner']);
+  $('.ss_income_client_annual').val(response['IncomeDetails']['ss_income_client_annual']);
+  $('.ss_income_partner_annual').val(response['IncomeDetails']['ss_income_partner_annual']);
+
+  $('#business_income_frequency').val(response['IncomeDetails']['business_income_frequency']);
+  $('.business_income_client').val(response['IncomeDetails']['business_income_client']);
+  $('.business_income_partner').val(response['IncomeDetails']['business_income_partner']);
+  $('.business_income_client_annual').val(response['IncomeDetails']['business_income_client_annual']);
+  $('.business_income_partner_annual').val(response['IncomeDetails']['business_income_partner_annual']);
+
+  $('#other_income_frequency').val(response['IncomeDetails']['other_income_frequency']);
+  $('.other_income_client').val(response['IncomeDetails']['other_income_client']);
+  $('.other_income_partner').val(response['IncomeDetails']['other_income_partner']);
+  $('.other_income_client_annual').val(response['IncomeDetails']['other_income_client_annual']);
+  $('.other_income_partner_annual').val(response['IncomeDetails']['other_income_partner_annual']);
+
+  $('.total_income_client_annual').val(response['IncomeDetails']['total_income_client_annual']);
+  $('.total_income_partner_annual').val(response['IncomeDetails']['total_income_partner_annual']);
+
+}
+
+function FillSuperannuation(response){
+  $('.gross_salary').val(response['SuperannuationDetails']['gross_salary']);
+  $('.sg_rate').val(response['SuperannuationDetails']['sg_rate']);
+  $('.annual_contribution').val(response['SuperannuationDetails']['annual_contribution']);
+  $('.quarterly_contribution').val(response['SuperannuationDetails']['quarterly_contribution']);
+}
+
+function FillNonInvestmentAsset(response){
+  $('.principle_residence').val(response['NonInvestmentAssets']['principle_residence']);
+  $('.principle_client_percentage').val(response['NonInvestmentAssets']['principle_client_percentage']);
+  $('.principle_partner_percentage').val(response['NonInvestmentAssets']['principle_partner_percentage']);
+  $('.principle_market_value').val(response['NonInvestmentAssets']['principle_market_value']);
+  $('.principle_client').val(response['NonInvestmentAssets']['principle_client']);
+  $('.principle_partner').val(response['NonInvestmentAssets']['principle_partner']);
+  $('.cash_everyday').val(response['NonInvestmentAssets']['cash_everyday']);
+  $('.cash_client_percentage').val(response['NonInvestmentAssets']['cash_client_percentage']);
+  $('.cash_partner_percentage').val(response['NonInvestmentAssets']['cash_partner_percentage']);
+  $('.cash_market_value').val(response['NonInvestmentAssets']['cash_market_value']);
+  $('.cash_client').val(response['NonInvestmentAssets']['cash_client']);
+  $('.cash_partner').val(response['NonInvestmentAssets']['cash_partner']);
+}
+
+
 function addHTML(count){
       let rowIdx = count;
         var add_investment_html = `<div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
-
 <div>
     <label>Investment Property</label>
     <select name="row[${rowIdx}][non_investment_owner]"  id="non-investment-owner" class="investment_property block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
@@ -71,8 +148,54 @@ function addHTML(count){
     <input type="text" class="mt-1 form-input investment_id"  placeholder="0.00" name="row[${rowIdx}][investment_id]" >
   </div>
   <div>`;
-               $('.investment-property').append(add_investment_html);
-                  rowIdx++;
+    $('.investment-property').append(add_investment_html);
+      rowIdx++;
+}
+
+function Add_Non_Investment_HTML(count){
+      let rowIdx = count;
+        var add_non_investment_html = `<div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
+<div>
+    <label>Other Personal Assets</label>
+    <select  id="non-investment-owner-asset" name="noninvestmentasset[${rowIdx}][other_personal_asset] "class="block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select non-investment-owner-asset ">
+    <option selected>Owner</option>
+    <option value="Client">Client</option>
+    <option value="Partner">Partner</option>
+    <option value="Joint">Joint</option>
+    <option value="Other">Other</option>
+  </select>
+  </div>
+  
+  <div>
+   <label >Client Percentage</label>
+    <input type="text"  class="mt-1 form-input non_investment_asset_client_percentage"  placeholder="0%" name="noninvestmentasset[${rowIdx}][non_investment_asset_client_percentage]">
+  </div>
+
+  <div>
+   <label >Partner Percentage</label>
+    <input type="email"  class="mt-1 form-input non_investment_asset_partner_percentage"  name="noninvestmentasset[${rowIdx}][non_investment_asset_partner_percentage]" placeholder="0%">
+  </div>
+
+  <div>
+   <label >Market Value</label>
+    <input type="tel"  class="mt-1 form-input non_investment_asset_market_value" name="noninvestmentasset[${rowIdx}][non_investment_asset_market_value]"  placeholder="0.00">
+  </div>
+
+  <div>
+   <label >Client </label>
+    <input type="text" class="mt-1 form-input non_investment_asset_client"  name="noninvestmentasset[${rowIdx}][non_investment_asset_client]" placeholder="0.00">
+  </div>
+    <div>
+   <label >Partner</label>
+    <input type="text" class="mt-1 form-input non_investment_asset_partner" name="noninvestmentasset[${rowIdx}][non_investment_asset_partner]"  placeholder="0.00">
+  </div>
+  <div style="display:none;">
+   <label >ID</label>
+    <input type="text" class="mt-1 form-input others_id" name="noninvestmentasset[${rowIdx}][others_id]"  placeholder="0.00" >
+  </div>
+  <div>`;
+    $('.div-non-investment-property').append(add_non_investment_html);
+      rowIdx++;
 }
 
 
@@ -98,34 +221,38 @@ $('.details_id').val(transactionID());
 }
 
   $('.add-investment-property').click(function(e){
-                  e.preventDefault();
-var x = 1;
-              addHTML(x);
-                });
+      e.preventDefault();
+      var x = 1;
+      addHTML(x);
+  });
+
+  $('.add-non-investment-property').click(function(e){
+      e.preventDefault();
+      var x = 1;
+      Add_Non_Investment_HTML(x);
+  });
 
      var appURL = window.location.origin;
      var details_id =  $('.details_id').val();
 
-
-         $(".btn-details").click(function(event){
+/*****************Save Details********************** */
+ $(".btn-details").click(function(event){
           
-          event.preventDefault();
-          var formData = new FormData($('.clientdetails').get(0))
-          formData.append('_method','POST');
-          console.log(formData);
-          $.ajax({
-          headers: {
-          'X-CSRF-TOKEN': "{{ csrf_token() }}"
-          },
-          
-          url: appURL + "/details",
-          method: "POST",
-          data:formData,       
-          processData: false,
-          contentType: false,
-    
-          success: function(response)
-            {
+    event.preventDefault();
+    var formData = new FormData($('.clientdetails').get(0))
+    formData.append('_method','POST');
+    console.log(formData);
+    $.ajax({
+    headers: {
+      'X-CSRF-TOKEN': "{{ csrf_token() }}"
+    },      
+    url: appURL + "/details",
+    method: "POST",
+    data:formData,       
+    processData: false,
+    contentType: false,
+    success: function(response)
+    {
               //   $('input').each(function(){
               // if($(this).val() != ""){
               //   $(this).css('border-color','inherit');
@@ -135,418 +262,141 @@ var x = 1;
             // $('.btn-details').css('display','none');
             // $('.btn-update-details').css('display','block');
       
-            Swal.fire({
-            title: "Client Details successfully saved",
-            icon: "success",
-            draggable: true
-            });
-            $('.details_id').val(transactionID());
-      
-            },  
-          error: function(error)
-            {
-               console.log(error);
+    Swal.fire({
+    title: "Client Details successfully saved",
+    icon: "success",
+    draggable: true
+    });
+    $('.details_id').val(transactionID());
+      },  
+      error: function(error)
+      {
+        console.log(error);
             //  $('input').each(function(){
             //   if($(this).val() == ""){
             //     $(this).css('border-color','red');
             //   }
                 
             //  });
-                 Swal.fire({
-                icon: "error",
-                title: "Please provide all requested details",
-        
-
-                          });
-    
+        Swal.fire({
+        icon: "error",
+        title: "Please provide all requested details",
+         });
             }
           });
-
     
          });
+/*****************End Save Details********************** */
 
-      $(".btn-update-details").click(function(event){
-          
-          event.preventDefault();
-          var formData = new FormData($('.clientdetails').get(0));
-          formData.append('_method','POST');
-        
-
-          $.ajax({
-          headers: {
-          'X-CSRF-TOKEN': "{{ csrf_token() }}"
-          },
-          
-          url: appURL + "/details/" + details_id,
-          method: "POST",
-          data:formData,       
-          processData: false,
-          contentType: false,
-    
-          success: function(response)
-            {
+/***************Update Details****************************/
+$(".btn-update-details").click(function(event){       
+    event.preventDefault();
+    var formData = new FormData($('.clientdetails').get(0));
+    formData.append('_method','POST');
+    $.ajax({
+    headers: {
+      'X-CSRF-TOKEN': "{{ csrf_token() }}"
+    },
+    url: appURL + "/details/" + details_id,
+    method: "POST",
+    data:formData,       
+    processData: false,
+    contentType: false,  
+    success: function(response)
+      {
               //   $('input').each(function(){
               // if($(this).val() != ""){
               //   $(this).css('border-color','inherit');
               // }
               // });
           
-              Swal.fire({
-              title: 'Changes successfully saved',
-              icon: 'success',
-              confirmButtonText: 'OK'
-              }).then((result) => {
-             if (result.isConfirmed) {
-              window.opener.location.reload();
+    Swal.fire({
+    title: 'Changes successfully saved',
+    icon: 'success',
+    confirmButtonText: 'OK'
+    }).then((result) => {
+    if (result.isConfirmed) {
+    window.opener.location.reload();
                 // window.top.close();
-  }
-});
-                 
-            setTimeout(function () {
-               
-            }, 10000);
-
-      
-            },  
-          error: function(error)
-            {
-               console.log(error);
-             $('input').each(function(){
-              if($(this).val() == ""){
-                $(this).css('border-color','red');
-              }
-                
-             });
-                 Swal.fire({
-                icon: "error",
-                title: "Please provide all requested details",
-        
-
-                          });
-    
-            }
+    }
+    });
+     },  
+      error: function(error)
+      {
+        console.log(error);
+        $('input').each(function(){
+        if($(this).val() == ""){
+        $(this).css('border-color','red');
+           }          
           });
-  
-    
+        Swal.fire({
+        icon: "error",
+        title: "Please provide all requested details",
          });
-       
-           
-       
-
-
-$('.age_client').keypress(function (e) {
-   if (String.fromCharCode(e.keyCode).match(/[^0-9]/g)) return false;
-
-   var client = $('.age_client').val();
-   var partner = $('.age_partner').val();
-   if(client != "" && partner != "")
-   {
-    var age_average = (partner  === 0) ? client : (client + partner) / 2;
-    $('.age_average').val(age_average);
-   }
-   
+      }
+  });
 });
-$('.age_client').on('keydown', function (e) {
-   if ($.inArray(e.keyCode, [46, 8, 9, 27, 13]) !== -1 ||
+/***************End Update Details****************************/
 
-        (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) ||
-       
-        (e.keyCode >= 35 && e.keyCode <= 39)) {
-        return; 
-    }
-
-  
-    if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-        e.preventDefault();
-    }
-    if (this.value.length >= 2 && window.getSelection().toString() === "") {
-        e.preventDefault();
-    }
-       var client = $('.age_client').val();
-   var partner = $('.age_partner').val();
-   if(client != "" && partner != "")
-   {
-    var age_average = (partner  === 0) ? client : (client + partner) / 2;
-    $('.age_average').val(age_average);
-   }
-   
-});
-
-$('.age_partner').keypress(function (e) {
-   if (String.fromCharCode(e.keyCode).match(/[^0-9]/g)) return false;
-   
-});
-$('.age_partner').on('keydown', function (e) {
-   if ($.inArray(e.keyCode, [46, 8, 9, 27, 13]) !== -1 ||
-
-        (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) ||
-       
-        (e.keyCode >= 35 && e.keyCode <= 39)) {
-        return; 
-    }
-
-  
-    if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-        e.preventDefault();
-    }
-    if (this.value.length >= 2 && window.getSelection().toString() === "") {
-        e.preventDefault();
-    }
-       var client = $('.age_client').val();
-   var partner = $('.age_partner').val();
-   if(client != "" && partner != "")
-   {
-   
-    if(partner === 0)
-    {
-      age_average = 0;
-    }
-    else{
-      age_average =parseInt(client)  + parseInt(partner)  / 2;
-    }
-    $('.age_average').val(Math.trunc(age_average));
-   }
-   
-});
-
-$('.age_average').keypress(function (e) {
-   if (String.fromCharCode(e.keyCode).match(/[^0-9]/g)) return false;
-   
-});
-$('.age_average').on('keydown', function (e) {
-   if ($.inArray(e.keyCode, [46, 8, 9, 27, 13]) !== -1 ||
-
-        (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) ||
-       
-        (e.keyCode >= 35 && e.keyCode <= 39)) {
-        return; 
-    }
-
-  
-    if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-        e.preventDefault();
-    }
-    if (this.value.length >= 2 && window.getSelection().toString() === "") {
-        e.preventDefault();
-    }
-});
-
-$('.target_age').keypress(function (e) {
-   if (String.fromCharCode(e.keyCode).match(/[^0-9]/g)) return false;
-   
-});
-$('.target_age').on('keydown', function (e) {
-   if ($.inArray(e.keyCode, [46, 8, 9, 27, 13]) !== -1 ||
-
-        (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) ||
-       
-        (e.keyCode >= 35 && e.keyCode <= 39)) {
-        return; 
-    }
-
-  
-    if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-        e.preventDefault();
-    }
-    if (this.value.length >= 2 && window.getSelection().toString() === "") {
-        e.preventDefault();
-
-        
-    }
-    var target_age = $('.target_age').val();
-    var age_partner = $('.age_partner').val();
-    var years_to_target_age = parseInt(age_partner) - parseInt(target_age);
-    $('.years_to_target_age').val(Math.round(years_to_target_age) );
-    var dateVal = $('.initial_appointment_date').val();
-  if(dateVal != "")
+/************Get Details******************************/
+$.ajax({
+  url: appURL + "/details/" + details_id,
+  type: "GET",
+  dataType: "json",
+  success: function(response) {   
+  console.log(response);
+  if(response.status == 'no data available')
   {
-    if($('.years_to_target_age').val() != "")
-    {
-  let desired_retirment_age = new Date(dateVal);
-    
-  
-   desired_retirment_age.setFullYear(desired_retirment_age.getFullYear() + parseInt($(this).val()) );
-    
-   
-    let desiredyearTwentyOne = desired_retirment_age.getFullYear();
-    let desireMonth = String(desired_retirment_age.getMonth() + 1).padStart(2, '0');
-    let desiredDay = String(desired_retirment_age.getDate()).padStart(2, '0');
-    let newdesiredDayMonthYear = `${desireMonth}/${desiredDay}/${desiredyearTwentyOne}`;
-
-      // var desired_result = dateVal + (parseFloat($(this).val) * 365);
-
-    $('.desired_retirement_age').val(newdesiredDayMonthYear);
-    $('.desired_retirement_date').val(newdesiredDayMonthYear);
-    }
-    else{
-      $('.desired_retirement_age').val("mm/dd/yyyy");
-      $('.desired_retirement_date').val("mm/dd/yyyy");
-    }
-    
-  }
-  else {
-return false;
-  }
-});
-
-$('.years_to_target_age').keypress(function (e) {
-   if (String.fromCharCode(e.keyCode).match(/[^0-9]/g)) return false;
-   
-});
-$('.years_to_target_age').on('keydown', function (e) {
-   if ($.inArray(e.keyCode, [46, 8, 9, 27, 13]) !== -1 ||
-
-        (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) ||
-       
-        (e.keyCode >= 35 && e.keyCode <= 39)) {
-        return; 
-    }
-
-  
-    if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-        e.preventDefault();
-    }
-    if (this.value.length >= 2 && window.getSelection().toString() === "") {
-        e.preventDefault();
-    }
-});
-
-$('.current_income_required_in_retirement').on('keypress',function(event){
-     if(event.which < 46 || event.which >= 58 || event.which == 47) {
-    event.preventDefault();
-  }
-
-  if(event.which == 46 && $(this).val().indexOf('.') != -1) {
-    this.value = '' ;
-  }  
-});
-$('.initial_appointment_date').on('change',function(){
-var dateVal = $('.initial_appointment_date').val();
-
-if (dateVal) {
-   
-    let d = new Date(dateVal);
-    
-  
-    d.setFullYear(d.getFullYear() + 7);
-    
-   
-    let year = d.getFullYear();
-    let month = String(d.getMonth() + 1).padStart(2, '0');
-    let day = String(d.getDate()).padStart(2, '0');
-    let newDateStr = `${month}/${day}/${year}`;
-    
-    
-    $('.in_seven_years').val(newDateStr);
-
-    let dateFourteen = new Date(dateVal);
-    
-    
-   dateFourteen.setFullYear(dateFourteen.getFullYear() + 14);
-  
-    let yearFourteen = dateFourteen.getFullYear();
-    let monthFourteen = String(d.getMonth() + 1).padStart(2, '0');
-    let dayFourteen = String(d.getDate()).padStart(2, '0');
-    let newDateStrFourteen = `${monthFourteen}/${dayFourteen}/${yearFourteen}`;
-   
-    $('.in_fourteen_years').val(newDateStrFourteen);
-
-     let dateTwentyOne = new Date(dateVal);
-    
-   dateTwentyOne.setFullYear(dateTwentyOne.getFullYear() + 21);
-    
-  
-    let yearTwentyOne = dateTwentyOne.getFullYear();
-    let monthTwentyOne = String(d.getMonth() + 1).padStart(2, '0');
-    let daywentyOne = String(d.getDate()).padStart(2, '0');
-    let newDateStrTwentyOne = `${monthTwentyOne}/${daywentyOne}/${yearTwentyOne}`;
-    
-    $('.in_twenty_one_years').val(newDateStrTwentyOne);
-
-  
-}
-});
-$('.years_to_target_age').on('keyup', function (e) {
-
-  return false;
-
-});
-$('.years_to_target_age').on('keydown', function (e) {
-  var dateVal = $('.initial_appointment_date').val();
-  if(dateVal == "")
-  {
-    return false;
-  }
-});
-
-$('.desired_retirement_age').on('keydown', function (e) {
-  return false;
-});
-
-$('.in_seven_years').on('keydown', function (e) {
-  return false;
-});
-
-$('.in_fourteen_years').on('keydown', function (e) {
-  return false;
-});
-
-$('.in_twenty_one_years').on('keydown', function (e) {
-  return false;
-});
- $('.desired_retirement_date').on('keydown', function (e) {
-  return false;
-});
-
-
-  
-                $.ajax({
-                    url: appURL + "/details/" + details_id,
-                    type: "GET",
-                    dataType: "json",
-                    success: function(response) {
-                      
-                      console.log(response);
-                      if(response.status == 'no data available')
-                      {
-                        $('.btn-update-details').css('display','none');
-                        $('.btn-details').css('display','block');
+    $('.btn-update-details').css('display','none');
+    $('.btn-details').css('display','block');
                         
-                      }
-                      else{
-                        FillForms(response);
-                        $('.add-investment-property').css('display','none');
-                     
-                        $('.btn-details').css('display','none');
-                       $('.btn-update-details').css('display','block');
-                       var  investment_asset = (response['InvestmentAssetDetails']).length;
-                       for(var x = 1; x < investment_asset; x++)
-                       {
-                          addHTML(x);
-                       }
-                       var get;
-                    
-                          response['InvestmentAssetDetails'].forEach((element,index) => {
-                            $('.investment_property').eq(index).val(element.investment_property);
-                            $('.client_percentage').eq(index).val(element.client_percentage);
-                            $('.partner_percentage').eq(index).val(element.partner_percentage);
-                            $('.market_value').eq(index).val(element.market_value);
-                            $('.client').eq(index).val(element.client);
-                            $('.partner').eq(index).val(element.partner);
-                            $('.investment_id').eq(index).val(element.id)
-                            
-                       });
-                     
-                      }
-                      
-                    },
-                    error: function(error) {
-                        console.error("AJAX Error: " + error);
-                    }
-                });
+  }
+  else{
+    FillForms(response);
+    Fill_Income(response);
+    FillSuperannuation(response);
+    FillNonInvestmentAsset(response);
+    $('.add-investment-property').css('display','none');                 
+    $('.btn-details').css('display','none');
+    $('.btn-update-details').css('display','block');
+    var  investment_asset = (response['InvestmentAssetDetails']).length;
+    var  other_personal_assets = (response['OtherPersonalAssets']).length;
+    for(var x = 1; x < investment_asset; x++)
+    {
+       addHTML(x);
+    }
+    for(var x = 1; x < other_personal_assets; x++)
+    {
+       Add_Non_Investment_HTML(x);
+    }
+    response['InvestmentAssetDetails'].forEach((element,index) => {
+      $('.investment_property').eq(index).val(element.investment_property);
+      $('.client_percentage').eq(index).val(element.client_percentage);
+      $('.partner_percentage').eq(index).val(element.partner_percentage);
+      $('.market_value').eq(index).val(element.market_value);
+      $('.client').eq(index).val(element.client);
+      $('.partner').eq(index).val(element.partner);
+      $('.investment_id').eq(index).val(element.id)
+      });
 
-              
-         });
+      response['OtherPersonalAssets'].forEach((element,index) => {
+      $('.non-investment-owner-asset').eq(index).val(element.other_personal_asset);
+      $('.non_investment_asset_client_percentage').eq(index).val(element.non_investment_asset_client_percentage);
+      $('.non_investment_asset_partner_percentage').eq(index).val(element.non_investment_asset_partner_percentage);
+      $('.non_investment_asset_market_value').eq(index).val(element.non_investment_asset_market_value);
+      $('.non_investment_asset_client').eq(index).val(element.non_investment_asset_client);
+      $('.non_investment_asset_partner').eq(index).val(element.non_investment_asset_partner);
+      $('.others_id').eq(index).val(element.id)
+      });
+
+      }
+    },
+    error: function(error) {
+    console.error("AJAX Error: " + error);
+    }
+    });
+        /************End Get Details******************************/
+});/***end document***/
          
 
 

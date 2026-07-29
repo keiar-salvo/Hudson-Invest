@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('personal_details', function (Blueprint $table) {
         
-            $table->string('details_id');
+            $table->string('details_id')->unique();
             $table->string('name');
             $table->string('residential_address');
             $table->string('phone_home');
@@ -33,6 +33,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+		
     }
 
     /**
