@@ -91,7 +91,7 @@ class PersonalDetails extends Model
              foreach ($request->input('row') as $value) {
                 if(isset($value['non_investment_owner']) && isset($value['client_percentage']) && isset($value['partner_percentage']) && isset($value['market_value']) && isset($value['client']) && isset($value['partner']))
                     {
-                $investment = new InvestmentAsset;
+                $investment = new InvestmentPropertyAsset;
                 $investment->details_id   = $request->input('details_id');
                 $investment->investment_property = $value['non_investment_owner'];
                 $investment->client_percentage = $value['client_percentage'];
@@ -216,9 +216,55 @@ class PersonalDetails extends Model
             $non_investment_asset->cash_market_value = $request->input('cash_market_value');
             $non_investment_asset->cash_client = $request->input('cash_client');
             $non_investment_asset->cash_partner = $request->input('cash_partner');
+            $non_investment_asset->total_market_value = $request->input('total_non_investment_market_value');
+            $non_investment_asset->total_client = $request->input('total_non_investment_client');
+            $non_investment_asset->total_partner = $request->input('total_non_investment_partner');
             $non_investment_asset->encoded_by   = $request->input('encoded_by');
             $non_investment_asset->date_encoded = Carbon::now()->toDateString();
             $non_investment_asset->save();
+
+            $investment_asset = new Investment_Asset;
+            $investment_asset->details_id = $request->input('details_id');
+            $investment_asset->long_term_investment_asset = $request->input('long_term_investment_asset');
+            $investment_asset->long_term_client_percentage = $request->input('long_term_client_percentage');
+            $investment_asset->long_term_partner_percentage = $request->input('long_term_partner_percentage');
+            $investment_asset->long_term_market_value = $request->input('long_term_market_value');
+            $investment_asset->long_term_client = $request->input('long_term_client');
+            $investment_asset->long_term_partner = $request->input('long_term_partner');
+            $investment_asset->superannuation_client_net = $request->input('superannuation_client_net');
+            $investment_asset->superannuation_client_client_percentage = $request->input('superannuation_client_client_percentage');
+            $investment_asset->superannuation_client_partner_percentage = $request->input('superannuation_client_partner_percentage');
+            $investment_asset->superannuation_client_market_value = $request->input('superannuation_client_market_value');
+            $investment_asset->superannuation_client_client = $request->input('superannuation_client_client');
+            $investment_asset->superannuation_client_partner = $request->input('superannuation_client_partner');
+            $investment_asset->superannuation_partner_net = $request->input('superannuation_partner_net');
+            $investment_asset->superannuation_partner_client_percentage = $request->input('superannuation_partner_client_percentage');
+            $investment_asset->superannuation_partner_parnter_percentage = $request->input('superannuation_partner_parnter_percentage');
+            $investment_asset->superannuation_partner_market_value = $request->input('superannuation_partner_market_value');
+            $investment_asset->superannuation_partner_client = $request->input('superannuation_partner_client');
+            $investment_asset->superannuation_partner_partner = $request->input('superannuation_partner_partner');
+            $investment_asset->shares_fund = $request->input('shares_fund');
+            $investment_asset->shares_fund_client_percentage = $request->input('shares_fund_client_percentage');
+            $investment_asset->shares_fund_partner_percentage = $request->input('shares_fund_partner_percentage');
+            $investment_asset->shares_fund_market_value = $request->input('shares_fund_market_value');
+            $investment_asset->shares_fund_client = $request->input('shares_fund_client');
+            $investment_asset->shares_fund_partner = $request->input('shares_fund_partner');
+            $investment_asset->business = $request->input('business');
+            $investment_asset->business_client_percentage = $request->input('business_client_percentage');
+            $investment_asset->business_partner_percentage = $request->input('business_partner_percentage');
+            $investment_asset->business_market_value = $request->input('business_market_value');
+            $investment_asset->business_client = $request->input('business_client');
+            $investment_asset->business_partner = $request->input('business_partner');
+            $investment_asset->total_investment_asset_market_value = $request->input('total_investment_asset_market_value');
+            $investment_asset->total_investment_asset_client = $request->input('total_investment_asset_client');
+            $investment_asset->total_investment_asset_partner = $request->input('total_investment_asset_partner');
+            $investment_asset->total_asset_market_value = $request->input('total_asset_market_value');
+            $investment_asset->total_asset_client = $request->input('total_asset_client');
+            $investment_asset->total_asset_partner = $request->input('total_asset_partner');
+            $investment_asset->encoded_by   = $request->input('encoded_by');
+            $investment_asset->date_encoded = Carbon::now()->toDateString();
+            $investment_asset->save();
+
 
             DB::commit();
 
@@ -234,11 +280,12 @@ class PersonalDetails extends Model
         try {
             $getPersonalDetails  = PersonalDetails::where('details_id',$id)->first();
             $getFinancialDetails  = FinancialIndependence::where('details_id',$id)->first();
-            $getInvestAsset = InvestmentAsset::where('details_id',$id)->get();
+            $getInvestmenPropertyAsset = InvestmentPropertyAsset::where('details_id',$id)->get();
             $otherPersonalAssets = Other_Personal_Assets_Non_Invesmtment::where('details_id',$id)->get();
             $getIncome = Income::where('details_id',$id)->first();
             $getNonInvestAssets = Non_Investment_Assets::where('details_id',$id)->first();
             $getSuperannuation = Superannuation::where('details_id',$id)->first();
+            $getInvestmentAssets = Investment_Asset::where('details_id',$id)->first();
             $result = [];
                 if(is_null($getPersonalDetails ) && is_null($getFinancialDetails))
                     {
@@ -249,11 +296,12 @@ class PersonalDetails extends Model
                          $result = [
                             "personalDetails" => $getPersonalDetails,
                             "financialDetails" => $getFinancialDetails,
-                            "InvestmentAssetDetails" => $getInvestAsset,
+                            "InvestmentPropertyAssetDetails" => $getInvestmenPropertyAsset,
                             "IncomeDetails" => $getIncome,
                             "SuperannuationDetails" => $getSuperannuation,
                             "OtherPersonalAssets" => $otherPersonalAssets,
-                            "NonInvestmentAssets" => $getNonInvestAssets                           
+                            "NonInvestmentAssets" => $getNonInvestAssets,
+                            "InvestmentAssets"    => $getInvestmentAssets                      
                     
                      ];
                         return response()->json($result);
@@ -396,7 +444,7 @@ class PersonalDetails extends Model
                 // $investment->date_encoded = Carbon::now()->toDateString();
                 // $investment->save();
                 
-                $updateInvestment = InvestmentAsset::where('id',$value['investment_id'])->update([
+                $updateInvestment = InvestmentPropertyAsset::where('id',$value['investment_id'])->update([
                 'investment_property' => $value['non_investment_owner'],
                 'client_percentage' => $value['client_percentage'],
                 'partner_percentage' => $value['partner_percentage'],
@@ -441,9 +489,52 @@ class PersonalDetails extends Model
                 'cash_partner_percentage' => $request->input('cash_partner_percentage'),
                 'cash_market_value' => $request->input('cash_market_value'),
                 'cash_client' => $request->input('cash_client'),
-                'cash_partner' => $request->input('cash_partner')
+                'cash_partner' => $request->input('cash_partner'),
+                'total_market_value' => $request->input('total_non_investment_market_value'),
+                'total_client' => $request->input('total_non_investment_client'),
+                'total_partner' => $request->input('total_non_investment_partner')
               
                 ]);
+
+                 $updateInvestmentAssets = Investment_Asset::where('details_id',$id)->update([
+                'long_term_investment_asset' => $request->input('long_term_investment_asset'),
+                'long_term_client_percentage' => $request->input('long_term_client_percentage'),
+                'long_term_partner_percentage' => $request->input('long_term_partner_percentage'),
+                'long_term_market_value' => $request->input('long_term_market_value'),
+                'long_term_client' => $request->input('long_term_client'),
+                'long_term_partner' => $request->input('long_term_partner'),
+                'superannuation_client_net' => $request->input('superannuation_client_net'),
+                'superannuation_client_client_percentage' => $request->input('superannuation_client_client_percentage'),
+                'superannuation_client_partner_percentage' => $request->input('superannuation_client_partner_percentage'),
+                'superannuation_client_market_value' => $request->input('superannuation_client_market_value'),
+                'superannuation_client_client' => $request->input('superannuation_client_client'),
+                'superannuation_client_partner' => $request->input('superannuation_client_partner'),
+                'superannuation_partner_net' => $request->input('superannuation_partner_net'),
+                'superannuation_partner_client_percentage' => $request->input('superannuation_partner_client_percentage'),
+                'superannuation_partner_parnter_percentage' => $request->input('superannuation_partner_parnter_percentage'),
+                'superannuation_partner_market_value' => $request->input('superannuation_partner_market_value'),
+                'superannuation_partner_client' => $request->input('superannuation_partner_client'),
+                'superannuation_partner_partner' => $request->input('superannuation_partner_partner'),
+                'shares_fund' => $request->input('shares_fund'),
+                'shares_fund_client_percentage' => $request->input('shares_fund_client_percentage'),
+                'shares_fund_partner_percentage' => $request->input('shares_fund_partner_percentage'),
+                'shares_fund_market_value' => $request->input('shares_fund_market_value'),
+                'shares_fund_client' => $request->input('shares_fund_client'),
+                'shares_fund_partner' => $request->input('shares_fund_partner'),
+                'business' => $request->input('business'),
+                'business_client_percentage' => $request->input('business_client_percentage'),
+                'business_partner_percentage' => $request->input('business_partner_percentage'),
+                'business_market_value' => $request->input('business_market_value'),
+                'business_client' => $request->input('business_client'),
+                'business_partner' => $request->input('business_partner'),
+                'total_investment_asset_market_value' => $request->input('total_investment_asset_market_value'),
+                'total_investment_asset_client' => $request->input('total_investment_asset_client'),
+                'total_investment_asset_partner' => $request->input('total_investment_asset_partner'),
+                'total_asset_market_value' => $request->input('total_asset_market_value'),
+                'total_asset_client' => $request->input('total_asset_client'),
+                'total_asset_partner' => $request->input('total_asset_partner'),
+                ]);
+
             
          
         DB::commit();

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-          Schema::create('investment_asset', function (Blueprint $table) {
+        Schema::create('investment_property_asset', function (Blueprint $table) {
             $table->id();
             $table->string('details_id');
             $table->string('investment_property')->nullable();
@@ -25,13 +25,12 @@ return new class extends Migration
             $table->timestamps();
         });
     }
-    
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('investment_asset');
+        Schema::dropIfExists('investment_property_asset');
     }
 };

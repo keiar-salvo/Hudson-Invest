@@ -550,7 +550,7 @@
     <label style=" color: #bd0c1d">Assets (Non-Investment)</label>
        <label >Principle Residence</label>
     <select  id="principle_residence" name="principle_residence" class="principle_residence block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
-    <option selected disabled>Owner</option>
+    <option selected>Owner</option>
     <option value="Client">Client</option>
     <option value="Partner">Partner</option>
     <option value="Joint">Joint</option>
@@ -591,10 +591,10 @@
 <div>
     <label>Cash (everyday)</label>
     <select  id="cash_everyday" name="cash_everyday" class="cash_everyday block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
-    <option selected disabled>Owner</option>
-    <option value="client">Client</option>
-    <option value="partner">Partner</option>
-    <option value="joint">Joint</option>
+    <option selected >Owner</option>
+    <option value="Client">Client</option>
+    <option value="Partner">Partner</option>
+    <option value="Joint">Joint</option>
     <option value="Other">Other</option>
   </select>
   </div>
@@ -632,9 +632,9 @@
     <label>Other Personal Assets</label>
     <select  id="non-investment-owner-asset" name="noninvestmentasset[0][other_personal_asset] "class="block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select non-investment-owner-asset ">
     <option selected>Owner</option>
-    <option value="client">Client</option>
-    <option value="partner">Partner</option>
-    <option value="joint">Joint</option>
+    <option value="Client">Client</option>
+    <option value="Partner">Partner</option>
+    <option value="Joint">Joint</option>
     <option value="Other">Other</option>
   </select>
   </div>
@@ -677,17 +677,17 @@
   <div>
    <label style=" color: #bd0c1d">Total Non-Investment Assets</label>
    <label>Market Value</label>
-<input type="text"  class="mt-1 form-input"  placeholder="0.00">
+<input type="text"  class="mt-1 form-input total_non_investment_market_value"  placeholder="0.00" name="total_non_investment_market_value">
   </div>
   
   <div style="padding-top: 26px;">
   
    <label>Client</label>
-    <input type="text"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="text"  name="total_non_investment_client" class="mt-1 form-input total_non_investment_client"  placeholder="0.00">
   </div>
   <div style="padding-top: 26px;">
     <label>Partner</label>
-    <input type="text"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="text"  name="total_non_investment_partner" class="mt-1 form-input total_non_investment_partner"  placeholder="0.00">
   </div>
 </div>
     <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
@@ -696,7 +696,7 @@
   <br/>
     <label style=" color: #bd0c1d">Investment Asset</label>
        <label >Long-term Savings,Term Deposits,Bonds</label>
-    <select  id="non-investment-owner" class="block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
+    <select  id="long_term_investment_asset" name="long_term_investment_asset" class="long_term_investment_asset block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
     <option selected disabled>Owner</option>
     <option value="client">Client</option>
     <option value="partner">Partner</option>
@@ -707,26 +707,26 @@
   
   <div style="margin-top:66px;">
    <label >Client Percentage</label>
-    <input type="text"  class="mt-1 form-input"  placeholder="0%">
+    <input type="text"  class="mt-1 form-input long_term_client_percentage" name="long_term_client_percentage" placeholder="0%">
   </div>
 
  <div style="margin-top:66px;">
    <label >Partner Percentage</label>
-    <input type="email"  class="mt-1 form-input"  placeholder="0%">
+    <input type="email"  class="mt-1 form-input long_term_partner_percentage" name="long_term_partner_percentage"  placeholder="0%">
   </div>
 
  <div style="margin-top:66px;">
    <label >Market Value</label>
-    <input type="tel"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="tel"  class="mt-1 form-input long_term_market_value" name="long_term_market_value" placeholder="0.00">
   </div>
 
  <div style="margin-top:66px;">
    <label >Client </label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+    <input type="text" class="mt-1 form-input long_term_client" name="long_term_client" placeholder="0.00">
   </div>
   <div style="margin-top:66px;">
    <label >Partner</label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+    <input type="text" class="mt-1 form-input long_term_partner" name="long_term_partner" placeholder="0.00">
   </div>
 
   </div>
@@ -735,7 +735,7 @@
 
 <div>
     <label>Superannuation- Client (net)</label>
-    <select  id="non-investment-owner" class="block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
+    <select  id="superannuation_client_net" name="superannuation_client_net" class="superannuation_client_net block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
     <option selected disabled>Owner</option>
     <option value="client">Client</option>
     <option value="partner">Partner</option>
@@ -746,26 +746,26 @@
   
   <div>
    <label >Client Percentage</label>
-    <input type="text"  class="mt-1 form-input"  placeholder="0%">
+    <input type="text"  class="mt-1 form-input superannuation_client_client_percentage"  placeholder="0%">
   </div>
 
   <div>
    <label >Partner Percentage</label>
-    <input type="email"  class="mt-1 form-input"  placeholder="0%">
+    <input type="email"  class="mt-1 form-input superannuation_client_partner_percentage" name="superannuation_client_partner_percentage" placeholder="0%">
   </div>
 
   <div>
    <label >Market Value</label>
-    <input type="tel"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="tel"  class="mt-1 form-input superannuation_client_market_value" name="superannuation_client_market_value"  placeholder="0.00">
   </div>
 
   <div>
    <label >Client </label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+    <input type="text" class="mt-1 form-input superannuation_client_client" name="superannuation_client_client"  placeholder="0.00">
   </div>
     <div>
    <label >Partner</label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+    <input type="text" class="mt-1 form-input superannuation_client_partner" name="superannuation_client_partner" placeholder="0.00">
   </div>
 </div>
   <br/>
@@ -773,7 +773,7 @@
 
 <div>
     <label>Superannuation- Partner (net)</label>
-    <select  id="non-investment-owner" class="block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
+    <select  id="superannuation_partner_net" name="superannuation_partner_net" class="superannuation_partner_net block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
     <option selected disabled>Owner</option>
     <option value="client">Client</option>
     <option value="partner">Partner</option>
@@ -784,26 +784,26 @@
   
   <div>
    <label >Client Percentage</label>
-    <input type="text"  class="mt-1 form-input"  placeholder="0%">
+    <input type="text"  class="mt-1 form-input superannuation_partner_client_percentage" name="superannuation_partner_client_percentage" placeholder="0%">
   </div>
 
   <div>
    <label >Partner Percentage</label>
-    <input type="email"  class="mt-1 form-input"  placeholder="0%">
+    <input type="email"  class="mt-1 form-input superannuation_partner_parnter_percentage" name="superannuation_partner_parnter_percentage"  placeholder="0%">
   </div>
 
   <div>
    <label >Market Value</label>
-    <input type="tel"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="tel"  class="mt-1 form-input superannuation_partner_market_value" name="superannuation_partner_market_value" placeholder="0.00">
   </div>
 
   <div>
    <label >Client </label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+    <input type="text" class="mt-1 form-input superannuation_partner_client" name="superannuation_partner_client" placeholder="0.00">
   </div>
     <div>
    <label >Partner</label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+    <input type="text" class="mt-1 form-input superannuation_partner_partner" name="superannuation_partner_partner" placeholder="0.00">
   </div>
 </div>
 
@@ -812,7 +812,7 @@
 
 <div>
     <label>Shares/Managed Funds</label>
-    <select  id="non-investment-owner" class="block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
+    <select  id="shares_fund" name="shares_fund" class="shares_fund block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
     <option selected disabled>Owner</option>
     <option value="client">Client</option>
     <option value="partner">Partner</option>
@@ -823,26 +823,26 @@
   
   <div>
    <label >Client Percentage</label>
-    <input type="text"  class="mt-1 form-input"  placeholder="0%">
+    <input type="text"  class="mt-1 form-input shares_fund_client_percentage" name="shares_fund_client_percentage"  placeholder="0%">
   </div>
 
   <div>
    <label >Partner Percentage</label>
-    <input type="email"  class="mt-1 form-input"  placeholder="0%">
+    <input type="email"  class="mt-1 form-input shares_fund_partner_percentage" name="shares_fund_partner_percentage"  placeholder="0%">
   </div>
 
   <div>
    <label >Market Value</label>
-    <input type="tel"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="tel"  class="mt-1 form-input shares_fund_market_value" name="shares_fund_market_value" placeholder="0.00">
   </div>
 
   <div>
    <label >Client </label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+    <input type="text" class="mt-1 form-input shares_fund_client" name="shares_fund_client" placeholder="0.00">
   </div>
     <div>
    <label >Partner</label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+    <input type="text" class="mt-1 form-input shares_fund_partner" name="shares_fund_partner" placeholder="0.00">
   </div>
 </div>
   
@@ -851,7 +851,7 @@
 
 <div>
     <label>Business</label>
-    <select  id="non-investment-owner" class="block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
+    <select  id="business" name="business" class="business block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
     <option selected disabled>Owner</option>
     <option value="client">Client</option>
     <option value="partner">Partner</option>
@@ -862,26 +862,26 @@
   
   <div>
    <label >Client Percentage</label>
-    <input type="text"  class="mt-1 form-input"  placeholder="0%">
+    <input type="text"  class="mt-1 form-input business_client_percentage" name="business_client_percentage"  placeholder="0%">
   </div>
 
   <div>
    <label >Partner Percentage</label>
-    <input type="email"  class="mt-1 form-input"  placeholder="0%">
+    <input type="email"  class="mt-1 form-input business_partner_percentage" name="business_partner_percentage"  placeholder="0%">
   </div>
 
   <div>
    <label >Market Value</label>
-    <input type="tel"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="tel"  class="mt-1 form-input business_market_value" name="business_market_value" placeholder="0.00">
   </div>
 
   <div>
    <label >Client </label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+    <input type="text" class="mt-1 form-input business_client" name="business_client" placeholder="0.00">
   </div>
     <div>
    <label >Partner</label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+    <input type="text" class="mt-1 form-input business_partner" name="business_partner"  placeholder="0.00">
   </div>
 </div>
   <br/>
@@ -1018,17 +1018,17 @@
 <div>
    <label style=" color: #bd0c1d">Total Investment Assets</label>
    <label>Market Value</label>
-<input type="text"  class="mt-1 form-input"  placeholder="0.00">
+<input type="text"  class="mt-1 form-input total_investment_asset_market_value" name="total_investment_asset_market_value"  placeholder="0.00">
   </div>
   
   <div style="padding-top: 26px;">
   
    <label>Client</label>
-    <input type="text"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="text"  class="mt-1 form-input total_investment_asset_client" name="total_investment_asset_client"  placeholder="0.00">
   </div>
   <div style="padding-top: 26px;">
     <label>Partner</label>
-    <input type="text"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="text"  class="mt-1 form-input total_investment_asset_partner" name="total_investment_asset_partner" placeholder="0.00">
   </div>
 
 </div>
@@ -1037,17 +1037,17 @@
 <div>
    <label style=" color: #bd0c1d">Total Assets</label>
    <label>Market Value</label>
-<input type="text"  class="mt-1 form-input"  placeholder="0.00">
+<input type="text"  class="mt-1 form-input total_asset_market_value" name="total_asset_market_value" placeholder="0.00">
   </div>
   
   <div style="padding-top: 26px;">
   
    <label>Client</label>
-    <input type="text"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="text"  class="mt-1 form-input total_asset_client" name="total_asset_client"  placeholder="0.00">
   </div>
   <div style="padding-top: 26px;">
     <label>Partner</label>
-    <input type="text"  class="mt-1 form-input"  placeholder="0.00">
+    <input type="text"  class="mt-1 form-input total_asset_partner" name="total_asset_partner" placeholder="0.00">
   </div>
 
 </div>
@@ -1172,51 +1172,10 @@
 
   </div>
   <br/>
-      <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
-
-<div>
-  
-       <label >Other Debt 1</label>
-    <select  id="non-investment-owner" class="block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
-    <option selected disabled>Owner</option>
-    <option value="client">Client</option>
-    <option value="partner">Partner</option>
-    <option value="joint">Joint</option>
-    <option value="Other">Other</option>
-  </select>
-  </div>
-  
-  <div >
-   <label >Client Percentage</label>
-    <input type="text"  class="mt-1 form-input"  placeholder="0%">
-  </div>
-
- <div >
-   <label >Partner Percentage</label>
-    <input type="email"  class="mt-1 form-input"  placeholder="0%">
-  </div>
-
- <div >
-   <label >Market Value</label>
-    <input type="tel"  class="mt-1 form-input"  placeholder="0.00">
-  </div>
-
- <div >
-   <label >Client </label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
-  </div>
-  <div>
-   <label >Partner</label>
-    <input type="text" class="mt-1 form-input"  placeholder="0.00">
-  </div>
-
-  </div>
-  <br/>
   <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
 
-<div>
-  
-       <label >Other Debt 2</label>
+  <div>
+       <label >Other Debt </label>
     <select  id="non-investment-owner" class="block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
     <option selected disabled>Owner</option>
     <option value="client">Client</option>
@@ -1251,10 +1210,53 @@
   </div>
 
   </div>
+  <div class="div-add-debt"></div>
+    <br/>
+     <button class="btn btn-info add-debt" style="width:50px;">Add</button>
+
+  <!-- <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
+
+<div> -->
+  
+       <!-- <label >Other Debt 2</label>
+    <select  id="non-investment-owner" class="block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
+    <option selected disabled>Owner</option>
+    <option value="client">Client</option>
+    <option value="partner">Partner</option>
+    <option value="joint">Joint</option>
+    <option value="Other">Other</option>
+  </select>
+  </div>
+  
+  <div >
+   <label >Client Percentage</label>
+    <input type="text"  class="mt-1 form-input"  placeholder="0%">
+  </div>
+
+ <div >
+   <label >Partner Percentage</label>
+    <input type="email"  class="mt-1 form-input"  placeholder="0%">
+  </div>
+
+ <div >
+   <label >Market Value</label>
+    <input type="tel"  class="mt-1 form-input"  placeholder="0.00">
+  </div>
+
+ <div >
+   <label >Client </label>
+    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+  </div>
+  <div>
+   <label >Partner</label>
+    <input type="text" class="mt-1 form-input"  placeholder="0.00">
+  </div>
+
+  </div> -->
   <br/>
   <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
 <div>
-       <label >Credit Card 1 <i style="font-weight:normal;font-size:12px;">(If paid in full leave blank)</i></label></label>
+       <label >Credit Card  <i style="font-weight:normal;font-size:12px;">(If paid in full leave blank)</i></label></label>
     <select  id="non-investment-owner" class="block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
     <option selected disabled>Owner</option>
     <option value="client">Client</option>
@@ -1289,8 +1291,11 @@
   </div>
 
   </div>
-  <br/>
-   <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
+  <div class="div-add-credit-card"></div>
+    <br/>
+     <button class="btn btn-info add-credit-card" style="width:50px;">Add</button>
+
+   <!-- <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
 <div>
        <label >Credit Card 2 <i style="font-weight:normal;font-size:12px;">(If paid in full leave blank)</i></label>
     <select  id="non-investment-owner" class="block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
@@ -1326,7 +1331,7 @@
     <input type="text" class="mt-1 form-input"  placeholder="0.00">
   </div>
 
-  </div>
+  </div> -->
   <br/>
     <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
 <div>
@@ -1821,8 +1826,12 @@
 <br/>
 
     </div>
-        <script defer="" src="{{ asset('assets/js/load-custom-functions.js') }}"></script>
+        <script defer="" src="{{ asset('assets/js/ajax-crud.js') }}"></script>
          <script defer="" src="{{ asset('assets/js/form-validation-input.js') }}"></script>
+         <script defer="" src="{{ asset('assets/js/get-data-fill-forms.js') }}"></script>
+         <script defer="" src="{{ asset('assets/js/append-html.js') }}"></script>
+         
+         
 
         
       @section('scripts')

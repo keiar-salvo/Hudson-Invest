@@ -25,6 +25,9 @@ return new class extends Migration
             $table->string('cash_market_value')->nullable();
             $table->string('cash_client')->nullable();
             $table->string('cash_partner')->nullable();
+            $table->string('total_market_value')->nullable();
+            $table->string('total_client')->nullable();
+            $table->string('total_partner')->nullable();
             $table->string('encoded_by');
             $table->string('date_encoded');
             $table->timestamps();
@@ -36,6 +39,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('non_invesment_assets');
+        Schema::dropIfExists('non_invest_assets');
     }
 };
