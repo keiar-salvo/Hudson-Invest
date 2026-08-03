@@ -132,6 +132,7 @@ class PersonalDetails extends Model
 
 
              if($request->input('salary_frequency') !== null){
+                
                 $income = new Income;
                 $income->details_id = $request->input('details_id');
 
