@@ -138,3 +138,44 @@ function FillInvestmentAsset(response){
   $('.total_asset_client').val(response['InvestmentAssets']['total_asset_client']);
   $('.total_asset_partner').val(response['InvestmentAssets']['total_asset_partner']);
 }
+
+function FillLiabilitiesNonInvestment(response){
+    $('.mortgage_residence').val(response['LiabilitiesNonInvestment']['mortgage_residence']);
+    $('.mortgage_client_percentage').val(response['LiabilitiesNonInvestment']['mortgage_client_percentage']);
+    $('.mortgage_partner_percentage').val(response['LiabilitiesNonInvestment']['mortgage_partner_percentage']);
+    $('.mortgage_market_value').val(response['LiabilitiesNonInvestment']['mortgage_market_value']);
+    $('.mortgage_client').val(response['LiabilitiesNonInvestment']['mortgage_client']);
+    $('.mortgage_partner').val(response['LiabilitiesNonInvestment']['mortgage_partner']);
+    $('.personal_loans').val(response['LiabilitiesNonInvestment']['personal_loans']);
+    $('.personal_loans_client_percentage').val(response['LiabilitiesNonInvestment']['personal_loans_client_percentage']);
+    $('.personal_loans_partner_percentage').val(response['LiabilitiesNonInvestment']['personal_loans_partner_percentage']);
+    $('.personal_loans_market_value').val(response['LiabilitiesNonInvestment']['personal_loans_market_value']);
+    $('.personal_loans_client').val(response['LiabilitiesNonInvestment']['personal_loans_client']);
+    $('.personal_loans_partner').val(response['LiabilitiesNonInvestment']['personal_loans_partner']);
+    $('.car_loans').val(response['LiabilitiesNonInvestment']['car_loans']);
+    $('.car_loans_client_percentage').val(response['LiabilitiesNonInvestment']['car_loans_client_percentage']);
+    $('.car_loans_partner_percentage').val(response['LiabilitiesNonInvestment']['car_loans_partner_percentage']);
+    $('.car_loans_market_value').val(response['LiabilitiesNonInvestment']['car_loans_market_value']);
+    $('.car_loans_client').val(response['LiabilitiesNonInvestment']['car_loans_client']);
+    $('.car_loans_partner').val(response['LiabilitiesNonInvestment']['car_loans_partner']);
+    $('.total_non_invesment_liabilities_market_value').val(response['LiabilitiesNonInvestment']['total_non_invesment_liabilities_market_value']);
+    $('.total_non_invesment_liabilities_client').val(response['LiabilitiesNonInvestment']['total_non_invesment_liabilities_client']);
+    $('.total_non_invesment_liabilities_partner').val(response['LiabilitiesNonInvestment']['total_non_invesment_liabilities_partner']);
+ 
+ 
+}
+
+function FillInvestmentRelatedLiabilities(response){
+    $('.margin_investment_loans').val(response['InvestmentRelatedLiabilities']['margin_investment_loans']);
+    $('.margin_investment_client_percentage').val(response['InvestmentRelatedLiabilities']['margin_investment_client_percentage']);
+    $('.margin_investment_partner_percentage').val(response['InvestmentRelatedLiabilities']['margin_investment_partner_percentage']);
+    $('.margin_investment_market_value').val(response['InvestmentRelatedLiabilities']['margin_investment_market_value']);
+    $('.margin_investment_client').val(response['InvestmentRelatedLiabilities']['margin_investment_client']);
+    $('.margin_investment_partner').val(response['InvestmentRelatedLiabilities']['margin_investment_partner']);
+    $('.business_loans').val(response['InvestmentRelatedLiabilities']['business_loans']);
+    $('.business_loans_client_percentage').val(response['InvestmentRelatedLiabilities']['business_loans_client_percentage']);
+    $('.business_loans_partner_percentage').val(response['InvestmentRelatedLiabilities']['business_loans_partner_percentage']);
+    $('.business_loans_market_value').val(response['InvestmentRelatedLiabilities']['business_loans_market_value']);
+    $('.business_loans_client').val(response['InvestmentRelatedLiabilities']['business_loans_client']);
+    $('.business_loans_partner').val(response['InvestmentRelatedLiabilities']['business_loans_partner']);
+}

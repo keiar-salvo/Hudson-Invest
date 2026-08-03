@@ -25,14 +25,36 @@ $('.details_id').val(transactionID());
   $('.add-investment-property').click(function(e){
       e.preventDefault();
       var x = 1;
-      addHTML(x);
+      addHTML();
   });
 
   $('.add-non-investment-property').click(function(e){
       e.preventDefault();
       var x = 1;
-      Add_Non_Investment_HTML(x);
+      Add_Non_Investment_HTML();
   });
+
+  $('.add-debt').click(function(e){
+    e.preventDefault();
+      var x = 1;
+      var y= 2;
+      Add_Other_Debt_HTML();
+  });
+
+  $('.add-credit-card').click(function(e){
+    e.preventDefault();
+      var x = 1;
+      var y= 2;
+      Add_Credit_Card_HTML();
+  });
+
+    $('.add-mortgage-investment-property').click(function(e){
+    e.preventDefault();
+      var x = 1;
+      var y= 2;
+      Add_Mortgage_Investment_Property();
+  });
+
 
      var appURL = window.location.origin;
      var details_id =  $('.details_id').val();
@@ -113,7 +135,7 @@ $(".btn-update-details").click(function(event){
               // });
           
     Swal.fire({
-    title: 'Changes successfully saved',
+    title: 'Changes applied',
     icon: 'success',
     confirmButtonText: 'OK'
     }).then((result) => {
@@ -159,11 +181,16 @@ $.ajax({
     FillSuperannuation(response);
     FillNonInvestmentAsset(response);
     FillInvestmentAsset(response);
+    FillLiabilitiesNonInvestment(response);
+    FillInvestmentRelatedLiabilities(response);
     $('.add-investment-property').css('display','none');                 
     $('.btn-details').css('display','none');
     $('.btn-update-details').css('display','block');
     var  investment_asset = (response['InvestmentPropertyAssetDetails']).length;
     var  other_personal_assets = (response['OtherPersonalAssets']).length;
+    var  other_debts = (response['OtherDebts']).length;
+    var  credit_cards = (response['CreditCards']).length;
+    var investment_related_liabilities = (response['MortgageInvestmentProperty']).length;
     for(var x = 1; x < investment_asset; x++)
     {
        addHTML(x);
@@ -171,6 +198,20 @@ $.ajax({
     for(var x = 1; x < other_personal_assets; x++)
     {
        Add_Non_Investment_HTML(x);
+    }
+
+    for(var x = 1; x < other_debts; x++)
+    {
+       Add_Other_Debt_HTML(x);
+    }
+    for(var x = 1; x < credit_cards; x++)
+    {
+       Add_Credit_Card_HTML(x);
+    }
+
+    for(var x = 1; x < investment_related_liabilities; x++)
+    {
+       Add_Mortgage_Investment_Property(x);
     }
     response['InvestmentPropertyAssetDetails'].forEach((element,index) => {
       $('.investment_property').eq(index).val(element.investment_property);
@@ -190,6 +231,36 @@ $.ajax({
       $('.non_investment_asset_client').eq(index).val(element.non_investment_asset_client);
       $('.non_investment_asset_partner').eq(index).val(element.non_investment_asset_partner);
       $('.others_id').eq(index).val(element.id)
+      });
+
+      response['OtherDebts'].forEach((element,index) => {
+      $('.other_debt').eq(index).val(element.other_debt);
+      $('.other_debt_client_percentage').eq(index).val(element.other_debt_client_percentage);
+      $('.other_debt_partner_percentage').eq(index).val(element.other_debt_partner_percentage);
+      $('.other_debt_market_value').eq(index).val(element.other_debt_market_value);
+      $('.other_debt_client').eq(index).val(element.other_debt_client);
+      $('.other_debt_parnter').eq(index).val(element.other_debt_parnter);
+      $('.other_debt_id').eq(index).val(element.id)
+      });
+
+      response['CreditCards'].forEach((element,index) => {
+      $('.credit_card').eq(index).val(element.credit_card);
+      $('.credit_card_client_percentage').eq(index).val(element.credit_card_client_percentage);
+      $('.credit_card_partner_percentage').eq(index).val(element.credit_card_partner_percentage);
+      $('.credit_card_market_value').eq(index).val(element.credit_card_market_value);
+      $('.credit_card_client').eq(index).val(element.credit_card_client);
+      $('.credit_card_partner').eq(index).val(element.credit_card_partner);
+      $('.credit_card_id').eq(index).val(element.id)
+      });
+
+      response['MortgageInvestmentProperty'].forEach((element,index) => {
+      $('.mortgage_investment').eq(index).val(element.mortgage_investment);
+      $('.mortgage_investment_client_percentage').eq(index).val(element.mortgage_investment_client_percentage);
+      $('.mortgage_investment_partner_percentage').eq(index).val(element.mortgage_investment_partner_percentage);
+      $('.mortgage_investment_market_value').eq(index).val(element.mortgage_investment_market_value);
+      $('.mortgage_investment_client').eq(index).val(element.mortgage_investment_client);
+      $('.mortgage_investment_partner').eq(index).val(element.mortgage_investment_partner);
+      $('.mortgage_investment_id').eq(index).val(element.id)
       });
 
       }
