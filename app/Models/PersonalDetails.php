@@ -131,166 +131,176 @@ class PersonalDetails extends Model
              }
 
 
-             
+             if($request->input('salary_frequency') !== null){
+                $income = new Income;
+                $income->details_id = $request->input('details_id');
 
-            $income = new Income;
-            $income->details_id = $request->input('details_id');
+                $income->salary_frequency = $request->input('salary_frequency');
+                $income->salary_client = $request->input('salary_client');
+                $income->salary_partner = $request->input('salary_partner');
+                $income->salary_client_annual = $request->input('salary_client_annual');
+                $income->salary_partner_annual = $request->input('salary_partner_annual');
 
-            $income->salary_frequency = $request->input('salary_frequency');
-            $income->salary_client = $request->input('salary_client');
-            $income->salary_partner = $request->input('salary_partner');
-            $income->salary_client_annual = $request->input('salary_client_annual');
-            $income->salary_partner_annual = $request->input('salary_partner_annual');
+                $income->bonus_frequency = $request->input('bonus_frequency');
+                $income->bonus_client = $request->input('bonus_client');
+                $income->bonus_partner = $request->input('bonus_partner');
+                $income->bonus_client_annual = $request->input('bonus_client_annual');
+                $income->bonus_partner_annual = $request->input('bonus_partner_annual');
 
-            $income->bonus_frequency = $request->input('bonus_frequency');
-            $income->bonus_client = $request->input('bonus_client');
-            $income->bonus_partner = $request->input('bonus_partner');
-            $income->bonus_client_annual = $request->input('bonus_client_annual');
-            $income->bonus_partner_annual = $request->input('bonus_partner_annual');
+                $income->interest_income_frequency = $request->input('interest_income_frequency');
+                $income->interest_income_client = $request->input('interest_income_client');
+                $income->interest_income_partner = $request->input('interest_income_partner');
+                $income->interest_income_client_annual = $request->input('interest_income_client_annual');
+                $income->interest_income_partner_annual = $request->input('interest_income_partner_annual');
 
-            $income->interest_income_frequency = $request->input('interest_income_frequency');
-            $income->interest_income_client = $request->input('interest_income_client');
-            $income->interest_income_partner = $request->input('interest_income_partner');
-            $income->interest_income_client_annual = $request->input('interest_income_client_annual');
-            $income->interest_income_partner_annual = $request->input('interest_income_partner_annual');
+                $income->rental_income_frequency = $request->input('rental_income_frequency');
+                $income->rental_income_client = $request->input('rental_income_client');
+                $income->rental_income_partner = $request->input('rental_income_partner');
+                $income->rental_income_client_annual = $request->input('rental_income_client_annual');
+                $income->rental_income_partner_annual = $request->input('rental_income_partner_annual');
 
-            $income->rental_income_frequency = $request->input('rental_income_frequency');
-            $income->rental_income_client = $request->input('rental_income_client');
-            $income->rental_income_partner = $request->input('rental_income_partner');
-            $income->rental_income_client_annual = $request->input('rental_income_client_annual');
-            $income->rental_income_partner_annual = $request->input('rental_income_partner_annual');
-
-            $income->dividend_income_frequency = $request->input('dividend_income_frequency');
-            $income->dividend_income_client = $request->input('dividend_income_client');
-            $income->dividend_income_partner = $request->input('dividend_income_partner');
-            $income->dividend_income_client_annual = $request->input('dividend_income_client_annual');
-            $income->dividend_income_partner_annual = $request->input('dividend_income_partner_annual');
+                $income->dividend_income_frequency = $request->input('dividend_income_frequency');
+                $income->dividend_income_client = $request->input('dividend_income_client');
+                $income->dividend_income_partner = $request->input('dividend_income_partner');
+                $income->dividend_income_client_annual = $request->input('dividend_income_client_annual');
+                $income->dividend_income_partner_annual = $request->input('dividend_income_partner_annual');
 
 
-            $income->ss_income_frequency = $request->input('ss_income_frequency');
-            $income->ss_income_client = $request->input('ss_income_client');
-            $income->ss_income_partner = $request->input('ss_income_partner');
-            $income->ss_income_client_annual = $request->input('ss_income_client_annual');
-            $income->ss_income_partner_annual = $request->input('ss_income_partner_annual');
+                $income->ss_income_frequency = $request->input('ss_income_frequency');
+                $income->ss_income_client = $request->input('ss_income_client');
+                $income->ss_income_partner = $request->input('ss_income_partner');
+                $income->ss_income_client_annual = $request->input('ss_income_client_annual');
+                $income->ss_income_partner_annual = $request->input('ss_income_partner_annual');
 
-            $income->business_income_frequency = $request->input('business_income_frequency');
-            $income->business_income_client = $request->input('business_income_client');
-            $income->business_income_partner = $request->input('business_income_partner');
-            $income->business_income_client_annual = $request->input('business_income_client_annual');
-            $income->business_income_partner_annual = $request->input('business_income_partner_annual');
+                $income->business_income_frequency = $request->input('business_income_frequency');
+                $income->business_income_client = $request->input('business_income_client');
+                $income->business_income_partner = $request->input('business_income_partner');
+                $income->business_income_client_annual = $request->input('business_income_client_annual');
+                $income->business_income_partner_annual = $request->input('business_income_partner_annual');
 
-            $income->other_income_frequency = $request->input('other_income_frequency');
-            $income->other_income_client = $request->input('other_income_client');
-            $income->other_income_partner = $request->input('other_income_partner');
-            $income->other_income_client_annual = $request->input('other_income_client_annual');
-            $income->other_income_partner_annual = $request->input('other_income_partner_annual');
+                $income->other_income_frequency = $request->input('other_income_frequency');
+                $income->other_income_client = $request->input('other_income_client');
+                $income->other_income_partner = $request->input('other_income_partner');
+                $income->other_income_client_annual = $request->input('other_income_client_annual');
+                $income->other_income_partner_annual = $request->input('other_income_partner_annual');
 
-            $income->total_income_client_annual = $request->input('total_income_client_annual');
-            $income->total_income_partner_annual = $request->input('total_income_partner_annual');
+                $income->total_income_client_annual = $request->input('total_income_client_annual');
+                $income->total_income_partner_annual = $request->input('total_income_partner_annual');
 
-            $income->encoded_by   = $request->input('encoded_by');
-            $income->date_encoded = Carbon::now()->toDateString();
-            $income->save();
+                $income->encoded_by   = $request->input('encoded_by');
+                $income->date_encoded = Carbon::now()->toDateString();
+                $income->save();
+             }
 
-            $supperannuation = new Superannuation;
-            $supperannuation->details_id = $request->input('details_id');
-            $supperannuation->gross_salary = $request->input('gross_salary');
-            $supperannuation->sg_rate = $request->input('sg_rate');
-            $supperannuation->annual_contribution = $request->input('annual_contribution');
-            $supperannuation->quarterly_contribution = $request->input('quarterly_contribution');
-            $supperannuation->encoded_by   = $request->input('encoded_by');
-            $supperannuation->date_encoded = Carbon::now()->toDateString();
-            $supperannuation->save();
+          
+            if ($request->input('gross_salary') !== null){
+                $supperannuation = new Superannuation;
+                $supperannuation->details_id = $request->input('details_id');
+                $supperannuation->gross_salary = $request->input('gross_salary');
+                $supperannuation->sg_rate = $request->input('sg_rate');
+                $supperannuation->annual_contribution = $request->input('annual_contribution');
+                $supperannuation->quarterly_contribution = $request->input('quarterly_contribution');
+                $supperannuation->encoded_by   = $request->input('encoded_by');
+                $supperannuation->date_encoded = Carbon::now()->toDateString();
+                $supperannuation->save();
 
-            $non_investment_asset = new Non_Investment_Assets;
-            $non_investment_asset->details_id = $request->input('details_id');
-            $non_investment_asset->principle_residence = $request->input('principle_residence');
-            $non_investment_asset->principle_client_percentage = $request->input('principle_client_percentage');
-            $non_investment_asset->principle_partner_percentage = $request->input('principle_partner_percentage');
-            $non_investment_asset->principle_market_value = $request->input('principle_market_value');
-            $non_investment_asset->principle_client = $request->input('principle_client');
-            $non_investment_asset->principle_partner = $request->input('principle_partner');
-            $non_investment_asset->cash_everyday = $request->input('cash_everyday');
-            $non_investment_asset->cash_client_percentage = $request->input('cash_client_percentage');
-            $non_investment_asset->cash_partner_percentage = $request->input('cash_partner_percentage');
-            $non_investment_asset->cash_market_value = $request->input('cash_market_value');
-            $non_investment_asset->cash_client = $request->input('cash_client');
-            $non_investment_asset->cash_partner = $request->input('cash_partner');
-            $non_investment_asset->total_market_value = $request->input('total_non_investment_market_value');
-            $non_investment_asset->total_client = $request->input('total_non_investment_client');
-            $non_investment_asset->total_partner = $request->input('total_non_investment_partner');
-            $non_investment_asset->encoded_by   = $request->input('encoded_by');
-            $non_investment_asset->date_encoded = Carbon::now()->toDateString();
-            $non_investment_asset->save();
-
-            $investment_asset = new Investment_Asset;
-            $investment_asset->details_id = $request->input('details_id');
-            $investment_asset->long_term_investment_asset = $request->input('long_term_investment_asset');
-            $investment_asset->long_term_client_percentage = $request->input('long_term_client_percentage');
-            $investment_asset->long_term_partner_percentage = $request->input('long_term_partner_percentage');
-            $investment_asset->long_term_market_value = $request->input('long_term_market_value');
-            $investment_asset->long_term_client = $request->input('long_term_client');
-            $investment_asset->long_term_partner = $request->input('long_term_partner');
-            $investment_asset->superannuation_client_net = $request->input('superannuation_client_net');
-            $investment_asset->superannuation_client_client_percentage = $request->input('superannuation_client_client_percentage');
-            $investment_asset->superannuation_client_partner_percentage = $request->input('superannuation_client_partner_percentage');
-            $investment_asset->superannuation_client_market_value = $request->input('superannuation_client_market_value');
-            $investment_asset->superannuation_client_client = $request->input('superannuation_client_client');
-            $investment_asset->superannuation_client_partner = $request->input('superannuation_client_partner');
-            $investment_asset->superannuation_partner_net = $request->input('superannuation_partner_net');
-            $investment_asset->superannuation_partner_client_percentage = $request->input('superannuation_partner_client_percentage');
-            $investment_asset->superannuation_partner_parnter_percentage = $request->input('superannuation_partner_parnter_percentage');
-            $investment_asset->superannuation_partner_market_value = $request->input('superannuation_partner_market_value');
-            $investment_asset->superannuation_partner_client = $request->input('superannuation_partner_client');
-            $investment_asset->superannuation_partner_partner = $request->input('superannuation_partner_partner');
-            $investment_asset->shares_fund = $request->input('shares_fund');
-            $investment_asset->shares_fund_client_percentage = $request->input('shares_fund_client_percentage');
-            $investment_asset->shares_fund_partner_percentage = $request->input('shares_fund_partner_percentage');
-            $investment_asset->shares_fund_market_value = $request->input('shares_fund_market_value');
-            $investment_asset->shares_fund_client = $request->input('shares_fund_client');
-            $investment_asset->shares_fund_partner = $request->input('shares_fund_partner');
-            $investment_asset->business = $request->input('business');
-            $investment_asset->business_client_percentage = $request->input('business_client_percentage');
-            $investment_asset->business_partner_percentage = $request->input('business_partner_percentage');
-            $investment_asset->business_market_value = $request->input('business_market_value');
-            $investment_asset->business_client = $request->input('business_client');
-            $investment_asset->business_partner = $request->input('business_partner');
-            $investment_asset->total_investment_asset_market_value = $request->input('total_investment_asset_market_value');
-            $investment_asset->total_investment_asset_client = $request->input('total_investment_asset_client');
-            $investment_asset->total_investment_asset_partner = $request->input('total_investment_asset_partner');
-            $investment_asset->total_asset_market_value = $request->input('total_asset_market_value');
-            $investment_asset->total_asset_client = $request->input('total_asset_client');
-            $investment_asset->total_asset_partner = $request->input('total_asset_partner');
-            $investment_asset->encoded_by   = $request->input('encoded_by');
-            $investment_asset->date_encoded = Carbon::now()->toDateString();
-            $investment_asset->save();
-
-            $liabilities_non_invesment = new Liabilities_Non_Investment;
-            $liabilities_non_invesment->details_id = $request->input('details_id');
-            $liabilities_non_invesment->mortgage_residence = $request->input('mortgage_residence');
-            $liabilities_non_invesment->mortgage_client_percentage = $request->input('mortgage_client_percentage');
-            $liabilities_non_invesment->mortgage_partner_percentage = $request->input('mortgage_partner_percentage');
-            $liabilities_non_invesment->mortgage_market_value = $request->input('mortgage_market_value');
-            $liabilities_non_invesment->mortgage_client = $request->input('mortgage_client');
-            $liabilities_non_invesment->mortgage_partner = $request->input('mortgage_partner');
-            $liabilities_non_invesment->personal_loans = $request->input('personal_loans');
-            $liabilities_non_invesment->personal_loans_client_percentage = $request->input('personal_loans_client_percentage');
-            $liabilities_non_invesment->personal_loans_partner_percentage = $request->input('personal_loans_partner_percentage');
-            $liabilities_non_invesment->personal_loans_market_value = $request->input('personal_loans_market_value');
-            $liabilities_non_invesment->personal_loans_client = $request->input('personal_loans_client');
-            $liabilities_non_invesment->personal_loans_partner = $request->input('personal_loans_partner');
-            $liabilities_non_invesment->car_loans = $request->input('car_loans');
-            $liabilities_non_invesment->car_loans_client_percentage = $request->input('car_loans_client_percentage');
-            $liabilities_non_invesment->car_loans_partner_percentage = $request->input('car_loans_partner_percentage');
-            $liabilities_non_invesment->car_loans_market_value = $request->input('car_loans_market_value');
-            $liabilities_non_invesment->car_loans_client = $request->input('car_loans_client');
-            $liabilities_non_invesment->car_loans_partner = $request->input('car_loans_partner');
-            $liabilities_non_invesment->total_non_invesment_liabilities_market_value = $request->input('total_non_invesment_liabilities_market_value');
-            $liabilities_non_invesment->total_non_invesment_liabilities_client = $request->input('total_non_invesment_liabilities_client');
-            $liabilities_non_invesment->total_non_invesment_liabilities_partner = $request->input('total_non_invesment_liabilities_partner');
-            $liabilities_non_invesment->encoded_by = $request->input('encoded_by');
-            $liabilities_non_invesment->date_encoded = Carbon::now()->toDateString();
-            $liabilities_non_invesment->save();
+            }
+           if($request->input('principle_residence') !== null){
+                $non_investment_asset = new Non_Investment_Assets;
+                $non_investment_asset->details_id = $request->input('details_id');
+                $non_investment_asset->principle_residence = $request->input('principle_residence');
+                $non_investment_asset->principle_client_percentage = $request->input('principle_client_percentage');
+                $non_investment_asset->principle_partner_percentage = $request->input('principle_partner_percentage');
+                $non_investment_asset->principle_market_value = $request->input('principle_market_value');
+                $non_investment_asset->principle_client = $request->input('principle_client');
+                $non_investment_asset->principle_partner = $request->input('principle_partner');
+                $non_investment_asset->cash_everyday = $request->input('cash_everyday');
+                $non_investment_asset->cash_client_percentage = $request->input('cash_client_percentage');
+                $non_investment_asset->cash_partner_percentage = $request->input('cash_partner_percentage');
+                $non_investment_asset->cash_market_value = $request->input('cash_market_value');
+                $non_investment_asset->cash_client = $request->input('cash_client');
+                $non_investment_asset->cash_partner = $request->input('cash_partner');
+                $non_investment_asset->total_market_value = $request->input('total_non_investment_market_value');
+                $non_investment_asset->total_client = $request->input('total_non_investment_client');
+                $non_investment_asset->total_partner = $request->input('total_non_investment_partner');
+                $non_investment_asset->encoded_by   = $request->input('encoded_by');
+                $non_investment_asset->date_encoded = Carbon::now()->toDateString();
+                $non_investment_asset->save();
+           }
+           
+            if($request->input('superannuation_client_client_percentage') !== null || $request->input('superannuation_client_partner_percentage') !== null ){
+                $investment_asset = new Investment_Asset;
+                $investment_asset->details_id = $request->input('details_id');
+                $investment_asset->long_term_investment_asset = $request->input('long_term_investment_asset');
+                $investment_asset->long_term_client_percentage = $request->input('long_term_client_percentage');
+                $investment_asset->long_term_partner_percentage = $request->input('long_term_partner_percentage');
+                $investment_asset->long_term_market_value = $request->input('long_term_market_value');
+                $investment_asset->long_term_client = $request->input('long_term_client');
+                $investment_asset->long_term_partner = $request->input('long_term_partner');
+                $investment_asset->superannuation_client_net = $request->input('superannuation_client_net');
+                $investment_asset->superannuation_client_client_percentage = $request->input('superannuation_client_client_percentage');
+                $investment_asset->superannuation_client_partner_percentage = $request->input('superannuation_client_partner_percentage');
+                $investment_asset->superannuation_client_market_value = $request->input('superannuation_client_market_value');
+                $investment_asset->superannuation_client_client = $request->input('superannuation_client_client');
+                $investment_asset->superannuation_client_partner = $request->input('superannuation_client_partner');
+                $investment_asset->superannuation_partner_net = $request->input('superannuation_partner_net');
+                $investment_asset->superannuation_partner_client_percentage = $request->input('superannuation_partner_client_percentage');
+                $investment_asset->superannuation_partner_parnter_percentage = $request->input('superannuation_partner_parnter_percentage');
+                $investment_asset->superannuation_partner_market_value = $request->input('superannuation_partner_market_value');
+                $investment_asset->superannuation_partner_client = $request->input('superannuation_partner_client');
+                $investment_asset->superannuation_partner_partner = $request->input('superannuation_partner_partner');
+                $investment_asset->shares_fund = $request->input('shares_fund');
+                $investment_asset->shares_fund_client_percentage = $request->input('shares_fund_client_percentage');
+                $investment_asset->shares_fund_partner_percentage = $request->input('shares_fund_partner_percentage');
+                $investment_asset->shares_fund_market_value = $request->input('shares_fund_market_value');
+                $investment_asset->shares_fund_client = $request->input('shares_fund_client');
+                $investment_asset->shares_fund_partner = $request->input('shares_fund_partner');
+                $investment_asset->business = $request->input('business');
+                $investment_asset->business_client_percentage = $request->input('business_client_percentage');
+                $investment_asset->business_partner_percentage = $request->input('business_partner_percentage');
+                $investment_asset->business_market_value = $request->input('business_market_value');
+                $investment_asset->business_client = $request->input('business_client');
+                $investment_asset->business_partner = $request->input('business_partner');
+                $investment_asset->total_investment_asset_market_value = $request->input('total_investment_asset_market_value');
+                $investment_asset->total_investment_asset_client = $request->input('total_investment_asset_client');
+                $investment_asset->total_investment_asset_partner = $request->input('total_investment_asset_partner');
+                $investment_asset->total_asset_market_value = $request->input('total_asset_market_value');
+                $investment_asset->total_asset_client = $request->input('total_asset_client');
+                $investment_asset->total_asset_partner = $request->input('total_asset_partner');
+                $investment_asset->encoded_by   = $request->input('encoded_by');
+                $investment_asset->date_encoded = Carbon::now()->toDateString();
+                $investment_asset->save();
+            }
+           
+            if($request->input('mortgage_residence') !== null || $request->input('personal_loans') !== null || $request->input('car_loans') !== null){
+                $liabilities_non_invesment = new Liabilities_Non_Investment;
+                $liabilities_non_invesment->details_id = $request->input('details_id');
+                $liabilities_non_invesment->mortgage_residence = $request->input('mortgage_residence');
+                $liabilities_non_invesment->mortgage_client_percentage = $request->input('mortgage_client_percentage');
+                $liabilities_non_invesment->mortgage_partner_percentage = $request->input('mortgage_partner_percentage');
+                $liabilities_non_invesment->mortgage_market_value = $request->input('mortgage_market_value');
+                $liabilities_non_invesment->mortgage_client = $request->input('mortgage_client');
+                $liabilities_non_invesment->mortgage_partner = $request->input('mortgage_partner');
+                $liabilities_non_invesment->personal_loans = $request->input('personal_loans');
+                $liabilities_non_invesment->personal_loans_client_percentage = $request->input('personal_loans_client_percentage');
+                $liabilities_non_invesment->personal_loans_partner_percentage = $request->input('personal_loans_partner_percentage');
+                $liabilities_non_invesment->personal_loans_market_value = $request->input('personal_loans_market_value');
+                $liabilities_non_invesment->personal_loans_client = $request->input('personal_loans_client');
+                $liabilities_non_invesment->personal_loans_partner = $request->input('personal_loans_partner');
+                $liabilities_non_invesment->car_loans = $request->input('car_loans');
+                $liabilities_non_invesment->car_loans_client_percentage = $request->input('car_loans_client_percentage');
+                $liabilities_non_invesment->car_loans_partner_percentage = $request->input('car_loans_partner_percentage');
+                $liabilities_non_invesment->car_loans_market_value = $request->input('car_loans_market_value');
+                $liabilities_non_invesment->car_loans_client = $request->input('car_loans_client');
+                $liabilities_non_invesment->car_loans_partner = $request->input('car_loans_partner');
+                $liabilities_non_invesment->total_non_invesment_liabilities_market_value = $request->input('total_non_invesment_liabilities_market_value');
+                $liabilities_non_invesment->total_non_invesment_liabilities_client = $request->input('total_non_invesment_liabilities_client');
+                $liabilities_non_invesment->total_non_invesment_liabilities_partner = $request->input('total_non_invesment_liabilities_partner');
+                $liabilities_non_invesment->encoded_by = $request->input('encoded_by');
+                $liabilities_non_invesment->date_encoded = Carbon::now()->toDateString();
+                $liabilities_non_invesment->save();
+            }
+          
 
             foreach ($request->input('debt') as $value) {
                 if(isset($value['other_debt']) && isset($value['other_debt_client_percentage']) && isset($value['other_debt_partner_percentage']) && isset($value['other_debt_market_value']) && isset($value['other_debt_client']) && isset($value['other_debt_parnter']))
@@ -335,7 +345,7 @@ class PersonalDetails extends Model
                     //  return response()->json($request->input('creditcard')); 
       
              }
-
+            if($request->input('margin_investment_loans') !== null || $request->input('business_loans') !== null){
                 $investment_related_liabilities = new Invesment_Related_Liabilities;
                 $investment_related_liabilities->details_id = $request->input('details_id');
                 $investment_related_liabilities->margin_investment_loans = $request->input('margin_investment_loans');
@@ -356,6 +366,8 @@ class PersonalDetails extends Model
                 $investment_related_liabilities->encoded_by = $request->input('encoded_by');
                 $investment_related_liabilities->date_encoded = Carbon::now()->toDateString();
                 $investment_related_liabilities->save();
+            }
+               
 
             foreach ($request->input('mortgageInvestment') as $value) {
                 if(isset($value['mortgage_investment']) && isset($value['mortgage_investment_client_percentage']) && isset($value['mortgage_investment_partner_percentage']) && isset($value['mortgage_investment_market_value']) && isset($value['mortgage_investment_client']) && isset($value['mortgage_investment_partner']))
@@ -378,37 +390,56 @@ class PersonalDetails extends Model
                     //  return response()->json($request->input('creditcard')); 
       
             }
+                if($request->input('net_assets_market_value') !== null){
+                    $net_assets = new Net_Assets;
+                    $net_assets->details_id = $request->input('details_id');
+                    $net_assets->net_assets_market_value = $request->input('net_assets_market_value');
+                    $net_assets->net_assets_client = $request->input('net_assets_client');
+                    $net_assets->net_assets_partner = $request->input('net_assets_partner');
+                    $net_assets->encoded_by = $request->input('encoded_by');
+                    $net_assets->date_encoded = Carbon::now()->toDateString();
+                    $net_assets->save();
+                }
+              
+                if($request->input('payg_estimation_client') !== null){
+                    $payg = new Payg_Estimation;
+                    $payg->details_id = $request->input('details_id');
+                    $payg->payg_estimation_client = $request->input('payg_estimation_client');
+                    $payg->payg_estimation_partner = $request->input('payg_estimation_partner');
+                    $payg->encoded_by = $request->input('encoded_by');
+                    $payg->date_encoded = Carbon::now()->toDateString();
+                    $payg->save();
+                }
+               
+                if($request->input('personal_debt_rate_mortgage_rates') !== null || $request->input('personal_debt_rate_personal_loans') !== null){
+                    $personal_debt_rates = new Personal_Debt_Rates;
+                    $personal_debt_rates->details_id = $request->input('details_id');
+                    $personal_debt_rates->personal_debt_rate_mortgage_rates = $request->input('personal_debt_rate_mortgage_rates');
+                    $personal_debt_rates->personal_debt_rate_years = $request->input('personal_debt_rate_years');
+                    $personal_debt_rates->personal_debt_rate_personal_loans = $request->input('personal_debt_rate_personal_loans');
+                    $personal_debt_rates->personal_debt_rate_personal_loans_years = $request->input('personal_debt_rate_personal_loans_years');
+                    $personal_debt_rates->personal_debt_rate_car_loans = $request->input('personal_debt_rate_car_loans');
+                    $personal_debt_rates->personal_debt_rate_car_loans_years = $request->input('personal_debt_rate_car_loans_years');
+                    $personal_debt_rates->encoded_by = $request->input('encoded_by');
+                    $personal_debt_rates->date_encoded = Carbon::now()->toDateString();
+                    $personal_debt_rates->save();
+                }
+      
+                if($request->input('investment_debt_rates') !== null){
+                    $investment_debt_rates = new Investment_Debt_Rates;
+                    $investment_debt_rates->details_id = $request->input('details_id');
+                    $investment_debt_rates->investment_debt_rates = $request->input('investment_debt_rates');
+                    $investment_debt_rates->investment_debt_rates_business_loans = $request->input('investment_debt_rates_business_loans');
+                    $investment_debt_rates->mortgage_existing_investment_properties = $request->input('mortgage_existing_investment_properties');
+                    $investment_debt_rates->mortgage_new_investment_properties = $request->input('mortgage_new_investment_properties');
+                    $investment_debt_rates->encoded_by = $request->input('encoded_by');
+                    $investment_debt_rates->date_encoded = Carbon::now()->toDateString();
+                    $investment_debt_rates->save();
+                }
+               
 
-                $net_assets = new Net_Assets;
-                $net_assets->details_id = $request->input('details_id');
-                $net_assets->net_assets_market_value = $request->input('net_assets_market_value');
-                $net_assets->net_assets_client = $request->input('net_assets_client');
-                $net_assets->net_assets_partner = $request->input('net_assets_partner');
-                $net_assets->encoded_by = $request->input('encoded_by');
-                $net_assets->date_encoded = Carbon::now()->toDateString();
-                $net_assets->save();
-                
-                $payg = new Payg_Estimation;
-                $payg->details_id = $request->input('details_id');
-                $payg->payg_estimation_client = $request->input('payg_estimation_client');
-                $payg->payg_estimation_partner = $request->input('payg_estimation_partner');
-                $payg->encoded_by = $request->input('encoded_by');
-                $payg->date_encoded = Carbon::now()->toDateString();
-                $payg->save();
 
-                $personal_debt_rates = new Personal_Debt_Rates;
-                $personal_debt_rates->details_id = $request->input('details_id');
-                $personal_debt_rates->personal_debt_rate_mortgage_rates = $request->input('personal_debt_rate_mortgage_rates');
-                $personal_debt_rates->personal_debt_rate_years = $request->input('personal_debt_rate_years');
-                $personal_debt_rates->personal_debt_rate_personal_loans = $request->input('personal_debt_rate_personal_loans');
-                $personal_debt_rates->personal_debt_rate_personal_loans_years = $request->input('personal_debt_rate_personal_loans_years');
-                $personal_debt_rates->personal_debt_rate_car_loans = $request->input('personal_debt_rate_car_loans');
-                $personal_debt_rates->personal_debt_rate_car_loans_years = $request->input('personal_debt_rate_car_loans_years');
-                $personal_debt_rates->encoded_by = $request->input('encoded_by');
-                $personal_debt_rates->date_encoded = Carbon::now()->toDateString();
-                $personal_debt_rates->save();
-
-            foreach ($request->input('personalDebtRateOtherDeb') as $value) {
+            foreach ($request->input('personalDebtRateOtherDebt') as $value) {
                 if(isset($value['personal_debt_rate_other_debts']) && isset($value['personal_debt_rate_other_debt_years']))
                     {
                         $debt_rates_other_debt = new Personal_Debt_Rate_Other_Debt;
@@ -468,6 +499,11 @@ class PersonalDetails extends Model
             $otherDebts = Other_Debt::where('details_id',$id)->get();
             $creditCard = Credit_Card::where('details_id',$id)->get();
             $mortgageInvestment = Mortgage_Investment_Property::where('details_id',$id)->get();
+            $getPaygEstimation = Payg_Estimation::where('details_id',$id)->first();
+            $getPersonalDebts = Personal_Debt_Rates::where('details_id',$id)->first();
+            $getPersonalOtherDebts = Personal_Debt_Rate_Other_Debt::where('details_id',$id)->get();
+            $getPersonalCreditCards = Personal_Debt_Rate_Credit_Card::where('details_id',$id)->get();
+            $getInvestmentDebtRates = Investment_Debt_Rates::where('details_id',$id)->first();
             $result = [];
                 if(is_null($getPersonalDetails ) && is_null($getFinancialDetails))
                     {
@@ -489,7 +525,12 @@ class PersonalDetails extends Model
                             "CreditCards" => $creditCard,
                             "InvestmentRelatedLiabilities" => $getInvestmentRelatedLiabilities,                     
                             "MortgageInvestmentProperty" => $mortgageInvestment,
-                            "NetAssets" => $getNetAssets
+                            "NetAssets" => $getNetAssets,
+                            "PaygEstimation" => $getPaygEstimation,
+                            "PersonalOtherDebts" => $getPersonalOtherDebts,
+                            "PersonalDebtRates" => $getPersonalDebts,
+                            "PersonalCreditCards" => $getPersonalCreditCards,
+                            "InvestmentDebtRates" => $getInvestmentDebtRates
                      ];
                         return response()->json($result);
                     }
@@ -613,6 +654,14 @@ class PersonalDetails extends Model
                 'sg_rate' => $request->input('sg_rate'),
                 'annual_contribution' => $request->input('annual_contribution'),
                 'quarterly_contribution' => $request->input('quarterly_contribution')
+              
+                ]);
+
+                $updateInvestmentDebtRates = Investment_Debt_Rates::where('details_id',$id)->update([
+                'investment_debt_rates' => $request->input('investment_debt_rates'),
+                'investment_debt_rates_business_loans' => $request->input('investment_debt_rates_business_loans'),
+                'mortgage_existing_investment_properties' => $request->input('mortgage_existing_investment_properties'),
+                'mortgage_new_investment_properties' => $request->input('mortgage_new_investment_properties')
               
                 ]);
 
@@ -785,7 +834,7 @@ class PersonalDetails extends Model
       
              }
 
-              foreach ($request->input('mortgageInvestment') as $value) {
+            foreach ($request->input('mortgageInvestment') as $value) {
                 if(isset($value['mortgage_investment']) && isset($value['mortgage_investment_client_percentage']) && isset($value['mortgage_investment_partner_percentage']) && isset($value['mortgage_investment_market_value']) && isset($value['mortgage_investment_client']) && isset($value['mortgage_investment_partner']))
                     {
                
@@ -797,6 +846,38 @@ class PersonalDetails extends Model
                         'mortgage_investment_client' => $value['mortgage_investment_client'],
                         'mortgage_investment_partner' => $value['mortgage_investment_partner'],
                      ]);
+             
+                    }
+                
+                    //  return response()->json($request->input('creditcard')); 
+      
+            }
+
+            foreach ($request->input('personalDebtRateOtherDebt') as $value) {
+                if(isset($value['personal_debt_rate_other_debts']) && isset($value['personal_debt_rate_other_debt_years']))
+                    {
+               
+                         $updatedebtRates= Personal_Debt_Rate_Other_Debt::where('id',$value['debt_rates_other_id'])->update([
+                        'personal_debt_rate_other_debts' => $value['personal_debt_rate_other_debts'],
+                        'personal_debt_rate_other_debt_years' => $value['personal_debt_rate_other_debt_years'],
+                        
+                         ]);
+             
+                    }
+                
+                    //  return response()->json($request->input('creditcard')); 
+      
+            }
+
+            foreach ($request->input('personalDebtRatesCreditCard') as $value) {
+                if(isset($value['personal_debt_rate_credit_card']) && isset($value['personal_debt_rate_credit_card_years']))
+                    {
+               
+                         $updateDebtCreditCard = Personal_Debt_Rate_Credit_Card::where('id',$value['debt_rates_credit_card_id'])->update([
+                        'personal_debt_rate_credit_card' => $value['personal_debt_rate_credit_card'],
+                        'personal_debt_rate_other_debt_years' => $value['personal_debt_rate_other_debt_years'],
+                        
+                         ]);
              
                     }
                 

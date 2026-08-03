@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('personal__debt__rate__other__debts', function (Blueprint $table) {
-            $table->string('details_id')->unique();
+            $table->id();
+            $table->string('details_id');
             $table->string('personal_debt_rate_other_debts')->nullable();
             $table->string('personal_debt_rate_other_debt_years')->nullable();
             $table->string('encoded_by')->nullable();

@@ -1540,16 +1540,23 @@
 
                     <div class="col-span-1 md:col-span-3">
                         <label>Other Debt 1</label>
-                        <input type="text" class="mt-1 form-input personal_debt_rate_other_debts" name="personalDebtRateOtherDebt[0]personal_debt_rate_other_debts" placeholder="0%">
+                        <input type="text" class="mt-1 form-input personal_debt_rate_other_debts" name="personalDebtRateOtherDebt[0][personal_debt_rate_other_debts]" placeholder="0%">
                     </div>
 
 
                     <div class="col-span-1 md:col-span-3">
                         <label>Years</label>
-                        <input type="text" class="mt-1 form-input personal_debt_rate_other_debt_years" name="personalDebtRateOtherDebt[0]personal_debt_rate_other_debt_years">
+                        <input type="text" class="mt-1 form-input personal_debt_rate_other_debt_years" name="personalDebtRateOtherDebt[0][personal_debt_rate_other_debt_years]">
+                    </div>
+                    <div class="col-span-1 md:col-span-3">
+                        <label>ID</label>
+                        <input type="text" class="mt-1 form-input debt_rates_other_id" name="personalDebtRateOtherDebt[${personalOtherDebtsIdx}][debt_rates_other_id]">
                     </div>
 
                 </div>
+                  <div class="div-add-personal-other-debts"></div>
+    <br/>
+     <button class="btn btn-info add-personal-other-debts" style="width:50px;">Add</button>
                 <br />
                 <!-- <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
 
@@ -1571,17 +1578,24 @@
 
                     <div class="col-span-1 md:col-span-3">
                         <label>Credit Card 1</label>
-                        <input type="text" class="mt-1 form-input personal_debt_rate_credit_card" name="personalDebtRatesCreditCard[0]personal_debt_rate_credit_card" placeholder="0%">
+                        <input type="text" class="mt-1 form-input personal_debt_rate_credit_card" name="personalDebtRatesCreditCard[0][personal_debt_rate_credit_card]" placeholder="0%">
                     </div>
 
 
                     <div class="col-span-1 md:col-span-3">
                         <label>Years</label>
-                        <input type="text" class="mt-1 form-input personal_debt_rate_credit_card_years" name="personalDebtRatesCreditCard[0]personal_debt_rate_credit_card_years">
+                        <input type="text" class="mt-1 form-input personal_debt_rate_credit_card_years" name="personalDebtRatesCreditCard[0][personal_debt_rate_credit_card_years]">
+                    </div>
+
+                       <div class="col-span-1 md:col-span-3">
+                        <label>ID</label>
+                        <input type="text" class="mt-1 form-input debt_rates_credit_card_id" name="personalDebtRatesCreditCard[0][debt_rates_credit_card_id]">
                     </div>
 
                 </div>
                 <br />
+                <div class="div-add-personal-credit-cards"></div>
+		  <button class="btn btn-info add-personal-credit-cards" style="width:50px;">Add</button>
             </fieldset>
 
 

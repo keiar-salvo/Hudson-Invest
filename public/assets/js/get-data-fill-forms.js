@@ -179,3 +179,25 @@ function FillInvestmentRelatedLiabilities(response){
     $('.business_loans_client').val(response['InvestmentRelatedLiabilities']['business_loans_client']);
     $('.business_loans_partner').val(response['InvestmentRelatedLiabilities']['business_loans_partner']);
 }
+
+function FillPaygEstimation(response){
+   $('.payg_estimation_client').val(response['PaygEstimation']['payg_estimation_client']);
+   $('.payg_estimation_partner').val(response['PaygEstimation']['payg_estimation_partner']);
+}
+
+function FillPersonalDebtRates(response){
+  $('.personal_debt_rate_mortgage_rates').val(response['PersonalDebtRates']['personal_debt_rate_mortgage_rates']);
+  $('.personal_debt_rate_years').val(response['PersonalDebtRates']['personal_debt_rate_years']);
+  $('.personal_debt_rate_personal_loans').val(response['PersonalDebtRates']['personal_debt_rate_personal_loans']);
+  $('.personal_debt_rate_personal_loans_years').val(response['PersonalDebtRates']['personal_debt_rate_personal_loans_years']);
+  $('.personal_debt_rate_car_loans').val(response['PersonalDebtRates']['personal_debt_rate_car_loans']);
+  $('.personal_debt_rate_car_loans_years').val(response['PersonalDebtRates']['personal_debt_rate_car_loans_years']);
+
+}
+
+function FillInvestmentDebtRates(response){
+    $('.investment_debt_rates').val(response['InvestmentDebtRates']['investment_debt_rates']);
+    $('.investment_debt_rates_business_loans').val(response['InvestmentDebtRates']['investment_debt_rates_business_loans']);
+    $('.mortgage_existing_investment_properties').val(response['InvestmentDebtRates']['mortgage_existing_investment_properties']);
+    $('.mortgage_new_investment_properties').val(response['InvestmentDebtRates']['mortgage_new_investment_properties']);
+}

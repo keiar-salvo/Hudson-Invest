@@ -252,3 +252,62 @@ function Add_Mortgage_Investment_Property(){
       mortgageNumber++;
 
 }
+
+let personalOtherDebtsIdx = 1;
+let personalOtherDebtsNumber = 2;
+
+function Add_Personal_Other_Debts(){
+  var personal_other_debts = `<br/><div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+
+
+                    <div class="col-span-1 md:col-span-3">
+                        <label>Other Debt ${personalOtherDebtsNumber}</label>
+                        <input type="text" class="mt-1 form-input personal_debt_rate_other_debts" name="personalDebtRateOtherDebt[${personalOtherDebtsIdx}][personal_debt_rate_other_debts]" placeholder="0%">
+                    </div>
+
+
+                    <div class="col-span-1 md:col-span-3">
+                        <label>Years</label>
+                        <input type="text" class="mt-1 form-input personal_debt_rate_other_debt_years" name="personalDebtRateOtherDebt[${personalOtherDebtsIdx}][personal_debt_rate_other_debt_years]">
+                    </div>
+
+                       <div class="col-span-1 md:col-span-3">
+                        <label>ID</label>
+                        <input type="text" class="mt-1 form-input debt_rates_other_id" name="personalDebtRateOtherDebt[${personalOtherDebtsIdx}][debt_rates_other_id]">
+                    </div>
+
+                </div>`;
+                 $('.div-add-personal-other-debts').append(personal_other_debts);
+      personalOtherDebtsIdx++;
+      personalOtherDebtsNumber++;
+}
+
+let personalCCIdx = 1;
+let personalCCNumber = 2;
+
+function Add_Personal_Credit_Cards(){
+  var personal_cc = `<br/><div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+
+
+                    <div class="col-span-1 md:col-span-3">
+                        <label>Credit Card ${personalCCNumber}</label>
+                        <input type="text" class="mt-1 form-input personal_debt_rate_credit_card" name="personalDebtRatesCreditCard[${personalCCIdx}][personal_debt_rate_credit_card]" placeholder="0%">
+                    </div>
+
+
+                    <div class="col-span-1 md:col-span-3">
+                        <label>Years</label>
+                        <input type="text" class="mt-1 form-input personal_debt_rate_credit_card_years" name="personalDebtRatesCreditCard[${personalCCIdx}][personal_debt_rate_credit_card_years]">
+                    </div>
+
+                </div>      
+                <div class="col-span-1 md:col-span-3">
+                        <label>ID</label>
+                        <input type="text" class="mt-1 form-input debt_rates_credit_card_id" name="personalDebtRatesCreditCard[0][debt_rates_credit_card_id]">
+                    </div><br/>`;
+
+                 $('.div-add-personal-credit-cards').append(personal_cc);
+
+            personalCCIdx++;
+            personalCCNumber++;
+}

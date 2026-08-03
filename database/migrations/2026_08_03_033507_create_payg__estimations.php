@@ -12,7 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('payg__estimations', function (Blueprint $table) {
-            $table->id();
+            $table->string('details_id')->unique();
+            $table->string('payg_estimation_client')->nullable();
+            $table->string('payg_estimation_partner')->nullable();
+            $table->string('encoded_by')->nullable();
+            $table->string('date_encoded')->nullable();
             $table->timestamps();
         });
     }

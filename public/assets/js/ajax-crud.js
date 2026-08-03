@@ -48,11 +48,25 @@ $('.details_id').val(transactionID());
       Add_Credit_Card_HTML();
   });
 
-    $('.add-mortgage-investment-property').click(function(e){
+  $('.add-mortgage-investment-property').click(function(e){
     e.preventDefault();
       var x = 1;
       var y= 2;
       Add_Mortgage_Investment_Property();
+  });
+
+  $('.add-personal-other-debts').click(function(e){
+    e.preventDefault();
+      var x = 1;
+      var y= 2;
+       Add_Personal_Other_Debts();
+  });
+
+  $('.add-personal-credit-cards').click(function(e){
+    e.preventDefault();
+      var x = 1;
+      var y= 2;
+       Add_Personal_Credit_Cards();
   });
 
 
@@ -183,6 +197,11 @@ $.ajax({
     FillInvestmentAsset(response);
     FillLiabilitiesNonInvestment(response);
     FillInvestmentRelatedLiabilities(response);
+    FillPersonalDebtRates(response);
+    FillPaygEstimation(response);
+    FillInvestmentRelatedLiabilities(response);
+    FillInvestmentDebtRates(response);
+
     $('.add-investment-property').css('display','none');                 
     $('.btn-details').css('display','none');
     $('.btn-update-details').css('display','block');
@@ -191,6 +210,12 @@ $.ajax({
     var  other_debts = (response['OtherDebts']).length;
     var  credit_cards = (response['CreditCards']).length;
     var investment_related_liabilities = (response['MortgageInvestmentProperty']).length;
+    var personal_other_debt_rates = (response['PersonalOtherDebts']).length;
+    var personal_credit_cards = (response['PersonalCreditCards']).length;
+    for(var x = 1; x < personal_other_debt_rates; x++)
+    {
+       addHTML(x);
+    }
     for(var x = 1; x < investment_asset; x++)
     {
        addHTML(x);
@@ -212,6 +237,16 @@ $.ajax({
     for(var x = 1; x < investment_related_liabilities; x++)
     {
        Add_Mortgage_Investment_Property(x);
+    }
+
+    for(var x = 1; x < personal_other_debt_rates; x++)
+    {
+       Add_Personal_Other_Debts(x);
+    }
+
+    for(var x = 1; x < personal_credit_cards; x++)
+    {
+       Add_Personal_Credit_Cards(x);
     }
     response['InvestmentPropertyAssetDetails'].forEach((element,index) => {
       $('.investment_property').eq(index).val(element.investment_property);
@@ -261,6 +296,18 @@ $.ajax({
       $('.mortgage_investment_client').eq(index).val(element.mortgage_investment_client);
       $('.mortgage_investment_partner').eq(index).val(element.mortgage_investment_partner);
       $('.mortgage_investment_id').eq(index).val(element.id)
+      });
+
+      response['PersonalOtherDebts'].forEach((element,index) => {
+      $('.personal_debt_rate_other_debts').eq(index).val(element.personal_debt_rate_other_debts);
+      $('.personal_debt_rate_other_debt_years').eq(index).val(element.personal_debt_rate_other_debt_years);
+      $('.debt_rates_other_id').eq(index).val(element.id)
+      });
+
+      response['PersonalCreditCards'].forEach((element,index) => {
+      $('.personal_debt_rate_credit_card').eq(index).val(element.personal_debt_rate_credit_card);
+      $('.personal_debt_rate_credit_card_years').eq(index).val(element.personal_debt_rate_credit_card_years);
+      $('.debt_rates_credit_card_id').eq(index).val(element.id)
       });
 
       }

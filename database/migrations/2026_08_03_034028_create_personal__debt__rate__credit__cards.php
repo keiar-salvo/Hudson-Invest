@@ -12,9 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('personal__debt__rate__credit__cards', function (Blueprint $table) {
-            $table->string('details_id')->unique();
+            $table->id();
+            $table->string('details_id');
             $table->string('personal_debt_rate_credit_card')->nullable();
-             $table->string('personal_debt_rate_credit_card_years')->nullable();
+            $table->string('personal_debt_rate_credit_card_years')->nullable();
             $table->string('encoded_by')->nullable();
             $table->string('date_encoded')->nullable();
             $table->timestamps();
