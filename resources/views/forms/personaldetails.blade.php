@@ -698,9 +698,9 @@
        <label >Long-term Savings,Term Deposits,Bonds</label>
     <select  id="long_term_investment_asset" name="long_term_investment_asset" class="long_term_investment_asset block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
     <option selected disabled>Select</option>
-    <option value="client">Client</option>
-    <option value="partner">Partner</option>
-    <option value="joint">Joint</option>
+    <option value="Client">Client</option>
+    <option value="Partner">Partner</option>
+    <option value="Joint">Joint</option>
     <option value="Other">Other</option>
   </select>
   </div>
@@ -737,9 +737,9 @@
     <label>Superannuation- Client (net)</label>
     <select  id="superannuation_client_net" name="superannuation_client_net" class="superannuation_client_net block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
     <option selected disabled>Select</option>
-    <option value="client">Client</option>
-    <option value="partner">Partner</option>
-    <option value="joint">Joint</option>
+    <option value="Client">Client</option>
+    <option value="Partner">Partner</option>
+    <option value="Joint">Joint</option>
     <option value="Other">Other</option>
   </select>
   </div>
@@ -775,9 +775,9 @@
     <label>Superannuation- Partner (net)</label>
     <select  id="superannuation_partner_net" name="superannuation_partner_net" class="superannuation_partner_net block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
     <option selected disabled>Select</option>
-    <option value="client">Client</option>
-    <option value="partner">Partner</option>
-    <option value="joint">Joint</option>
+    <option value="Client">Client</option>
+    <option value="Partner">Partner</option>
+    <option value="Joint">Joint</option>
     <option value="Other">Other</option>
   </select>
   </div>
@@ -814,9 +814,9 @@
     <label>Shares/Managed Funds</label>
     <select  id="shares_fund" name="shares_fund" class="shares_fund block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
     <option selected disabled>Select</option>
-    <option value="client">Client</option>
-    <option value="partner">Partner</option>
-    <option value="joint">Joint</option>
+    <option value="Client">Client</option>
+    <option value="Partner">Partner</option>
+    <option value="Joint">Joint</option>
     <option value="Other">Other</option>
   </select>
   </div>
@@ -853,9 +853,9 @@
     <label>Business</label>
     <select  id="business" name="business" class="business block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
     <option selected disabled>Select</option>
-    <option value="client">Client</option>
-    <option value="partner">Partner</option>
-    <option value="joint">Joint</option>
+    <option value="Client">Client</option>
+    <option value="Partner">Partner</option>
+    <option value="Joint">Joint</option>
     <option value="Other">Other</option>
   </select>
   </div>

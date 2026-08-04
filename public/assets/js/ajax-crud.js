@@ -107,20 +107,36 @@ $('.details_id').val(transactionID());
     });
     $('.details_id').val(transactionID());
       },  
-      error: function(error)
-      {
-        console.log(error);
-            //  $('input').each(function(){
-            //   if($(this).val() == ""){
-            //     $(this).css('border-color','red');
-            //   }
-                
-            //  });
-        Swal.fire({
-        icon: "error",
-        title: "Please provide all requested details",
-         });
+  error: function(xhr) 
+        {
+            console.log(xhr);
+            
+      
+            let errorsSource = xhr.responseJSON?.errors ?? {};
+            let allErrors = Object.values(errorsSource).flat();
+              
+            let errorMessageHtml = "";
+            
+            if (allErrors.length > 0) {
+                errorMessageHtml = `<br/>
+                    <div style="text-align: left; max-height: 250px; overflow-y: auto; padding: 10px;  border-radius: 5px;">
+                        <ul style="margin: 0; padding-left: 20px; color: #d32f2f;">
+                            ${allErrors.map(err => `<li style="margin-bottom: 5px;">${err}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            } else {
+                errorMessageHtml = "Please provide all requested details.";
             }
+               
+        
+            Swal.fire({
+                icon: "error",
+                title: "Form Validation Failed",
+                html: errorMessageHtml, 
+                confirmButtonColor: "#3085d6"
+            });
+        }
           });
     
          });

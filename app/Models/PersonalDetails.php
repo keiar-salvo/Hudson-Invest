@@ -27,7 +27,7 @@ class PersonalDetails extends Model
             'residential_address' => 'required|string|max:255',
             'phone_home'  => 'required|string|max:255',
             'phone_mobile'  => 'required|string|max:255',
-            'email'  => 'required|string|max:255',
+            'email' => 'required|string|email:rfc,dns|max:255',
             'age_client'  => 'required|string|max:255',
             'age_partner'  => 'required|string|max:255',
             'age_average'  => 'required|string|max:255',
@@ -131,7 +131,7 @@ class PersonalDetails extends Model
              }
 
 
-             if($request->input('salary_frequency') !== null){
+             if($request->input('salary_frequency') !== null || $request->input('bonus_frequency') !== null || $request->input('interest_income_frequency') !== null || $request->input('rental_income_frequency') !== null || $request->input('dividend_income_frequency') !== null || $request->input('ss_income_frequency') !== null || $request->input('business_income_frequency') !== null || $request->input('other_income_frequency') !== null){
                 
                 $income = new Income;
                 $income->details_id = $request->input('details_id');
@@ -206,7 +206,7 @@ class PersonalDetails extends Model
                 $supperannuation->save();
 
             }
-           if($request->input('principle_residence') !== null){
+           if($request->input('principle_residence') !== null || $request->input('cash_everyday') !== null ){
                 $non_investment_asset = new Non_Investment_Assets;
                 $non_investment_asset->details_id = $request->input('details_id');
                 $non_investment_asset->principle_residence = $request->input('principle_residence');
@@ -229,7 +229,8 @@ class PersonalDetails extends Model
                 $non_investment_asset->save();
            }
            
-            if($request->input('superannuation_client_client_percentage') !== null || $request->input('superannuation_client_partner_percentage') !== null ){
+            if($request->input('long_term_investment_asset') !== null || $request->input('superannuation_client_partner_percentage') !== null || $request->input('superannuation_partner_net') ||
+             $request->input('shares_fund') !== null || $request->input('business') !== null){
                 $investment_asset = new Investment_Asset;
                 $investment_asset->details_id = $request->input('details_id');
                 $investment_asset->long_term_investment_asset = $request->input('long_term_investment_asset');
@@ -412,7 +413,7 @@ class PersonalDetails extends Model
                     $payg->save();
                 }
                
-                if($request->input('personal_debt_rate_mortgage_rates') !== null || $request->input('personal_debt_rate_personal_loans') !== null){
+                if($request->input('personal_debt_rate_mortgage_rates') !== null || $request->input('personal_debt_rate_personal_loans') !== null || $request->input('personal_debt_rate_car_loans') !== null){
                     $personal_debt_rates = new Personal_Debt_Rates;
                     $personal_debt_rates->details_id = $request->input('details_id');
                     $personal_debt_rates->personal_debt_rate_mortgage_rates = $request->input('personal_debt_rate_mortgage_rates');
@@ -426,7 +427,8 @@ class PersonalDetails extends Model
                     $personal_debt_rates->save();
                 }
       
-                if($request->input('investment_debt_rates') !== null){
+                if($request->input('investment_debt_rates') !== null || $request->input('investment_debt_rates_business_loans') !== null || $request->input('investment_debt_rates_business_loans') !== null || 
+                $request->input('mortgage_existing_investment_properties') !== null || $request->input('mortgage_new_investment_properties') !== null){
                     $investment_debt_rates = new Investment_Debt_Rates;
                     $investment_debt_rates->details_id = $request->input('details_id');
                     $investment_debt_rates->investment_debt_rates = $request->input('investment_debt_rates');
@@ -914,7 +916,7 @@ class PersonalDetails extends Model
               
                 ]);
 
-                $updatePayg = payg__estimations::where('details_id',$id)->update([
+                $updatePayg = Payg_Estimation::where('details_id',$id)->update([
                 'payg_estimation_client' => $request->input('payg_estimation_client'),
                 'payg_estimation_partner' => $request->input('payg_estimation_partner'),
                 
