@@ -270,5 +270,57 @@ $('.in_twenty_one_years').on('keydown', function (e) {
   return false;
 });
 
+//Income Calculation
+ $('.salary_client_annual,.salary_partner_annual,.bonus_client_annual,.bonus_partner_annual,.interest_income_client_annual,.interest_income_partner_annual').on('keydown', function (e) {
+  return false;
+});
+$('.salary_client, .salary_partner,.bonus_client, .bonus_partner,.interest_income_client,.interest_income_partner').on('keypress',function(event){
+     if(event.which < 46 || event.which >= 58 || event.which == 47) {
+    event.preventDefault();
+  }
+
+  if(event.which == 46 && $(this).val().indexOf('.') != -1) {
+    this.value = '' ;
+  }
+});
+
+    
+    $('.salary_client, .salary_partner, #salary_frequency').on('keyup input change', function() {
+        calculateAnnualIncome('.salary_client', '.salary_partner', '#salary_frequency', '.salary_client_annual', '.salary_partner_annual');
+    });
+
+    $('.bonus_client, .bonus_partner, #bonus_frequency').on('keyup input change', function() {
+        calculateAnnualIncome('.bonus_client', '.bonus_partner', '#bonus_frequency', '.bonus_client_annual', '.bonus_partner_annual');
+    });
+
+    $('.interest_income_client, .interest_income_partner, #interest_income_frequency').on('keyup input change', function() {
+        calculateAnnualIncome('.interest_income_client', '.interest_income_partner', '#interest_income_frequency', '.interest_income_client_annual', '.interest_income_partner_annual');
+    });
+
+    $('.rental_income_client, .rental_income_partner, #rental_income_frequency').on('keyup input change', function() {
+        calculateAnnualIncome('.rental_income_client', '.rental_income_partner', '#rental_income_frequency', '.rental_income_client_annual', '.rental_income_partner_annual');
+    });
+
+    $('.dividend_income_client, .dividend_income_partner, #dividend_income_frequency').on('keyup input change', function() {
+        calculateAnnualIncome('.dividend_income_client', '.dividend_income_partner', '#dividend_income_frequency', '.dividend_income_client_annual', '.dividend_income_partner_annual');
+    });
+
+    $('.ss_income_client, .ss_income_partner, #ss_income_frequency').on('keyup input change', function() {
+        calculateAnnualIncome('.ss_income_client', '.ss_income_partner', '#ss_income_frequency', '.ss_income_client_annual', '.ss_income_partner_annual');
+    });
+
+    $('.business_income_client, .business_income_partner, #business_income_frequency').on('keyup input change', function() {
+        calculateAnnualIncome('.business_income_client', '.business_income_partner', '#business_income_frequency', '.business_income_client_annual', '.business_income_partner_annual');
+    });
+
+    $('.other_income_client, .other_income_partner, #other_income_frequency').on('keyup input change', function() {
+        calculateAnnualIncome('.other_income_client', '.other_income_partner', '#other_income_frequency', '.other_income_client_annual', '.other_income_partner_annual');
+    });
+
+
+
+
+
+
 
 });

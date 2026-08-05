@@ -1668,9 +1668,10 @@
 
     </div>
         <script defer="" src="{{ asset('assets/js/ajax-crud.js') }}"></script>
-         <script defer="" src="{{ asset('assets/js/form-validation-input.js') }}"></script>
+         <script defer="" src="{{ asset('assets/js/form-validation-calculation-input.js') }}"></script>
          <script defer="" src="{{ asset('assets/js/get-data-fill-forms.js') }}"></script>
          <script defer="" src="{{ asset('assets/js/append-html.js') }}"></script>
+         <script defer="" src="{{ asset('assets/js/multiple-calculations.js') }}"></script>
          
          
 
