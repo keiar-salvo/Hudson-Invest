@@ -201,6 +201,12 @@ class PersonalDetails extends Model
                 $supperannuation->sg_rate = $request->input('sg_rate');
                 $supperannuation->annual_contribution = $request->input('annual_contribution');
                 $supperannuation->quarterly_contribution = $request->input('quarterly_contribution');
+                $supperannuation->partner_gross_salary = $request->input('partner_gross_salary');
+                $supperannuation->partner_sg_rate = $request->input('partner_sg_rate');
+                $supperannuation->partner_annual_contribution = $request->input('partner_annual_contribution');
+                $supperannuation->partner_quarterly_contribution = $request->input('partner_quarterly_contribution');
+                $supperannuation->grand_total_annual = $request->input('grand_total_annual');
+                $supperannuation->grand_total_quarterly = $request->input('grand_total_quarterly');
                 $supperannuation->encoded_by   = $request->input('encoded_by');
                 $supperannuation->date_encoded = Carbon::now()->toDateString();
                 $supperannuation->save();
@@ -656,7 +662,13 @@ class PersonalDetails extends Model
                 'gross_salary' => $request->input('gross_salary'),
                 'sg_rate' => $request->input('sg_rate'),
                 'annual_contribution' => $request->input('annual_contribution'),
-                'quarterly_contribution' => $request->input('quarterly_contribution')
+                'quarterly_contribution' => $request->input('partner_gross_salary'),
+                'partner_gross_salary' => $request->input('partner_gross_salary'),
+                'partner_sg_rate' => $request->input('partner_sg_rate'),
+                'partner_annual_contribution' => $request->input('partner_annual_contribution'),
+                'partner_quarterly_contribution' => $request->input('partner_quarterly_contribution'),
+                'grand_total_annual' => $request->input('grand_total_annual'),
+                'grand_total_quarterly' => $request->input('grand_total_quarterly'),
               
                 ]);
 

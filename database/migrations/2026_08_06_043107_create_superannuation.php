@@ -11,16 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-     	Schema::create('superannuation', function (Blueprint $table) {
-           $table->string('details_id')->unique();
+        Schema::create('superannuation', function (Blueprint $table) {
+            $table->string('details_id')->unique();
             $table->string('gross_salary')->nullable();
             $table->string('sg_rate')->nullable();
             $table->string('annual_contribution')->nullable();
             $table->string('quarterly_contribution')->nullable();
+            $table->string('partner_gross_salary')->nullable();
+            $table->string('partner_sg_rate')->nullable();
+            $table->string('partner_annual_contribution')->nullable();
+            $table->string('partner_quarterly_contribution')->nullable();
+            $table->string('grand_total_annual')->nullable();
+            $table->string('grand_total_quarterly')->nullable();
             $table->string('encoded_by')->nullable();
             $table->string('date_encoded')->nullable();
             $table->timestamps();
-       
         });
     }
 

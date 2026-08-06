@@ -318,9 +318,21 @@ $('.salary_client, .salary_partner,.bonus_client, .bonus_partner,.interest_incom
     });
 
 
+$('.sg_rate').on('keyup',function(){
 
+   supperAnnutationCalcs('.gross_salary','.sg_rate','.annual_contribution','.quarterly_contribution');
 
+});
 
+$('.partner_sg_rate').on('keyup',function(){
+
+  supperAnnutationCalcs('.partner_gross_salary','.partner_sg_rate','.partner_annual_contribution','.partner_quarterly_contribution');
+});
+
+$('#principle_residence,.principle_client_percentage,.principle_partner_percentage,.principle_market_value').on('keyup input change',function(){
+
+  calculateNonInvestmentAsset('#principle_residence','.principle_client_percentage','.principle_partner_percentage','.principle_market_value','.principle_client','.principle_partner')
+});
 
 
 });

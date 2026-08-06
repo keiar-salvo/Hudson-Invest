@@ -507,7 +507,7 @@
  
 
     <div class="col-span-1 md:col-span-3">
-      <label >Gross Salary</label>
+      <label >Client - Gross Salary</label>
       <input type="text" class="mt-1 form-input gross_salary" name ="gross_salary">
     </div>
 
@@ -535,9 +535,56 @@
      
   </div>
      </div>
+     <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+ 
+
+    <div class="col-span-1 md:col-span-3">
+      <label >Partner - Gross Salary</label>
+      <input type="text" class="mt-1 form-input partner_gross_salary" name ="partner_gross_salary">
+    </div>
+
+
+    <div class="col-span-1 md:col-span-3">
+      <label >SG Rate</label>
+      <input type="text" class="mt-1 form-input partner_sg_rate" placeholder="0%" name="partner_sg_rate">
+    </div>
+
+
+    <div class="col-span-1 md:col-span-6">
+      <label >Annual Contribution</label>
+      <input type="email" class="mt-1 form-input partner_annual_contribution" name="partner_annual_contribution">
+    </div>
+
+
+    <div class="col-span-1 md:col-span-3">
+      <label >Quarterly Contribution</label>
+      <input type="text" class="mt-1 form-input partner_quarterly_contribution" name="partner_quarterly_contribution">
+ 
+
+    <div class="col-span-1 md:col-span-6 text-right mt-2">
+     
+    </div>
+     
+  </div>
+     </div>
+     
         <div class="w-full ">
    <label class="w-full text-gray-700 font-medium"><i>Note: The maximum SG that an employer is required to contribute is $5,312.50 per quarter (that is $20,351.40 SG for the year).</i></label>
 </div>
+  <div class="grid grid-cols-1 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-5 gap-5">
+
+<div>
+   <label style=" color: #bd0c1d">Total Contributions</label>
+   <label>Annual Contributions</label>
+<input type="text"  class="mt-1 form-input grand_total_annual"  placeholder="0.00" name="grand_total_client">
+  </div>
+  
+  <div style="padding-top: 26px;">
+  
+   <label>Quarterly Contributions</label>
+    <input type="text"  class="mt-1 form-input grand_total_quarterly"  placeholder="0.00" name="grand_total_partner">
+  </div>
+  </div>
     </fieldset>
 
     <fieldset class="group-box">
@@ -1671,7 +1718,7 @@
          <script defer="" src="{{ asset('assets/js/form-validation-calculation-input.js') }}"></script>
          <script defer="" src="{{ asset('assets/js/get-data-fill-forms.js') }}"></script>
          <script defer="" src="{{ asset('assets/js/append-html.js') }}"></script>
-         <script defer="" src="{{ asset('assets/js/multiple-calculations.js') }}"></script>
+         <script defer="" src="{{ asset('assets/js/unary-calculations.js') }}"></script>
          
          
 

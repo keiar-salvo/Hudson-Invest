@@ -80,6 +80,12 @@ function FillSuperannuation(response){
   $('.sg_rate').val(response['SuperannuationDetails']['sg_rate']);
   $('.annual_contribution').val(response['SuperannuationDetails']['annual_contribution']);
   $('.quarterly_contribution').val(response['SuperannuationDetails']['quarterly_contribution']);
+  $('.partner_gross_salary').val(response['SuperannuationDetails']['partner_gross_salary']);
+  $('.partner_sg_rate').val(response['SuperannuationDetails']['partner_sg_rate']);
+  $('.partner_annual_contribution').val(response['SuperannuationDetails']['partner_annual_contribution']);
+  $('.partner_quarterly_contribution').val(response['SuperannuationDetails']['partner_quarterly_contribution']);
+  $('.grand_total_annual').val(response['SuperannuationDetails']['grand_total_annual']);
+  $('.grand_total_quarterly').val(response['SuperannuationDetails']['grand_total_quarterly']);
 }
 
 function FillNonInvestmentAsset(response){
