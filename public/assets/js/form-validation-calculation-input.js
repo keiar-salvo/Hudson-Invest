@@ -331,8 +331,70 @@ $('.partner_sg_rate').on('keyup',function(){
 
 $('#principle_residence,.principle_client_percentage,.principle_partner_percentage,.principle_market_value').on('keyup input change',function(){
 
-  calculateNonInvestmentAsset('#principle_residence','.principle_client_percentage','.principle_partner_percentage','.principle_market_value','.principle_client','.principle_partner')
+  calculateNonInvestmentAsset('#principle_residence','.principle_client_percentage','.principle_partner_percentage','.principle_market_value','.principle_client','.principle_partner');
 });
 
+$('#cash_everyday,.cash_client_percentage,.cash_partner_percentage,.cash_market_value').on('keyup input change',function(){
+
+  calculateNonInvestmentAsset('#cash_everyday','.cash_client_percentage','.cash_partner_percentage','.cash_market_value','.cash_client','.cash_partner');
+});
+
+// $('#non-investment-owner-asset,.non_investment_asset_client_percentage,.non_investment_asset_partner_percentage,.non_investment_asset_market_value').on('keyup input change',function(){
+
+//   calculateNonInvestmentAsset('#non-investment-owner-asset','.non_investment_asset_client_percentage','.non_investment_asset_partner_percentage','.non_investment_asset_market_value','.non_investment_asset_client','.non_investment_asset_partner')
+// });
+
+$('.div-non-investment-property,#assets-container').on('keyup input change','.non-investment-owner-asset,.non_investment_asset_client_percentage, .non_investment_asset_partner_percentage, .non_investment_asset_market_value',function(){
+     let row = $(this).closest('.form-row');
+
+        // Execute your calculation function safely using scoped elements
+        calculateNonInvestmentAsset(
+            row.find('.non-investment-owner-asset'),
+            row.find('.non_investment_asset_client_percentage'),
+            row.find('.non_investment_asset_partner_percentage'),
+            row.find('.non_investment_asset_market_value'),
+            row.find('.non_investment_asset_client'),
+            row.find('.non_investment_asset_partner')
+        );
+});
+
+$('#long_term_investment_asset,.long_term_client_percentage,.long_term_partner_percentage,.long_term_market_value').on('keyup input change',function(){
+
+  calculateInvestmentAsset('#long_term_investment_asset','.long_term_client_percentage','.long_term_partner_percentage','.long_term_market_value','.long_term_client','.long_term_partner');
+});
+
+$('#superannuation_client_net,.superannuation_client_client_percentage,.superannuation_client_partner_percentage,.superannuation_client_market_value').on('keyup input change',function(){
+
+  calculateInvestmentAsset('#superannuation_client_net','.superannuation_client_client_percentage','.superannuation_client_partner_percentage','.superannuation_client_market_value','.superannuation_client_client','.superannuation_client_partner');
+});
+
+$('#superannuation_partner_net,.superannuation_partner_client_percentage,.superannuation_partner_parnter_percentage,.superannuation_partner_market_value').on('keyup input change',function(){
+
+  calculateInvestmentAsset('#superannuation_partner_net','.superannuation_partner_client_percentage','.superannuation_partner_parnter_percentage','.superannuation_partner_market_value','.superannuation_partner_client','.superannuation_partner_partner');
+});
+
+$('#shares_fund,.shares_fund_client_percentage,.shares_fund_partner_percentage,.shares_fund_market_value').on('keyup input change',function(){
+
+  calculateInvestmentAsset('#shares_fund','.shares_fund_client_percentage','.shares_fund_partner_percentage','.shares_fund_market_value','.shares_fund_client','.shares_fund_partner');
+});
+
+$('#business,.business_client_percentage,.business_partner_percentage,.business_market_value').on('keyup input change',function(){
+
+calculateInvestmentAsset('#business','.business_client_percentage','.business_partner_percentage','.business_market_value','.business_client','.business_partner');
+});
+
+$('.investment-property,.investment-container').on('keyup input change','#non-investment-owner,.client_percentage, partner_percentage,.market_value',function(){
+     let row = $(this).closest('.form-row-investment');
+
+        // Execute your calculation function safely using scoped elements
+        calculateInvestmentAsset(
+            row.find('.investment_property'),
+            row.find('.client_percentage'),
+            row.find('.partner_percentage'),
+            row.find('.market_value'),
+            row.find('.client'),
+            row.find('.partner')
+        );
+});
 
 });

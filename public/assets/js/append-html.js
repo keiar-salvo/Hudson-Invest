@@ -3,7 +3,7 @@ let non_investmentIdx = 1;
 let non_investmentNmbr = 2;
 function addHTML(count){
       let rowIdx = count;
-        var add_investment_html = `<div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
+        var add_investment_html = `<div class="form-row-investment grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
 <div>
     <label>Investment Property ${non_investmentNmbr}</label>
     <select name="row[${non_investmentIdx}][non_investment_owner]"  id="non-investment-owner" class="investment_property block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
@@ -52,7 +52,7 @@ let otherIdx = 1;
 let otherNmbr = 2;
 function Add_Non_Investment_HTML(){
    
-        var add_non_investment_html = `<div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
+        var add_non_investment_html = `<div class="form-row grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
 <div>
     <label>Other Personal Assets ${otherNmbr}</label>
     <select  id="non-investment-owner-asset" name="noninvestmentasset[${otherIdx}][other_personal_asset] "class="block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select non-investment-owner-asset ">

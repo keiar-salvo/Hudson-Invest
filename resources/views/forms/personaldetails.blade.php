@@ -673,7 +673,7 @@
   </div>
  
 <br/>
-  <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
+  <div class="form-row  grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6" id="assets-container">
 
 <div>
     <label>Other Personal Assets 1</label>
@@ -1008,7 +1008,7 @@
   </div>
 </div> -->
 
-<div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
+<div class="form-row-investment investment-container grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6" id="">
 
 <div>
     <label>Investment Property 1</label>
