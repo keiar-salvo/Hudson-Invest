@@ -347,7 +347,7 @@ $('#cash_everyday,.cash_client_percentage,.cash_partner_percentage,.cash_market_
 $('.div-non-investment-property,#assets-container').on('keyup input change','.non-investment-owner-asset,.non_investment_asset_client_percentage, .non_investment_asset_partner_percentage, .non_investment_asset_market_value',function(){
      let row = $(this).closest('.form-row');
 
-        // Execute your calculation function safely using scoped elements
+       
         calculateNonInvestmentAsset(
             row.find('.non-investment-owner-asset'),
             row.find('.non_investment_asset_client_percentage'),
@@ -383,10 +383,10 @@ $('#business,.business_client_percentage,.business_partner_percentage,.business_
 calculateInvestmentAsset('#business','.business_client_percentage','.business_partner_percentage','.business_market_value','.business_client','.business_partner');
 });
 
-$('.investment-property,.investment-container').on('keyup input change','#non-investment-owner,.client_percentage, partner_percentage,.market_value',function(){
+$('.investment-property,.investment-container').on('keyup input change','#non-investment-owner,.client_percentage,.partner_percentage,.market_value',function(){
      let row = $(this).closest('.form-row-investment');
 
-        // Execute your calculation function safely using scoped elements
+       
         calculateInvestmentAsset(
             row.find('.investment_property'),
             row.find('.client_percentage'),
@@ -394,6 +394,75 @@ $('.investment-property,.investment-container').on('keyup input change','#non-in
             row.find('.market_value'),
             row.find('.client'),
             row.find('.partner')
+        );
+});
+
+$('#mortgage_residence,.mortgage_client_percentage,.mortgage_partner_percentage,.mortgage_market_value').on('keyup input change',function(){
+
+  calculateNonInvestmentLiabilities('#mortgage_residence','.mortgage_client_percentage','.mortgage_partner_percentage','.mortgage_market_value','.mortgage_client','.mortgage_partner');
+
+});
+
+$('#personal_loans,.personal_loans_client_percentage,.personal_loans_partner_percentage,.personal_loans_market_value').on('keyup input change',function(){
+
+  calculateNonInvestmentLiabilities('#personal_loans','.personal_loans_client_percentage','.personal_loans_partner_percentage','.personal_loans_market_value','.personal_loans_client','.personal_loans_partner');
+
+});
+
+$('#car_loans,.car_loans_client_percentage,.car_loans_partner_percentage,.car_loans_market_value').on('keyup input change',function(){
+
+  calculateNonInvestmentLiabilities('#car_loans','.car_loans_client_percentage','.car_loans_partner_percentage','.car_loans_market_value','.car_loans_client','.car_loans_partner');
+
+});
+
+$('.div-add-debt,.liabilities-non-investment').on('keyup input change','#other_debt,.other_debt_client_percentage,.other_debt_partner_percentage,.other_debt_market_value',function(){
+     let row = $(this).closest('.form-liabilities-non-investment');
+
+        calculateNonInvestmentLiabilities(
+            row.find('.other_debt'),
+            row.find('.other_debt_client_percentage'),
+            row.find('.other_debt_partner_percentage'),
+            row.find('.other_debt_market_value'),
+            row.find('.other_debt_client'),
+            row.find('.other_debt_parnter')
+        );
+});
+
+$('.div-add-credit-card,.credit-card-liabilities').on('keyup input change','#credit_card,.credit_card_client_percentage,.credit_card_partner_percentage,.credit_card_market_value',function(){
+     let row = $(this).closest('.form-row-credit-card-liabilities');
+
+        calculateNonInvestmentLiabilities(
+            row.find('.credit_card'),
+            row.find('.credit_card_client_percentage'),
+            row.find('.credit_card_partner_percentage'),
+            row.find('.credit_card_market_value'),
+            row.find('.credit_card_client'),
+            row.find('.credit_card_partner')
+        );
+});
+
+$('#margin_investment_loans,.margin_investment_client_percentage,.margin_investment_partner_percentage,.margin_investment_market_value').on('keyup input change',function(){
+
+  calculateInvestmentLiabilities('#margin_investment_loans','.margin_investment_client_percentage','.margin_investment_partner_percentage','.margin_investment_market_value','.margin_investment_client','.margin_investment_partner');
+
+});
+
+$('#business_loans,.business_loans_client_percentage,.business_loans_partner_percentage,.business_loans_market_value').on('keyup input change',function(){
+
+  calculateInvestmentLiabilities('#business_loans','.business_loans_client_percentage','.business_loans_partner_percentage','.business_loans_market_value','.business_loans_client','.business_loans_partner');
+
+});
+
+$('.div-add-mortgage-investment-property,.div-mortgage').on('keyup input change','#mortgage_investment,.mortgage_investment_client_percentage,.mortgage_investment_partner_percentage,.mortgage_investment_market_value',function(){
+     let row = $(this).closest('.form-row-mortgage-investment ');
+
+        calculateInvestmentLiabilities(
+            row.find('.mortgage_investment'),
+            row.find('.mortgage_investment_client_percentage'),
+            row.find('.mortgage_investment_partner_percentage'),
+            row.find('.mortgage_investment_market_value'),
+            row.find('.mortgage_investment_client'),
+            row.find('.mortgage_investment_partner')
         );
 });
 

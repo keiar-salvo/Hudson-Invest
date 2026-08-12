@@ -273,6 +273,8 @@
             
     }
     calculateGrandTotalForNonInvestment();
+    GrandTotalAssets();
+    NetAssetsGrandTotal();
          }
             
 
@@ -390,10 +392,253 @@ function calculateInvestmentAsset(ownerSelection,clientPercentage,partnerPercent
     }
 
     calculateGrandTotalForInvestment();
+    GrandTotalAssets();
+    NetAssetsGrandTotal();
          }
             
 
     }
+// Calculate Non-Investment Liabilities
+    function calculateNonInvestmentLiabilities(ownerSelection,clientPercentage,partnerPercentage,marketValue,clientCalc,partnerCalc){
+        let ownerStr = $(ownerSelection).val();
+        let clientStr =  $(clientPercentage).val();
+        let partnerStr = $(partnerPercentage).val()
+        let marketValueStr = $(marketValue).val();
+        let cleanClientStr;
+        let cleanMarketStr;
+        let clientResult;
+        let formattedTotal
+
+         if(clientStr !== null && clientStr !== '' || partnerStr !== null && partnerStr !== ''){
+
+            switch (ownerStr) {
+                case "Client":
+                 
+                    cleanMarketStr = parseFloat(marketValueStr?.replace(/,/g, '')) || 0;
+                    clientResult = cleanMarketStr * (clientStr / 100);
+                    formattedTotal = clientResult.toLocaleString('en-US', { 
+                        minimumFractionDigits: 2, 
+                        maximumFractionDigits: 2 
+                    });
+                    $(clientCalc).val(formattedTotal);
+                    $(partnerCalc).val('');
+                    $(partnerPercentage).val('');
+
+                break;
+                case "Partner":
+                    cleanMarketStr = parseFloat(marketValueStr?.replace(/,/g, '')) || 0;
+                    clientResult = cleanMarketStr * (partnerStr / 100);
+                    formattedTotal = clientResult.toLocaleString('en-US', { 
+                        minimumFractionDigits: 2, 
+                        maximumFractionDigits: 2 
+                    });
+                    $(partnerCalc).val(formattedTotal);
+                      $(clientCalc).val('');
+                      $(clientPercentage).val('');
+                break;
+        
+                case "Joint":
+                   
+                      
+                    cleanMarketStr = parseFloat(marketValueStr?.replace(/,/g, '')) || 0;
+                    clientResult = cleanMarketStr * (clientStr / 100);
+                    const remaingforPartner =  100 - clientStr;
+
+                    $(partnerPercentage).val(remaingforPartner);
+                   
+                  
+                    formattedTotal = clientResult.toLocaleString('en-US', { 
+                        minimumFractionDigits: 2, 
+                        maximumFractionDigits: 2 
+                    });
+
+                    let remainingVal = cleanMarketStr - clientResult;
+                    let formattedHalfPartner = remainingVal.toLocaleString('en-US', { 
+                        minimumFractionDigits: 2, 
+                        maximumFractionDigits: 2 
+                    });
+
+                    let formattedHalfClient = clientResult.toLocaleString('en-US', { 
+                        minimumFractionDigits: 2, 
+                        maximumFractionDigits: 2 
+                    });
+
+                    $(partnerCalc).val(formattedHalfPartner);
+                    $(clientCalc).val(formattedHalfClient);
+                    
+                   
+                break;
+                case "Other":
+                    $(partnerCalc).val('0');
+                    $(clientCalc).val('0');
+                    
+                    cleanMarketStrs = parseFloat(marketValueStr?.replace(/,/g, '')) || 0;
+                    clientResults = cleanMarketStr * (clientStr / 100);
+                    const remaingforPartnerValue =  100 - clientStr;
+
+                    // const remainingWholeVal = parseFloat(remaingforPartner);
+                    // const remainingPercenteage = 100 - remainingWholeVal;
+                   
+                    $(partnerPercentage).val(remaingforPartnerValue);
+                   
+                  
+                    formattedTotal = clientResult.toLocaleString('en-US', { 
+                        minimumFractionDigits: 2, 
+                        maximumFractionDigits: 2 
+                    });
+
+                    let remainingVals = cleanMarketStrs - clientResults;
+                    let formattedHalfPartners = remainingVals.toLocaleString('en-US', { 
+                        minimumFractionDigits: 2, 
+                        maximumFractionDigits: 2 
+                    });
+
+                    let formattedHalfClients = clientResults.toLocaleString('en-US', { 
+                        minimumFractionDigits: 2, 
+                        maximumFractionDigits: 2 
+                    });
+
+                    $(partnerCalc).val(formattedHalfPartners);
+                    $(clientCalc).val(formattedHalfClients);
+                break;
+    
+        default:
+            break;
+            
+    }
+    calculateGrandTotalForNonInvestmentLiabilities();
+    GrandTotalLiabilities();
+    NetAssetsGrandTotal();
+
+         }
+            
+
+    }
+
+     function calculateInvestmentLiabilities(ownerSelection,clientPercentage,partnerPercentage,marketValue,clientCalc,partnerCalc){
+        let ownerStr = $(ownerSelection).val();
+        let clientStr =  $(clientPercentage).val();
+        let partnerStr = $(partnerPercentage).val()
+        let marketValueStr = $(marketValue).val();
+        let cleanClientStr;
+        let cleanMarketStr;
+        let clientResult;
+        let formattedTotal
+
+        // alert(ownerStr);
+
+         if(clientStr !== null && clientStr !== '' || partnerStr !== null && partnerStr !== ''){
+
+            switch (ownerStr) {
+                case "Client":
+
+                    cleanMarketStr = parseFloat(marketValueStr?.replace(/,/g, '')) || 0;
+                    clientResult = cleanMarketStr * (clientStr / 100);
+                    formattedTotal = clientResult.toLocaleString('en-US', { 
+                        minimumFractionDigits: 2, 
+                        maximumFractionDigits: 2 
+                    });
+                    $(clientCalc).val(formattedTotal);
+                    $(partnerCalc).val('');
+                    $(partnerPercentage).val('');
+
+                break;
+                case "Partner":
+                    cleanMarketStr = parseFloat(marketValueStr?.replace(/,/g, '')) || 0;
+                    clientResult = cleanMarketStr * (partnerStr / 100);
+                    formattedTotal = clientResult.toLocaleString('en-US', { 
+                        minimumFractionDigits: 2, 
+                        maximumFractionDigits: 2 
+                    });
+                    $(partnerCalc).val(formattedTotal);
+                      $(clientCalc).val('');
+                      $(clientPercentage).val('');
+                break;
+        
+                case "Joint":
+                   
+                      
+                    cleanMarketStr = parseFloat(marketValueStr?.replace(/,/g, '')) || 0;
+                    clientResult = cleanMarketStr * (clientStr / 100);
+                    const remaingforPartner =  100 - clientStr;
+
+                    $(partnerPercentage).val(remaingforPartner);
+                   
+                  
+                    formattedTotal = clientResult.toLocaleString('en-US', { 
+                        minimumFractionDigits: 2, 
+                        maximumFractionDigits: 2 
+                    });
+
+                    let remainingVal = cleanMarketStr - clientResult;
+                    let formattedHalfPartner = remainingVal.toLocaleString('en-US', { 
+                        minimumFractionDigits: 2, 
+                        maximumFractionDigits: 2 
+                    });
+
+                    let formattedHalfClient = clientResult.toLocaleString('en-US', { 
+                        minimumFractionDigits: 2, 
+                        maximumFractionDigits: 2 
+                    });
+
+                    $(partnerCalc).val(formattedHalfPartner);
+                    $(clientCalc).val(formattedHalfClient);
+                    
+                   
+                break;
+                case "Other":
+                    $(partnerCalc).val('0');
+                    $(clientCalc).val('0');
+                    
+                    cleanMarketStrs = parseFloat(marketValueStr?.replace(/,/g, '')) || 0;
+                    clientResults = cleanMarketStr * (clientStr / 100);
+                    const remaingforPartnerValue =  100 - clientStr;
+
+                    // const remainingWholeVal = parseFloat(remaingforPartner);
+                    // const remainingPercenteage = 100 - remainingWholeVal;
+                   
+                    $(partnerPercentage).val(remaingforPartnerValue);
+                   
+                  
+                    formattedTotal = clientResult.toLocaleString('en-US', { 
+                        minimumFractionDigits: 2, 
+                        maximumFractionDigits: 2 
+                    });
+
+                    let remainingVals = cleanMarketStrs - clientResults;
+                    let formattedHalfPartners = remainingVals.toLocaleString('en-US', { 
+                        minimumFractionDigits: 2, 
+                        maximumFractionDigits: 2 
+                    });
+
+                    let formattedHalfClients = clientResults.toLocaleString('en-US', { 
+                        minimumFractionDigits: 2, 
+                        maximumFractionDigits: 2 
+                    });
+
+                    $(partnerCalc).val(formattedHalfPartners);
+                    $(clientCalc).val(formattedHalfClients);
+                break;
+    
+        default:
+            break;
+            
+    }
+calculateGrandTotalForInvestmentLiabilities();
+GrandTotalLiabilities();
+NetAssetsGrandTotal();
+
+         }
+            
+
+    }
+
+    var withTotalNonInvestmentClientVal = 0;
+    var withTotalNonInvestmentPartnerVal = 0;
+    var withTotalNonInvestmentMarketVal = 0;
+    var withTotalInvestmentClientVal = 0;
+    var withTotalInvestmentPartnerVal = 0;
+    var withTotalInvestmentMarketVal = 0;
 
     function calculateGrandTotalForNonInvestment(){
     let total = 0;
@@ -442,19 +687,19 @@ function calculateInvestmentAsset(ownerSelection,clientPercentage,partnerPercent
  
     });
 
-   let withTotalClientVal = total + totalClient;
-    let withTotalPartnerVal = totalGrandPartner + totalPartner;
-    let withTotalMarketVal = totalGrandMarketVal + totalMarket;
+   withTotalNonInvestmentClientVal = total + totalClient;
+    withTotalNonInvestmentPartnerVal = totalGrandPartner + totalPartner;
+    withTotalNonInvestmentMarketVal = totalGrandMarketVal + totalMarket;
 
-    let formattedGrandTotal = withTotalClientVal.toLocaleString('en-US', { 
+    let formattedGrandTotal = withTotalNonInvestmentClientVal.toLocaleString('en-US', { 
         minimumFractionDigits: 2, 
         maximumFractionDigits: 2 
     });
-    let formattedGrandPartnerTotal = withTotalPartnerVal.toLocaleString('en-US', { 
+    let formattedGrandPartnerTotal = withTotalNonInvestmentPartnerVal.toLocaleString('en-US', { 
         minimumFractionDigits: 2, 
         maximumFractionDigits: 2 
     });
-    let formattedGrandMarketTotal = withTotalMarketVal.toLocaleString('en-US', { 
+    let formattedGrandMarketTotal = withTotalNonInvestmentMarketVal.toLocaleString('en-US', { 
         minimumFractionDigits: 2, 
         maximumFractionDigits: 2 
     });
@@ -463,6 +708,187 @@ function calculateInvestmentAsset(ownerSelection,clientPercentage,partnerPercent
     $('.total_non_investment_client').val(formattedGrandTotal);
     $('.total_non_investment_partner').val(formattedGrandPartnerTotal);
     $('.total_non_investment_market_value').val(formattedGrandMarketTotal);
+       GrandTotalAssets();
+       NetAssetsGrandTotal();
+   
+}
+
+  var withTotalNonInvestmentLiabilitiesClientVal = 0;
+    var withTotalNonInvestmentLiabilitiesPartnerVal = 0;
+    var withTotalNonInvestmentLiabilieitsMarketVal = 0;
+    // var withTotalInvestmentClientVal = 0;
+    // var withTotalInvestmentPartnerVal = 0;
+    // var withTotalInvestmentMarketVal = 0;
+
+     // Non-Investment Liabilities
+function calculateGrandTotalForNonInvestmentLiabilities(){
+    let total = 0;
+    let totalGrandPartner = 0;
+    let totalGrandMarketVal = 0;
+    let totalMarket = 0;
+    let totalClient = 0;
+    let totalPartner = 0;
+    let totalCreditCardMarket = 0;
+    let totalCrediCardClient = 0;
+    let totalCreditCardPartner = 0;
+
+    let clientFields = ['.mortgage_client', '.personal_loans_client','.car_loans_client'];
+    let partnerFields = ['.mortgage_partner', '.personal_loans_partner','.car_loans_partner'];
+    let marketValueFields = ['.mortgage_market_value', '.personal_loans_market_value','.car_loans_market_value'];
+
+    // 1. Sum up baseline static inputs
+    clientFields.forEach(function(selector) {
+        let valString = $(selector).val() || '0';
+        let cleanNum = parseFloat(valString.replace(/,/g, '')) || 0;
+        total += cleanNum;
+    });
+
+    partnerFields.forEach(function(selector) {
+        let partnervalString = $(selector).val() || '0';
+        let cleanVal = parseFloat(partnervalString.replace(/,/g, '')) || 0;
+        totalGrandPartner += cleanVal;
+    });
+
+    marketValueFields.forEach(function(selector) {
+        let marketvalString = $(selector).val() || '0';
+        let cleanMarketVal = parseFloat(marketvalString.replace(/,/g, '')) || 0;
+        totalGrandMarketVal += cleanMarketVal;
+    });
+
+    // 2. FIX: Only loop through actual rows inside your container
+    // Adjust '#assets-container .form-row' to match your actual wrapper layout
+    $('.form-liabilities-non-investment').each(function() {
+        let row = $(this);
+        
+        let marketVal = parseFloat(row.find('.other_debt_market_value').val()?.replace(/,/g, '')) || 0;
+        let clientVal = parseFloat(row.find('.other_debt_client').val()?.replace(/,/g, '')) || 0;
+        let partnerVal = parseFloat(row.find('.other_debt_parnter').val()?.replace(/,/g, '')) || 0;
+
+        totalMarket += marketVal;
+        totalClient += clientVal;
+        totalPartner += partnerVal;
+
+ 
+    });
+
+      $('.form-row-credit-card-liabilities ').each(function() {
+        let row_credit_card = $(this);
+        
+        let creditCardMarketVal = parseFloat(row_credit_card.find('.credit_card_market_value').val()?.replace(/,/g, '')) || 0;
+        let creditCardClientVal = parseFloat(row_credit_card.find('.credit_card_client').val()?.replace(/,/g, '')) || 0;
+        let creditCardPartnerVal = parseFloat(row_credit_card.find('.credit_card_partner').val()?.replace(/,/g, '')) || 0;
+
+        totalCreditCardMarket += creditCardMarketVal;
+        totalCrediCardClient += creditCardClientVal;
+        totalCreditCardPartner += creditCardPartnerVal;
+
+ 
+    });
+
+    withTotalNonInvestmentLiabilitiesClientVal = total + totalCrediCardClient + totalClient;
+    withTotalNonInvestmentLiabilitiesPartnerVal = totalGrandPartner + totalCreditCardPartner + totalPartner;
+    withTotalNonInvestmentLiabilieitsMarketVal = totalGrandMarketVal + totalCreditCardMarket + totalMarket;
+
+    let formattedGrandTotal = withTotalNonInvestmentLiabilitiesClientVal.toLocaleString('en-US', { 
+        minimumFractionDigits: 2, 
+        maximumFractionDigits: 2 
+    });
+    let formattedGrandPartnerTotal = withTotalNonInvestmentLiabilitiesPartnerVal.toLocaleString('en-US', { 
+        minimumFractionDigits: 2, 
+        maximumFractionDigits: 2 
+    });
+    let formattedGrandMarketTotal = withTotalNonInvestmentLiabilieitsMarketVal.toLocaleString('en-US', { 
+        minimumFractionDigits: 2, 
+        maximumFractionDigits: 2 
+    });
+
+    // 4. Update the grand total fields
+    $('.total_non_invesment_liabilities_client').val(formattedGrandTotal);
+    $('.total_non_invesment_liabilities_partner').val(formattedGrandPartnerTotal);
+    $('.total_non_invesment_liabilities_market_value').val(formattedGrandMarketTotal);
+     
+   
+}
+    var withTotalInvestmentLiabilitiesClientVal = 0;
+    var withTotalInvestmentLiabilitiesPartnerVal = 0;    
+    var withTotalInvestmentLiabilieitsMarketVal = 0;
+
+function calculateGrandTotalForInvestmentLiabilities(){
+    let total = 0;
+    let totalGrandPartner = 0;
+    let totalGrandMarketVal = 0;
+    let totalMarket = 0;
+    let totalClient = 0;
+    let totalPartner = 0;
+    let totalCreditCardMarket = 0;
+    let totalCrediCardClient = 0;
+    let totalCreditCardPartner = 0;
+    let totalMortgageMarket = 0;
+    let totalMortgageClient = 0;
+    let totalMortgagePartner = 0;
+
+    let clientFields = ['.margin_investment_client', '.business_loans_client'];
+    let partnerFields = ['.margin_investment_partner', '.business_loans_partner'];
+    let marketValueFields = ['.margin_investment_market_value', '.business_loans_market_value'];
+
+    // 1. Sum up baseline static inputs
+    clientFields.forEach(function(selector) {
+        let valString = $(selector).val() || '0';
+        let cleanNum = parseFloat(valString.replace(/,/g, '')) || 0;
+        total += cleanNum;
+    });
+
+    partnerFields.forEach(function(selector) {
+        let partnervalString = $(selector).val() || '0';
+        let cleanVal = parseFloat(partnervalString.replace(/,/g, '')) || 0;
+        totalGrandPartner += cleanVal;
+    });
+
+    marketValueFields.forEach(function(selector) {
+        let marketvalString = $(selector).val() || '0';
+        let cleanMarketVal = parseFloat(marketvalString.replace(/,/g, '')) || 0;
+        totalGrandMarketVal += cleanMarketVal;
+    });
+
+    // 2. FIX: Only loop through actual rows inside your container
+    // Adjust '#assets-container .form-row' to match your actual wrapper layout
+    
+      $('.form-row-mortgage-investment').each(function() {
+        let row = $(this);
+        
+        let mortgageMarketVal = parseFloat(row.find('.mortgage_investment_market_value').val()?.replace(/,/g, '')) || 0;
+        let mortgageClientVal = parseFloat(row.find('.mortgage_investment_client').val()?.replace(/,/g, '')) || 0;
+        let mortgagePartnerVal = parseFloat(row.find('.mortgage_investment_partner').val()?.replace(/,/g, '')) || 0;
+
+        totalMortgageMarket += mortgageMarketVal;
+        totalMortgageClient += mortgageClientVal;
+        totalMortgagePartner += mortgagePartnerVal;
+
+ 
+    });
+
+    withTotalInvestmentLiabilitiesClientVal = total + totalMortgageClient ;
+    withTotalInvestmentLiabilitiesPartnerVal = totalGrandPartner + totalMortgagePartner;
+    withTotalInvestmentLiabilieitsMarketVal = totalGrandMarketVal + totalMortgageMarket;
+
+    let formattedGrandTotal = withTotalInvestmentLiabilitiesClientVal.toLocaleString('en-US', { 
+        minimumFractionDigits: 2, 
+        maximumFractionDigits: 2 
+    });
+    let formattedGrandPartnerTotal = withTotalInvestmentLiabilitiesPartnerVal.toLocaleString('en-US', { 
+        minimumFractionDigits: 2, 
+        maximumFractionDigits: 2 
+    });
+    let formattedGrandMarketTotal = withTotalInvestmentLiabilieitsMarketVal.toLocaleString('en-US', { 
+        minimumFractionDigits: 2, 
+        maximumFractionDigits: 2 
+    });
+
+    // 4. Update the grand total fields
+    $('.total_related_liabilities_client').val(formattedGrandTotal);
+    $('.total_related_liabilities_partner').val(formattedGrandPartnerTotal);
+    $('.total_related_liabilities_market_value').val(formattedGrandMarketTotal);
+     
    
 }
 
@@ -516,11 +942,11 @@ function calculateInvestmentAsset(ownerSelection,clientPercentage,partnerPercent
         totalGrandMarketVal += cleanMarketVal;
     });
 
-    // FIX 1: Narrow down selectors so it only loops through valid individual data rows
+
     $('.form-row-investment').each(function() {
         let row = $(this);
         
-        // FIX 2: Added optional chaining (?.) to prevent crashing if fields don't exist in a row
+    
         let marketVal = parseFloat(row.find('.market_value').val()?.replace(/,/g, '')) || 0;
         let clientVal = parseFloat(row.find('.client').val()?.replace(/,/g, '')) || 0;
         let partnerVal = parseFloat(row.find('.partner').val()?.replace(/,/g, '')) || 0;
@@ -530,21 +956,20 @@ function calculateInvestmentAsset(ownerSelection,clientPercentage,partnerPercent
         totalPartner += partnerVal;
     });
 
-    // FIX 3: Moved final math and DOM updates outside the .each loop 
-    // to prevent updating total fields repeatedly on every loop iteration.
-    let withTotalClientVal = total + totalClient;
-    let withTotalPartnerVal = totalGrandPartner + totalPartner;
-    let withTotalMarketVal = totalGrandMarketVal + totalMarket;
 
-    let formattedGrandTotal = withTotalClientVal.toLocaleString('en-US', { 
+    withTotalInvestmentClientVal = total + totalClient;
+    withTotalInvestmentPartnerVal = totalGrandPartner + totalPartner;
+    withTotalInvestmentMarketVal = totalGrandMarketVal + totalMarket;
+
+    let formattedGrandTotal = withTotalInvestmentClientVal.toLocaleString('en-US', { 
         minimumFractionDigits: 2, 
         maximumFractionDigits: 2 
     });
-    let formattedGrandPartnerTotal = withTotalPartnerVal.toLocaleString('en-US', { 
+    let formattedGrandPartnerTotal = withTotalInvestmentPartnerVal.toLocaleString('en-US', { 
         minimumFractionDigits: 2, 
         maximumFractionDigits: 2 
     });
-    let formattedGrandMarketTotal = withTotalMarketVal.toLocaleString('en-US', { 
+    let formattedGrandMarketTotal = withTotalInvestmentMarketVal.toLocaleString('en-US', { 
         minimumFractionDigits: 2, 
         maximumFractionDigits: 2 
     });
@@ -552,7 +977,109 @@ function calculateInvestmentAsset(ownerSelection,clientPercentage,partnerPercent
     $('.total_investment_asset_client').val(formattedGrandTotal);
     $('.total_investment_asset_partner').val(formattedGrandPartnerTotal);
     $('.total_investment_asset_market_value').val(formattedGrandMarketTotal);
+
+    GrandTotalAssets();
+    NetAssetsGrandTotal();
 }
 
+function GrandTotalAssets(){
+    let cleanNonInvestmentTotalMarketValue = parseFloat(String(withTotalNonInvestmentMarketVal || '').replace(/[^0-9.-]/g, '')) || 0;
+    //  let cleanNonInvestmentTotalMarketValue = withTotalNonInvestmentClientVal;
+    let cleanNonInvestmentTotalClientValue = parseFloat(String(withTotalNonInvestmentClientVal || '').replace(/[^0-9.-]/g, '')) || 0;
+    let cleanNonInvestmentPartnerValue = parseFloat(String(withTotalNonInvestmentPartnerVal || '').replace(/[^0-9.-]/g, '')) || 0;
+    let cleanInvestmentTotalMarkettValue = parseFloat(String(withTotalInvestmentMarketVal || '' ).replace(/[^0-9.-]/g, '')) || 0;
+    // let cleanInvestmentTotalMarkettValue = withTotalInvestmentMarketVal;
+    let cleanInvestmentClientValue = parseFloat(String(withTotalInvestmentClientVal || '').replace(/[^0-9.-]/g, '')) || 0;
+    let cleanInvestmentPartnerValue = parseFloat(String(withTotalInvestmentPartnerVal || 0).replace(/[^0-9.-]/g, '')) || 0;
 
+    let totalAssetsForMarketValue = cleanNonInvestmentTotalMarketValue + cleanInvestmentTotalMarkettValue;
+    let totalAssetsForClientValue = cleanNonInvestmentTotalClientValue + cleanInvestmentClientValue;
+    let totalAssetsForPartnerValue = cleanNonInvestmentPartnerValue + cleanInvestmentPartnerValue;
 
+     let formattedGrandMarketTotalValue = totalAssetsForMarketValue.toLocaleString('en-US', { 
+        minimumFractionDigits: 2, 
+        maximumFractionDigits: 2 
+    });
+
+    let formattedGrandClientTotalValue = totalAssetsForClientValue.toLocaleString('en-US', { 
+        minimumFractionDigits: 2, 
+        maximumFractionDigits: 2 
+    });
+    
+    let formattedGrandPartnerTotalValue = totalAssetsForPartnerValue.toLocaleString('en-US', { 
+        minimumFractionDigits: 2, 
+        maximumFractionDigits: 2 
+    });
+
+    $('.total_asset_market_value').val(formattedGrandMarketTotalValue);
+    $('.total_asset_client').val(formattedGrandClientTotalValue);
+    $('.total_asset_partner').val(formattedGrandPartnerTotalValue);
+}
+
+function GrandTotalLiabilities(){
+    let cleanNonInvestmentTotalMarketValue = parseFloat(String(withTotalNonInvestmentLiabilieitsMarketVal  || '').replace(/[^0-9.-]/g, '')) || 0;
+    //  let cleanNonInvestmentTotalMarketValue = withTotalNonInvestmentClientVal;
+    let cleanNonInvestmentTotalClientValue = parseFloat(String(withTotalNonInvestmentLiabilitiesClientVal  || '').replace(/[^0-9.-]/g, '')) || 0;
+    let cleanNonInvestmentPartnerValue = parseFloat(String(withTotalNonInvestmentLiabilitiesPartnerVal  || '').replace(/[^0-9.-]/g, '')) || 0;
+    let cleanInvestmentTotalMarkettValue = parseFloat(String(withTotalInvestmentLiabilieitsMarketVal  || '' ).replace(/[^0-9.-]/g, '')) || 0;
+    // let cleanInvestmentTotalMarkettValue = withTotalInvestmentMarketVal;
+    let cleanInvestmentClientValue = parseFloat(String(withTotalInvestmentLiabilitiesClientVal  || '').replace(/[^0-9.-]/g, '')) || 0;
+    let cleanInvestmentPartnerValue = parseFloat(String(withTotalInvestmentLiabilitiesPartnerVal  || 0).replace(/[^0-9.-]/g, '')) || 0;
+
+    let totalAssetsForMarketValue = cleanNonInvestmentTotalMarketValue + cleanInvestmentTotalMarkettValue;
+    let totalAssetsForClientValue = cleanNonInvestmentTotalClientValue + cleanInvestmentClientValue;
+    let totalAssetsForPartnerValue = cleanNonInvestmentPartnerValue + cleanInvestmentPartnerValue;
+
+     let formattedGrandMarketTotalValue = totalAssetsForMarketValue.toLocaleString('en-US', { 
+        minimumFractionDigits: 2, 
+        maximumFractionDigits: 2 
+    });
+
+    let formattedGrandClientTotalValue = totalAssetsForClientValue.toLocaleString('en-US', { 
+        minimumFractionDigits: 2, 
+        maximumFractionDigits: 2 
+    });
+    
+    let formattedGrandPartnerTotalValue = totalAssetsForPartnerValue.toLocaleString('en-US', { 
+        minimumFractionDigits: 2, 
+        maximumFractionDigits: 2 
+    });
+
+    $('.total_liabilities_market_value').val(formattedGrandMarketTotalValue);
+    $('.total_liabilities_client').val(formattedGrandClientTotalValue);
+    $('.total_liabilities_partner').val(formattedGrandPartnerTotalValue);
+}
+
+function NetAssetsGrandTotal(){
+
+    let totalAssetMarketValue =  parseFloat($('.total_asset_market_value').val()?.replace(/,/g, '') || 0) ;
+    let totalAssetClient = parseFloat($('.total_asset_client').val()?.replace(/,/g, '') || 0);
+    let totalAssetPartner = parseFloat($('.total_asset_partner').val()?.replace(/,/g, '') || 0);
+
+    let totalLiabilititiesMarketValue = parseFloat($('.total_liabilities_market_value').val()?.replace(/,/g, '') || 0);
+    let totalLiabilititiesClientValue = parseFloat($('.total_liabilities_client').val()?.replace(/,/g, '') || 0);
+    let totalLiabilititiesPartnerValue = parseFloat($('.total_liabilities_partner').val()?.replace(/,/g, '') || 0);
+
+    let netAssetMarketValueTotal = totalAssetMarketValue - totalLiabilititiesMarketValue;
+    let netAssetClientValueTotal = totalAssetClient - totalLiabilititiesClientValue;
+    let netAssetPartnerValueTotal = totalAssetPartner - totalLiabilititiesPartnerValue;
+
+     let currencyFormatNetAssetMarketValue = netAssetMarketValueTotal.toLocaleString('en-US', { 
+        minimumFractionDigits: 2, 
+        maximumFractionDigits: 2 
+    });
+    
+    let currencyFormatNetAssetClientValue = netAssetClientValueTotal.toLocaleString('en-US', { 
+        minimumFractionDigits: 2, 
+        maximumFractionDigits: 2 
+    });
+
+    let currencyFormatNetAssetPartnerValue = netAssetPartnerValueTotal.toLocaleString('en-US', { 
+        minimumFractionDigits: 2, 
+        maximumFractionDigits: 2 
+    });
+
+    $('.net_assets_market_value').val(currencyFormatNetAssetMarketValue);
+    $('.net_assets_client').val(currencyFormatNetAssetClientValue);
+    $('.net_assets_partner').val(currencyFormatNetAssetPartnerValue);
+}

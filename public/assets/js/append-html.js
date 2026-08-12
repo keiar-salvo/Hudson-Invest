@@ -102,7 +102,7 @@ function Add_Non_Investment_HTML(){
 function Add_Other_Debt_HTML(){
    
 
-        var add_other_debt_html = ` <br/> <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
+        var add_other_debt_html = ` <br/> <div class="form-liabilities-non-investment grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
 
   <div>
     <label >Other Debt ${number} </label>
@@ -155,7 +155,7 @@ let creditNumber = 2;
 function Add_Credit_Card_HTML(){
    
 
-        var add_credit_card = `<br/> <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
+        var add_credit_card = `<br/> <div class="form-row-credit-card-liabilities grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
 <div>
        <label >Credit Card ${creditNumber} <i style="font-weight:normal;font-size:12px;">(If paid in full leave blank)</i></label></label>
     <select  id="credit_card" name="creditcard[${creditIdx}][credit_card]" class="credit_card block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
@@ -204,7 +204,7 @@ function Add_Credit_Card_HTML(){
 let mortgageIdx = 1;
 let mortgageNumber = 2;
 function Add_Mortgage_Investment_Property(){
-  var add_mortgage = `<br/><div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
+  var add_mortgage = `<br/><div class="form-row-mortgage-investment grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
 
 <div>
  

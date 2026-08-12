@@ -1219,7 +1219,7 @@
 
   </div>
   <br/>
-  <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
+  <div class="form-liabilities-non-investment liabilities-non-investment grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6" >
 
   <div>
     <label >Other Debt 1</label>
@@ -1268,7 +1268,7 @@
 
  
   <br/>
-  <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
+  <div class="form-row-credit-card-liabilities credit-card-liabilities grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
 <div>
        <label >Credit Card 1 <i style="font-weight:normal;font-size:12px;">(If paid in full leave blank)</i></label></label>
     <select  id="credit_card" name="creditcard[0][credit_card]" class="credit_card block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
@@ -1341,9 +1341,9 @@
        <label >Margin/Investment Loans</label>
     <select  id="margin_investment_loans" name="margin_investment_loans" class="margin_investment_loans block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
     <option selected disabled>Select</option>
-    <option value="client">Client</option>
-    <option value="partner">Partner</option>
-    <option value="joint">Joint</option>
+    <option value="Client">Client</option>
+    <option value="Partner">Partner</option>
+    <option value="Joint">Joint</option>
     <option value="Other">Other</option>
   </select>
   </div>
@@ -1414,7 +1414,7 @@
 
   </div>
   <br/>
-  <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
+  <div class="form-row-mortgage-investment div-mortgage grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
 
 <div>
  
@@ -1466,7 +1466,7 @@
 
 <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
 <div>
-   <label style=" color: #bd0c1d">Total Liabilities</label>
+   <label style=" color: #bd0c1d">Total Invested Related Liabilities</label>
    <label>Market Value</label>
 <input type="text"  class="mt-1 form-input total_related_liabilities_market_value" name="total_related_liabilities_market_value"  placeholder="0.00">
   </div>
@@ -1479,6 +1479,25 @@
   <div style="padding-top: 26px;">
     <label>Partner</label>
     <input type="text"  class="mt-1 form-input total_related_liabilities_partner" name="total_related_liabilities_partner" placeholder="0.00">
+  </div>
+
+</div>
+<br/>
+<div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
+<div>
+   <label style=" color: #bd0c1d">Total Liabilities</label>
+   <label>Market Value</label>
+<input type="text"  class="mt-1 form-input total_liabilities_market_value" name="total_related_liabilities_market_value"  placeholder="0.00">
+  </div>
+  
+  <div style="padding-top: 26px;">
+  
+   <label>Client</label>
+    <input type="text"  class="mt-1 form-input total_liabilities_client" name="total_related_liabilities_client"  placeholder="0.00">
+  </div>
+  <div style="padding-top: 26px;">
+    <label>Partner</label>
+    <input type="text"  class="mt-1 form-input total_liabilities_partner" name="total_related_liabilities_partner" placeholder="0.00">
   </div>
 
 </div>
