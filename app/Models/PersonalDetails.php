@@ -432,6 +432,18 @@ class PersonalDetails extends Model
                     $personal_debt_rates->date_encoded = Carbon::now()->toDateString();
                     $personal_debt_rates->save();
                 }
+
+                if($request->input('total_liabilities_market_value') !== null || $request->input('total_liabilities_client') !== null || $request->input('total_liabilities_client') !== null){
+                    $totalLibilities = new TotalLiabilities;
+                    $totalLibilities->details_id = $request->input('details_id');
+                    $totalLibilities->total_liabilities_market_value = $request->input('total_liabilities_market_value');
+                    $totalLibilities->total_liabilities_client = $request->input('total_liabilities_client');
+                    $totalLibilities->total_liabilities_partner = $request->input('total_liabilities_partner');
+                    $totalLibilities->encoded_by = $request->input('encoded_by');
+                    $totalLibilities->date_encoded = Carbon::now()->toDateString();
+                    $totalLibilities->save();
+                }
+                
       
                 if($request->input('investment_debt_rates') !== null || $request->input('investment_debt_rates_business_loans') !== null || $request->input('investment_debt_rates_business_loans') !== null || 
                 $request->input('mortgage_existing_investment_properties') !== null || $request->input('mortgage_new_investment_properties') !== null){
@@ -445,6 +457,8 @@ class PersonalDetails extends Model
                     $investment_debt_rates->date_encoded = Carbon::now()->toDateString();
                     $investment_debt_rates->save();
                 }
+
+
                
 
 
@@ -513,6 +527,7 @@ class PersonalDetails extends Model
             $getPersonalOtherDebts = Personal_Debt_Rate_Other_Debt::where('details_id',$id)->get();
             $getPersonalCreditCards = Personal_Debt_Rate_Credit_Card::where('details_id',$id)->get();
             $getInvestmentDebtRates = Investment_Debt_Rates::where('details_id',$id)->first();
+            $getTotalLiabilities = TotalLiabilities::where('details_id',$id)->first();
             $result = [];
                 if(is_null($getPersonalDetails ) && is_null($getFinancialDetails))
                     {
@@ -539,7 +554,8 @@ class PersonalDetails extends Model
                             "PersonalOtherDebts" => $getPersonalOtherDebts,
                             "PersonalDebtRates" => $getPersonalDebts,
                             "PersonalCreditCards" => $getPersonalCreditCards,
-                            "InvestmentDebtRates" => $getInvestmentDebtRates
+                            "InvestmentDebtRates" => $getInvestmentDebtRates,
+                            "TotalLiabilitites",$getTotalLiabilities
                      ];
                         return response()->json($result);
                     }
@@ -924,6 +940,14 @@ class PersonalDetails extends Model
                 'net_assets_market_value' => $request->input('net_assets_market_value'),
                 'net_assets_client' => $request->input('net_assets_client'),
                 'net_assets_partner' => $request->input('net_assets_partner'),
+              
+              
+                ]);
+
+                $updateTotalLiabilities = TotalLiabilities::where('details_id',$id)->update([
+                'total_liabilities_market_value' => $request->input('total_liabilities_market_value'),
+                'total_liabilities_client' => $request->input('total_liabilities_client'),
+                'total_liabilities_partner' => $request->input('total_liabilities_partner'),
               
               
                 ]);

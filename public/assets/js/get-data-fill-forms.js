@@ -75,6 +75,12 @@ function Fill_Income(response){
 
 }
 
+function FillTotalLiabilites(response){
+  $('.total_liabilities_market_value').val(response['TotalLiabilitites']['total_liabilities_market_value']); 
+  $('.total_liabilities_client').val(response['TotalLiabilitites']['total_liabilities_client']); 
+  $('.total_liabilities_partner').val(response['TotalLiabilitites']['total_liabilities_partner']); 
+}
+
 function FillSuperannuation(response){
   $('.gross_salary').val(response['SuperannuationDetails']['gross_salary']);
   $('.sg_rate').val(response['SuperannuationDetails']['sg_rate']);

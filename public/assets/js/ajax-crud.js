@@ -217,6 +217,7 @@ $.ajax({
     FillPaygEstimation(response);
     FillInvestmentRelatedLiabilities(response);
     FillInvestmentDebtRates(response);
+    FillTotalLiabilites(response);
 
     $('.add-investment-property').css('display','none');                 
     $('.btn-details').css('display','none');
