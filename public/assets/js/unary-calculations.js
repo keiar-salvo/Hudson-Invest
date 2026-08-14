@@ -27,6 +27,7 @@
             $('.partner_gross_salary').val(formattedPartner);
 
             supperAnnutationCalcs('.gross_salary','.sg_rate','.annual_contribution','.quarterly_contribution');
+          
       
         } else {
             $(clientAnnualSelector).val('');
@@ -1082,4 +1083,30 @@ function NetAssetsGrandTotal(){
     $('.net_assets_market_value').val(currencyFormatNetAssetMarketValue);
     $('.net_assets_client').val(currencyFormatNetAssetClientValue);
     $('.net_assets_partner').val(currencyFormatNetAssetPartnerValue);
+}
+
+function calculatePayGEstimation(salary,estimation){
+
+let salaryClientAnnual = parseFloat($(salary).val()?.replace(/,/g, '')) || 0; 
+let result = 0;
+
+if (salaryClientAnnual < 18200) {
+    result = 0;
+} else if (salaryClientAnnual < 37000) {
+    result = (salaryClientAnnual - 18200) * 0.19;
+} else if (salaryClientAnnual < 90000) {
+  
+    result = 3572 + (90000 - 37200) * 0.325; 
+} else if (salaryClientAnnual < 180000) {
+    result = (salaryClientAnnual - 90000) * 0.37 + 20797;
+} else {
+    result = 54097 + (salaryClientAnnual - 180000) * 0.45;
+}
+
+  let currencyFormatPayGClient = result.toLocaleString('en-US', { 
+        minimumFractionDigits: 2, 
+        maximumFractionDigits: 2 
+    });
+$(estimation).val(currencyFormatPayGClient);
+
 }

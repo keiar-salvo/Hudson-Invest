@@ -124,6 +124,7 @@ $('.target_age').on('keyup', function (e) {
     console.log(target_age);
     var years_to_target_age = parseInt(target_age) - parseInt(age_average);
     $('.years_to_target_age').val(Math.round(years_to_target_age) );
+    $('.personal_debt_rate_car_loans_years').val(Math.round(years_to_target_age));
 
 
 
@@ -287,6 +288,8 @@ $('.salary_client, .salary_partner,.bonus_client, .bonus_partner,.interest_incom
     
     $('.salary_client, .salary_partner, #salary_frequency').on('keyup input change', function() {
         calculateAnnualIncome('.salary_client', '.salary_partner', '#salary_frequency', '.salary_client_annual', '.salary_partner_annual');
+        calculatePayGEstimation('.salary_client_annual','.payg_estimation_client');
+        calculatePayGEstimation('.salary_partner_annual','.payg_estimation_partner');
     });
 
     $('.bonus_client, .bonus_partner, #bonus_frequency').on('keyup input change', function() {

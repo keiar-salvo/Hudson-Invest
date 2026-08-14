@@ -1614,7 +1614,7 @@
                         <label>Years</label>
                         <input type="text" class="mt-1 form-input personal_debt_rate_other_debt_years" name="personalDebtRateOtherDebt[0][personal_debt_rate_other_debt_years]">
                     </div>
-                    <div class="col-span-1 md:col-span-3">
+                    <div class="col-span-1 md:col-span-3" style="display:none;">
                         <label>ID</label>
                         <input type="text" class="mt-1 form-input debt_rates_other_id" name="personalDebtRateOtherDebt[${personalOtherDebtsIdx}][debt_rates_other_id]">
                     </div>
@@ -1653,7 +1653,7 @@
                         <input type="text" class="mt-1 form-input personal_debt_rate_credit_card_years" name="personalDebtRatesCreditCard[0][personal_debt_rate_credit_card_years]">
                     </div>
 
-                       <div class="col-span-1 md:col-span-3">
+                       <div class="col-span-1 md:col-span-3" style="display:none;">
                         <label>ID</label>
                         <input type="text" class="mt-1 form-input debt_rates_credit_card_id" name="personalDebtRatesCreditCard[0][debt_rates_credit_card_id]">
                     </div>
