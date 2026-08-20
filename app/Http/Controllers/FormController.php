@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\PersonalDetails;
+use App\Models\Assumptions;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 use Hash;
@@ -16,9 +17,16 @@ class FormController extends Controller
         $this->middleware('auth');
     }
 
-        public function personaldetails()
+    public function personaldetails(Request $request)
     {
-        return view('forms.personaldetails');
+        $collection = Assumptions::get();
+        if ($request->ajax()) {
+        return response()->json($collection);}
+
+        return view('forms.personaldetails', [
+       'proc' => $collection
+    ]);
+        // return view('forms.personaldetails');
     }
 
     public function storePersonalDetails(Request $request)

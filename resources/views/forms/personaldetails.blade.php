@@ -1717,11 +1717,9 @@
 
                 </div>
                 <br />
-
-
-
-
             </fieldset>
+
+                
 </form>
 <br/>
 <button type="submit" class="btn btn-primary btn-details" style="position:relative; bottom:20px;right:20px;float:right;">

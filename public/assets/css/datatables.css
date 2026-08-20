@@ -587,7 +587,7 @@ table.dataTable.display tbody tr:hover.selected > .sorting_2, table.dataTable.or
   box-shadow: inset 0 0 0 9999px rgba(var(--dt-row-selected), calc(var(--dt-row-selected-stripe-alpha) + var(--dt-column-ordering-alpha) + var(--dt-row-hover-alpha) - 0.007));
 }
 table.dataTable.display tbody tr:hover.selected > .sorting_3, table.dataTable.order-column.hover tbody tr:hover.selected > .sorting_3 {
-  box-shadow: inset 0 0 0 9999px rgba(13, 110, 253, 0.962);
+  /* box-shadow: inset 0 0 0 9999px rgba(13, 110, 253, 0.962); */
   box-shadow: inset 0 0 0 9999px rgba(var(--dt-row-selected), calc(var(--dt-row-selected-stripe-alpha) + var(--dt-column-ordering-alpha) + var(--dt-row-hover-alpha) - 0.015));
 }
 table.dataTable.compact thead th,

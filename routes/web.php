@@ -53,6 +53,16 @@ Route::group(['namespace' => 'App\Http\Controllers'],function()
         Route::controller(FinancialIndependenceController::class)->group(function () {
              Route::get('financialindependence', 'financialindependence')->name('financialindependence');
        });
+         Route::controller(AssumptionsController::class)->group(function () {
+            Route::get('assumptionrates', 'assumptionrates')->name('assumptionrates');
+            Route::post('assumptionrates','storeAssumptionsDetails')->name('assumptionrates'); 
+            Route::get('assumptionrates','assumptionsData')->name('assumptionrates'); 
+            Route::post('assumptionrates/{id}','updateRates')->name('assumptionrates');    
+       });
+
+        Route::controller(CurrentPositionController::class)->group(function () {
+             Route::get('currentposition', 'currentposition')->name('currentposition');
+       });
         Route::controller(IncomeController::class)->group(function () {
              Route::get('income', 'income')->name('income');
        });

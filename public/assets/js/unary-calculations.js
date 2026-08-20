@@ -68,14 +68,14 @@
        
         clientFields.forEach(function(selector) {
             let valString = $(selector).val() || '0';
-            let cleanNum = parseFloat(valString.replace(/,/g, '')) || 0;
+            let cleanNum = parseFloat(valString?.replace(/,/g, '')) || 0;
             total += cleanNum;
         });
 
   
          partnerFields.forEach(function(selector) {
             let partnervalString = $(selector).val() || '0';
-            let cleanVal = parseFloat(partnervalString.replace(/,/g, '')) || 0;
+            let cleanVal = parseFloat(partnervalString?.replace(/,/g, '')) || 0;
             totalGrandPartner += cleanVal;
         });
 
@@ -988,6 +988,7 @@ function GrandTotalAssets(){
     //  let cleanNonInvestmentTotalMarketValue = withTotalNonInvestmentClientVal;
     let cleanNonInvestmentTotalClientValue = parseFloat(String(withTotalNonInvestmentClientVal || '').replace(/[^0-9.-]/g, '')) || 0;
     let cleanNonInvestmentPartnerValue = parseFloat(String(withTotalNonInvestmentPartnerVal || '').replace(/[^0-9.-]/g, '')) || 0;
+   
     let cleanInvestmentTotalMarkettValue = parseFloat(String(withTotalInvestmentMarketVal || '' ).replace(/[^0-9.-]/g, '')) || 0;
     // let cleanInvestmentTotalMarkettValue = withTotalInvestmentMarketVal;
     let cleanInvestmentClientValue = parseFloat(String(withTotalInvestmentClientVal || '').replace(/[^0-9.-]/g, '')) || 0;
@@ -1110,3 +1111,6 @@ if (salaryClientAnnual < 18200) {
 $(estimation).val(currencyFormatPayGClient);
 
 }
+
+
+

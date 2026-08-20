@@ -130,6 +130,33 @@ class PersonalDetails extends Model
       
              }
 
+             if($request->input('total_income_client_annual') !== null && $request->input('total_income_partner_annual') !== null)
+                {
+                    $current_position = new CurrentPosition;
+                    $current_position->details_id   = $request->input('details_id');
+                    $current_position->gross_anual_income_client = $request->input('gross_anual_income_client');
+                    $current_position->gross_anual_income_partner = $request->input('gross_anual_income_partner');
+                    $current_position->total_houese_hold_income = $request->input('total_houese_hold_income');
+                    $current_position->your_home_value_of_your_home = $request->input('your_home_value_of_your_home');
+                    $current_position->your_home_mortgage = $request->input('your_home_mortgage');
+                    $current_position->equity_in_your_home = $request->input('equity_in_your_home');
+                    $current_position->investment_portfolio_long_term_savings = $request->input('investment_portfolio_long_term_savings');
+                    $current_position->investment_portfolio_superannuation_client_net_value = $request->input('investment_portfolio_superannuation_client_net_value');
+                     $current_position->investment_portfolio_superannuation_partner_net_value = $request->input('investment_portfolio_superannuation_partner_net_value');
+                    $current_position->investment_portfolio_shares_net_value = $request->input('investment_portfolio_shares_net_value');
+                    $current_position->investment_portfolio_business_net_value = $request->input('investment_portfolio_business_net_value');
+                    $current_position->investment_portfolio_existing_investment_property = $request->input('investment_portfolio_existing_investment_property');
+                    $current_position->investment_portfolio_mortgage = $request->input('investment_portfolio_mortgage');
+                    $current_position->investment_portfolio_total = $request->input('investment_portfolio_total');
+                    $current_position->investment_portfolio_net_position = $request->input('investment_portfolio_net_position');
+                    $current_position->investment_portfolio_repay_mortgage = $request->input('investment_portfolio_repay_mortgage');
+                    $current_position->investment_portfolio_current_net_financial_assets = $request->input('investment_portfolio_current_net_financial_assets');
+                    $current_position->projected_value_of_your_home = $request->input('projected_value_of_your_home');
+                    $current_position->encoded_by   = $request->input('encoded_by');
+                    $current_position->date_encoded = Carbon::now()->toDateString();
+                    $current_position->save();
+
+                }
 
              if($request->input('salary_frequency') !== null || $request->input('bonus_frequency') !== null || $request->input('interest_income_frequency') !== null || $request->input('rental_income_frequency') !== null || $request->input('dividend_income_frequency') !== null || $request->input('ss_income_frequency') !== null || $request->input('business_income_frequency') !== null || $request->input('other_income_frequency') !== null){
                 

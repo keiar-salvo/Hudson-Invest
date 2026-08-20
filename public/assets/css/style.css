@@ -10311,18 +10311,18 @@ div.dt-container .dt-paging .dt-paging-button.current, div.dt-container .dt-pagi
 }
 #search-table tbody tr:hover {
     cursor: pointer!important;
-    background-color: #00a0df!important;
-    color:whitesmoke!important;
+    background-color: #fff!important;
+    color:black!important;
 }
 
 #search-table tbody tr:hover {
     cursor: pointer!important;
-    background-color: #00a0df!important;
-    color:whitesmoke!important;
+    background-color: #fff!important;
+    color:black!important;
      font-weight: 600!important;
 }
 .client-selected{
-    background-color: #00a0df!important;
-    color:whitesmoke!important;
+    /* background-color: #00a0df!important; */
+    color:#fff!important;
     font-weight: 600!important;
 }
