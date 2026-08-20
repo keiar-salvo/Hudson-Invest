@@ -226,28 +226,52 @@ $.ajax({
           maximumFractionDigits: 2 
     });
 
-   let rate = parseFloat(annual_growth_rate_invest_assets) / 100; 
+    function calculateFV(finalrate, nper, pmt, pvalue, type = 0) {
+        if (finalrate === 0) return -(pvalue + pmt * nper);
+
+        let pvFactor = Math.pow(1 + finalrate, nper);
+        let pmtFactor = ((Math.pow(1 + finalrate, nper) - 1) / finalrate) * (1 + finalrate * type);
+    
+        return -(pvalue * pvFactor + pmt * pmtFactor);
+    }
+
+    let rate = parseFloat(annual_growth_rate_invest_assets) / 100; 
+    let periods = parseInt($('.years_to_target_age').val()) || 0;
+    let total_superanuation_annual =parseFloat($('.grand_total_annual').val()?.replace(/,/g, '')) || 0;
+    let total_superannuation = total_superannuation_client + total_superannuation_partner_partner;
+
+    let rawperiods = parseFloat($('.years_to_target_age').val()) || 0;
+    let finalrate = (rate) / 4;
+    let nper = rawperiods * 4;
+    let pmt =  -(total_superanuation_annual / 4);
+    let pvalue = -total_superannuation;
+    let type = 1;
+
+    let totalFutureValue = calculateFV(finalrate,nper,pmt,pvalue,type);
+
+    var grandTotalFutureValue = Math.round(totalFutureValue).toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    });
+    
+  console.log("FutureValue: " + grandTotalFutureValue);
+    
+
+    let pv = parseFloat(formatted_value_your_home?.replace(/,/g, '')) || 0;
+    let pValue = Math.abs(pv);
+
+    console.log("Rate: " + rate);       
+    console.log("Period: " + periods);   
+    console.log("PV: " + pValue);       
 
 
-let periods = parseInt($('.years_to_target_age').val()) || 0;
+    let futureValue = pValue * Math.pow((1 + rate), periods);
 
 
-let pv = parseFloat(formatted_value_your_home?.replace(/,/g, '')) || 0;
-let pValue = Math.abs(pv);
-
-// 3. Debugging logs (Check your browser console to make sure PV says 1100000!)
-console.log("Rate: " + rate);       // Should print: 0.045
-console.log("Period: " + periods);   // Should print: 22
-console.log("PV: " + pValue);       // Should print: 1100000
-
-
-let futureValue = pValue * Math.pow((1 + rate), periods);
-
-
-var formatted_futureValue = futureValue.toLocaleString('en-US', { 
+    var formatted_futureValue = futureValue.toLocaleString('en-US', { 
       minimumFractionDigits: 2, 
       maximumFractionDigits: 2 
-});
+    });
 
     var formData = new FormData($('.clientdetails').get(0))
 
@@ -272,7 +296,9 @@ var formatted_futureValue = futureValue.toLocaleString('en-US', {
     }));
 
     formData.append('investment_portfolio_current_net_financial_assets',formatted_cuurent_net_financial_assets);
-     formData.append('projected_value_of_your_home',formatted_futureValue);
+    formData.append('projected_value_of_your_home',formatted_futureValue);
+    formData.append('investment_portfolio_assets_superannuation',grandTotalFutureValue);
+     
 
     console.log(formData);
 

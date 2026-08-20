@@ -576,13 +576,13 @@
 <div>
    <label style=" color: #bd0c1d">Total Contributions</label>
    <label>Annual Contributions</label>
-<input type="text"  class="mt-1 form-input grand_total_annual"  placeholder="0.00" name="grand_total_client">
+<input type="text"  class="mt-1 form-input grand_total_annual"  placeholder="0.00" name="grand_total_annual">
   </div>
   
   <div style="padding-top: 26px;">
   
    <label>Quarterly Contributions</label>
-    <input type="text"  class="mt-1 form-input grand_total_quarterly"  placeholder="0.00" name="grand_total_partner">
+    <input type="text"  class="mt-1 form-input grand_total_quarterly"  placeholder="0.00" name="grand_total_quarterly">
   </div>
   </div>
     </fieldset>

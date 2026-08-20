@@ -152,6 +152,7 @@ class PersonalDetails extends Model
                     $current_position->investment_portfolio_repay_mortgage = $request->input('investment_portfolio_repay_mortgage');
                     $current_position->investment_portfolio_current_net_financial_assets = $request->input('investment_portfolio_current_net_financial_assets');
                     $current_position->projected_value_of_your_home = $request->input('projected_value_of_your_home');
+                    $current_position->investment_portfolio_assets_superannuation = $request->input('investment_portfolio_assets_superannuation');
                     $current_position->encoded_by   = $request->input('encoded_by');
                     $current_position->date_encoded = Carbon::now()->toDateString();
                     $current_position->save();
