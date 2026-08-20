@@ -99,8 +99,9 @@ $.ajax({
 
     // Get Total Value of Your Home
     var principle_residence_client = parseFloat($('.principle_client').val()?.replace(/[^0-9.-]/g, '')) || 0;
-    var principle_residence_partner = parseFloat($('.total_incoprinciple_partnerme_partner_annual').val()?.replace(/[^0-9.-]/g, '')) || 0;
+    var principle_residence_partner = parseFloat($('.principle_partner').val()?.replace(/[^0-9.-]/g, '')) || 0;
     var your_value_home = principle_residence_client + principle_residence_partner;
+    
     var formatted_value_your_home =  your_value_home.toLocaleString('en-US', { 
       minimumFractionDigits: 2, 
       maximumFractionDigits: 2 
@@ -225,18 +226,28 @@ $.ajax({
           maximumFractionDigits: 2 
     });
 
-    let rate = parseFloat(annual_growth_rate_invest_assets) / 100; 
-    let periods = parseInt($('.years_to_target_age').val()) || 0;
-    let pv = parseFloat(formatted_value_your_home?.replace(/,/g, '')) || 0;
-    let pValue = Math.abs(pv);
+   let rate = parseFloat(annual_growth_rate_invest_assets) / 100; 
 
 
-    let futureValue = pValue * Math.pow((1 + rate), periods);
+let periods = parseInt($('.years_to_target_age').val()) || 0;
 
-    var formatted_futureValue = futureValue.toLocaleString('en-US', { 
-          minimumFractionDigits: 2, 
-          maximumFractionDigits: 2 
-    });
+
+let pv = parseFloat(formatted_value_your_home?.replace(/,/g, '')) || 0;
+let pValue = Math.abs(pv);
+
+// 3. Debugging logs (Check your browser console to make sure PV says 1100000!)
+console.log("Rate: " + rate);       // Should print: 0.045
+console.log("Period: " + periods);   // Should print: 22
+console.log("PV: " + pValue);       // Should print: 1100000
+
+
+let futureValue = pValue * Math.pow((1 + rate), periods);
+
+
+var formatted_futureValue = futureValue.toLocaleString('en-US', { 
+      minimumFractionDigits: 2, 
+      maximumFractionDigits: 2 
+});
 
     var formData = new FormData($('.clientdetails').get(0))
 

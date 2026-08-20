@@ -123,7 +123,7 @@ $('.target_age').on('keyup', function (e) {
     var age_average = $('.age_average').val();
     console.log(target_age);
     var years_to_target_age = parseInt(target_age) - parseInt(age_average);
-    $('.years_to_target_age').val(Math.round(years_to_target_age) );
+    $('.years_to_target_age').val(Math.round(years_to_target_age) + 1 );
     $('.personal_debt_rate_car_loans_years').val(Math.round(years_to_target_age));
 
 

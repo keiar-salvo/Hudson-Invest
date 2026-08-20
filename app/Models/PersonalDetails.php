@@ -142,7 +142,7 @@ class PersonalDetails extends Model
                     $current_position->equity_in_your_home = $request->input('equity_in_your_home');
                     $current_position->investment_portfolio_long_term_savings = $request->input('investment_portfolio_long_term_savings');
                     $current_position->investment_portfolio_superannuation_client_net_value = $request->input('investment_portfolio_superannuation_client_net_value');
-                     $current_position->investment_portfolio_superannuation_partner_net_value = $request->input('investment_portfolio_superannuation_partner_net_value');
+                    $current_position->investment_portfolio_superannuation_partner_net_value = $request->input('investment_portfolio_superannuation_partner_net_value');
                     $current_position->investment_portfolio_shares_net_value = $request->input('investment_portfolio_shares_net_value');
                     $current_position->investment_portfolio_business_net_value = $request->input('investment_portfolio_business_net_value');
                     $current_position->investment_portfolio_existing_investment_property = $request->input('investment_portfolio_existing_investment_property');
