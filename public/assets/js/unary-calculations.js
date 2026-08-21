@@ -902,7 +902,7 @@ function calculateGrandTotalForInvestmentLiabilities(){
     let totalPartner = 0;
 
     let clientFields = [
-        '.long_term_client',
+        // '.long_term_client',
         '.superannuation_client_client',
         '.superannuation_partner_client',
         '.shares_fund_client',
@@ -910,7 +910,7 @@ function calculateGrandTotalForInvestmentLiabilities(){
     ];
 
     let partnerFields = [
-        '.long_term_partner',
+        // '.long_term_partner',
         '.superannuation_client_partner',
         '.superannuation_partner_partner',
         '.shares_fund_partner',
@@ -918,7 +918,7 @@ function calculateGrandTotalForInvestmentLiabilities(){
     ];
     
     let marketValueFields = [
-        '.long_term_market_value',
+        // '.long_term_market_value',
         '.superannuation_client_market_value',
         '.superannuation_partner_market_value',
         '.shares_fund_market_value',

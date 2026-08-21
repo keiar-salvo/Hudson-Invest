@@ -235,6 +235,8 @@ $.ajax({
         return -(pvalue * pvFactor + pmt * pmtFactor);
     }
 
+
+
     let rate = parseFloat(annual_growth_rate_invest_assets) / 100; 
     let periods = parseInt($('.years_to_target_age').val()) || 0;
     let total_superanuation_annual =parseFloat($('.grand_total_annual').val()?.replace(/,/g, '')) || 0;
@@ -242,33 +244,52 @@ $.ajax({
 
     let rawperiods = parseFloat($('.years_to_target_age').val()) || 0;
     let finalrate = (rate) / 4;
+
     let nper = rawperiods * 4;
     let pmt =  -(total_superanuation_annual / 4);
     let pvalue = -total_superannuation;
     let type = 1;
 
-    let totalFutureValue = calculateFV(finalrate,nper,pmt,pvalue,type);
+    // Future Value for Shares
+    let total_shares =  parseFloat($('.shares_fund_market_value').val()?.replace(/,/g, '')) || 0;
+    let deduction = parseFloat($('.margin_investment_market_value').val()?.replace(/,/g, '')) || 0;
+    let postValue = -total_shares;
+    let shares_pmt = 0;
 
-    var grandTotalFutureValue = Math.round(totalFutureValue).toLocaleString('en-US', { 
+    let shares_calculated_future_value = calculateFV(rate,periods,shares_pmt,postValue,type);
+    console.log("Shares FV: " + shares_calculated_future_value);
+    console.log("Deduction: " + deduction);
+    let final_shares_value = shares_calculated_future_value - deduction;
+    let share_net_future_value = Math.round(final_shares_value).toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    });
+        // Future Value Long Term Savings
+    let long_term_raw_pv = parseFloat(formatted_investment_long_term_savings?.replace(/,/g, '')) || 0 
+    let long_term_pmt = 0;
+    let long_term_pv = -long_term_raw_pv;
+    let long_term_calculated_value = calculateFV(rate,periods,long_term_pmt,long_term_pv,type);
+
+    var long_term_total_future_value  = Math.round(long_term_calculated_value).toLocaleString('en-US', { 
           minimumFractionDigits: 2, 
           maximumFractionDigits: 2 
     });
     
-  console.log("FutureValue: " + grandTotalFutureValue);
+
+    // Future Value Superannuation
+    let totalFutureValue = calculateFV(finalrate,nper,pmt,pvalue,type);
+
+    var supper_annuation_futureValue = Math.round(totalFutureValue).toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    });
     
 
+    // Future Value of Value of your home
     let pv = parseFloat(formatted_value_your_home?.replace(/,/g, '')) || 0;
     let pValue = Math.abs(pv);
-
-    console.log("Rate: " + rate);       
-    console.log("Period: " + periods);   
-    console.log("PV: " + pValue);       
-
-
     let futureValue = pValue * Math.pow((1 + rate), periods);
-
-
-    var formatted_futureValue = futureValue.toLocaleString('en-US', { 
+    var value_of_your_home_futureValue = futureValue.toLocaleString('en-US', { 
       minimumFractionDigits: 2, 
       maximumFractionDigits: 2 
     });
@@ -282,6 +303,8 @@ $.ajax({
     formData.append('your_home_value_of_your_home',formatted_value_your_home);
     formData.append('your_home_mortgage',your_home_mortgage);
     formData.append('equity_in_your_home',formatted_equity_in_your_home);
+    formData.append('investment_portfolio_long_term_savings',formatted_investment_long_term_savings);
+    
     formData.append('investment_portfolio_superannuation_client_net_value',$('.superannuation_client_client').val());
     formData.append('investment_portfolio_superannuation_partner_net_value',$('.superannuation_partner_partner').val());
     formData.append('investment_portfolio_shares_net_value',formatted_investment_portfolio_shares_net_value);
@@ -296,8 +319,14 @@ $.ajax({
     }));
 
     formData.append('investment_portfolio_current_net_financial_assets',formatted_cuurent_net_financial_assets);
-    formData.append('projected_value_of_your_home',formatted_futureValue);
-    formData.append('investment_portfolio_assets_superannuation',grandTotalFutureValue);
+    formData.append('projected_value_of_your_home',value_of_your_home_futureValue);
+    formData.append('investment_portfolio_assets_superannuation',supper_annuation_futureValue);
+    formData.append('investment_portfolio_assets_long_term_savings',long_term_total_future_value);
+    formData.append('investment_portfolio_assets_shares',share_net_future_value);
+
+    
+
+    
      
 
     console.log(formData);
