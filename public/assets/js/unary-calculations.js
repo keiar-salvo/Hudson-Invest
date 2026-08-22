@@ -1262,9 +1262,6 @@ function currentPosition(formData,annual_growth_rate_invest_assets){
     });
 
 
-
-
-
     let rate = parseFloat(annual_growth_rate_invest_assets) / 100; 
     let periods = parseInt($('.years_to_target_age').val()) || 0;
     let total_superanuation_annual =parseFloat($('.grand_total_annual').val()?.replace(/,/g, '')) || 0;
@@ -1279,7 +1276,7 @@ function currentPosition(formData,annual_growth_rate_invest_assets){
     let type = 1;
 
 
-        // Future Value Long Term Savings
+    // Future Value Long Term Savings
     let long_term_raw_pv = parseFloat(formatted_investment_long_term_savings?.replace(/,/g, '')) || 0 
     let long_term_pmt = 0;
     let long_term_pv = -long_term_raw_pv;
