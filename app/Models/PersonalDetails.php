@@ -577,7 +577,7 @@ class PersonalDetails extends Model
                             "SuperannuationDetails" => $getSuperannuation,
                             "OtherPersonalAssets" => $otherPersonalAssets,
                             "NonInvestmentAssets" => $getNonInvestAssets,
-                            "InvestmentAssets"    => $getInvestmentAssets,
+                            "InvestmentAssets" => $getInvestmentAssets,
                             "LiabilitiesNonInvestment" => $getLiabilitiesNonInvesment,
                             "OtherDebts" => $otherDebts,
                             "CreditCards" => $creditCard,
@@ -589,7 +589,7 @@ class PersonalDetails extends Model
                             "PersonalDebtRates" => $getPersonalDebts,
                             "PersonalCreditCards" => $getPersonalCreditCards,
                             "InvestmentDebtRates" => $getInvestmentDebtRates,
-                            "TotalLiabilitites",$getTotalLiabilities
+                            "TotalLiabilitites" => $getTotalLiabilities
                      ];
                         return response()->json($result);
                     }

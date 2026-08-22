@@ -59,18 +59,15 @@
                 "searching": true,
                 "dom": 'frtip',
                 "order":['asc'],
-         
-        
-        
-                 language: {
-        searchPlaceholder: "Search Name",
-        search: "",
-},
-"columnDefs": [
-        {
-            "targets": [0], // Targets the second column
-            "visible": false, // Hides the column
-            "searchable": true // Optional: allows the hidden column data to still be searchable
+                language: {
+                searchPlaceholder: "Search Name",
+                search: "",
+                        },
+                "columnDefs": [
+                        {
+                  "targets": [0], 
+                  "visible": false, 
+                  "searchable": true 
         }
     ]
   
@@ -79,41 +76,56 @@
 
 
  $.ajax({
-                    url: appURL + "/clientlist" ,
-                    type: "GET",
-                    dataType: "json",
-                    success: function(response) {
+      url: appURL + "/clientlist" ,
+      type: "GET",
+      dataType: "json",
+      success: function(response) {
                       
-                      console.log(response);
-                 $.each(response, function(index, element) {
-                    var formatDate = new Date(element.date_encoded);
-                    var convertedDate =  formatDate.toLocaleDateString('en-GB');
+        console.log(response);
+        $.each(response, function(index, element) { 
+        var formatDate = new Date(element.date_encoded); 
+        var convertedDate = formatDate.toLocaleDateString('en-GB'); 
+        var uniqueId = "dropdown-trigger-" + element.details_id;
 
-                     table.row.add([element.details_id,element.name,element.email,element.phone_mobile,convertedDate,'<div class="dropdown-container">'+
+        table.row.add([
+            element.details_id,
+            element.name,
+            element.email,
+            element.phone_mobile,
+            convertedDate,
+            '<div class="dropdown-container">'+ 
+         
+            '<input type="checkbox" id="' + uniqueId + '" class="dropdown-toggle-input">'+ 
+            '<label for="' + uniqueId + '" class="dropdown-button">View</label>'+ 
+            '<ul class="dropdown-menu">'+ 
+            '<li><a href="/details?id='+ element.details_id + '" target="_blank">Personal Details</a></li>'+ 
+            '<li><a href="/currentposition?id='+ element.details_id + '" target="_blank">Current Position</a></li>'+ 
+            '<li><a href="/details?id='+ element.details_id +'">Financial Independence</a></li>'+ 
+            '<li><a href="/details?id='+ element.details_id +'">Initital Client Graph</a></li>'+ 
+            '<li><a href="/details?id='+ element.details_id +'">Client New IP Graph</a></li>'+ 
+            '<li><a href="/details?id='+ element.details_id +'">Client Po with IP Graph</a></li>'+ 
+            '</ul></div>' 
+        ]).draw(false); 
+    });        
+          },
+        error: function(error) {
+            console.error("AJAX Error: " + error);
+            }
+          });
 
-    '<input type="checkbox" id="dropdown-trigger" class="dropdown-toggle-input">'+
-    '<label for="dropdown-trigger" class="dropdown-button">View</label>'+
-    '<ul class="dropdown-menu">'+
-    '<li><a href="/details?id='+ element.details_id + '" target="_blank">Personal Details</a></li>'+
-      '<li><a href="/currentposition?id='+ element.details_id + '" target="_blank">Current Position</a></li>'+
-      '<li><a href="/details?id='+ element.details_id +'">Financial Independence</a></li>'+
-      '<li><a href="/details?id='+ element.details_id +'">Initital Client Graph</a></li>'+
-      '<li><a href="/details?id='+ element.details_id +'">Client New IP Graph</a></li>'+
-      '<li><a href="/details?id='+ element.details_id +'">Client Po with IP Graph</a></li>'+
-    '</ul></div>'
- ]).draw(false);
 
-                
-                });
-                      
-                      
-                    
-                      
-                    },
-                    error: function(error) {
-                        console.error("AJAX Error: " + error);
-                    }
-                });
+$(document).on('click', function(event) {
+    var $clickedElement = $(event.target);
+    if (!$clickedElement.closest('.dropdown-container').length) {
+        $('.dropdown-toggle-input').prop('checked', false);
+        return;
+    }
+
+    if ($clickedElement.hasClass('dropdown-button')) {
+        var currentCheckboxId = $clickedElement.attr('for');
+        $('.dropdown-toggle-input').not('#' + currentCheckboxId).prop('checked', false);
+    }
+});
 
    $('#dt-search-0').keyup(function(){
         if($(this).val() == "")

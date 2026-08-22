@@ -1487,17 +1487,17 @@
 <div>
    <label style=" color: #bd0c1d">Total Liabilities</label>
    <label>Market Value</label>
-<input type="text"  class="mt-1 form-input total_liabilities_market_value" name="total_related_liabilities_market_value"  placeholder="0.00">
+<input type="text"  class="mt-1 form-input total_liabilities_market_value" name="total_liabilities_market_value"  placeholder="0.00">
   </div>
   
   <div style="padding-top: 26px;">
   
    <label>Client</label>
-    <input type="text"  class="mt-1 form-input total_liabilities_client" name="total_related_liabilities_client"  placeholder="0.00">
+    <input type="text"  class="mt-1 form-input total_liabilities_client" name="total_liabilities_client"  placeholder="0.00">
   </div>
   <div style="padding-top: 26px;">
     <label>Partner</label>
-    <input type="text"  class="mt-1 form-input total_liabilities_partner" name="total_related_liabilities_partner" placeholder="0.00">
+    <input type="text"  class="mt-1 form-input total_liabilities_partner" name="total_liabilities_partner" placeholder="0.00">
   </div>
 
 </div>

@@ -1112,5 +1112,286 @@ $(estimation).val(currencyFormatPayGClient);
 
 }
 
+function calculateFV(finalrate, nper, pmt, pvalue, type = 0) {
+        if (finalrate === 0) return -(pvalue + pmt * nper);
+
+        let pvFactor = Math.pow(1 + finalrate, nper);
+        let pmtFactor = ((Math.pow(1 + finalrate, nper) - 1) / finalrate) * (1 + finalrate * type);
+    
+        return -(pvalue * pvFactor + pmt * pmtFactor);
+}
+
+function currentPosition(formData,annual_growth_rate_invest_assets){
+    
+    // Get Total House Hold Income
+    var gross_annual_income_client = parseFloat($('.total_income_client_annual').val()?.replace(/[^0-9.-]/g, '')) || 0;
+    var gross_annual_income_partner = parseFloat($('.total_income_partner_annual').val()?.replace(/[^0-9.-]/g, '')) || 0;
+    var total_household_income = gross_annual_income_client + gross_annual_income_partner;
+    var formatted_household_income = total_household_income.toLocaleString('en-US', { 
+      minimumFractionDigits: 2, 
+      maximumFractionDigits: 2 
+    });
+
+    // Get Total Value of Your Home
+    var principle_residence_client = parseFloat($('.principle_client').val()?.replace(/[^0-9.-]/g, '')) || 0;
+    var principle_residence_partner = parseFloat($('.principle_partner').val()?.replace(/[^0-9.-]/g, '')) || 0;
+    var your_value_home = principle_residence_client + principle_residence_partner;
+    
+    var formatted_value_your_home =  your_value_home.toLocaleString('en-US', { 
+      minimumFractionDigits: 2, 
+      maximumFractionDigits: 2 
+    });
+
+    // Get Total Your Home Mortgage
+    var your_home_mortgage = $('.mortgage_market_value').val().toLocaleString('en-US', { 
+      minimumFractionDigits: 2, 
+      maximumFractionDigits: 2 
+    });
+
+    // Get Total Equity in Your Home
+    var cleanMortgage = your_home_mortgage?.replace(/[^0-9.-]/g, '') || 0;
+    var equity = your_value_home  - cleanMortgage;
+    var formatted_equity_in_your_home = equity.toLocaleString('en-US', { 
+      minimumFractionDigits: 2, 
+      maximumFractionDigits: 2 
+    });
+
+    // Get Total Investment Portfolio Long Term Savings
+    var long_term_savings_client = parseFloat($('.long_term_client').val()?.replace(/[^0-9.-]/g, '')) || 0;
+    var long_term_savings_partner = parseFloat($('.long_term_partner').val()?.replace(/[^0-9.-]/g, '')) || 0;
+    var investment_portfolio_long_term_savings = long_term_savings_client + long_term_savings_partner;
+    var formatted_investment_long_term_savings = investment_portfolio_long_term_savings.toLocaleString('en-US', { 
+      minimumFractionDigits: 2, 
+      maximumFractionDigits: 2 
+    });
+
+    // Get Total Shares / Managed Funds Net Value
+    var share_fund_client = parseFloat($('.shares_fund_client').val()?.replace(/[^0-9.-]/g, '')) || 0;
+    var share_fund_partner = parseFloat($('.shares_fund_partner').val()?.replace(/[^0-9.-]/g, '')) || 0;
+    var margin_investment_client  = parseFloat($('.margin_investment_client').val()?.replace(/[^0-9.-]/g, '')) || 0;
+    var margin_investment_partner  = parseFloat($('.margin_investment_partner').val()?.replace(/[^0-9.-]/g, '')) || 0;
+    var investment_portfolio_shares_net_value  = share_fund_client + share_fund_partner - margin_investment_client - margin_investment_partner;
+    var formatted_investment_portfolio_shares_net_value =  investment_portfolio_shares_net_value.toLocaleString('en-US', { 
+      minimumFractionDigits: 2, 
+      maximumFractionDigits: 2 
+    });
+
+    // Get Total Business Net Value
+    var business_client  = parseFloat($('.business_client ').val()?.replace(/[^0-9.-]/g, '')) || 0;
+    var business_partner  = parseFloat($('.business_partner ').val()?.replace(/[^0-9.-]/g, '')) || 0;
+    var business_loans_client   = parseFloat($('.business_loans_client ').val()?.replace(/[^0-9.-]/g, '')) || 0;
+    var business_loans_partner  = parseFloat($('.business_loans_partner').val()?.replace(/[^0-9.-]/g, '')) || 0;
+    var investment_portfolio_business_net_value  = business_client + business_partner - business_loans_client - business_loans_partner;
+    var formatted_investment_portfolio_business_net_value =  investment_portfolio_business_net_value.toLocaleString('en-US', { 
+      minimumFractionDigits: 2, 
+      maximumFractionDigits: 2 
+    });
+
+    // Get Total Existing Investment Property Portfolio
+    var total_investment_portfolio = 0;
+    var formatted_investment_portfolio_existing_investment_property = 0;
+
+    $('.form-row-investment').each(function() {
+        let row = $(this);
+        
+    
+        // let marketVal = parseFloat(row.find('.market_value').val()?.replace(/,/g, '')) || 0;
+        let clientVal = parseFloat(row.find('.client').val()?.replace(/,/g, '')) || 0;
+        let partnerVal = parseFloat(row.find('.partner').val()?.replace(/,/g, '')) || 0;
+
+   
+        total_investment_portfolio += clientVal + partnerVal
+        formatted_investment_portfolio_existing_investment_property = total_investment_portfolio.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    });
+        
+    });
+
+    // Get Total Porfolio Mortgage
+    var total_investment_portfolio_mortgage = 0;
+    var formatted_investment_portfolio_mortgage = 0;
+      $('.form-row-mortgage-investment').each(function() {
+        let row = $(this);
+        
+        let mortgageMarketVal = parseFloat(row.find('.mortgage_investment_market_value').val()?.replace(/,/g, '')) || 0;
+        let mortgageClientVal = parseFloat(row.find('.mortgage_investment_client').val()?.replace(/,/g, '')) || 0;
+        let mortgagePartnerVal = parseFloat(row.find('.mortgage_investment_partner').val()?.replace(/,/g, '')) || 0;
+
+      
+        total_investment_portfolio_mortgage += mortgageClientVal + mortgagePartnerVal;
+        
+      
+    });
+    
+      formatted_investment_portfolio_mortgage = total_investment_portfolio_mortgage.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+
+ 
+    });
+
+    // Get Total Investment Portfolio Total
+    var total_long_term_savings = parseFloat(formatted_investment_long_term_savings?.replace(/,/g, '')) || 0; 
+    var total_superannuation_client = parseFloat($('.superannuation_client_client').val()?.replace(/,/g, '')) || 0; 
+    var total_superannuation_partner_partner = parseFloat($('.superannuation_partner_partner').val()?.replace(/,/g, '')) || 0; 
+    var total_shares_net_value = parseFloat(formatted_investment_portfolio_shares_net_value?.replace(/,/g, '')) || 0; 
+    var total_business_net_value = parseFloat(formatted_investment_portfolio_business_net_value?.replace(/,/g, '')) || 0; 
+    var total_existing_invesment_property = parseFloat(formatted_investment_portfolio_existing_investment_property?.replace(/,/g, '')) || 0; 
+    var investment_portfolio_total = total_long_term_savings + total_superannuation_client + total_superannuation_partner_partner + total_shares_net_value + total_business_net_value + total_existing_invesment_property;
+
+    var formatted_investment_portfolio_total = investment_portfolio_total.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    });
+
+    // Get Total Investment Portfolio Net Position
+    var total_investment_porfolio_net_position = investment_portfolio_total + total_investment_portfolio_mortgage;
+    var formatted_investment_portfolio_net_position = total_investment_porfolio_net_position.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    });
+
+    // Get Total Current Net Financial Assets
+    var repay_mortgage  = parseFloat($('.mortgage_market_value').val()?.replace(/,/g, '')) || 0;
+    var total_investment_portfolio_net_position = total_investment_porfolio_net_position;
+    var cuurent_net_financial_assets =  total_investment_portfolio_net_position - repay_mortgage;
+    var formatted_cuurent_net_financial_assets = cuurent_net_financial_assets.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    });
+
+
+
+
+
+    let rate = parseFloat(annual_growth_rate_invest_assets) / 100; 
+    let periods = parseInt($('.years_to_target_age').val()) || 0;
+    let total_superanuation_annual =parseFloat($('.grand_total_annual').val()?.replace(/,/g, '')) || 0;
+    let total_superannuation = total_superannuation_client + total_superannuation_partner_partner;
+
+    let rawperiods = parseFloat($('.years_to_target_age').val()) || 0;
+    let finalrate = (rate) / 4;
+
+    let nper = rawperiods * 4;
+    let pmt =  -(total_superanuation_annual / 4);
+    let pvalue = -total_superannuation;
+    let type = 1;
+
+
+        // Future Value Long Term Savings
+    let long_term_raw_pv = parseFloat(formatted_investment_long_term_savings?.replace(/,/g, '')) || 0 
+    let long_term_pmt = 0;
+    let long_term_pv = -long_term_raw_pv;
+    let long_term_calculated_value = calculateFV(rate,periods,long_term_pmt,long_term_pv,type);
+
+    var long_term_total_future_value  = long_term_calculated_value.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    });
+    
+
+    // Future Value Superannuation
+    let totalFutureValue = calculateFV(finalrate,nper,pmt,pvalue,type);
+
+    var supper_annuation_futureValue = totalFutureValue.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    });
+    
+
+    // Future Value of Value of your home
+    let pv = parseFloat(formatted_value_your_home?.replace(/,/g, '')) || 0;
+    let pValue = Math.abs(pv);
+    let futureValue = pValue * Math.pow((1 + rate), periods);
+    var value_of_your_home_futureValue = futureValue.toLocaleString('en-US', { 
+      minimumFractionDigits: 2, 
+      maximumFractionDigits: 2 
+    });
+
+    // Future Value for Shares
+    let total_shares =  parseFloat($('.shares_fund_market_value').val()?.replace(/,/g, '')) || 0;
+    let deduction = parseFloat($('.margin_investment_market_value').val()?.replace(/,/g, '')) || 0;
+    let postValue = -total_shares;
+    let shares_pmt = 0;
+
+    let shares_calculated_future_value = calculateFV(rate,periods,shares_pmt,postValue,type);
+    console.log("Shares FV: " + shares_calculated_future_value);
+    console.log("Deduction: " + deduction);
+    let final_shares_value = shares_calculated_future_value - deduction;
+    let share_net_future_value = final_shares_value.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    });
+
+    // Future Value for Business
+    let clean_pv = parseFloat($('.business_market_value').val()?.replace(/,/g, '')) || 0;
+    let clean_business_loan_decution = parseFloat($('.business_loans_market_value').val()?.replace(/,/g, '')) || 0;
+    let raw_pv = -clean_pv;
+    let raw_pmt = 0;
+    let business_future_value = calculateFV(rate,periods,raw_pmt,raw_pv,type);
+    let deducted_future_value = business_future_value - clean_business_loan_decution;
+    var formatted_business_future_value = deducted_future_value.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    });
+
+    let clean_existing_investment_portfolio = parseFloat(formatted_investment_portfolio_existing_investment_property?.replace(/,/g, '')) || 0;
+    let existing_portfolio_pv = -clean_existing_investment_portfolio;
+    let total_existing_investment_porfolio_future_value = calculateFV(rate,periods,raw_pmt,existing_portfolio_pv,type);
+    let formatted_existing_investment_portfolio_future_value = total_existing_investment_porfolio_future_value.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    });
+   
+let superannuation_net_value_fv = parseFloat(supper_annuation_futureValue?.replace(/,/g, '')) || 0; 
+let long_term_savings_fv = parseFloat(long_term_total_future_value?.replace(/,/g, '')) || 0;  
+let share_net_fv = parseFloat(share_net_future_value?.replace(/,/g, '')) || 0;   
+let business_net_fv = parseFloat(formatted_business_future_value?.replace(/,/g, '')) || 0;    
+let existing_investment_fv =  parseFloat(formatted_existing_investment_portfolio_future_value?.replace(/,/g, '')) || 0;  
+let mortgage_static = parseFloat(formatted_investment_portfolio_mortgage?.replace(/,/g, '')) || 0; 
+
+let total_financial_assets = superannuation_net_value_fv + long_term_savings_fv + share_net_fv + business_net_fv + existing_investment_fv + mortgage_static;
+var grand_total_financial_assets =  total_financial_assets.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    });
+
+    formData.append('_method','POST');
+    formData.append('gross_anual_income_client',$('.total_income_client_annual').val());
+    formData.append('gross_anual_income_partner',$('.total_income_partner_annual').val());
+    formData.append('total_houese_hold_income',formatted_household_income);
+    formData.append('your_home_value_of_your_home',formatted_value_your_home);
+    formData.append('your_home_mortgage',your_home_mortgage);
+    formData.append('equity_in_your_home',formatted_equity_in_your_home);
+    formData.append('investment_portfolio_long_term_savings',formatted_investment_long_term_savings);
+    
+    formData.append('investment_portfolio_superannuation_client_net_value',$('.superannuation_client_client').val());
+    formData.append('investment_portfolio_superannuation_partner_net_value',$('.superannuation_partner_partner').val());
+    formData.append('investment_portfolio_shares_net_value',formatted_investment_portfolio_shares_net_value);
+    formData.append('investment_portfolio_business_net_value',formatted_investment_portfolio_business_net_value);
+    formData.append('investment_portfolio_existing_investment_property',formatted_investment_portfolio_existing_investment_property);
+    formData.append('investment_portfolio_mortgage',formatted_investment_portfolio_mortgage);
+    formData.append('investment_portfolio_total',formatted_investment_portfolio_total);
+    formData.append('investment_portfolio_net_position',formatted_investment_portfolio_net_position);
+    formData.append('investment_portfolio_repay_mortgage',$('.mortgage_market_value').val().toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }));
+
+    formData.append('investment_portfolio_current_net_financial_assets',formatted_cuurent_net_financial_assets);
+    formData.append('projected_value_of_your_home',value_of_your_home_futureValue);
+    formData.append('investment_portfolio_assets_superannuation',supper_annuation_futureValue);
+    formData.append('investment_portfolio_assets_long_term_savings',long_term_total_future_value);
+    formData.append('investment_portfolio_assets_shares',share_net_future_value);
+    formData.append('investment_portfolio_assets_business_net_value',formatted_business_future_value);
+    formData.append('investment_portfolio_assets_existing_investment_property',formatted_existing_investment_portfolio_future_value);
+    formData.append('investment_portfolio_assets_mortgage',formatted_investment_portfolio_mortgage);
+    formData.append('investment_portfolio_net_financial_assets',grand_total_financial_assets);
+
+    
+    
+
+}
 
 
