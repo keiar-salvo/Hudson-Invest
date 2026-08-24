@@ -229,7 +229,7 @@ $.ajax({
     filldataforms(response);
     
 
-    $('.add-investment-property').css('display','none');                 
+    // $('.add-investment-property').css('display','none');                 
     $('.btn-details').css('display','none');
     $('.btn-update-details').css('display','block');
     var  investment_asset = (response['InvestmentPropertyAssetDetails']).length;
@@ -338,6 +338,22 @@ $.ajax({
       });
 
       }
+    },
+    error: function(error) {
+    console.error("AJAX Error: " + error);
+    }
+    });
+        /************End Get Details******************************/
+
+        
+/************Get Current Position******************************/
+$.ajax({
+  url: appURL + "/currentposition/" + product,
+  type: "GET",
+  dataType: "json",
+  success: function(response) {   
+  console.log(response);
+  fillCurrentPosition(response);
     },
     error: function(error) {
     console.error("AJAX Error: " + error);

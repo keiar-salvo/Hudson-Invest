@@ -831,87 +831,122 @@ class PersonalDetails extends Model
                     $investment_debt_rates->save();
                 }
              
-            foreach ($request->input('row') as $value) {
-                if(isset($value['non_investment_owner']) && isset($value['client_percentage']) && isset($value['partner_percentage']) && isset($value['market_value']) && isset($value['client']) && isset($value['partner']) && isset($value['investment_id']))
-                    {
-                // $investment = new InvestmentAsset;
-                // $investment->details_id   = $request->input('details_id');
-                // $investment->investment_property = $value['non_investment_owner'];
-                // $investment->client_percentage = $value['client_percentage'];
-                // $investment->partner_percentage = $value['partner_percentage'];
-                // $investment->market_value = $value['market_value'];
-                // $investment->client = $value['client'];
-                // $investment->partner = $value['partner'];
-                // $investment->encoded_by   = $request->input('encoded_by');
-                // $investment->date_encoded = Carbon::now()->toDateString();
-                // $investment->save();
-                $verifyInvestmentPropertyAsset = InvestmentPropertyAsset::where('id',$value['investment_id'])->first();
-                if($verifyInvestmentPropertyAsset !== null){
-                    $updateInvestment = InvestmentPropertyAsset::where('id',$value['investment_id'])->update([
+          
+
+                foreach ($request->input('row', []) as $value) {
+                    if (!isset($value['non_investment_owner'])) {
+                        continue;
+                        }
+                $investmentId = !empty($value['investment_id']) ? $value['investment_id'] : null;
+                $verifyInvestmentPropertyAsset = null;
+                    if ($investmentId !== null) {
+                        $verifyInvestmentPropertyAsset = InvestmentPropertyAsset::where('id', $investmentId)->first();
+                     }
+
+   
+                $data = [
                     'investment_property' => $value['non_investment_owner'],
-                    'client_percentage' => $value['client_percentage'],
-                    'partner_percentage' => $value['partner_percentage'],
-                    'market_value' => $value['market_value'],
-                    'client' => $value['client'],
-                    'partner' => $value['partner'],
-                     ]);
-                }
-                else{
+                    'client_percentage'   => $value['client_percentage'] ?? 0,
+                    'partner_percentage'  => $value['partner_percentage'] ?? 0,
+                    'market_value'        => $value['market_value'] ?? 0,
+                    'client'              => $value['client'] ?? 0,
+                    'partner'             => $value['partner'] ?? 0,
+                ];
+
+                if ($verifyInvestmentPropertyAsset !== null) {
+    
+                    $verifyInvestmentPropertyAsset->update($data);
+                } 
+                else {
+   
                     $investment = new InvestmentPropertyAsset;
-                    $investment->details_id   = $request->input('details_id');
-                    $investment->investment_property = $value['non_investment_owner'];
-                    $investment->client_percentage = $value['client_percentage'];
-                    $investment->partner_percentage = $value['partner_percentage'];
-                    $investment->market_value = $value['market_value'];
-                    $investment->client = $value['client'];
-                    $investment->partner = $value['partner'];
+                    $investment->details_id = $request->input('details_id'); 
+                    $investment->investment_property = $data['investment_property'];
+                    $investment->client_percentage   = $data['client_percentage'];
+                    $investment->partner_percentage  = $data['partner_percentage'];
+                    $investment->market_value        = $data['market_value'];
+                    $investment->client              = $data['client'];
+                    $investment->partner             = $data['partner'];
                     $investment->encoded_by   = $request->input('encoded_by');
-                    $investment->date_encoded = Carbon::now()->toDateString();
-                    $investment->save();
-                }
-            
-
-                
-             
+                    $investment->date_encoded = \Carbon\Carbon::now()->toDateString(); 
+                        $investment->save();
                     }
-                //  return response()->json($request->all());
-            }
+                }
 
-                foreach ($request->input('noninvestmentasset') as $value) {
-                 if(isset($value['other_personal_asset']) && isset($value['non_investment_asset_client_percentage']) && isset($value['non_investment_asset_partner_percentage']) && isset($value['non_investment_asset_market_value']) && isset($value['non_investment_asset_client']) && isset($value['non_investment_asset_partner']))
-                    {
+
+            //     foreach ($request->input('noninvestmentasset') as $value) {
+            //      if(isset($value['other_personal_asset']) && isset($value['non_investment_asset_client_percentage']) && isset($value['non_investment_asset_partner_percentage']) && isset($value['non_investment_asset_market_value']) && isset($value['non_investment_asset_client']) && isset($value['non_investment_asset_partner']))
+            //         {
                 
-                $verifyOtherPersonalNonInvestment = Other_Personal_Assets_Non_Invesmtment::where('id',$value['others_id'])->first();
-                if($verifyOtherPersonalNonInvestment !== null){
-                    $updateOtherPersonalAsset = Other_Personal_Assets_Non_Invesmtment::where('id',$value['others_id'])->update([
-                    'other_personal_asset' => $value['other_personal_asset'],
-                    'non_investment_asset_client_percentage' => $value['non_investment_asset_client_percentage'],
-                    'non_investment_asset_partner_percentage' => $value['non_investment_asset_partner_percentage'],
-                    'non_investment_asset_market_value' => $value['non_investment_asset_market_value'],
-                    'non_investment_asset_client' => $value['non_investment_asset_client'],
-                    'non_investment_asset_partner' => $value['non_investment_asset_partner'],
-                     ]);
+            //     $verifyOtherPersonalNonInvestment = Other_Personal_Assets_Non_Invesmtment::where('id',$value['others_id'])->first();
+            //     if($verifyOtherPersonalNonInvestment !== null){
+            //         $updateOtherPersonalAsset = Other_Personal_Assets_Non_Invesmtment::where('id',$value['others_id'])->update([
+            //         'other_personal_asset' => $value['other_personal_asset'],
+            //         'non_investment_asset_client_percentage' => $value['non_investment_asset_client_percentage'],
+            //         'non_investment_asset_partner_percentage' => $value['non_investment_asset_partner_percentage'],
+            //         'non_investment_asset_market_value' => $value['non_investment_asset_market_value'],
+            //         'non_investment_asset_client' => $value['non_investment_asset_client'],
+            //         'non_investment_asset_partner' => $value['non_investment_asset_partner'],
+            //          ]);
 
-                }
-                else{
-                    $non_investment = new Other_Personal_Assets_Non_Invesmtment;
-                    $non_investment->details_id   = $request->input('details_id');
-                    $non_investment->other_personal_asset = $value['other_personal_asset'];
-                    $non_investment->non_investment_asset_client_percentage = $value['non_investment_asset_client_percentage'];
-                    $non_investment->non_investment_asset_partner_percentage = $value['non_investment_asset_partner_percentage'];
-                    $non_investment->non_investment_asset_market_value = $value['non_investment_asset_market_value'];
-                    $non_investment->non_investment_asset_client = $value['non_investment_asset_client'];
-                    $non_investment->non_investment_asset_partner = $value['non_investment_asset_partner'];
-                    $non_investment->encoded_by   = $request->input('encoded_by');
-                    $non_investment->date_encoded = Carbon::now()->toDateString();
-                    $non_investment->save();
-                }
+            //     }
+            //     else{
+            //         $non_investment = new Other_Personal_Assets_Non_Invesmtment;
+            //         $non_investment->details_id   = $request->input('details_id');
+            //         $non_investment->other_personal_asset = $value['other_personal_asset'];
+            //         $non_investment->non_investment_asset_client_percentage = $value['non_investment_asset_client_percentage'];
+            //         $non_investment->non_investment_asset_partner_percentage = $value['non_investment_asset_partner_percentage'];
+            //         $non_investment->non_investment_asset_market_value = $value['non_investment_asset_market_value'];
+            //         $non_investment->non_investment_asset_client = $value['non_investment_asset_client'];
+            //         $non_investment->non_investment_asset_partner = $value['non_investment_asset_partner'];
+            //         $non_investment->encoded_by   = $request->input('encoded_by');
+            //         $non_investment->date_encoded = Carbon::now()->toDateString();
+            //         $non_investment->save();
+            //     }
                
                 
              
+            //         }
+            //     //  return response()->json($request->all());
+            // }
+            foreach ($request->input('noninvestmentasset', []) as $value) {
+                if (!isset($value['other_personal_asset'])) {
+                    continue;
                     }
-                //  return response()->json($request->all());
-            }
+                $assetId = !empty($value['others_id']) ? $value['others_id'] : null;
+                $verifyOtherPersonalNonInvestment = null;
+                 if ($assetId !== null) {
+                    $verifyOtherPersonalNonInvestment = Other_Personal_Assets_Non_Invesmtment::where('id', $assetId)->first();
+                    }
+
+                 $data = [
+                    'other_personal_asset'                    => $value['other_personal_asset'],
+                    'non_investment_asset_client_percentage'  => $value['non_investment_asset_client_percentage'] ?? 0,
+                    'non_investment_asset_partner_percentage' => $value['non_investment_asset_partner_percentage'] ?? 0,
+                    'non_investment_asset_market_value'      => $value['non_investment_asset_market_value'] ?? 0,
+                    'non_investment_asset_client'            => $value['non_investment_asset_client'] ?? 0,
+                    'non_investment_asset_partner'           => $value['non_investment_asset_partner'] ?? 0,
+                    ];
+
+                if ($verifyOtherPersonalNonInvestment !== null) {
+                    $verifyOtherPersonalNonInvestment->update($data);
+                    } 
+                    else {
+        
+                $non_investment = new Other_Personal_Assets_Non_Invesmtment;
+                $non_investment->details_id = $request->input('details_id'); 
+                $non_investment->other_personal_asset                    = $data['other_personal_asset'];
+                $non_investment->non_investment_asset_client_percentage  = $data['non_investment_asset_client_percentage'];
+                $non_investment->non_investment_asset_partner_percentage = $data['non_investment_asset_partner_percentage'];
+                $non_investment->non_investment_asset_market_value      = $data['non_investment_asset_market_value'];
+                $non_investment->non_investment_asset_client            = $data['non_investment_asset_client'];
+                $non_investment->non_investment_asset_partner           = $data['non_investment_asset_partner'];
+                $non_investment->encoded_by   = $request->input('encoded_by');
+                $non_investment->date_encoded = \Carbon\Carbon::now()->toDateString();
+                $non_investment->save();
+                }
+        }
+
 
                 $verifyNonInvestmentAssets = Non_Investment_Assets::where('details_id',$id)->first();
                 if($verifyNonInvestmentAssets !== null)
@@ -1102,173 +1137,191 @@ class PersonalDetails extends Model
                 }
                
 
-            foreach ($request->input('debt') as $value) {
-                if(isset($value['other_debt']) && isset($value['other_debt_client_percentage']) && isset($value['other_debt_partner_percentage']) && isset($value['other_debt_market_value']) && isset($value['other_debt_client']) && isset($value['other_debt_parnter']))
-                    {
-                        $verifyOtherDebt = Other_Debt::where('id',$value['other_debt_id'])->first();
-                        if($verifyOtherDebt !== null)
-                        {
-                            $updateOtherDebt = Other_Debt::where('id',$value['other_debt_id'])->update([
-                            'other_debt' => $value['other_debt'],
-                            'other_debt_client_percentage' => $value['other_debt_client_percentage'],
-                            'other_debt_partner_percentage' => $value['other_debt_partner_percentage'],
-                            'other_debt_market_value' => $value['other_debt_market_value'],
-                            'other_debt_client' => $value['other_debt_client'],
-                            'other_debt_parnter' => $value['other_debt_parnter'],
-                     ]);
-                        }
-                        else{
-                            $other_debt = new Other_Debt;
-                            $other_debt->details_id   = $request->input('details_id');
-                            $other_debt->other_debt = $value['other_debt'];
-                            $other_debt->other_debt_client_percentage = $value['other_debt_client_percentage'];
-                            $other_debt->other_debt_partner_percentage = $value['other_debt_partner_percentage'];
-                            $other_debt->other_debt_market_value = $value['other_debt_market_value'];
-                            $other_debt->other_debt_client = $value['other_debt_client'];
-                            $other_debt->other_debt_parnter = $value['other_debt_parnter'];
-               
-                            $other_debt->encoded_by   = $request->input('encoded_by');
-                            $other_debt->date_encoded = Carbon::now()->toDateString();
-                            $other_debt->save(); 
-                        }
-                        
-             
+           
+                foreach ($request->input('debt', []) as $value) {
+                 if (!isset($value['other_debt'])) {
+                    continue;
                     }
-                
-                    //   return response()->json($request->all()); 
-      
-             }
 
-              foreach ($request->input('creditcard') as $value) {
-                if(isset($value['credit_card']) && isset($value['credit_card_client_percentage']) && isset($value['credit_card_partner_percentage']) && isset($value['credit_card_market_value']) && isset($value['credit_card_client']) && isset($value['credit_card_partner']))
-                    {
-                     $verifyCreditCard = Credit_Card::where('id',$value['credit_card_id'])->first();
-                     if($verifyCreditCard !== null)
-                        {
-                            $updateCreditCard = Credit_Card::where('id',$value['credit_card_id'])->update([
-                            'credit_card' => $value['credit_card'],
-                            'credit_card_client_percentage' => $value['credit_card_client_percentage'],
-                            'credit_card_partner_percentage' => $value['credit_card_partner_percentage'],
-                            'credit_card_market_value' => $value['credit_card_market_value'],
-                            'credit_card_client' => $value['credit_card_client'],
-                            'credit_card_partner' => $value['credit_card_partner'],
-                     ]);
-                        }
-                        else{
-                            $credit_card = new Credit_Card;
-                            $credit_card->details_id  = $request->input('details_id');
-                            $credit_card->credit_card = $value['credit_card'];
-                            $credit_card->credit_card_client_percentage = $value['credit_card_client_percentage'];
-                            $credit_card->credit_card_partner_percentage = $value['credit_card_partner_percentage'];
-                            $credit_card->credit_card_market_value = $value['credit_card_market_value'];
-                            $credit_card->credit_card_client = $value['credit_card_client'];
-                            $credit_card->credit_card_partner = $value['credit_card_partner'];
-               
-                            $credit_card->encoded_by   = $request->input('encoded_by');
-                            $credit_card->date_encoded = Carbon::now()->toDateString();
-                            $credit_card->save(); 
-                        }
-                
-             
+                    $debtId = !empty($value['other_debt_id']) ? $value['other_debt_id'] : null;
+                    $verifyOtherDebt = null;
+                    if ($debtId !== null) {
+                        $verifyOtherDebt = Other_Debt::where('id', $debtId)->first();
                     }
-                
-                    //   return response()->json($request->all()); 
-      
-             }
 
-            foreach ($request->input('mortgageInvestment') as $value) {
-                if(isset($value['mortgage_investment']) && isset($value['mortgage_investment_client_percentage']) && isset($value['mortgage_investment_partner_percentage']) && isset($value['mortgage_investment_market_value']) && isset($value['mortgage_investment_client']) && isset($value['mortgage_investment_partner']))
-                    {
-               
-                $verifyMortgageInvestmentProperty = Mortgage_Investment_Property::where('id',$value['mortgage_investment_id'])->first();
-                if($verifyMortgageInvestmentProperty !== null)
-                    {
-                        $updateMortgage = Mortgage_Investment_Property::where('id',$value['mortgage_investment_id'])->update([
-                        'mortgage_investment' => $value['mortgage_investment'],
-                        'mortgage_investment_client_percentage' => $value['mortgage_investment_client_percentage'],
-                        'mortgage_investment_partner_percentage' => $value['mortgage_investment_partner_percentage'],
-                        'mortgage_investment_market_value' => $value['mortgage_investment_market_value'],
-                        'mortgage_investment_client' => $value['mortgage_investment_client'],
-                        'mortgage_investment_partner' => $value['mortgage_investment_partner'],
-                     ]);
+                $data = [
+                    'other_debt'                    => $value['other_debt'],
+                    'other_debt_client_percentage'  => $value['other_debt_client_percentage'] ?? 0,
+                    'other_debt_partner_percentage' => $value['other_debt_partner_percentage'] ?? 0,
+                    'other_debt_market_value'       => $value['other_debt_market_value'] ?? 0,
+                    'other_debt_client'             => $value['other_debt_client'] ?? 0,
+                    'other_debt_parnter'            => $value['other_debt_parnter'] ?? 0, 
+                    ];
+
+                if ($verifyOtherDebt !== null) {
+                        $verifyOtherDebt->update($data);
+                        } 
+                else {
+                    $other_debt = new Other_Debt; 
+                    $other_debt->details_id = $request->input('details_id'); 
+                    $other_debt->other_debt                    = $data['other_debt'];
+                    $other_debt->other_debt_client_percentage  = $data['other_debt_client_percentage'];
+                    $other_debt->other_debt_partner_percentage = $data['other_debt_partner_percentage'];
+                    $other_debt->other_debt_market_value       = $data['other_debt_market_value'];
+                    $other_debt->other_debt_client             = $data['other_debt_client'];
+                    $other_debt->other_debt_parnter            = $data['other_debt_parnter'];
+                    $other_debt->encoded_by   = $request->input('encoded_by');
+                    $other_debt->date_encoded = \Carbon\Carbon::now()->toDateString();
+                    $other_debt->save(); 
                     }
-                    else{
-                        $mortgage = new Mortgage_Investment_Property;
-                        $mortgage->details_id  = $request->input('details_id');
-                        $mortgage->mortgage_investment = $value['mortgage_investment'];
-                        $mortgage->mortgage_investment_client_percentage = $value['mortgage_investment_client_percentage'];
-                        $mortgage->mortgage_investment_partner_percentage = $value['mortgage_investment_partner_percentage'];
-                        $mortgage->mortgage_investment_market_value = $value['mortgage_investment_market_value'];
-                        $mortgage->mortgage_investment_client= $value['mortgage_investment_client'];
-                        $mortgage->mortgage_investment_partner = $value['mortgage_investment_partner'];
-               
-                        $mortgage->encoded_by   = $request->input('encoded_by');
-                        $mortgage->date_encoded = Carbon::now()->toDateString();
-                        $mortgage->save();
+                }
+
+
+       
+                foreach ($request->input('creditcard', []) as $value) {
+                    if (!isset($value['credit_card'])) {
+                        continue;
+                     }
+                    $cardId = !empty($value['credit_card_id']) ? $value['credit_card_id'] : null;
+                    $verifyCreditCard = null;
+                    if ($cardId !== null) {
+                        $verifyCreditCard = Credit_Card::where('id', $cardId)->first();
+                        }
+                    $data = [
+                        'credit_card'                    => $value['credit_card'],
+                        'credit_card_client_percentage'  => $value['credit_card_client_percentage'] ?? 0,
+                        'credit_card_partner_percentage' => $value['credit_card_partner_percentage'] ?? 0,
+                        'credit_card_market_value'      => $value['credit_card_market_value'] ?? 0,
+                        'credit_card_client'            => $value['credit_card_client'] ?? 0,
+                        'credit_card_partner'           => $value['credit_card_partner'] ?? 0,
+                        ];
+
+                    if ($verifyCreditCard !== null) {
+                        $verifyCreditCard->update($data);
+                        } 
+                    else {
+   
+                    $credit_card = new Credit_Card;
+                    $credit_card->details_id = $request->input('details_id'); 
+                    $credit_card->credit_card                   = $data['credit_card'];
+                    $credit_card->credit_card_client_percentage  = $data['credit_card_client_percentage'];
+                    $credit_card->credit_card_partner_percentage = $data['credit_card_partner_percentage'];
+                    $credit_card->credit_card_market_value      = $data['credit_card_market_value'];
+                    $credit_card->credit_card_client            = $data['credit_card_client'];
+                    $credit_card->credit_card_partner           = $data['credit_card_partner']; 
+                    $credit_card->encoded_by   = $request->input('encoded_by');
+                    $credit_card->date_encoded = \Carbon\Carbon::now()->toDateString();
+                    $credit_card->save(); 
                     }
-                 
-             
-                    }
-                
-                    //  return response()->json($request->input('creditcard')); 
-      
+                }
+
+
+         
+
+            foreach ($request->input('mortgageInvestment', []) as $value) {
+                if (!isset($value['mortgage_investment'])) {
+                    continue;
+                }
+            $mortgageId = !empty($value['mortgage_investment_id']) ? $value['mortgage_investment_id'] : null;
+            $verifyMortgageInvestmentProperty = null;
+            if ($mortgageId !== null) {
+                $verifyMortgageInvestmentProperty = Mortgage_Investment_Property::where('id', $mortgageId)->first();
             }
 
-            foreach ($request->input('personalDebtRateOtherDebt') as $value) {
-                if(isset($value['personal_debt_rate_other_debts']) && isset($value['personal_debt_rate_other_debt_years']))
-                    {
-                        $verifyPersonalDebtRateOtherDebt = Personal_Debt_Rate_Other_Debt::where('id',$value['debt_rates_other_id'])->first();
-                        if($verifyPersonalDebtRateOtherDebt !== null){
-                            $updatedebtRates= Personal_Debt_Rate_Other_Debt::where('id',$value['debt_rates_other_id'])->update([
-                            'personal_debt_rate_other_debts' => $value['personal_debt_rate_other_debts'],
-                            'personal_debt_rate_other_debt_years' => $value['personal_debt_rate_other_debt_years'],
-                        
-                         ]);
-                        }
-                        else{
-                            $debt_rates_other_debt = new Personal_Debt_Rate_Other_Debt;
-                            $debt_rates_other_debt->details_id  = $request->input('details_id');
-                            $debt_rates_other_debt->personal_debt_rate_other_debts = $value['personal_debt_rate_other_debts'];
-                            $debt_rates_other_debt->personal_debt_rate_other_debt_years = $value['personal_debt_rate_other_debt_years'];
-                            $debt_rates_other_debt->encoded_by   = $request->input('encoded_by');
-                             $debt_rates_other_debt->date_encoded = Carbon::now()->toDateString();
-                            $debt_rates_other_debt->save(); 
-                        }
-                       
-             
-                    }
-                
-                    //  return response()->json($request->input('creditcard')); 
-      
+            $data = [
+                'mortgage_investment'                    => $value['mortgage_investment'],
+                'mortgage_investment_client_percentage'  => $value['mortgage_investment_client_percentage'] ?? 0,
+                'mortgage_investment_partner_percentage' => $value['mortgage_investment_partner_percentage'] ?? 0,
+                'mortgage_investment_market_value'      => $value['mortgage_investment_market_value'] ?? 0,
+                'mortgage_investment_client'            => $value['mortgage_investment_client'] ?? 0,
+                'mortgage_investment_partner'           => $value['mortgage_investment_partner'] ?? 0,
+                ];
+
+            if ($verifyMortgageInvestmentProperty !== null) {
+                $verifyMortgageInvestmentProperty->update($data);
+            } 
+            else {
+        
+                $mortgage = new Mortgage_Investment_Property;
+                $mortgage->details_id = $request->input('details_id'); 
+                $mortgage->mortgage_investment                    = $data['mortgage_investment'];
+                $mortgage->mortgage_investment_client_percentage  = $data['mortgage_investment_client_percentage'];
+                $mortgage->mortgage_investment_partner_percentage = $data['mortgage_investment_partner_percentage'];
+                $mortgage->mortgage_investment_market_value      = $data['mortgage_investment_market_value'];
+                $mortgage->mortgage_investment_client            = $data['mortgage_investment_client'];
+                $mortgage->mortgage_investment_partner           = $data['mortgage_investment_partner'];   
+                $mortgage->encoded_by   = $request->input('encoded_by');
+                $mortgage->date_encoded = \Carbon\Carbon::now()->toDateString();
+                $mortgage->save();
+                }
             }
 
-            foreach ($request->input('personalDebtRatesCreditCard') as $value) {
-                if(isset($value['personal_debt_rate_credit_card']) && isset($value['personal_debt_rate_credit_card_years']))
-                    {
-                        $verifyPersonalDebtRateCreditCard = Personal_Debt_Rate_Credit_Card::where('id',$value['debt_rates_credit_card_id'])->first();
-                        if($verifyPersonalDebtRateCreditCard !== null){
-                            $updateDebtCreditCard = Personal_Debt_Rate_Credit_Card::where('id',$value['debt_rates_credit_card_id'])->update([
-                            'personal_debt_rate_credit_card' => $value['personal_debt_rate_credit_card'],
-                            'personal_debt_rate_other_debt_years' => $value['personal_debt_rate_other_debt_years'],
-                        
-                         ]);
-                        }
-                        else{
-                            $debt_rates_credit_card = new Personal_Debt_Rate_Credit_Card;
-                            $debt_rates_credit_card->details_id  = $request->input('details_id');
-                            $debt_rates_credit_card->personal_debt_rate_credit_card = $value['personal_debt_rate_credit_card'];
-                            $debt_rates_credit_card->personal_debt_rate_credit_card_years = $value['personal_debt_rate_credit_card_years'];
-                            $debt_rates_credit_card->encoded_by   = $request->input('encoded_by');
-                            $debt_rates_credit_card->date_encoded = Carbon::now()->toDateString();
-                            $debt_rates_credit_card->save();
-                        }
-                        
-             
-                    }
-                
-                    //  return response()->json($request->input('creditcard')); 
-      
+
+       
+
+            foreach ($request->input('personalDebtRateOtherDebt', []) as $value) {
+                if (!isset($value['personal_debt_rate_other_debts'])) {
+                    continue;
+                }
+
+            $rateId = !empty($value['debt_rates_other_id']) ? $value['debt_rates_other_id'] : null;
+            $verifyPersonalDebtRateOtherDebt = null;
+            if ($rateId !== null) {
+                $verifyPersonalDebtRateOtherDebt = Personal_Debt_Rate_Other_Debt::where('id', $rateId)->first();
             }
+
+
+            $data = [
+                'personal_debt_rate_other_debts'      => $value['personal_debt_rate_other_debts'],
+                'personal_debt_rate_other_debt_years' => $value['personal_debt_rate_other_debt_years'] ?? 0,
+            ];
+
+            if ($verifyPersonalDebtRateOtherDebt !== null) {
+                $verifyPersonalDebtRateOtherDebt->update($data);
+            } 
+            else {
+                $debt_rates_other_debt = new Personal_Debt_Rate_Other_Debt;
+                $debt_rates_other_debt->details_id = $request->input('details_id'); 
+                $debt_rates_other_debt->personal_debt_rate_other_debts      = $data['personal_debt_rate_other_debts'];
+                $debt_rates_other_debt->personal_debt_rate_other_debt_years = $data['personal_debt_rate_other_debt_years'];
+                $debt_rates_other_debt->encoded_by   = $request->input('encoded_by');
+                $debt_rates_other_debt->date_encoded = \Carbon\Carbon::now()->toDateString();
+                $debt_rates_other_debt->save(); 
+            }
+        }
+
+
+            foreach ($request->input('personalDebtRatesCreditCard', []) as $value) {
+                if (!isset($value['personal_debt_rate_credit_card'])) {
+                    continue;
+                }
+
+                $rateId = !empty($value['debt_rates_credit_card_id']) ? $value['debt_rates_credit_card_id'] : null;
+                $verifyPersonalDebtRateCreditCard = null;
+                if ($rateId !== null) {
+                    $verifyPersonalDebtRateCreditCard = Personal_Debt_Rate_Credit_Card::where('id', $rateId)->first();
+                }
+
+                $data = [
+                    'personal_debt_rate_credit_card'       => $value['personal_debt_rate_credit_card'],
+                    'personal_debt_rate_credit_card_years' => $value['personal_debt_rate_credit_card_years'] ?? 0,
+                    ];
+
+                if ($verifyPersonalDebtRateCreditCard !== null) {
+                    $verifyPersonalDebtRateCreditCard->update($data);
+                } 
+                else {
+        
+                    $debt_rates_credit_card = new Personal_Debt_Rate_Credit_Card;
+                    $debt_rates_credit_card->details_id = $request->input('details_id'); 
+                    $debt_rates_credit_card->personal_debt_rate_credit_card       = $data['personal_debt_rate_credit_card'];
+                    $debt_rates_credit_card->personal_debt_rate_credit_card_years = $data['personal_debt_rate_credit_card_years']; 
+                    $debt_rates_credit_card->encoded_by   = $request->input('encoded_by');
+                    $debt_rates_credit_card->date_encoded = \Carbon\Carbon::now()->toDateString();
+                    $debt_rates_credit_card->save();
+                }
+            }
+
                 $verifyInvestmentRelatedLiabilities = Invesment_Related_Liabilities::where('details_id',$id)->first();
                 if($verifyInvestmentRelatedLiabilities !== null){
                     $updateInvestmentRelatedLiabilities = Invesment_Related_Liabilities::where('details_id',$id)->update([

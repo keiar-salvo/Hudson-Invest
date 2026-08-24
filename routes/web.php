@@ -61,7 +61,8 @@ Route::group(['namespace' => 'App\Http\Controllers'],function()
        });
 
         Route::controller(CurrentPositionController::class)->group(function () {
-             Route::get('currentposition', 'currentposition')->name('currentposition');
+            Route::get('currentposition', 'currentposition')->name('currentposition');
+            Route::get('currentposition/{id}','getCurrentPositionData')->name('currentposition'); 
        });
         Route::controller(IncomeController::class)->group(function () {
              Route::get('income', 'income')->name('income');

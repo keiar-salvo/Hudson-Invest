@@ -793,7 +793,7 @@
   
   <div>
    <label >Client Percentage</label>
-    <input type="text"  class="mt-1 form-input superannuation_client_client_percentage"  placeholder="0%">
+    <input type="text"  class="mt-1 form-input superannuation_client_client_percentage"  placeholder="0%" name="superannuation_client_client_percentage">
   </div>
 
   <div>

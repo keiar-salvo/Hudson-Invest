@@ -220,6 +220,12 @@
 
 
     </div>
+        <script defer="" src="{{ asset('assets/js/ajax-crud.js') }}"></script>
+         <script defer="" src="{{ asset('assets/js/form-validation-calculation-input.js') }}"></script>
+         <script defer="" src="{{ asset('assets/js/get-data-fill-forms.js') }}"></script>
+         <script defer="" src="{{ asset('assets/js/append-html.js') }}"></script>
+         <script defer="" src="{{ asset('assets/js/unary-calculations.js') }}"></script>
+         
       @section('scripts')
       <script>
          $(document).ready(function(){

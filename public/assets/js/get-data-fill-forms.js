@@ -1,16 +1,16 @@
 function filldataforms(response)
 {
-  // Early exit if the entire response is null or undefined
+
   if (!response) {
     console.warn("filldataforms received an empty or null response.");
     return;
   }
 
-  // Safe extraction of parent objects using optional chaining
+
   const personal = response['personalDetails'];
   const financial = response['financialDetails'];
   const income = response['IncomeDetails'];
-  const liabilities = response['TotalLiabilitites']; // Typo preserved from source
+  const liabilities = response['TotalLiabilitites']; 
   const superAnn = response['SuperannuationDetails'];
   const nonInvest = response['NonInvestmentAssets'];
   const invest = response['InvestmentAssets'];
@@ -19,6 +19,7 @@ function filldataforms(response)
   const payg = response['PaygEstimation'];
   const personalRates = response['PersonalDebtRates'];
   const investRates = response['InvestmentDebtRates'];
+  const netasset = response['NetAssets'];
 
   // Personal Details
   $('.name').val(personal?.['name'] ?? '');
@@ -229,6 +230,39 @@ $('.total_asset_partner').val(invest?.['total_asset_partner'] ?? '');
   $('.investment_debt_rates_business_loans').val(investRates?.['investment_debt_rates_business_loans'] ?? '');
   $('.mortgage_existing_investment_properties').val(investRates?.['mortgage_existing_investment_properties'] ?? '');
   $('.mortgage_new_investment_properties').val(investRates?.['mortgage_new_investment_properties'] ?? '');
+
+  $('.net_assets_market_value').val(netasset?.['net_assets_market_value'] ?? '0');
+  $('.net_assets_client').val(netasset?.['net_assets_client'] ?? '0');
+  $('.net_assets_partner').val(netasset?.['net_assets_partner'] ?? '0');
+
+}
+
+function fillCurrentPosition(response){
+$('.equity_in_your_home').val(response['equity_in_your_home']);
+$('.gross_anual_income_client').val(response['gross_anual_income_client']);
+$('.gross_anual_income_partner').val(response['gross_anual_income_partner']);
+$('.investment_portfolio_assets_business_net_value').val(response['investment_portfolio_assets_business_net_value']);
+$('.investment_portfolio_assets_existing_investment_property').val(response['investment_portfolio_assets_existing_investment_property']);
+$('.investment_portfolio_assets_long_term_savings').val(response['investment_portfolio_assets_long_term_savings']);
+$('.investment_portfolio_assets_mortgage').val(response['investment_portfolio_assets_mortgage']);
+$('.investment_portfolio_assets_shares').val(response['investment_portfolio_assets_shares']);
+$('.investment_portfolio_assets_superannuation').val(response['investment_portfolio_assets_superannuation']);
+$('.investment_portfolio_business_net_value').val(response['investment_portfolio_business_net_value']);
+$('.investment_portfolio_current_net_financial_assets').val(response['investment_portfolio_current_net_financial_assets']);
+$('.investment_portfolio_existing_investment_property').val(response['investment_portfolio_existing_investment_property']);
+$('.investment_portfolio_long_term_savings').val(response['investment_portfolio_long_term_savings']);
+$('.investment_portfolio_mortgage').val(response['investment_portfolio_mortgage']);
+$('.investment_portfolio_net_financial_assets').val(response['investment_portfolio_net_financial_assets']);
+$('.investment_portfolio_net_position').val(response['investment_portfolio_net_position']);
+$('.investment_portfolio_repay_mortgage').val(response['investment_portfolio_repay_mortgage']);
+$('.investment_portfolio_shares_net_value').val(response['investment_portfolio_shares_net_value']);
+$('.investment_portfolio_superannuation_client_net_value').val(response['investment_portfolio_superannuation_client_net_value']);
+$('.investment_portfolio_superannuation_partner_net_value').val(response['investment_portfolio_superannuation_partner_net_value']);
+$('.investment_portfolio_total').val(response['investment_portfolio_total']);
+$('.projected_value_of_your_home').val(response['projected_value_of_your_home']);
+$('.total_houese_hold_income').val(response['total_houese_hold_income']);
+$('.your_home_mortgage').val(response['your_home_mortgage']);
+$('.your_home_value_of_your_home').val(response['your_home_value_of_your_home']);
 }
 
 

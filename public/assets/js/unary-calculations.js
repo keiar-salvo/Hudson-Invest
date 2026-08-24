@@ -1281,6 +1281,9 @@ function currentPosition(formData,annual_growth_rate_invest_assets){
     let long_term_pmt = 0;
     let long_term_pv = -long_term_raw_pv;
     let long_term_calculated_value = calculateFV(rate,periods,long_term_pmt,long_term_pv,type);
+    if (Math.abs(long_term_calculated_value) === 0) {
+    long_term_calculated_value = 0.00;
+        }
 
     var long_term_total_future_value  = long_term_calculated_value.toLocaleString('en-US', { 
           minimumFractionDigits: 2, 
@@ -1316,6 +1319,10 @@ function currentPosition(formData,annual_growth_rate_invest_assets){
     console.log("Shares FV: " + shares_calculated_future_value);
     console.log("Deduction: " + deduction);
     let final_shares_value = shares_calculated_future_value - deduction;
+       if (Math.abs(final_shares_value) === 0) {
+            final_shares_value = 0.00;
+        }
+
     let share_net_future_value = final_shares_value.toLocaleString('en-US', { 
           minimumFractionDigits: 2, 
           maximumFractionDigits: 2 
@@ -1328,6 +1335,9 @@ function currentPosition(formData,annual_growth_rate_invest_assets){
     let raw_pmt = 0;
     let business_future_value = calculateFV(rate,periods,raw_pmt,raw_pv,type);
     let deducted_future_value = business_future_value - clean_business_loan_decution;
+    if (Math.abs(deducted_future_value) === 0) {
+            deducted_future_value = 0.00;
+        }
     var formatted_business_future_value = deducted_future_value.toLocaleString('en-US', { 
           minimumFractionDigits: 2, 
           maximumFractionDigits: 2 
@@ -1349,11 +1359,14 @@ let existing_investment_fv =  parseFloat(formatted_existing_investment_portfolio
 let mortgage_static = parseFloat(formatted_investment_portfolio_mortgage?.replace(/,/g, '')) || 0; 
 
 let total_financial_assets = superannuation_net_value_fv + long_term_savings_fv + share_net_fv + business_net_fv + existing_investment_fv + mortgage_static;
-var grand_total_financial_assets =  total_financial_assets.toLocaleString('en-US', { 
+var grand_total_financial_assets = Math.round(total_financial_assets).toLocaleString('en-US', { 
           minimumFractionDigits: 2, 
           maximumFractionDigits: 2 
     });
-
+let formatted_repay_mortgage = $('.mortgage_market_value').val().toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    })
     formData.append('_method','POST');
     formData.append('gross_anual_income_client',$('.total_income_client_annual').val());
     formData.append('gross_anual_income_partner',$('.total_income_partner_annual').val());
@@ -1371,10 +1384,7 @@ var grand_total_financial_assets =  total_financial_assets.toLocaleString('en-US
     formData.append('investment_portfolio_mortgage',formatted_investment_portfolio_mortgage);
     formData.append('investment_portfolio_total',formatted_investment_portfolio_total);
     formData.append('investment_portfolio_net_position',formatted_investment_portfolio_net_position);
-    formData.append('investment_portfolio_repay_mortgage',$('.mortgage_market_value').val().toLocaleString('en-US', { 
-          minimumFractionDigits: 2, 
-          maximumFractionDigits: 2 
-    }));
+    formData.append('investment_portfolio_repay_mortgage',formatted_repay_mortgage);
 
     formData.append('investment_portfolio_current_net_financial_assets',formatted_cuurent_net_financial_assets);
     formData.append('projected_value_of_your_home',value_of_your_home_futureValue);

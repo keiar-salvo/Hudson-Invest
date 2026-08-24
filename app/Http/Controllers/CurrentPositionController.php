@@ -17,7 +17,21 @@ class CurrentPositionController extends Controller
 
     
     public function currentposition()
+
     {
-        return view('forms.currentposition');
+          return view('forms.currentposition');
+         
+      
+        // return view('forms.currentposition');
+    }
+
+    public function getCurrentPositionData($id)
+    {
+        try {
+                $getCurrentPosition = new CurrentPosition();
+                return $getCurrentPosition->currentPositionData($id);
+            } catch (Exception $e) {
+                return response()->json(['Something went wrong!']);
+            }
     }
 }

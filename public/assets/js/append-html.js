@@ -271,7 +271,7 @@ function Add_Personal_Other_Debts(){
                         <input type="text" class="mt-1 form-input personal_debt_rate_other_debt_years" name="personalDebtRateOtherDebt[${personalOtherDebtsIdx}][personal_debt_rate_other_debt_years]">
                     </div>
 
-                       <div class="col-span-1 md:col-span-3">
+                       <div class="col-span-1 md:col-span-3" style="display:none;">
                         <label>ID</label>
                         <input type="text" class="mt-1 form-input debt_rates_other_id" name="personalDebtRateOtherDebt[${personalOtherDebtsIdx}][debt_rates_other_id]">
                     </div>
