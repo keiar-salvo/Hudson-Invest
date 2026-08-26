@@ -17,204 +17,257 @@
   
     <form class="current-position">
         
-     <fieldset class="group-box">
-        <legend class="group-title">Your Household Income</legend>
-      
-  <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
- 
-
-    <div class="col-span-1 md:col-span-3">
-      <label >Gross Annual Income (Client)</label>
-      <input type="text" class="mt-1 form-input gross_anual_income_client" name="gross_anual_income_client">
-    </div>
-
-
-    <div class="col-span-1 md:col-span-3">
-      <label >Gross Annual Income (Partner)</label>
-      <input type="text" class="mt-1 form-input gross_anual_income_partner" placeholder="0%" name="gross_anual_income_partner">
-    </div>
-
-  </div>
-  <br/>
-    <div class="grid grid-cols-1 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-5 gap-5">
-    <div>
-        <label>Total Household Income</label>
-        <input type="text"  class="mt-1 form-input total_houese_hold_income"  placeholder="0.00" name="total_houese_hold_income">
-    </div>
-</div>
-    </fieldset>
-    
-  <fieldset class="group-box">
-        <legend class="group-title">Your Home</legend>
-      
-  <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
- 
-
-    <div class="col-span-1 md:col-span-3">
-      <label >Value of your home</label>
-      <input type="text" class="mt-1 form-input your_home_value_of_your_home" name="your_home_value_of_your_home">
-    </div>
-
-
-    <div class="col-span-1 md:col-span-3">
-      <label >Mortgage</label>
-      <input type="text" class="mt-1 form-input your_home_mortgage" placeholder="0%" name="your_home_mortgage">
-    </div>
-
-  </div>
-  <br/>
-    <div class="grid grid-cols-1 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-5 gap-5">
-    <div>
-        <label>Equity in your home</label>
-        <input type="text"  class="mt-1 form-input equity_in_your_home"  placeholder="0.00" name="equity_in_your_home">
-    </div>
-</div>
-    </fieldset>
-
-    <fieldset class="group-box">
-        <legend class="group-title">Investment Portfolio</legend>
-      
-  <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
- 
-
-    <div class="col-span-1 md:col-span-3">
-      <label >Long Term Savings / Term Deposites / Bonds</label>
-      <input type="text" class="mt-1 form-input investment_portfolio_long_term_savings" name="investment_portfolio_long_term_savings">
-    </div>
-
-
-    <div class="col-span-1 md:col-span-3">
-      <label >Superannuation (Client) - Net Value</label>
-      <input type="text" class="mt-1 form-input investment_portfolio_superannuation_client_net_value" placeholder="0%" name="investment_portfolio_superannuation_client_net_value">
-    </div>
-
-    <div class="col-span-1 md:col-span-3">
-      <label >Superannuation (Partner) - Net Value</label>
-      <input type="text" class="mt-1 form-input investment_portfolio_superannuation_partner_net_value" placeholder="0%" name="investment_portfolio_superannuation_partner_net_value">
-    </div>
-
-    <div class="col-span-1 md:col-span-3">
-      <label >Shares / Managed Funds - Net Value</label>
-      <input type="text" class="mt-1 form-input investment_portfolio_shares_net_value" placeholder="0%" name="investment_portfolio_shares_net_value">
-    </div>
-
-     <div class="col-span-1 md:col-span-3">
-      <label >Business - Net Value</label>
-      <input type="text" class="mt-1 form-input investment_portfolio_business_net_value" placeholder="0%" name="investment_portfolio_business_net_value">
-    </div>
-
-    <div class="col-span-1 md:col-span-3">
-      <label >Existing Investment Property Portfolio</label>
-      <input type="text" class="mt-1 form-input investment_portfolio_existing_investment_property" placeholder="0%" name="investment_portfolio_existing_investment_property">
-    </div>
-
-    <div class="col-span-1 md:col-span-3">
-      <label >Mortgage</label>
-      <input type="text" class="mt-1 form-input investment_portfolio_mortgage" placeholder="0%" name="investment_portfolio_einvestment_portfolio_mortgagexisting_investment_property">
-    </div>
-
-  </div>
-  <br/>
-  <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
- 
-
-    <div class="col-span-1 md:col-span-3">
-      <label >Investment Portfolio Total</label>
-      <input type="text" class="mt-1 form-input investment_portfolio_total" name="investment_portfolio_total">
-    </div>
-
-
-    <div class="col-span-1 md:col-span-3">
-      <label >Investment Portfolio Net Position</label>
-      <input type="text" class="mt-1 form-input investment_portfolio_net_position" placeholder="0%" name="investment_portfolio_net_position">
-    </div>
-
-    <div class="col-span-1 md:col-span-3">
-      <label >Repay Mortgage on Your Home</label>
-      <input type="text" class="mt-1 form-input investment_portfolio_repay_mortgage" placeholder="0%" name="investment_portfolio_repay_mortgage">
-    </div>
-  </div>
-  <br/>
-
-
-<div class="grid grid-cols-1 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-5 gap-5">
-    <div>
-        <label>Current Net Financial Assets</label>
-        <input type="text"  class="mt-1 form-input investment_portfolio_current_net_financial_assets"  placeholder="0.00" name="investment_portfolio_current_net_financial_assets">
-    </div>
-</div>
-    </fieldset>
-
 <fieldset class="group-box">
-        <legend class="group-title">Projected Values</legend>
-      
-  <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
- 
-
-    <div class="col-span-1 md:col-span-3">
-      <label >Value of your Home</label>
-      <input type="text" class="mt-1 form-input projected_value_of_your_home" name="projected_value_of_your_home">
-    </div>
-</div>
-
-<div class="w-full ">
-   <label class="w-full text-gray-700 font-medium"><i>Note: The future value of your home has been calculated by assuming an average growth rate of 4.5% per annum.</i></label>
-</div>
+  <legend class="group-title">Your Household Income</legend>
   
-    </fieldset>
+  <!-- Row 1: Client Income -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center mb-4">
+    <label class="md:col-span-2 text-left md:text-right md:pr-4">Gross Annual Income (Client)</label>
+    <div class="md:col-span-2">
+      <input type="text" class="form-input gross_anual_income_client w-full max-w-[370px]" name="gross_anual_income_client" style="width:370px;">
+    </div>
+  </div>
+
+  <!-- Row 2: Partner Income -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center mb-4">
+    <label class="md:col-span-2 text-left md:text-right md:pr-4">Gross Annual Income (Partner)</label>
+    <div class="md:col-span-2">
+      <input type="text" class="form-input gross_anual_income_partner w-full max-w-[370px]" placeholder="0%" name="gross_anual_income_partner" style="width:370px;">
+    </div>
+  </div>
+
+  <!-- Row 3: Total Household Income -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center mb-4">
+    <label class="md:col-span-2 text-left md:text-right md:pr-4 font-semibold">Total Household Income</label>
+    <div class="md:col-span-2">
+      <input type="text" class="form-input total_houese_hold_income w-full max-w-[370px]" placeholder="0.00" name="total_houese_hold_income" style="width:370px;">
+    </div>
+  </div>
+</fieldset>
+
+    
+<fieldset class="group-box">
+  <legend class="group-title">Your Home</legend>
+  
+  <!-- Row 1: Home Value -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center mb-4">
+    <label class="md:col-span-2 text-left md:text-right md:pr-4">Value of your home</label>
+    <div class="md:col-span-2">
+      <input type="text" class="form-input your_home_value_of_your_home w-full max-w-[370px]" name="your_home_value_of_your_home" style="width:370px;">
+    </div>
+  </div>
+
+  <!-- Row 2: Mortgage -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center mb-4">
+    <label class="md:col-span-2 text-left md:text-right md:pr-4">Mortgage</label>
+    <div class="md:col-span-2">
+      <input type="text" class="form-input your_home_mortgage w-full max-w-[370px]" placeholder="0%" name="your_home_mortgage" style="width:370px;">
+    </div>
+  </div>
+
+  <!-- Row 3: Equity -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center mb-4">
+    <label class="md:col-span-2 text-left md:text-right md:pr-4 font-semibold">Equity in your home</label>
+    <div class="md:col-span-2">
+      <input type="text" class="form-input equity_in_your_home w-full max-w-[370px]" placeholder="0.00" name="equity_in_your_home" style="width:370px;">
+    </div>
+  </div>
+</fieldset>
+
+
+  <fieldset class="group-box">
+  <legend class="group-title">Investment Portfolio</legend>
+  
+  <!-- Row 1: Long Term Savings -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center mb-4">
+    <label class="md:col-span-2 text-left md:text-right md:pr-4">Long Term Savings / Term Deposits / Bonds</label>
+    <div class="md:col-span-2">
+      <input type="text" class="form-input investment_portfolio_long_term_savings w-full max-w-[370px]" name="investment_portfolio_long_term_savings" style="width:370px;">
+    </div>
+  </div>
+
+  <!-- Row 2: Superannuation (Client) -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center mb-4">
+    <label class="md:col-span-2 text-left md:text-right md:pr-4">Superannuation (Client) - Net Value</label>
+    <div class="md:col-span-2">
+      <input type="text" class="form-input investment_portfolio_superannuation_client_net_value w-full max-w-[370px]" placeholder="0%" name="investment_portfolio_superannuation_client_net_value" style="width:370px;">
+    </div>
+  </div>
+
+  <!-- Row 3: Superannuation (Partner) -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center mb-4">
+    <label class="md:col-span-2 text-left md:text-right md:pr-4">Superannuation (Partner) - Net Value</label>
+    <div class="md:col-span-2">
+      <input type="text" class="form-input investment_portfolio_superannuation_partner_net_value w-full max-w-[370px]" placeholder="0%" name="investment_portfolio_superannuation_partner_net_value" style="width:370px;">
+    </div>
+  </div>
+
+  <!-- Row 4: Shares / Managed Funds -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center mb-4">
+    <label class="md:col-span-2 text-left md:text-right md:pr-4">Shares / Managed Funds - Net Value</label>
+    <div class="md:col-span-2">
+      <input type="text" class="form-input investment_portfolio_shares_net_value w-full max-w-[370px]" placeholder="0%" name="investment_portfolio_shares_net_value" style="width:370px;">
+    </div>
+  </div>
+
+  <!-- Row 5: Business -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center mb-4">
+    <label class="md:col-span-2 text-left md:text-right md:pr-4">Business - Net Value</label>
+    <div class="md:col-span-2">
+      <input type="text" class="form-input investment_portfolio_business_net_value w-full max-w-[370px]" placeholder="0%" name="investment_portfolio_business_net_value" style="width:370px;">
+    </div>
+  </div>
+
+  <!-- Row 6: Existing Investment Property -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center mb-4">
+    <label class="md:col-span-2 text-left md:text-right md:pr-4">Existing Investment Property Portfolio</label>
+    <div class="md:col-span-2">
+      <input type="text" class="form-input investment_portfolio_existing_investment_property w-full max-w-[370px]" placeholder="0%" name="investment_portfolio_existing_investment_property" style="width:370px;">
+    </div>
+  </div>
+
+  <!-- Row 7: Mortgage -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center mb-4">
+    <label class="md:col-span-2 text-left md:text-right md:pr-4">Mortgage</label>
+    <div class="md:col-span-2">
+      <input type="text" class="form-input investment_portfolio_mortgage w-full max-w-[370px]" placeholder="0%" name="investment_portfolio_mortgage" style="width:370px;">
+    </div>
+  </div>
+
+  <!-- Row 8: Investment Portfolio Total -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center mb-4">
+    <label class="md:col-span-2 text-left md:text-right md:pr-4 font-semibold">Investment Portfolio Total</label>
+    <div class="md:col-span-2">
+      <input type="text" class="form-input investment_portfolio_total w-full max-w-[370px]" name="investment_portfolio_total" style="width:370px;">
+    </div>
+  </div>
+
+  <!-- Row 9: Investment Portfolio Net Position -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center mb-4">
+    <label class="md:col-span-2 text-left md:text-right md:pr-4 font-semibold">Investment Portfolio Net Position</label>
+    <div class="md:col-span-2">
+      <input type="text" class="form-input investment_portfolio_net_position w-full max-w-[370px]" placeholder="0%" name="investment_portfolio_net_position" style="width:370px;">
+    </div>
+  </div>
+
+  <!-- Row 10: Repay Mortgage on Your Home -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center mb-4">
+    <label class="md:col-span-2 text-left md:text-right md:pr-4">Repay Mortgage on Your Home</label>
+    <div class="md:col-span-2">
+      <input type="text" class="form-input investment_portfolio_repay_mortgage w-full max-w-[370px]" placeholder="0%" name="investment_portfolio_repay_mortgage" style="width:370px;">
+    </div>
+  </div>
+
+  <!-- Row 11: Current Net Financial Assets -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center mb-4">
+    <label class="md:col-span-2 text-left md:text-right md:pr-4 font-bold text-base">Current Net Financial Assets</label>
+    <div class="md:col-span-2">
+      <input type="text" class="form-input investment_portfolio_current_net_financial_assets w-full max-w-[370px]" placeholder="0.00" name="investment_portfolio_current_net_financial_assets" style="width:370px;">
+    </div>
+  </div>
+</fieldset>
+
 
 <fieldset class="group-box">
-        <legend class="group-title">Invested Portfolio Assets</legend>
-      
-  <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
- 
+  <legend class="group-title">Projected Values</legend>
+  
+  <!-- Row 1: Home Value Input -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center mb-4">
+    <label class="md:col-span-2 text-left md:text-right md:pr-4">Value of your Home</label>
+    <div class="md:col-span-2">
+      <input type="text" class="form-input projected_value_of_your_home w-full max-w-[370px]" name="projected_value_of_your_home" style="width:370px;">
+    </div>
+  </div>
 
-    <div class="col-span-1 md:col-span-3">
-      <label >Superannuation</label>
-      <input type="text" class="mt-1 form-input investment_portfolio_assets_superannuation" name="investment_portfolio_assets_superannuation">
+  <!-- Row 2: Descriptive Note -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+    <!-- Empty columns push the note right under the input box for structural symmetry -->
+    <div class="hidden md:block md:col-span-2"></div>
+    <div class="col-span-1 md:col-span-2 max-w-[370px]">
+      <p class="text-sm text-gray-500 italic leading-snug">
+        Note: The future value of your home has been calculated by assuming an average growth rate of 4.5% per annum.
+      </p>
     </div>
+  </div>
+</fieldset>
 
-</div>
-<div class="w-full ">
-   <label class="w-full text-gray-700 font-medium"><i>Note: The future superannuation value has been calculated by assuming an SG rate of 9.5% of your current salary, contributed quarterly and an average growth rate of 4.5% per annum</i></label>
-</div>
-  <br/>
-   <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-     <div class="col-span-1 md:col-span-3">
-        <label >Long-term Saving, Term Deposits, Bonds</label>
-        <input type="text" class="mt-1 form-input investment_portfolio_assets_long_term_savings" name="investment_portfolio_assets_long_term_savings">
+
+<fieldset class="group-box">
+  <legend class="group-title">Invested Portfolio Assets</legend>
+  
+  <!-- Row 1: Superannuation -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center mb-1">
+    <label class="md:col-span-2 text-left md:text-right md:pr-4">Superannuation</label>
+    <div class="md:col-span-2">
+      <input type="text" class="form-input investment_portfolio_assets_superannuation w-full max-w-[370px]" name="investment_portfolio_assets_superannuation" style="width:370px;">
     </div>
-    <div class="col-span-1 md:col-span-3">
-        <label >Shares / Managed Funds - Net Value</label>
-        <input type="text" class="mt-1 form-input investment_portfolio_assets_shares" name="investment_portfolio_assets_shares">
+  </div>
+
+  <!-- Row 2: Superannuation Note -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+    <div class="hidden md:block md:col-span-2"></div>
+    <div class="col-span-1 md:col-span-2 max-w-[370px]">
+      <p class="text-sm text-gray-500 italic leading-snug">
+        Note: The future superannuation value has been calculated by assuming an SG rate of 9.5% of your current salary, contributed quarterly and an average growth rate of 4.5% per annum
+      </p>
     </div>
-      <div class="col-span-1 md:col-span-3">
-        <label >Business - Net Value</label>
-        <input type="text" class="mt-1 form-input investment_portfolio_assets_business_net_value" name="investment_portfolio_assets_business_net_value">
+  </div>
+
+  <!-- Row 3: Long-term Savings -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center mb-4">
+    <label class="md:col-span-2 text-left md:text-right md:pr-4">Long-term Saving, Term Deposits, Bonds</label>
+    <div class="md:col-span-2">
+      <input type="text" class="form-input investment_portfolio_assets_long_term_savings w-full max-w-[370px]" name="investment_portfolio_assets_long_term_savings" style="width:370px;">
     </div>
-    <div class="col-span-1 md:col-span-3">
-        <label >Existing Invesment Propety Portfolio</label>
-        <input type="text" class="mt-1 form-input investment_portfolio_assets_existing_investment_property" name="investment_portfolio_assets_existing_investment_property">
+  </div>
+
+  <!-- Row 4: Shares / Managed Funds -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center mb-4">
+    <label class="md:col-span-2 text-left md:text-right md:pr-4">Shares / Managed Funds - Net Value</label>
+    <div class="md:col-span-2">
+      <input type="text" class="form-input investment_portfolio_assets_shares w-full max-w-[370px]" name="investment_portfolio_assets_shares" style="width:370px;">
     </div>
-      <div class="col-span-1 md:col-span-3">
-        <label >Mortgage (assumes Interest Only repayments)</label>
-        <input type="text" class="mt-1 form-input investment_portfolio_assets_mortgage" name="investment_portfolio_assets_mortgage">
+  </div>
+
+  <!-- Row 5: Business -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center mb-4">
+    <label class="md:col-span-2 text-left md:text-right md:pr-4">Business - Net Value</label>
+    <div class="md:col-span-2">
+      <input type="text" class="form-input investment_portfolio_assets_business_net_value w-full max-w-[370px]" name="investment_portfolio_assets_business_net_value" style="width:370px;">
     </div>
-   </div>
-   <br/>
-   <div class="grid grid-cols-1 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-5 gap-5">
-    <div>
-        <label>Net Financial Assets at Desired Retirement Age</label>
-        <input type="text"  class="mt-1 form-input investment_portfolio_net_financial_assets"  placeholder="0.00" name="investment_portfolio_net_financial_assets" >
+  </div>
+
+  <!-- Row 6: Existing Investment Property -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center mb-4">
+    <label class="md:col-span-2 text-left md:text-right md:pr-4">Existing Investment Property Portfolio</label>
+    <div class="md:col-span-2">
+      <input type="text" class="form-input investment_portfolio_assets_existing_investment_property w-full max-w-[370px]" name="investment_portfolio_assets_existing_investment_property" style="width:370px;">
     </div>
-</div>
-    </fieldset>
+  </div>
+
+  <!-- Row 7: Mortgage -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center mb-4">
+    <label class="md:col-span-2 text-left md:text-right md:pr-4">Mortgage (assumes Interest Only repayments)</label>
+    <div class="md:col-span-2">
+      <input type="text" class="form-input investment_portfolio_assets_mortgage w-full max-w-[370px]" name="investment_portfolio_assets_mortgage" style="width:370px;">
+    </div>
+  </div>
+
+  <!-- Row 8: Net Financial Assets at Retirement Age -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center mb-4">
+    <label class="md:col-span-2 text-left md:text-right md:pr-4 font-bold text-base">Net Financial Assets at Desired Retirement Age</label>
+    <div class="md:col-span-2">
+      <input type="text" class="form-input investment_portfolio_net_financial_assets w-full max-w-[370px]" placeholder="0.00" name="investment_portfolio_net_financial_assets" style="width:370px;">
+    </div>
+  </div>
+</fieldset>
+
     
     
 </form>
 <br/>
-     <button type="submit" class="btn btn-primary btn-details" style="position:relative; bottom:20px;right:20px;float:right;">
-                                    Save
+     <button type="submit" class="btn btn-danger btn-close" style="position:relative; bottom:20px;right:20px;float:right;">
+                                    Close
                                 </button>
 
 
@@ -229,12 +282,8 @@
       @section('scripts')
       <script>
          $(document).ready(function(){
-         $(".btn-details").click(function(){
-        Swal.fire({
-            title: "Successfully Saved!",
-            icon: "success",
-            draggable: true
-            });
+         $(".btn-close").click(function(){
+            window.close();
          })
          });
       </script>

@@ -64,6 +64,12 @@ Route::group(['namespace' => 'App\Http\Controllers'],function()
             Route::get('currentposition', 'currentposition')->name('currentposition');
             Route::get('currentposition/{id}','getCurrentPositionData')->name('currentposition'); 
        });
+        Route::controller(SheetFinancialIndependanceController::class)->group(function () {
+            Route::get('financialindependance', 'financialindependance')->name('financialindependance');
+            //  Route::get('financialindependance','assumptionsData')->name('financialindependance'); 
+             Route::get('financialindependance/{id}','assumptionsData')->name('financialindependance');
+            
+       });
         Route::controller(IncomeController::class)->group(function () {
              Route::get('income', 'income')->name('income');
        });

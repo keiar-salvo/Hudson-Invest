@@ -73,14 +73,26 @@ $('.details_id').val(transactionID());
      var appURL = window.location.origin;
      var details_id =  $('.details_id').val();
 var annual_growth_rate_invest_assets = 0;
+var income_investment_portfolio_assets = 0;
+var annual_inflation_rate = 0;
+
+
 /***************Get Assumption Rates*************************/
 $.ajax({
   url: appURL + "/details",
   type: "GET",
   dataType: "json",
   success: function(response) {   
-  console.log("Rates:" + response);
+  console.log(response[0]);
   annual_growth_rate_invest_assets = response[0]['annual_compound_growth_rate_investment_assets'];
+  annual_interest_rate_mortgages = response[0]['annual_interest_rate_mortgages'];
+  $('.personal_debt_rate_mortgage_rates').val(annual_interest_rate_mortgages);
+  $('.mortgage_existing_investment_properties').val(annual_interest_rate_mortgages);
+  $('.mortgage_new_investment_properties').val(annual_interest_rate_mortgages);
+   $('.mortgage_new_investment_properties').val(annual_interest_rate_mortgages);
+   income_investment_portfolio_assets = response[0]['income_investment_portfolio_assets'];
+   annual_inflation_rate = response[0]['annual_inflation_rate'];
+  
 }
 });
 
@@ -91,10 +103,10 @@ $.ajax({
     
     var formData = new FormData($('.clientdetails').get(0))   
 
-    // Calculate Future Values for Current Position
-    currentPosition(formData,annual_growth_rate_invest_assets);
+    // Calculate Future Values for Current Position Page
+    currentPosition_and_financial_independance(formData,annual_growth_rate_invest_assets,income_investment_portfolio_assets,annual_inflation_rate);
 
-    console.log(formData);
+    // console.log(formData);
 
     $.ajax({
     headers: {
@@ -163,6 +175,7 @@ $(".btn-update-details").click(function(event){
     event.preventDefault();
     var formData = new FormData($('.clientdetails').get(0));
     formData.append('_method','POST');
+    currentPosition_and_financial_independance(formData,annual_growth_rate_invest_assets);
     $.ajax({
     headers: {
       'X-CSRF-TOKEN': "{{ csrf_token() }}"
@@ -217,7 +230,7 @@ $.ajax({
   type: "GET",
   dataType: "json",
   success: function(response) {   
-  console.log(response);
+  // console.log(response);
   if(response.status == 'no data available')
   {
     $('.btn-update-details').css('display','none');
@@ -227,9 +240,7 @@ $.ajax({
   else{
 
     filldataforms(response);
-    
-
-    // $('.add-investment-property').css('display','none');                 
+                 
     $('.btn-details').css('display','none');
     $('.btn-update-details').css('display','block');
     var  investment_asset = (response['InvestmentPropertyAssetDetails']).length;
@@ -352,8 +363,23 @@ $.ajax({
   type: "GET",
   dataType: "json",
   success: function(response) {   
-  console.log(response);
+  // console.log(response);
   fillCurrentPosition(response);
+    },
+    error: function(error) {
+    console.error("AJAX Error: " + error);
+    }
+    });
+        /************End Get Details******************************/
+
+$.ajax({
+  url: appURL + "/financialindependance/" + product,
+  type: "GET",
+  dataType: "json",
+  success: function(response) {   
+  // console.log(response);
+  // fillCurrerentPosition(response);
+  console.log(response);
     },
     error: function(error) {
     console.error("AJAX Error: " + error);
