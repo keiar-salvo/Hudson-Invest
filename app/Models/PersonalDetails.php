@@ -550,10 +550,52 @@ class PersonalDetails extends Model
                     $financial_independance->weekly_increase_in_net_financial_assets = $request->input('weekly_increase_in_net_financial_assets');
                     $financial_independance->current_level_of_income_and_expenses = $request->input('current_level_of_income_and_expenses');
                     $financial_independance->total_investment_portfolio_achieve_annual_household_today = $request->input('total_investment_portfolio_achieve_annual_household_today');
-                  
+                    $financial_independance->present_value_required = $request->input('present_value_required');
                     $financial_independance->encoded_by   = $request->input('encoded_by');
                     $financial_independance->date_encoded = Carbon::now()->toDateString();
                     $financial_independance->save();
+
+                    $rawPvString = $request->input('present_value_required');
+                    $cleanPv = str_replace(['$', ','], '', $rawPvString);
+                    $pv = (float) $cleanPv;
+                    $rate = (float) $request->input('annual_inflation_rate') / 100;
+                    $years = (int) $request->input('years_to_achieve_financial_independence');
+                    $breakdown = [];
+
+                    for ($i = 1; $i <= $years; $i++) {
+                    $yearlyValue = $pv * pow(1 + $rate, $i); 
+                    $breakdown[] = [
+                    'year' => 'Year ' . $i,
+                    'value' =>  number_format($yearlyValue, 0, '.', ',')
+                    ];
+                }
+      
+        // $portfolio_yearly = Yearly_Investment_Portfolio::updateOrCreate(
+        //     ['details_id' => $request->input('details_id')],
+        //     [
+                
+        //         'year' => $years,
+        //         'yearly_value' => $breakdown,
+        //         'encoded_by'   => $request->input('encoded_by'),
+        //         'date_encoded' => Carbon::now()->toDateString(),
+        //     ]
+        // );
+    $portfolio_yearly = Yearly_Investment_Portfolio::create([
+        'details_id'   => $request->input('details_id'),
+        'year'         => $years,
+        'yearly_value' => $breakdown,
+        'encoded_by'   => $request->input('encoded_by'),
+        'date_encoded' => Carbon::now()->toDateString(),
+    ]);
+
+      $target = FinancialIndependenceTarget::create([
+            'details_id'   => $request->input('details_id'),
+            'current_net_financial_assets'             => $request->input('investment_portfolio_net_financial_assets'),
+            'total_investment_portfolio_required'      => $request->input('total_investment_portfolio_required'),
+            'total_annual_household_income_retirement' => $request->input('total_annual_household_income_retirement'),
+            'encoded_by'                               => $request->input('encoded_by'),
+            'date_encoded'                             => Carbon::now()->toDateString(),
+        ]);
 
             DB::commit();
 
@@ -1589,7 +1631,36 @@ class PersonalDetails extends Model
                     $financial_independance->date_encoded = Carbon::now()->toDateString();
                     $financial_independance->save();
                     }
-                 
+
+
+                    $rawPvString = $request->input('present_value_required');
+                    $cleanPv = str_replace(['$', ','], '', $rawPvString);
+                    $pv = (float) $cleanPv;
+                    $rate = (float) $request->input('annual_inflation_rate') / 100;
+                    $years = (int) $request->input('years_to_achieve_financial_independence');
+                    $breakdown = [];
+
+                    for ($i = 1; $i <= $years; $i++) {
+                    $yearlyValue = $pv * pow(1 + $rate, $i); 
+                    $breakdown[] = [
+                    'year' => 'Year ' . $i,
+                    'value' =>  number_format($yearlyValue, 0, '.', ',')
+                    ];
+                }
+
+                 $portfolio_yearly = Yearly_Investment_Portfolio::where('details_id', $request->input('details_id'))->update([
+                    'year'         => $years,
+                    'yearly_value' => $breakdown,
+                  
+                    ]);
+
+                $updatedRows = FinancialIndependenceTarget::where('details_id', $request->input('details_id'))->update([
+                    'current_net_financial_assets'             => $request->input('investment_portfolio_net_financial_assets'),
+                    'total_investment_portfolio_required'      => $request->input('total_investment_portfolio_required'),
+                    'total_annual_household_income_retirement' => $request->input('total_annual_household_income_retirement'),
+                    
+                    ]);
+
         
          
         DB::commit();

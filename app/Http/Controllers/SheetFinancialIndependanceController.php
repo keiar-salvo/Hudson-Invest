@@ -21,11 +21,11 @@ class SheetFinancialIndependanceController extends Controller
     {
         return view('forms.financialindependance');
     }
-    public function assumptionsData(Request $request){
+    public function financialIndependanceCollection($id){
         try {
           
             $data = new SheetFinancialIndependance();
-            return $data->getAssumptionsData($request);
+            return $data->getAssumptionsData($id);
          
          
         } catch (Exception $e) {

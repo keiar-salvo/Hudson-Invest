@@ -64,10 +64,19 @@ Route::group(['namespace' => 'App\Http\Controllers'],function()
             Route::get('currentposition', 'currentposition')->name('currentposition');
             Route::get('currentposition/{id}','getCurrentPositionData')->name('currentposition'); 
        });
+
+        Route::controller(YearlyInvestmentPortfolioController::class)->group(function () {
+            Route::get('investmentportfolio', 'yearlyinvestmentportfolio')->name('investmentportfolio');
+            Route::get('investmentportfolio/{id}','getYearlyInvestmentPortfolio')->name('investmentportfolio'); 
+       });
+        Route::controller(FinancialIndependenceTargetController::class)->group(function () {
+            Route::get('initialclientpograph', 'initialclientpo')->name('initialclientpograph');
+            Route::get('initialclientpograph/{id}','getInitialClientPO')->name('initialclientpograph'); 
+       });
         Route::controller(SheetFinancialIndependanceController::class)->group(function () {
             Route::get('financialindependance', 'financialindependance')->name('financialindependance');
             //  Route::get('financialindependance','assumptionsData')->name('financialindependance'); 
-             Route::get('financialindependance/{id}','assumptionsData')->name('financialindependance');
+             Route::get('financialindependance/{id}','financialIndependanceCollection')->name('financialindependance');
             
        });
         Route::controller(IncomeController::class)->group(function () {

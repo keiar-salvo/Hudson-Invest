@@ -100,10 +100,10 @@
             '<ul class="dropdown-menu">'+ 
             '<li><a href="/details?id='+ element.details_id + '" target="_blank">Personal Details</a></li>'+ 
             '<li><a href="/currentposition?id='+ element.details_id + '" target="_blank">Current Position</a></li>'+ 
-            '<li><a href="/financialindependance?id='+ element.details_id +'">Financial Independence</a></li>'+ 
-            '<li><a href="/details?id='+ element.details_id +'">Initital Client Graph</a></li>'+ 
-            '<li><a href="/details?id='+ element.details_id +'">Client New IP Graph</a></li>'+ 
-            '<li><a href="/details?id='+ element.details_id +'">Client Po with IP Graph</a></li>'+ 
+            '<li><a href="/financialindependance?id='+ element.details_id +'" target="_blank">Financial Independence</a></li>'+ 
+            '<li><a href="/investmentportfolio?id='+ element.details_id +'" target="_blank">Invt Portfolio Graph</a></li>'+ 
+            '<li><a href="/initialclientpograph?id='+ element.details_id +'" target="_blank">Initial IP Graph</a></li>'+ 
+            // '<li><a href="/details?id=#">Client Po with IP Graph</a></li>'+ 
             '</ul></div>' 
         ]).draw(false); 
     });        

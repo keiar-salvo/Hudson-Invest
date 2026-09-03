@@ -21,9 +21,11 @@ class SheetFinancialIndependance extends Model
                 "assumptionData" => $assumptionData,
                 "financialIndependance" => $financialIndependance,
                 ];
-        return view('forms.financialindependance', [
-       'proc' => $result
-    ]);
+                 return response()->json($result);
+        
+    //     return view('forms.financialindependance', [
+    //    'proc' => $result
+    // ]);
     }
      
 }

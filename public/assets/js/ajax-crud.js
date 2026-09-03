@@ -134,6 +134,9 @@ $.ajax({
     draggable: true
     });
     $('.details_id').val(transactionID());
+       setTimeout(function () {
+                window.location.href='/clientlist';
+            }, 2000);
       },  
   error: function(xhr) 
         {
@@ -175,7 +178,7 @@ $(".btn-update-details").click(function(event){
     event.preventDefault();
     var formData = new FormData($('.clientdetails').get(0));
     formData.append('_method','POST');
-    currentPosition_and_financial_independance(formData,annual_growth_rate_invest_assets);
+    currentPosition_and_financial_independance(formData,annual_growth_rate_invest_assets,income_investment_portfolio_assets,annual_inflation_rate);
     $.ajax({
     headers: {
       'X-CSRF-TOKEN': "{{ csrf_token() }}"
@@ -377,8 +380,8 @@ $.ajax({
   type: "GET",
   dataType: "json",
   success: function(response) {   
-  // console.log(response);
-  // fillCurrerentPosition(response);
+  console.log(response);
+ fillFinancialIndependaceAssumptionsDataForms(response);
   console.log(response);
     },
     error: function(error) {

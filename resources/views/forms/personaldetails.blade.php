@@ -1722,12 +1722,16 @@
                 
 </form>
 <br/>
-<button type="submit" class="btn btn-primary btn-details" style="position:relative; bottom:20px;right:20px;float:right;">
+  <button type="submit" class="btn btn-danger btn-close" style="position:relative; bottom:20px;right:20px;float:right;">
+                                    Close
+                                </button>
+<button type="submit" class="btn btn-primary btn-details" style="position:relative; bottom:20px;right:20px;float:right;margin-right:10px;">
                                     Save
                                 </button>
-  <button type="submit" class="btn btn-primary btn-update-details" style="position:relative; bottom:20px;right:20px;float:right; display:none;">
+  <button type="submit" class="btn btn-primary btn-update-details" style="position:relative; bottom:20px;right:20px;float:right; display:none;margin-right:10px;">
                                 Save Changes
                                 </button>
+
 <br/>
 
     </div>
@@ -1741,7 +1745,13 @@
 
         
       @section('scripts')
-
+<script>
+  $(document).ready(function(){
+      $(".btn-close").click(function(){
+            window.close();
+         })
+  });
+</script>
       @endsection
           
   

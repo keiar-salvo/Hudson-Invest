@@ -1121,6 +1121,18 @@ function calculateFV(finalrate, nper, pmt, pvalue, type = 0) {
         return -(pvalue * pvFactor + pmt * pmtFactor);
 }
 
+function calculatePV(rate, nper, pmt, fv, type) {
+   
+    pmt = pmt || 0;
+    fv = fv || 0;
+    type = type || 0;
+    if (rate === 0) {
+        return -(fv + (pmt * nper));
+    }
+    var pv = (pmt * (1 - Math.pow(1 + rate, -nper)) / rate) + fv * Math.pow(1 + rate, -nper);
+    return -pv;
+}
+
 function currentPosition_and_financial_independance(formData,annual_growth_rate_invest_assets,income_investment_portfolio_assets,annual_inflation_rate){
     
     // Get Total House Hold Income
@@ -1384,7 +1396,7 @@ var formatted_weekly_gross_household_income = Math.round(weekly_gross_household_
 
 let agethisyear = parseFloat($('.age_average').val());
 let retirementage =  parseFloat($('.target_age').val());
-let years_to_achive_financial_independence =  retirementage - agethisyear + 1;
+let years_to_achive_financial_independence =  retirementage - agethisyear;
 console.log("Age: " + years_to_achive_financial_independence);
 
 let get_income_investment_portfolio_assets = parseFloat(income_investment_portfolio_assets) / 100;
@@ -1396,11 +1408,13 @@ var formatted_total_invesemtment_porfolio = total_invesemtment_porfolio.toLocale
     });
 
 let raw_rate = parseFloat(annual_inflation_rate) || 0;
+console.log("Inflation: " + annual_inflation_rate);
+console.log("years: " + years_to_achive_financial_independence);
+console.log("Investment: " + formatted_total_invesemtment_porfolio);
 let fin_rate = raw_rate > 1 ? raw_rate / 100 : raw_rate;
 
-let fi_nper = parseFloat(years_to_achive_financial_independence) || 0;
+let fi_nper = parseFloat(years_to_achive_financial_independence) || 0; // Test for exact 
 
-// Remove commas from string formatted numbers (e.g., "3,750,000" becomes 3750000)
 let raw_fi_pv = 0;
 if (formatted_total_invesemtment_porfolio) {
     let cleanString = formatted_total_invesemtment_porfolio.toString().replace(/,/g, '');
@@ -1408,13 +1422,11 @@ if (formatted_total_invesemtment_porfolio) {
 }
 
 let fi_pmt = 0;
-let fi_pv  = -raw_fi_pv; // Mirrors the negative flag (-$C$16) from Excel
-let fi_type = 1;        // Mirrors the Type parameter (1) from Excel
+let fi_pv  = -raw_fi_pv; 
+let fi_type = 1;        
 
-// 3. Execute the function
+
 let total_investment_portfolio_desired_retirement_age = calculateFV(fin_rate, fi_nper, fi_pmt, fi_pv, fi_type);
-
-// 4. Format the final output to display with commas and no decimals (e.g., "7,185,388")
 let formatted_total_investment_portfolio_desired_retirement_age = Math.round(total_investment_portfolio_desired_retirement_age).toLocaleString('en-US');
 
 // var formatted_total_investment_portfolio_desired_retirement_age = Math.round(total_investment_portfolio_desired_retirement_age).toLocaleString('en-US', { 
@@ -1435,7 +1447,7 @@ var formatted_your_current_net_financial_asset_value =  your_current_net_financi
           maximumFractionDigits: 2 
     });
 let clean_years_to_achieve = fi_nper;
-let annual_increase_net_financial_assets = -your_current_net_financial_asset_value / clean_years_to_achieve;
+let annual_increase_net_financial_assets = your_current_net_financial_asset_value / clean_years_to_achieve;
 var formatted_annual_increase_net_financial_assets =  annual_increase_net_financial_assets.toLocaleString('en-US', { 
           minimumFractionDigits: 2, 
           maximumFractionDigits: 2 
@@ -1452,6 +1464,19 @@ var formatted_weekly_increase_net_financial_asset = weekly_increase_net_financia
           minimumFractionDigits: 2, 
           maximumFractionDigits: 2 
     });
+    fin_rate;
+    years_to_achive_financial_independence;
+    let pv_pmt = 0;
+    clean_total_investment_portfolio_desired_retirement_age;
+    let pv_type = 0;
+
+    let total_present_value_required = calculatePV(fin_rate,years_to_achive_financial_independence,pv_pmt,-clean_total_investment_portfolio_desired_retirement_age,pv_type);
+    var formatted_total_present_value_required =Math.round(total_present_value_required).toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    });
+
+
 
     formData.append('_method','POST');
     formData.append('gross_anual_income_client',$('.total_income_client_annual').val());
@@ -1500,6 +1525,9 @@ var formatted_weekly_increase_net_financial_asset = weekly_increase_net_financia
     formData.append('weekly_increase_in_net_financial_assets',formatted_weekly_increase_net_financial_asset);
     formData.append('current_level_of_income_and_expenses',$('.amount_per_week').val());
     formData.append('total_investment_portfolio_achieve_annual_household_today',formatted_total_invesemtment_porfolio);
+    formData.append('present_value_required',formatted_total_present_value_required);
+    formData.append('annual_inflation_rate',raw_rate);
+     
     
 
     

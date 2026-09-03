@@ -194,6 +194,20 @@
   </div>
 </fieldset>
 
+  <fieldset class="group-box">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center mb-4">
+    <!-- Label occupies 2 columns and right-aligns next to the input on desktop -->
+    <label class="md:col-span-2 text-left md:text-right md:pr-4">
+      Present Value Required
+    </label>
+    
+    <!-- Input occupies the remaining 2 columns -->
+    <div class="md:col-span-2">
+      <input type="text" class="form-input present_value_required w-full max-w-[370px]" placeholder="0.00" name="present_value_required" style="width:370px;">
+    </div>
+  </div>
+</fieldset>
+
 
 
 
@@ -264,7 +278,7 @@
          
       @section('scripts')
       <script>
-         $(document).ready(function(){
+       $(document).ready(function(){
          $(".btn-close").click(function(){
             window.close();
          })
