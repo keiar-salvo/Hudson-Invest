@@ -82,6 +82,9 @@ Route::group(['namespace' => 'App\Http\Controllers'],function()
         Route::controller(IncomeController::class)->group(function () {
              Route::get('income', 'income')->name('income');
        });
+        Route::controller(DashboardController::class)->group(function () {
+             Route::get('dashboard', 'dashboardindex')->name('dashboard');
+       });
   
         Route::controller(SuperannuationController::class)->group(function () {
              Route::get('contribution', 'contribution')->name('contribution');

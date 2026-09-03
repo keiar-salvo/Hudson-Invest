@@ -41,7 +41,7 @@ class LoginController extends Controller
              
                 // Update last login
                 // $user->update(['last_login' => Carbon::now()]);
-                return redirect()->to('clientlist');
+                return redirect()->to('dashboard');
             }
             return redirect('login')->with('error', 'Wrong Username or Password');
                      return response()->json([
