@@ -67,10 +67,11 @@
       <input type="text" class="mt-1 form-input age_partner" name="age_partner" id="">
     </div>
 
-    <div class="col-span-1 md:col-span-1">
-      <label>Age (Average)</label>
-      <input type="text" class="mt-1 form-input age_average" name="age_average" id="">
-    </div>
+   <div class="col-span-1 md:col-span-1">
+  <label>Age (Average)</label>
+  <input type="text" class="mt-1 form-input age_average w-full" name="age_average" id="">
+  <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
+</div>
 
     <div class="col-span-1 md:col-span-1">
       <label>Amount per week to contribute to Property</label>
@@ -95,18 +96,22 @@
   
    <label>Desired Retirement Age</label>
     <input type="text"  class="mt-1 form-input desired_retirement_age"  placeholder="mm/dd/yyyy" name="desired_retirement_age" id="">
+    <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   <div >
     <label>In 7 years</label>
     <input type="text"  class="mt-1 form-input in_seven_years"  placeholder="mm/dd/yyyy" name="in_seven_years" id="">
+    <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
    <div >
     <label>In 14 years</label>
     <input type="text"  class="mt-1 form-input in_fourteen_years"  placeholder="mm/dd/yyyy" name="in_fourteen_years" >
+    <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   <div >
     <label>In 21 years</label>
     <input type="text"  class="mt-1 form-input in_twenty_one_years"  placeholder="mm/dd/yyyy" name="in_twenty_one_years" >
+    <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
 </div>
@@ -128,6 +133,7 @@
     <div class="col-span-1 md:col-span-3">
       <label >Years to Target Age</label>
       <input type="text" class="mt-1 form-input years_to_target_age" name="years_to_target_age">
+       <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
     </div>
 
 
@@ -135,6 +141,7 @@
       <label>Desired Retirement Date</label>
 
 <input  type="text" name="desired_retirement_date" class="form-input desired_retirement_date"   required="" style="margin-top:4px;">
+ <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
 
                                               
     </div>
@@ -182,11 +189,13 @@
   <div>
    <label >Client Annual</label>
     <input type="tel"  class="mt-1 form-input salary_client_annual"  placeholder="0.00" name="salary_client_annual">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
   <div>
    <label >Partner Annual</label>
     <input type="text" class="mt-1 form-input salary_partner_annual"  placeholder="0.00" name="salary_partner_annual">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
 
@@ -219,11 +228,13 @@
   <div>
    <label >Client Annual</label>
     <input type="tel"  class="mt-1 form-input bonus_client_annual"  placeholder="0.00" name="bonus_client_annual">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
   <div>
    <label >Partner Annual</label>
     <input type="text" class="mt-1 form-input bonus_partner_annual"  placeholder="0.00" name="bonus_partner_annual">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
 
@@ -256,11 +267,13 @@
   <div>
    <label >Client Annual</label>
     <input type="tel"  class="mt-1 form-input interest_income_client_annual"  placeholder="0.00" name="interest_income_client_annual">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
   <div>
   <label>Partner Annual</label>
     <input type="text" class="mt-1 form-input interest_income_partner_annual"  placeholder="0.00" name="interest_income_partner_annual">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
    
@@ -330,11 +343,13 @@
   <div>
    <label >Client Annual</label>
     <input type="tel"  class="mt-1 form-input dividend_income_client_annual"  placeholder="0.00" name="dividend_income_client_annual">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
   <div>
    <label >Partner Annual</label>
     <input type="text" class="mt-1 form-input dividend_income_partner_annual"  placeholder="0.00" name="dividend_income_partner_annual">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
 
@@ -367,11 +382,13 @@
   <div>
    <label >Client Annual</label>
     <input type="tel"  class="mt-1 form-input ss_income_client_annual"  placeholder="0.00" name="ss_income_client_annual">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
   <div>
    <label >Partner Annual</label>
     <input type="text" class="mt-1 form-input ss_income_partner_annual"  placeholder="0.00" name="ss_income_partner_annual">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
   
@@ -404,11 +421,13 @@
   <div>
    <label >Client Annual</label>
     <input type="tel"  class="mt-1 form-input business_income_client_annual"  placeholder="0.00" name="business_income_client_annual">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
   <div>
    <label >Partner Annual</label>
     <input type="text" class="mt-1 form-input business_income_partner_annual"  placeholder="0.00" name="business_income_partner_annual">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
      
   </div>
@@ -439,11 +458,13 @@
   <div>
    <label >Client Annual</label>
     <input type="tel"  class="mt-1 form-input other_income_client_annual"  placeholder="0.00" name="other_income_client_annual">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
   <div>
    <label >Partner Annual</label>
     <input type="text" class="mt-1 form-input other_income_partner_annual"  placeholder="0.00" name="other_income_partner_annual">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
      
@@ -509,6 +530,7 @@
     <div class="col-span-1 md:col-span-3">
       <label >Client - Gross Salary</label>
       <input type="text" class="mt-1 form-input gross_salary" name ="gross_salary">
+       <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
     </div>
 
 
@@ -521,12 +543,14 @@
     <div class="col-span-1 md:col-span-6">
       <label >Annual Contribution</label>
       <input type="email" class="mt-1 form-input annual_contribution" name="annual_contribution">
+       <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
     </div>
 
 
     <div class="col-span-1 md:col-span-3">
       <label >Quarterly Contribution</label>
       <input type="text" class="mt-1 form-input quarterly_contribution" name="quarterly_contribution">
+       <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
  
 
     <div class="col-span-1 md:col-span-6 text-right mt-2">
@@ -541,6 +565,7 @@
     <div class="col-span-1 md:col-span-3">
       <label >Partner - Gross Salary</label>
       <input type="text" class="mt-1 form-input partner_gross_salary" name ="partner_gross_salary">
+       <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
     </div>
 
 
@@ -553,12 +578,14 @@
     <div class="col-span-1 md:col-span-6">
       <label >Annual Contribution</label>
       <input type="email" class="mt-1 form-input partner_annual_contribution" name="partner_annual_contribution">
+       <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
     </div>
 
 
     <div class="col-span-1 md:col-span-3">
       <label >Quarterly Contribution</label>
       <input type="text" class="mt-1 form-input partner_quarterly_contribution" name="partner_quarterly_contribution">
+       <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
  
 
     <div class="col-span-1 md:col-span-6 text-right mt-2">
@@ -577,12 +604,14 @@
    <label style=" color: #bd0c1d">Total Contributions</label>
    <label>Annual Contributions</label>
 <input type="text"  class="mt-1 form-input grand_total_annual"  placeholder="0.00" name="grand_total_annual">
+ <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   
   <div style="padding-top: 26px;">
   
    <label>Quarterly Contributions</label>
     <input type="text"  class="mt-1 form-input grand_total_quarterly"  placeholder="0.00" name="grand_total_quarterly">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   </div>
     </fieldset>
@@ -618,15 +647,18 @@
  <div style="margin-top:23px;">
    <label >Market Value</label>
     <input type="tel"  name="principle_market_value" class="mt-1 form-input principle_market_value"  placeholder="0.00">
+
   </div>
 
  <div style="margin-top:23px;">
    <label >Client </label>
     <input type="text" name="principle_client" class="mt-1 form-input principle_client"  placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   <div style="margin-top:23px;">
    <label >Partner</label>
     <input type="text" name="principle_partner" class="mt-1 form-input principle_partner"  placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
  
   </div>
@@ -664,10 +696,12 @@
   <div>
    <label >Client </label>
     <input type="text" class="mt-1 form-input cash_client" name="cash_client" placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
     <div>
    <label >Partner</label>
     <input type="text" class="mt-1 form-input cash_partner" name="cash_partner"  placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
   </div>
@@ -704,10 +738,12 @@
   <div>
    <label >Client </label>
     <input type="text" class="mt-1 form-input non_investment_asset_client"  name="noninvestmentasset[0][non_investment_asset_client]" placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
     <div>
    <label >Partner</label>
     <input type="text" class="mt-1 form-input non_investment_asset_partner" name="noninvestmentasset[0][non_investment_asset_partner]"  placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 <div style="display:none;">
    <label >ID</label>
@@ -725,16 +761,19 @@
    <label style=" color: #bd0c1d">Total Non-Investment Assets</label>
    <label>Market Value</label>
 <input type="text"  class="mt-1 form-input total_non_investment_market_value"  placeholder="0.00" name="total_non_investment_market_value">
+ <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   
   <div style="padding-top: 26px;">
   
    <label>Client</label>
     <input type="text"  name="total_non_investment_client" class="mt-1 form-input total_non_investment_client"  placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   <div style="padding-top: 26px;">
     <label>Partner</label>
     <input type="text"  name="total_non_investment_partner" class="mt-1 form-input total_non_investment_partner"  placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 </div>
     <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
@@ -770,10 +809,12 @@
  <div style="margin-top:66px;">
    <label >Client </label>
     <input type="text" class="mt-1 form-input long_term_client" name="long_term_client" placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   <div style="margin-top:66px;">
    <label >Partner</label>
     <input type="text" class="mt-1 form-input long_term_partner" name="long_term_partner" placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
   </div>
@@ -809,10 +850,12 @@
   <div>
    <label >Client </label>
     <input type="text" class="mt-1 form-input superannuation_client_client" name="superannuation_client_client"  placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
     <div>
    <label >Partner</label>
     <input type="text" class="mt-1 form-input superannuation_client_partner" name="superannuation_client_partner" placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 </div>
   <br/>
@@ -847,10 +890,12 @@
   <div>
    <label >Client </label>
     <input type="text" class="mt-1 form-input superannuation_partner_client" name="superannuation_partner_client" placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
     <div>
    <label >Partner</label>
     <input type="text" class="mt-1 form-input superannuation_partner_partner" name="superannuation_partner_partner" placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 </div>
 
@@ -886,10 +931,12 @@
   <div>
    <label >Client </label>
     <input type="text" class="mt-1 form-input shares_fund_client" name="shares_fund_client" placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
     <div>
    <label >Partner</label>
     <input type="text" class="mt-1 form-input shares_fund_partner" name="shares_fund_partner" placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 </div>
   
@@ -925,10 +972,12 @@
   <div>
    <label >Client </label>
     <input type="text" class="mt-1 form-input business_client" name="business_client" placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
     <div>
    <label >Partner</label>
     <input type="text" class="mt-1 form-input business_partner" name="business_partner"  placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 </div>
   <br/>
@@ -1039,10 +1088,12 @@
   <div>
    <label >Client </label>
     <input type="text" class="mt-1 form-input client"  placeholder="0.00" name="row[0][client]">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
     <div>
    <label >Partner</label>
     <input type="text" class="mt-1 form-input partner"  placeholder="0.00" name="row[0][partner]">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
      <div style="display:none;">
    <label >ID</label>
@@ -1066,16 +1117,19 @@
    <label style=" color: #bd0c1d">Total Investment Assets</label>
    <label>Market Value</label>
 <input type="text"  class="mt-1 form-input total_investment_asset_market_value" name="total_investment_asset_market_value"  placeholder="0.00">
+ <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   
   <div style="padding-top: 26px;">
   
    <label>Client</label>
     <input type="text"  class="mt-1 form-input total_investment_asset_client" name="total_investment_asset_client"  placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   <div style="padding-top: 26px;">
     <label>Partner</label>
     <input type="text"  class="mt-1 form-input total_investment_asset_partner" name="total_investment_asset_partner" placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
 </div>
@@ -1085,16 +1139,19 @@
    <label style=" color: #bd0c1d">Total Assets</label>
    <label>Market Value</label>
 <input type="text"  class="mt-1 form-input total_asset_market_value" name="total_asset_market_value" placeholder="0.00">
+ <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   
   <div style="padding-top: 26px;">
   
    <label>Client</label>
     <input type="text"  class="mt-1 form-input total_asset_client" name="total_asset_client"  placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   <div style="padding-top: 26px;">
     <label>Partner</label>
     <input type="text"  class="mt-1 form-input total_asset_partner" name="total_asset_partner" placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
 </div>
@@ -1131,10 +1188,12 @@
  <div style="margin-top:23px;">
    <label >Client </label>
     <input type="text" class="mt-1 form-input mortgage_client" name="mortgage_client"  placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   <div style="margin-top:23px;">
    <label >Partner</label>
     <input type="text" class="mt-1 form-input mortgage_partner" name="mortgage_partner" placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
   </div>
@@ -1171,10 +1230,12 @@
  <div >
    <label >Client </label>
     <input type="text" class="mt-1 form-input personal_loans_client" name="personal_loans_client"  placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   <div>
    <label >Partner</label>
     <input type="text" class="mt-1 form-input personal_loans_partner" name="personal_loans_partner" placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
   </div>
@@ -1211,10 +1272,12 @@
  <div >
    <label >Client </label>
     <input type="text" class="mt-1 form-input car_loans_client" name="car_loans_client"  placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   <div>
    <label >Partner</label>
     <input type="text" class="mt-1 form-input car_loans_partner" name="car_loans_partner" placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
   </div>
@@ -1249,10 +1312,12 @@
  <div >
    <label >Client </label>
     <input type="text" class="mt-1 form-input other_debt_client" name="debt[0][other_debt_client]" placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   <div>
    <label >Partner</label>
     <input type="text" class="mt-1 form-input other_debt_parnter" name="debt[0][other_debt_parnter]"  placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
    <div style="display:none;">
@@ -1298,10 +1363,12 @@
  <div >
    <label >Client </label>
     <input type="text" class="mt-1 form-input credit_card_client" name="creditcard[0][credit_card_client]"  placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   <div>
    <label >Partner</label>
     <input type="text" class="mt-1 form-input credit_card_partner" name="creditcard[0][credit_card_partner]"  placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
     <div style="display:none;">
    <label >ID</label>
@@ -1320,16 +1387,19 @@
    <label style=" color: #bd0c1d">Total Non-Investment Liabilities</label>
    <label>Market Value</label>
 <input type="text"  class="mt-1 form-input total_non_invesment_liabilities_market_value" name="total_non_invesment_liabilities_market_value"  placeholder="0.00">
+ <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   
   <div style="padding-top: 26px;">
   
    <label>Client</label>
     <input type="text"  class="mt-1 form-input total_client total_non_invesment_liabilities_client" name="total_non_invesment_liabilities_client" placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   <div style="padding-top: 26px;">
     <label>Partner</label>
     <input type="text"  class="mt-1 form-input total_non_invesment_liabilities_partner" name="total_non_invesment_liabilities_partner"  placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
 </div>
@@ -1366,10 +1436,12 @@
  <div style="margin-top:23px;">
    <label >Client </label>
     <input type="text" class="mt-1 form-input margin_investment_client" name="margin_investment_client" placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   <div style="margin-top:23px;">
    <label >Partner</label>
     <input type="text" class="mt-1 form-input margin_investment_partner" name="margin_investment_partner" placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
   </div>
@@ -1406,10 +1478,12 @@
  <div>
    <label >Client </label>
     <input type="text" class="mt-1 form-input business_loans_client" name="business_loans_client"  placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   <div>
    <label >Partner</label>
     <input type="text" class="mt-1 form-input business_loans_partner" name="business_loans_partner" placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
   </div>
@@ -1446,10 +1520,12 @@
  <div>
    <label >Client </label>
     <input type="text" class="mt-1 form-input mortgage_investment_client" name="mortgageInvestment[0][mortgage_investment_client]"   placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   <div>
    <label >Partner</label>
     <input type="text" class="mt-1 form-input mortgage_investment_partner" name="mortgageInvestment[0][mortgage_investment_partner]" placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
     <div style="display:none;">
@@ -1469,16 +1545,19 @@
    <label style=" color: #bd0c1d">Total Invested Related Liabilities</label>
    <label>Market Value</label>
 <input type="text"  class="mt-1 form-input total_related_liabilities_market_value" name="total_related_liabilities_market_value"  placeholder="0.00">
+ <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   
   <div style="padding-top: 26px;">
   
    <label>Client</label>
     <input type="text"  class="mt-1 form-input total_related_liabilities_client" name="total_related_liabilities_client"  placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   <div style="padding-top: 26px;">
     <label>Partner</label>
     <input type="text"  class="mt-1 form-input total_related_liabilities_partner" name="total_related_liabilities_partner" placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
 </div>
@@ -1488,16 +1567,19 @@
    <label style=" color: #bd0c1d">Total Liabilities</label>
    <label>Market Value</label>
 <input type="text"  class="mt-1 form-input total_liabilities_market_value" name="total_liabilities_market_value"  placeholder="0.00">
+ <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   
   <div style="padding-top: 26px;">
   
    <label>Client</label>
     <input type="text"  class="mt-1 form-input total_liabilities_client" name="total_liabilities_client"  placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   <div style="padding-top: 26px;">
     <label>Partner</label>
     <input type="text"  class="mt-1 form-input total_liabilities_partner" name="total_liabilities_partner" placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
 </div>
@@ -1507,16 +1589,19 @@
    <label style=" color: #bd0c1d">Net Assets</label>
    <label>Market Value</label>
 <input type="text"  class="mt-1 form-input net_assets_market_value" name="net_assets_market_value" placeholder="0.00">
+ <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   
   <div style="padding-top: 26px;">
   
    <label>Client</label>
     <input type="text"  class="mt-1 form-input net_assets_client" name="net_assets_client"  placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   <div style="padding-top: 26px;">
     <label>Partner</label>
     <input type="text"  class="mt-1 form-input net_assets_partner" name="net_assets_partner"  placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
 
 </div>
@@ -1533,12 +1618,14 @@
     <div class="col-span-1 md:col-span-3">
       <label>PAYG Estimation - Client</label>
       <input type="text" class="mt-1 form-input payg_estimation_client" name="payg_estimation_client">
+       <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
     </div>
 
    
     <div class="col-span-1 md:col-span-3">
       <label >PAYG Estimation - Partner</label>
       <input type="text" class="mt-1 form-input payg_estimation_partner" name="payg_estimation_partner">
+       <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
     </div>
 
   </div>
@@ -1597,6 +1684,7 @@
                     <div class="col-span-1 md:col-span-3">
                         <label>Years</label>
                         <input type="text" class="mt-1 form-input personal_debt_rate_car_loans_years" name="personal_debt_rate_car_loans_years">
+                         <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
                     </div>
 
                 </div>
@@ -1697,6 +1785,7 @@
                     <div class="col-span-1 md:col-span-3">
                         <label>Mortgage - Existing Investment Properties</label>
                         <input type="text" class="mt-1 form-input mortgage_existing_investment_properties" name="mortgage_existing_investment_properties" placeholder="0%">
+                         <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
                     </div>
 
 
@@ -1710,6 +1799,7 @@
                     <div class="col-span-1 md:col-span-3">
                         <label>Mortgage - New Investment Properties</label>
                         <input type="text" class="mt-1 form-input mortgage_new_investment_properties" name="mortgage_new_investment_properties" placeholder="0%">
+                         <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
                     </div>
 
 
@@ -1740,9 +1830,6 @@
          <script defer="" src="{{ asset('assets/js/get-data-fill-forms.js') }}"></script>
          <script defer="" src="{{ asset('assets/js/append-html.js') }}"></script>
          <script defer="" src="{{ asset('assets/js/unary-calculations.js') }}"></script>
-         
-         
-
         
       @section('scripts')
 <script>
@@ -1752,6 +1839,14 @@
          })
   });
 </script>
+<style>
+  .autofill-label {
+  color:#6b7280;
+  margin-top: 5px;
+  text-align: center;
+  font-size:12px;
+}
+</style>
       @endsection
           
   

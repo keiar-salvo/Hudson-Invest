@@ -64,6 +64,7 @@
     <div class="col-span-1 md:col-span-1">
       <label>Age (Average)</label>
       <input type="text" class="mt-1 form-input">
+     
     </div>
 
     <!-- Submit Button: Spans full width -->

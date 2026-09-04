@@ -1,3 +1,5 @@
+
+
 $(document).ready(function(){
    
 $('.age_client').keypress(function (e) {
@@ -267,7 +269,21 @@ $('.in_fourteen_years').on('keydown', function (e) {
 $('.in_twenty_one_years').on('keydown', function (e) {
   return false;
 });
- $('.desired_retirement_date').on('keydown', function (e) {
+$('.desired_retirement_date').on('keydown', function (e) {
+  return false;
+});
+
+$('.gross_anual_income_client,.gross_anual_income_partner,.total_houese_hold_income,.your_home_value_of_your_home,.your_home_mortgage,.equity_in_your_home,.investment_portfolio_long_term_savings,.investment_portfolio_superannuation_client_net_value,.investment_portfolio_superannuation_partner_net_value,.investment_portfolio_shares_net_value,.investment_portfolio_business_net_value,.investment_portfolio_existing_investment_property').on('keydown',function(e){
+  return false;
+});
+$('.investment_portfolio_mortgage,.investment_portfolio_total,.investment_portfolio_net_position,.investment_portfolio_repay_mortgage,.investment_portfolio_current_net_financial_assets,.projected_value_of_your_home,.investment_portfolio_assets_superannuation,.investment_portfolio_assets_long_term_savings,.investment_portfolio_assets_shares,.investment_portfolio_assets_existing_investment_property,.investment_portfolio_assets_mortgage,.investment_portfolio_net_financial_assets,.investment_portfolio_assets_business_net_value').on('keydown',function(){
+  return false;
+});
+
+$('.gross_household_income_per_annum,.desired_current_income_required_retirement,.annual_gross_houshold_income_required_in_retirement,.weekly_gross_household_income,.age_this_year,.prefer_retirement_age,.years_to_achieve_financial_independence,.net_financial_assets,.total_investment_portfolio_required,.total_annual_household_income_retirement,.equivalent_value_of_annual_household,.your_current_net_financial_assets_value,.annual_increase_in_net_financial_assets').on('keydown',function(){
+  return false;
+});
+$('.monthly_increase_in_net_financial_assets,.weekly_increase_in_net_financial_assets,.current_level_of_income_and_expenses,.total_investment_portfolio_achieve_annual_household_today,.present_value_required,.annual_compound_growth_rate_investment_assets,.annual_inflation_rate,.income_investment_portfolio_assets,.annual_interest_rate_mortgages,.annual_contribution_superannuation').on('keydown',function(){
   return false;
 });
 

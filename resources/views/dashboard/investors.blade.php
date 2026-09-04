@@ -39,7 +39,7 @@
 
             <!-- Card 3: System Assumption Rate (Royal Blue Accent) -->
             <div class="bg-blue-600 p-5 rounded-xl border border-blue-700 shadow-md text-white" style="background-color:#bd0c1d;">
-                <span class="text-xs font-semibold text-blue-200 tracking-wide block mb-2">Annual Compound Growth</span>
+                <span class="text-xs font-semibold text-blue-200 tracking-wide block mb-2">Annual Compound Growth Rate</span>
                 <div class="text-3xl font-bold tracking-tight text-white">{{ $assumptionData->annual_compound_growth_rate_investment_assets }}%</div>
             </div>
 
@@ -51,13 +51,13 @@
 
             <!-- Card 5: Mortgage Interests (Rich Purple Accent) -->
             <div class="bg-purple-600 p-5 rounded-xl border border-purple-700 shadow-md text-white" style="background-color:#bd0c1d;">
-                <span class="text-xs font-semibold text-purple-200 tracking-wide block mb-2">Annual Mortgage Interest</span>
+                <span class="text-xs font-semibold text-purple-200 tracking-wide block mb-2">Annual Interest Mortgages</span>
                 <div class="text-3xl font-bold tracking-tight text-white">{{ $assumptionData->annual_interest_rate_mortgages }}%</div>
             </div>
 
             <!-- Card 6: Superannuation Contributions (Warm Amber Accent) -->
             <div class="bg-amber-600 p-5 rounded-xl border border-amber-700 shadow-md text-white" style="background-color:#bd0c1d;">
-                <span class="text-xs font-semibold text-amber-200 tracking-wide block mb-2">Annual Super Contribution</span>
+                <span class="text-xs font-semibold text-amber-200 tracking-wide block mb-2">Annual Contribution Superannuation</span>
                 <div class="text-3xl font-bold tracking-tight text-white">{{ $assumptionData->annual_contribution_superannuation }}%</div>
             </div>
 

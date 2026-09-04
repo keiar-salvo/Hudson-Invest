@@ -5,7 +5,7 @@
         <div x-data="personaldetails">
             <ul class="flex space-x-2 rtl:space-x-reverse">
                 <li>
-                    <a href="javascript:;" class="text-primary hover:underline">Chart / Financial Indepence Target</a>
+                    <a href="javascript:;" class="text-primary hover:underline">Chart / Financial Independence Target</a>
                 </li>
         
             </ul>
@@ -18,7 +18,7 @@
        
 
 <div class="chart-header">
-    <h1>Financial Indepence Target</h1>
+    <h1>Financial Independence Target</h1>
     <h3>Before Implementing Stategic Property Investment Plan</h3>
     <br/>
     <div class="chart-metadata">

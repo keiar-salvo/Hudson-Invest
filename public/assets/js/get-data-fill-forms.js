@@ -283,12 +283,14 @@ $('.monthly_increase_in_net_financial_assets').val(response['financialIndependan
 $('.weekly_increase_in_net_financial_assets').val(response['financialIndependance']['weekly_increase_in_net_financial_assets']);
 $('.current_level_of_income_and_expenses').val(response['financialIndependance']['current_level_of_income_and_expenses']);
 $('.total_investment_portfolio_achieve_annual_household_today').val(response['financialIndependance']['total_investment_portfolio_achieve_annual_household_today']);
+$('.present_value_required').val(response['financialIndependance']['present_value_required']);
+
 $('.annual_compound_growth_rate_investment_assets').val(response['assumptionData'][0]['annual_compound_growth_rate_investment_assets']);
 $('.annual_inflation_rate').val(response['assumptionData'][0]['annual_inflation_rate']);
 $('.income_investment_portfolio_assets').val(response['assumptionData'][0]['income_investment_portfolio_assets']);
 $('.annual_interest_rate_mortgages').val(response['assumptionData'][0]['annual_interest_rate_mortgages']);
 $('.annual_contribution_superannuation').val(response['assumptionData'][0]['annual_contribution_superannuation']);
-$('.present_value_required').val(response['assumptionData'][0]['present_value_required']);
+
 }
 
 
