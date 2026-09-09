@@ -79,6 +79,18 @@ Route::group(['namespace' => 'App\Http\Controllers'],function()
              Route::get('financialindependance/{id}','financialIndependanceCollection')->name('financialindependance');
             
        });
+        Route::controller(AddingNewInvestmentPropController ::class)->group(function () {
+            Route::get('addingnewinvestmentproperty', 'addnewinvestmentproperties')->name('addingnewinvestmentproperty');
+        
+            //  Route::get('newinvestmentproperty/{id}','financialIndependanceCollection')->name('newinvestmentproperty');
+            
+       });
+           Route::controller(NewIPController ::class)->group(function () {
+            Route::get('newinvestmentproperty', 'newinvestmentproperties')->name('newinvestmentproperty');
+        
+            //  Route::get('newinvestmentproperty/{id}','financialIndependanceCollection')->name('newinvestmentproperty');
+            
+       });
         Route::controller(IncomeController::class)->group(function () {
              Route::get('income', 'income')->name('income');
        });
