@@ -21,7 +21,7 @@
         <fieldset class="group-box">
                <legend class="group-title">Personal Details</legend>
                <input type="text" name="_token" id="token" value="{{ csrf_token() }}" style="display:none;">
-        <input type="text" class="mt-1 form-input details_id"  name="details_id" value="" style="display:none;">
+        <input type="text" class="mt-1 form-input details_id"  name="details_id"  style="display:none;">
         <input type="text" class="mt-1 form-input encoded_by"  name="encoded_by" value="{{ session('name') }}" style="display:none;">
        
   <!-- Grid Container: 1 column on mobile, 6 equal columns on desktop -->
@@ -1808,8 +1808,488 @@
                 </div>
                 <br />
             </fieldset>
+<div class="w-full mb-8 text-xs">
 
-                
+  <!-- 
+    UNIFIED FULL-WIDTH FIELDSET: 
+    Styled exactly like your "Investment Debt Rates" block container
+  -->
+  <fieldset class="group-box bg-white border border-gray-200 rounded-lg p-5 shadow-sm w-full overflow-hidden">
+    <legend class="group-title px-3 py-1 bg-gray-800 text-white text-xs font-semibold rounded-full shadow-sm">
+     Proposed New Investment Properties
+    </legend>
+    
+    <!-- 
+      THE CONVEYOR SCROLL TRACK:
+      Allows all 7 property blocks to sit side-by-side cleanly. Users can scroll
+      horizontally to navigate through the entire real estate portfolio timeline.
+    -->
+    <div class="flex flex-row overflow-x-auto gap-6 pb-4 w-full items-start scroll-smooth custom-scroll-track">
+
+      <!-- ==================== PROPERTY 1 (CURRENT) ==================== -->
+      <!-- Styled as the anchor card, left-aligned to mirror your upper input cards -->
+      <div class="w-[200px] shrink-0 bg-blue-50/40 border border-blue-200 rounded-lg p-4 shadow-sm text-left flex flex-col items-start">
+        <div class="text-xs font-bold text-blue-800 border-b border-blue-200 pb-2 mb-3 w-full flex justify-between">
+          <span>Current Acquisittion New IP 1</span>
+        
+        </div>
+        
+        <div class="mb-4 w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Purchase Date</label>
+          <input type="month" class="form-input w-full bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+        
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1"># of Months Since Last Acquisition</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+        <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Yeaars to Desired Retirement Age</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Property Portfolio Purchase Price</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Stamp Duty (NSW)</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Other Purchase Costs</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">LVR</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Loan Value Based on LVR</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Total Loan Value (inc.costs)</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Rent</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="">
+        </div>
+          <br/>
+         <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Outgoings</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Annual Interest Cost (Yr1)</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+      </div>
+
+      <!-- ==================== PROPERTY 2 ==================== -->
+      <div class="w-[200px] shrink-0 bg-gray-50/70 border border-gray-200 rounded-lg p-4 shadow-sm text-left flex flex-col items-start">
+        <div class="text-xs font-bold text-gray-800 border-b border-gray-200 pb-2 mb-3 w-full">New IP 2</div>
+        
+        <div class="mb-4 w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Purchase Date</label>
+          <input type="month" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+        
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1"># of Months Since Last Acquisition</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Yeaars to Desired Retirement Age</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Property Portfolio Purchase Price</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Stamp Duty (NSW)</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Other Purchase Costs</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">LVR</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Loan Value Based on LVR</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Total Loan Value (inc.costs)</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Rent</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+         <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Outgoings</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Annual Interest Cost (Yr1)</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+      </div>
+
+      <!-- ==================== PROPERTY 3 ==================== -->
+      <div class="w-[200px] shrink-0 bg-gray-50/70 border border-gray-200 rounded-lg p-4 shadow-sm text-left flex flex-col items-start">
+        <div class="text-xs font-bold text-gray-800 border-b border-gray-200 pb-2 mb-3 w-full">New IP 3</div>
+        
+        <div class="mb-4 w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Purchase Date</label>
+          <input type="month" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+        
+           <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1"># of Months Since Last Acquisition</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Yeaars to Desired Retirement Age</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Property Portfolio Purchase Price</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Stamp Duty (NSW)</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Other Purchase Costs</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">LVR</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Loan Value Based on LVR</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Total Loan Value (inc.costs)</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Rent</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+         <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Outgoings</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Annual Interest Cost (Yr1)</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+      </div>
+
+      <!-- ==================== PROPERTY 4 ==================== -->
+      <div class="w-[200px] shrink-0 bg-gray-50/70 border border-gray-200 rounded-lg p-4 shadow-sm text-left flex flex-col items-start">
+        <div class="text-xs font-bold text-gray-800 border-b border-gray-200 pb-2 mb-3 w-full">New IP 4</div>
+        
+        <div class="mb-4 w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Purchase Date</label>
+          <input type="month" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+        
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1"># of Months Since Last Acquisition</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="">
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Yeaars to Desired Retirement Age</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Property Portfolio Purchase Price</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Stamp Duty (NSW)</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Other Purchase Costs</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">LVR</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Loan Value Based on LVR</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Total Loan Value (inc.costs)</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Rent</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+         <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Outgoings</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Annual Interest Cost (Yr1)</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+        
+      </div>
+
+      <!-- ==================== PROPERTY 5 ==================== -->
+      <div class="w-[200px] shrink-0 bg-gray-50/70 border border-gray-200 rounded-lg p-4 shadow-sm text-left flex flex-col items-start">
+        <div class="text-xs font-bold text-gray-800 border-b border-gray-200 pb-2 mb-3 w-full">New IP 5</div>
+        
+        <div class="mb-4 w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Purchase Date</label>
+          <input type="month" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+        
+           <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1"># of Months Since Last Acquisition</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Yeaars to Desired Retirement Age</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Property Portfolio Purchase Price</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Stamp Duty (NSW)</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Other Purchase Costs</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">LVR</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Loan Value Based on LVR</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Total Loan Value (inc.costs)</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Rent</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+         <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Outgoings</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Annual Interest Cost (Yr1)</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+      </div>
+
+      <!-- ==================== PROPERTY 6 ==================== -->
+      <div class="w-[200px] shrink-0 bg-gray-50/70 border border-gray-200 rounded-lg p-4 shadow-sm text-left flex flex-col items-start">
+        <div class="text-xs font-bold text-gray-800 border-b border-gray-200 pb-2 mb-3 w-full">New IP 6</div>
+        
+        <div class="mb-4 w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Purchase Date</label>
+          <input type="month" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+        
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1"># of Months Since Last Acquisition</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Yeaars to Desired Retirement Age</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Property Portfolio Purchase Price</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Stamp Duty (NSW)</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Other Purchase Costs</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">LVR</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Loan Value Based on LVR</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Total Loan Value (inc.costs)</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Rent</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+         <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Outgoings</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Annual Interest Cost (Yr1)</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+      </div>
+
+      <!-- ==================== PROPERTY 7 ==================== -->
+      <div class="w-[200px] shrink-0 bg-gray-50/70 border border-gray-200 rounded-lg p-4 shadow-sm text-left flex flex-col items-start">
+        <div class="text-xs font-bold text-gray-800 border-b border-gray-200 pb-2 mb-3 w-full">New IP 7</div>
+        
+        <div class="mb-4 w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Purchase Date</label>
+          <input type="month" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-left text-xs" name="" >
+        </div>
+        
+      <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1"># of Months Since Last Acquisition</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Yeaars to Desired Retirement Age</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Property Portfolio Purchase Price</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Stamp Duty (NSW)</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Other Purchase Costs</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">LVR</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Loan Value Based on LVR</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Total Loan Value (inc.costs)</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Rent</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+         <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Outgoings</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+          <br/>
+        <div class="w-full">
+          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Annual Interest Cost (Yr1)</label>
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+        </div>
+      </div>
+
+    </div>
+  </fieldset>
+
+</div>
 </form>
 <br/>
   <button type="submit" class="btn btn-danger btn-close" style="position:relative; bottom:20px;right:20px;float:right;">
