@@ -52,9 +52,9 @@
                                 <button type="submit" class="btn btn-gradient !mt-6 w-full border-0 uppercase shadow-[0_10px_20px_-10px_rgba(67,97,238,0.44)]">
                                     Sign in
                                 </button>
-                                 <!-- <button type="button" class="btn btn-info !mt-6 w-full border-0 uppercase shadow-[0_10px_20px_-10px_rgba(67,97,238,0.44)]" onclick="window.location='{{route('register')}}'">
-                                    Sign Up
-                                </button> -->
+                             <a href="{{ route('register') }}" class="btn btn-info !mt-6 block w-full border-0 text-center uppercase shadow-[0_10px_20px_-10px_rgba(67,97,238,0.44)]">
+    Sign Up
+</a>
                             </form>
                             <!-- <a href="{{route('register')}}">Register</a> -->
 

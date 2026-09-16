@@ -28,7 +28,7 @@ class RegisterController extends Controller
             return redirect('login');
         } catch (QueryException $e) {
              $errorMessage = $e->getMessage(); 
-            return redirect()->back();
+            // return redirect()->back();
           
         }
     }

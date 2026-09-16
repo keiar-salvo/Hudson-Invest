@@ -1133,6 +1133,103 @@ function calculatePV(rate, nper, pmt, fv, type) {
     return -pv;
 }
 
+
+
+  function getCalculatedMonthStr(year, monthIndex, addMonths) {
+    let runningDate = new Date(Date.UTC(year, monthIndex, 1));
+    runningDate.setUTCMonth(runningDate.getUTCMonth() + addMonths);
+    
+    let month = ("0" + (runningDate.getUTCMonth() + 1)).slice(-2);
+    return runningDate.getUTCFullYear() + "-" + month;
+}
+
+function calculateTimeline() {
+    let startVal = $('#ip-1').val(); 
+    if (!startVal) return;
+
+    let parts = startVal.split('-');
+    let year = Number(parts[0]);
+    let monthIndex = Number(parts[1]) - 1;
+
+  
+    $('.ip2-date').val(getCalculatedMonthStr(year, monthIndex, 24));  
+    $('.ip3-date').val(getCalculatedMonthStr(year, monthIndex, 48));  
+    $('.ip4-date').val(getCalculatedMonthStr(year, monthIndex, 72));  
+    $('.ip5-date').val(getCalculatedMonthStr(year, monthIndex, 96));  
+    $('.ip6-date').val(getCalculatedMonthStr(year, monthIndex, 120)); 
+    $('.ip7-date').val(getCalculatedMonthStr(year, monthIndex, 144)); 
+
+   
+    let dates = [
+        new Date(startVal + "-01"),
+        new Date($('.ip2-date').val() + "-01"),
+        new Date($('.ip3-date').val() + "-01"),
+        new Date($('.ip4-date').val() + "-01"),
+        new Date($('.ip5-date').val() + "-01"),
+        new Date($('.ip6-date').val() + "-01"),
+        new Date($('.ip7-date').val() + "-01")
+    ];
+
+  
+    for (let i = 1; i < dates.length; i++) {
+        if (!isNaN(dates[i]) && !isNaN(dates[i - 1])) {
+            let monthsDiff = (dates[i].getFullYear() - dates[i - 1].getFullYear()) * 12;
+            monthsDiff += dates[i].getMonth() - dates[i - 1].getMonth();
+            
+         
+            $(`.months_last_acq_ip${i + 1}`).val(monthsDiff);
+        }
+    }
+
+
+    let baseRetirementYears = Number($('.retired_age_ip1').val()) || 0; 
+
+  
+    for (let i = 1; i < dates.length; i++) {
+        if (!isNaN(dates[i]) && !isNaN(dates[0])) {
+            let cumulativeMonths = (dates[i].getFullYear() - dates[0].getFullYear()) * 12;
+            cumulativeMonths += dates[i].getMonth() - dates[0].getMonth();
+          
+            let yearsRemaining = baseRetirementYears - Math.round(cumulativeMonths / 12);
+            $(`.retired_age_ip${i + 1}`).val(yearsRemaining);
+        }
+    }
+}
+
+function calculatePurchaseCosts() {
+    // Loop cleanly through properties 1 to 7 using an index loop
+    for (let i = 1; i <= 7; i++) {
+        // Read value safely from target input class element matching your layout
+        let rawValue = $(`#property_purchase_ip${i}`).val() || "0";
+        
+        // Ensure commas, spaces, and currency symbols are completely stripped before calculating math
+        let propertyValue = Number(String(rawValue).replace(/[^0-9.]/g, "")) || 0;
+        let calculatedCost = 0;
+
+        if (propertyValue > 0) {
+            // UNIFIED SPREADSHEET FORMULA:
+            // This flat linear calculation handles all price thresholds perfectly:
+            // 1,150,000 * 0.045 - 4510 = 47,240
+            // 1,250,000 * 0.045 - 4510 = 51,740
+            calculatedCost = (propertyValue * 0.045) - 4510;
+        }
+
+        // Format raw outputs back into readable, clean currency strings
+        let formattedCost = "";
+        if (propertyValue > 0 && calculatedCost > 0) {
+            formattedCost = "$" + Math.round(calculatedCost).toLocaleString();
+        } else {
+            formattedCost = "$0"; // Fallback placeholder if empty
+        }
+
+        // Inject the corrected dollar value directly back into your display column class
+        $(`#stamp_duty_ip${i}`).val(formattedCost);
+    }
+}
+    calculateTimeline();
+
+   
+
 function currentPosition_and_financial_independance(formData,annual_growth_rate_invest_assets,income_investment_portfolio_assets,annual_inflation_rate){
     
     // Get Total House Hold Income
@@ -1242,6 +1339,8 @@ function currentPosition_and_financial_independance(formData,annual_growth_rate_
 
  
     });
+
+ 
 
     // Get Total Investment Portfolio Total
     var total_long_term_savings = parseFloat(formatted_investment_long_term_savings?.replace(/,/g, '')) || 0; 
@@ -1475,6 +1574,8 @@ var formatted_weekly_increase_net_financial_asset = weekly_increase_net_financia
           minimumFractionDigits: 2, 
           maximumFractionDigits: 2 
     });
+
+    
 
 
 

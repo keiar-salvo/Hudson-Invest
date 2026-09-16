@@ -128,6 +128,8 @@ $('.target_age').on('keyup', function (e) {
     $('.years_to_target_age').val(Math.round(years_to_target_age));
     $('.personal_debt_rate_car_loans_years').val(Math.round(years_to_target_age));
 
+    $('.retired_age_ip1').val(Math.round(years_to_target_age));
+
 
 
 
@@ -484,5 +486,5 @@ $('.div-add-mortgage-investment-property,.div-mortgage').on('keyup input change'
             row.find('.mortgage_investment_partner')
         );
 });
-
+   
 });

@@ -1836,27 +1836,27 @@
         
         <div class="mb-4 w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Purchase Date</label>
-          <input type="month" class="form-input w-full bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="month" class="form-input w-full bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs " id="ip-1" name="" >
         </div>
         
         <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1"># of Months Since Last Acquisition</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" class="months_last_acq_ip1 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="months_last_acq_ip1" >
         </div>
         <br/>
         <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Yeaars to Desired Retirement Age</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" class="retired_age_ip1 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="retired_age_ip1" >
         </div>
           <br/>
         <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Property Portfolio Purchase Price</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" id="property_purchase_ip1" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="property_purchase_ip1" >
         </div>
           <br/>
         <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Stamp Duty (NSW)</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" id="stamp_duty_ip1" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="stamp_duty_ip1" >
         </div>
           <br/>
         <div class="w-full">
@@ -1901,27 +1901,27 @@
         
         <div class="mb-4 w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Purchase Date</label>
-          <input type="month" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="month" class="ip2-date form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs " data-type="future-date" name="" >
         </div>
         
         <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1"># of Months Since Last Acquisition</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" class="months_last_acq_ip2 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="months_last_acq_ip2" >
         </div>
           <br/>
         <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Yeaars to Desired Retirement Age</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" class="retired_age_ip2 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="retired_age_ip2" >
         </div>
           <br/>
         <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Property Portfolio Purchase Price</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" id="property_purchase_ip2" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="property_purchase_ip2" >
         </div>
           <br/>
         <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Stamp Duty (NSW)</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" id="stamp_duty_ip2" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="stamp_duty_ip2" >
         </div>
           <br/>
         <div class="w-full">
@@ -1966,27 +1966,27 @@
         
         <div class="mb-4 w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Purchase Date</label>
-          <input type="month" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="month" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs ip3-date" data-type="future-date" name="" >
         </div>
         
            <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1"># of Months Since Last Acquisition</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" class="months_last_acq_ip3 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="months_last_acq_ip3" >
         </div>
           <br/>
         <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Yeaars to Desired Retirement Age</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" class="retired_age_ip3 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="retired_age_ip3" >
         </div>
           <br/>
         <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Property Portfolio Purchase Price</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" id="property_purchase_ip3" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="property_purchase_ip3" >
         </div>
           <br/>
         <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Stamp Duty (NSW)</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" id="stamp_duty_ip3"class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="stamp_duty_ip3" >
         </div>
           <br/>
         <div class="w-full">
@@ -2031,27 +2031,27 @@
         
         <div class="mb-4 w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Purchase Date</label>
-          <input type="month" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="month" class="property_purchase_ip4 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs ip4-date" data-type="future-date" name="property_purchase_ip4" >
         </div>
         
         <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1"># of Months Since Last Acquisition</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="">
+          <input type="text" class="months_last_acq_ip4 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="months_last_acq_ip4">
         </div>
           <br/>
         <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Yeaars to Desired Retirement Age</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" class="retired_age_ip4 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="retired_age_ip4" >
         </div>
           <br/>
         <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Property Portfolio Purchase Price</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" id="property_purchase_ip4" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="property_purchase_ip4" >
         </div>
           <br/>
         <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Stamp Duty (NSW)</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" id="stamp_duty_ip4" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="stamp_duty_ip4" >
         </div>
           <br/>
         <div class="w-full">
@@ -2097,27 +2097,27 @@
         
         <div class="mb-4 w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Purchase Date</label>
-          <input type="month" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="month" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs ip5-date" data-type="future-date" name="months_last_acq_ip5" >
         </div>
         
            <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1"># of Months Since Last Acquisition</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" class="months_last_acq_ip5 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="months_last_acq_ip5" >
         </div>
           <br/>
         <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Yeaars to Desired Retirement Age</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" class="retired_age_ip5 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="retired_age_ip5" >
         </div>
           <br/>
         <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Property Portfolio Purchase Price</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" id="property_purchase_ip5" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="property_purchase_ip5" >
         </div>
           <br/>
         <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Stamp Duty (NSW)</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" id="stamp_duty_ip5" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="stamp_duty_ip5" >
         </div>
           <br/>
         <div class="w-full">
@@ -2162,27 +2162,27 @@
         
         <div class="mb-4 w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Purchase Date</label>
-          <input type="month" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="month" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs ip6-date" data-type="future-date" name="" >
         </div>
         
         <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1"># of Months Since Last Acquisition</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" class="months_last_acq_ip6 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="months_last_acq_ip6" >
         </div>
           <br/>
         <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Yeaars to Desired Retirement Age</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" class="retired_age_ip6 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="retired_age_ip6" >
         </div>
           <br/>
         <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Property Portfolio Purchase Price</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" id="property_purchase_ip6" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="property_purchase_ip6">
         </div>
           <br/>
         <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Stamp Duty (NSW)</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" id="stamp_duty_ip6" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="stamp_duty_ip6" >
         </div>
           <br/>
         <div class="w-full">
@@ -2227,27 +2227,27 @@
         
         <div class="mb-4 w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Purchase Date</label>
-          <input type="month" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-left text-xs" name="" >
+          <input type="month" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-left text-xs ip7-date" data-type="future-date"  name="" >
         </div>
         
       <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1"># of Months Since Last Acquisition</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" class="months_last_acq_ip7 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="months_last_acq_ip7" >
         </div>
           <br/>
         <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Yeaars to Desired Retirement Age</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" class="retired_age_ip7 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="retired_age_ip7" >
         </div>
           <br/>
         <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Property Portfolio Purchase Price</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" id= "property_purchase_ip7" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="property_purchase_ip7" >
         </div>
           <br/>
         <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Stamp Duty (NSW)</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" id="stamp_duty_ip7" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="stamp_duty_ip7" >
         </div>
           <br/>
         <div class="w-full">
@@ -2282,7 +2282,7 @@
           <br/>
         <div class="w-full">
           <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Annual Interest Cost (Yr1)</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs"  name="" >
         </div>
       </div>
 
@@ -2314,6 +2314,16 @@
       @section('scripts')
 <script>
   $(document).ready(function(){
+    
+
+
+
+    $('#ip-1').on('change input', function() {
+        calculateTimeline();
+    });
+    $('[id*="property_purchase_ip"]').on('change input', function() {
+        calculatePurchaseCosts();
+    });
       $(".btn-close").click(function(){
             window.close();
          })
