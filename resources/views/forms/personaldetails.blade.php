@@ -1815,7 +1815,7 @@
     Styled exactly like your "Investment Debt Rates" block container
   -->
   <fieldset class="group-box bg-white border border-gray-200 rounded-lg p-5 shadow-sm w-full overflow-hidden">
-    <legend class="group-title px-3 py-1 bg-gray-800 text-white text-xs font-semibold rounded-full shadow-sm">
+    <legend class="group-title px-3 py-1 bg-gray-800 text-white text-xs  rounded-full shadow-sm">
      Proposed New Investment Properties
     </legend>
     
@@ -1835,63 +1835,71 @@
         </div>
         
         <div class="mb-4 w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Purchase Date</label>
-          <input type="month" class="form-input w-full bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs " id="ip-1" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Purchase Date</label>
+          <input type="month" class="form-input w-full bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs " id="ip-1" name="" >
         </div>
         
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1"># of Months Since Last Acquisition</label>
-          <input type="text" class="months_last_acq_ip1 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="months_last_acq_ip1" >
+          <label class="block text-[11px] text-gray-500  mb-1"># of Months Since Last Acquisition</label>
+          <input type="text" class="months_last_acq_ip1 form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="months_last_acq_ip1" >
         </div>
         <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Yeaars to Desired Retirement Age</label>
-          <input type="text" class="retired_age_ip1 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="retired_age_ip1" >
+          <label class="block text-[11px] text-gray-500  mb-1">Yeaars to Desired Retirement Age</label>
+          <input type="text" class="retired_age_ip1 form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="retired_age_ip1" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Property Portfolio Purchase Price</label>
-          <input type="text" id="property_purchase_ip1" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="property_purchase_ip1" >
+          <label class="block text-[11px] text-gray-500  mb-1">Property Portfolio Purchase Price</label>
+          <input type="text" id="property_purchase_ip1" class=" form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="property_purchase_ip1" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Stamp Duty (NSW)</label>
-          <input type="text" id="stamp_duty_ip1" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="stamp_duty_ip1" >
+          <label class="block text-[11px] text-gray-500  mb-1">Stamp Duty (NSW)</label>
+          <input type="text" id="stamp_duty_ip1" class=" form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="stamp_duty_ip1" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Other Purchase Costs</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Other Purchase Costs</label>
+          <input type="text" id="other_purchased_cost_ip1" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="other_purchased_cost_ip1" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">LVR</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">LVR</label>
+          <input type="text" id="lvr_ip1" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="lvr_ip1" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Loan Value Based on LVR</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Loan Value Based on LVR</label>
+          <input type="text" id="loan_value_based_ip1" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="loan_value_based_ip1" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Total Loan Value (inc.costs)</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Total Loan Value (inc.costs)</label>
+          <input type="text" id="total_loan_value_ip1" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="total_loan_value_ip1" >
         </div>
-          <br/>
+               <br/>
+        <div class="w-full" style="display:none;">
+          <label class="block text-[11px] text-gray-500  mb-1">Total Loan Value (inc.costs)</label>
+          <input type="text"  class="income_interest_rate_for_rent form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="total_loan_value_ip1" >
+        </div>
+            <div class="w-full" style="display:none;">
+          <label class="block text-[11px] text-gray-500  mb-1">Total Loan Value (inc.costs)</label>
+          <input type="text"  class="annual_interest_rate_for_estimating form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="total_loan_value_ip1" >
+        </div>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Rent</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="">
+          <label class="block text-[11px] text-gray-500  mb-1">Estimated Rent</label>
+          <input type="text" id="estimated_rent_ip1" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="estimated_rent_ip1">
         </div>
           <br/>
          <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Outgoings</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Estimated Outgoings</label>
+          <input type="text" id="estimated_outgoing_ip1" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="estimated_outgoing_ip1" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Annual Interest Cost (Yr1)</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Estimated Annual Interest Cost (Yr1)</label>
+          <input type="text" id="estimated_annual_interest_ip1" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="estimated_annual_interest_ip1" >
         </div>
       </div>
 
@@ -1900,63 +1908,63 @@
         <div class="text-xs font-bold text-gray-800 border-b border-gray-200 pb-2 mb-3 w-full">New IP 2</div>
         
         <div class="mb-4 w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Purchase Date</label>
-          <input type="month" class="ip2-date form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs " data-type="future-date" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Purchase Date</label>
+          <input type="month" class="ip2-date form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs " data-type="future-date" name="" >
         </div>
         
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1"># of Months Since Last Acquisition</label>
-          <input type="text" class="months_last_acq_ip2 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="months_last_acq_ip2" >
+          <label class="block text-[11px] text-gray-500  mb-1"># of Months Since Last Acquisition</label>
+          <input type="text" class="months_last_acq_ip2 form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="months_last_acq_ip2" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Yeaars to Desired Retirement Age</label>
-          <input type="text" class="retired_age_ip2 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="retired_age_ip2" >
+          <label class="block text-[11px] text-gray-500  mb-1">Yeaars to Desired Retirement Age</label>
+          <input type="text" class="retired_age_ip2 form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="retired_age_ip2" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Property Portfolio Purchase Price</label>
-          <input type="text" id="property_purchase_ip2" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="property_purchase_ip2" >
+          <label class="block text-[11px] text-gray-500  mb-1">Property Portfolio Purchase Price</label>
+          <input type="text" id="property_purchase_ip2" class=" form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="property_purchase_ip2" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Stamp Duty (NSW)</label>
-          <input type="text" id="stamp_duty_ip2" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="stamp_duty_ip2" >
+          <label class="block text-[11px] text-gray-500  mb-1">Stamp Duty (NSW)</label>
+          <input type="text" id="stamp_duty_ip2" class=" form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="stamp_duty_ip2" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Other Purchase Costs</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Other Purchase Costs</label>
+          <input type="text" id="other_purchased_cost_ip2" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="other_purchased_cost_ip2" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">LVR</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">LVR</label>
+          <input type="text" id="lvr_ip2" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="lvr_ip2" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Loan Value Based on LVR</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Loan Value Based on LVR</label>
+          <input type="text" id="loan_value_based_ip2" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="loan_value_based_ip2" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Total Loan Value (inc.costs)</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Total Loan Value (inc.costs)</label>
+          <input type="text" id="total_loan_value_ip2" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="total_loan_value_ip2" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Rent</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Estimated Rent</label>
+          <input type="text" id="estimated_rent_ip2" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="estimated_rent_ip2" >
         </div>
           <br/>
          <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Outgoings</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Estimated Outgoings</label>
+          <input type="text" id="estimated_outgoing_ip2" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="estimated_outgoing_ip2" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Annual Interest Cost (Yr1)</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Estimated Annual Interest Cost (Yr1)</label>
+          <input type="text" id="estimated_annual_interest_ip2" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="estimated_annual_interest_ip2" >
         </div>
       </div>
 
@@ -1965,63 +1973,63 @@
         <div class="text-xs font-bold text-gray-800 border-b border-gray-200 pb-2 mb-3 w-full">New IP 3</div>
         
         <div class="mb-4 w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Purchase Date</label>
-          <input type="month" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs ip3-date" data-type="future-date" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Purchase Date</label>
+          <input type="month" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs ip3-date" data-type="future-date" name="" >
         </div>
         
            <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1"># of Months Since Last Acquisition</label>
-          <input type="text" class="months_last_acq_ip3 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="months_last_acq_ip3" >
+          <label class="block text-[11px] text-gray-500  mb-1"># of Months Since Last Acquisition</label>
+          <input type="text" class="months_last_acq_ip3 form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="months_last_acq_ip3" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Yeaars to Desired Retirement Age</label>
-          <input type="text" class="retired_age_ip3 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="retired_age_ip3" >
+          <label class="block text-[11px] text-gray-500  mb-1">Yeaars to Desired Retirement Age</label>
+          <input type="text" class="retired_age_ip3 form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="retired_age_ip3" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Property Portfolio Purchase Price</label>
-          <input type="text" id="property_purchase_ip3" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="property_purchase_ip3" >
+          <label class="block text-[11px] text-gray-500  mb-1">Property Portfolio Purchase Price</label>
+          <input type="text" id="property_purchase_ip3" class=" form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="property_purchase_ip3" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Stamp Duty (NSW)</label>
-          <input type="text" id="stamp_duty_ip3"class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="stamp_duty_ip3" >
+          <label class="block text-[11px] text-gray-500  mb-1">Stamp Duty (NSW)</label>
+          <input type="text" id="stamp_duty_ip3"class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="stamp_duty_ip3" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Other Purchase Costs</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Other Purchase Costs</label>
+          <input type="text" id="other_purchased_cost_ip3" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="other_purchased_cost_ip3" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">LVR</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">LVR</label>
+          <input type="text" id="lvr_ip3" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="lvr_ip3" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Loan Value Based on LVR</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Loan Value Based on LVR</label>
+          <input type="text" id="loan_value_based_ip3" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="loan_value_based_ip3" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Total Loan Value (inc.costs)</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Total Loan Value (inc.costs)</label>
+          <input type="text" id="total_loan_value_ip3" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="total_loan_value_ip3" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Rent</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Estimated Rent</label>
+          <input type="text" id="estimated_rent_ip3" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="estimated_rent_ip3" >
         </div>
           <br/>
          <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Outgoings</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Estimated Outgoings</label>
+          <input type="text" id="estimated_outgoing_ip3" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="estimated_outgoing_ip3" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Annual Interest Cost (Yr1)</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Estimated Annual Interest Cost (Yr1)</label>
+          <input type="text" id="estimated_annual_interest_ip3" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="estimated_annual_interest_ip3" >
         </div>
       </div>
 
@@ -2030,63 +2038,63 @@
         <div class="text-xs font-bold text-gray-800 border-b border-gray-200 pb-2 mb-3 w-full">New IP 4</div>
         
         <div class="mb-4 w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Purchase Date</label>
-          <input type="month" class="property_purchase_ip4 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs ip4-date" data-type="future-date" name="property_purchase_ip4" >
+          <label class="block text-[11px] text-gray-500  mb-1">Purchase Date</label>
+          <input type="month" class="property_purchase_ip4 form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs ip4-date" data-type="future-date" name="property_purchase_ip4" >
         </div>
         
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1"># of Months Since Last Acquisition</label>
-          <input type="text" class="months_last_acq_ip4 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="months_last_acq_ip4">
+          <label class="block text-[11px] text-gray-500  mb-1"># of Months Since Last Acquisition</label>
+          <input type="text" class="months_last_acq_ip4 form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="months_last_acq_ip4">
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Yeaars to Desired Retirement Age</label>
-          <input type="text" class="retired_age_ip4 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="retired_age_ip4" >
+          <label class="block text-[11px] text-gray-500  mb-1">Yeaars to Desired Retirement Age</label>
+          <input type="text" class="retired_age_ip4 form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="retired_age_ip4" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Property Portfolio Purchase Price</label>
-          <input type="text" id="property_purchase_ip4" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="property_purchase_ip4" >
+          <label class="block text-[11px] text-gray-500  mb-1">Property Portfolio Purchase Price</label>
+          <input type="text" id="property_purchase_ip4" class=" form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="property_purchase_ip4" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Stamp Duty (NSW)</label>
-          <input type="text" id="stamp_duty_ip4" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="stamp_duty_ip4" >
+          <label class="block text-[11px] text-gray-500  mb-1">Stamp Duty (NSW)</label>
+          <input type="text" id="stamp_duty_ip4" class=" form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="stamp_duty_ip4" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Other Purchase Costs</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Other Purchase Costs</label>
+          <input type="text" id="other_purchased_cost_ip4" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="other_purchased_cost_ip4" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">LVR</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">LVR</label>
+          <input type="text" id="lvr_ip4" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="lvr_ip4" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Loan Value Based on LVR</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Loan Value Based on LVR</label>
+          <input type="text" id="loan_value_based_ip4" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="loan_value_based_ip4" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Total Loan Value (inc.costs)</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Total Loan Value (inc.costs)</label>
+          <input type="text" id="total_loan_value_ip4" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="total_loan_value_ip4" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Rent</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Estimated Rent</label>
+          <input type="text" id="estimated_rent_ip4" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="estimated_rent_ip4" >
         </div>
           <br/>
          <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Outgoings</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Estimated Outgoings</label>
+          <input type="text" id="estimated_outgoing_ip4" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="estimated_outgoing_ip4" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Annual Interest Cost (Yr1)</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Estimated Annual Interest Cost (Yr1)</label>
+          <input type="text" id="estimated_annual_interest_ip4" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="estimated_annual_interest_ip4" >
         </div>
         
       </div>
@@ -2096,63 +2104,63 @@
         <div class="text-xs font-bold text-gray-800 border-b border-gray-200 pb-2 mb-3 w-full">New IP 5</div>
         
         <div class="mb-4 w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Purchase Date</label>
-          <input type="month" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs ip5-date" data-type="future-date" name="months_last_acq_ip5" >
+          <label class="block text-[11px] text-gray-500  mb-1">Purchase Date</label>
+          <input type="month" class=" form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs ip5-date" data-type="future-date" name="months_last_acq_ip5" >
         </div>
         
            <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1"># of Months Since Last Acquisition</label>
-          <input type="text" class="months_last_acq_ip5 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="months_last_acq_ip5" >
+          <label class="block text-[11px] text-gray-500  mb-1"># of Months Since Last Acquisition</label>
+          <input type="text" class="months_last_acq_ip5 form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="months_last_acq_ip5" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Yeaars to Desired Retirement Age</label>
-          <input type="text" class="retired_age_ip5 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="retired_age_ip5" >
+          <label class="block text-[11px] text-gray-500  mb-1">Yeaars to Desired Retirement Age</label>
+          <input type="text" class="retired_age_ip5 form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="retired_age_ip5" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Property Portfolio Purchase Price</label>
-          <input type="text" id="property_purchase_ip5" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="property_purchase_ip5" >
+          <label class="block text-[11px] text-gray-500  mb-1">Property Portfolio Purchase Price</label>
+          <input type="text" id="property_purchase_ip5" class=" form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="property_purchase_ip5" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Stamp Duty (NSW)</label>
-          <input type="text" id="stamp_duty_ip5" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="stamp_duty_ip5" >
+          <label class="block text-[11px] text-gray-500  mb-1">Stamp Duty (NSW)</label>
+          <input type="text" id="stamp_duty_ip5" class=" form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="stamp_duty_ip5" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Other Purchase Costs</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Other Purchase Costs</label>
+          <input type="text" id="other_purchased_cost_ip5" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="other_purchased_cost_ip5" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">LVR</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">LVR</label>
+          <input type="text" id="lvr_ip5" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="lvr_ip5" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Loan Value Based on LVR</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Loan Value Based on LVR</label>
+          <input type="text" id="loan_value_based_ip5" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="loan_value_based_ip5" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Total Loan Value (inc.costs)</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Total Loan Value (inc.costs)</label>
+          <input type="text" id="total_loan_value_ip5" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="total_loan_value_ip5" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Rent</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Estimated Rent</label>
+          <input type="text" id="estimated_rent_ip5" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="estimated_rent_ip5" >
         </div>
           <br/>
          <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Outgoings</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Estimated Outgoings</label>
+          <input type="text" id="estimated_outgoing_ip5" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="estimated_outgoing_ip5" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Annual Interest Cost (Yr1)</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Estimated Annual Interest Cost (Yr1)</label>
+          <input type="text" id="estimated_annual_interest_ip5" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="estimated_annual_interest_ip5" >
         </div>
       </div>
 
@@ -2161,63 +2169,63 @@
         <div class="text-xs font-bold text-gray-800 border-b border-gray-200 pb-2 mb-3 w-full">New IP 6</div>
         
         <div class="mb-4 w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Purchase Date</label>
-          <input type="month" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs ip6-date" data-type="future-date" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Purchase Date</label>
+          <input type="month" class=" form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs ip6-date" data-type="future-date" name="" >
         </div>
         
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1"># of Months Since Last Acquisition</label>
-          <input type="text" class="months_last_acq_ip6 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="months_last_acq_ip6" >
+          <label class="block text-[11px] text-gray-500  mb-1"># of Months Since Last Acquisition</label>
+          <input type="text" class="months_last_acq_ip6 form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="months_last_acq_ip6" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Yeaars to Desired Retirement Age</label>
-          <input type="text" class="retired_age_ip6 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="retired_age_ip6" >
+          <label class="block text-[11px] text-gray-500  mb-1">Yeaars to Desired Retirement Age</label>
+          <input type="text" class="retired_age_ip6 form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="retired_age_ip6" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Property Portfolio Purchase Price</label>
-          <input type="text" id="property_purchase_ip6" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="property_purchase_ip6">
+          <label class="block text-[11px] text-gray-500  mb-1">Property Portfolio Purchase Price</label>
+          <input type="text" id="property_purchase_ip6" class=" form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="property_purchase_ip6">
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Stamp Duty (NSW)</label>
-          <input type="text" id="stamp_duty_ip6" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="stamp_duty_ip6" >
+          <label class="block text-[11px] text-gray-500  mb-1">Stamp Duty (NSW)</label>
+          <input type="text" id="stamp_duty_ip6" class=" form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="stamp_duty_ip6" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Other Purchase Costs</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Other Purchase Costs</label>
+          <input type="text" id="other_purchased_cost_ip6" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="other_purchased_cost_ip6" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">LVR</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">LVR</label>
+          <input type="text" id="lvr_ip6" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="lvr_ip6" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Loan Value Based on LVR</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Loan Value Based on LVR</label>
+          <input type="text" id="loan_value_based_ip6" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="loan_value_based_ip6" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Total Loan Value (inc.costs)</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Total Loan Value (inc.costs)</label>
+          <input type="text" id="total_loan_value_ip6" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="total_loan_value_ip6" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Rent</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Estimated Rent</label>
+          <input type="text" id="estimated_rent_ip6" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="estimated_rent_ip6" >
         </div>
           <br/>
          <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Outgoings</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Estimated Outgoings</label>
+          <input type="text" id="estimated_outgoing_ip6" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="estimated_outgoing_ip6" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Annual Interest Cost (Yr1)</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Estimated Annual Interest Cost (Yr1)</label>
+          <input type="text" id="estimated_annual_interest_ip6" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="estimated_annual_interest_ip6" >
         </div>
       </div>
 
@@ -2226,63 +2234,63 @@
         <div class="text-xs font-bold text-gray-800 border-b border-gray-200 pb-2 mb-3 w-full">New IP 7</div>
         
         <div class="mb-4 w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Purchase Date</label>
-          <input type="month" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-left text-xs ip7-date" data-type="future-date"  name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Purchase Date</label>
+          <input type="month" class="form-input w-[170px] bg-amber-50 border-amber-300  text-left text-xs ip7-date" data-type="future-date"  name="" >
         </div>
         
       <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1"># of Months Since Last Acquisition</label>
-          <input type="text" class="months_last_acq_ip7 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="months_last_acq_ip7" >
+          <label class="block text-[11px] text-gray-500  mb-1"># of Months Since Last Acquisition</label>
+          <input type="text" class="months_last_acq_ip7 form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="months_last_acq_ip7" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Yeaars to Desired Retirement Age</label>
-          <input type="text" class="retired_age_ip7 form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="retired_age_ip7" >
+          <label class="block text-[11px] text-gray-500  mb-1">Yeaars to Desired Retirement Age</label>
+          <input type="text" class="retired_age_ip7 form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="retired_age_ip7" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Property Portfolio Purchase Price</label>
-          <input type="text" id= "property_purchase_ip7" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="property_purchase_ip7" >
+          <label class="block text-[11px] text-gray-500  mb-1">Property Portfolio Purchase Price</label>
+          <input type="text" id= "property_purchase_ip7" class=" form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="property_purchase_ip7" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Stamp Duty (NSW)</label>
-          <input type="text" id="stamp_duty_ip7" class=" form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="stamp_duty_ip7" >
+          <label class="block text-[11px] text-gray-500  mb-1">Stamp Duty (NSW)</label>
+          <input type="text" id="stamp_duty_ip7" class=" form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="stamp_duty_ip7" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Other Purchase Costs</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Other Purchase Costs</label>
+          <input type="text" id="other_purchased_cost_ip7" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="other_purchased_cost_ip7" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">LVR</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">LVR</label>
+          <input type="text" id="lvr_ip7" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="lvr_ip7" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Loan Value Based on LVR</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Loan Value Based on LVR</label>
+          <input type="text" id="loan_value_based_ip7" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="loan_value_based_ip7" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Total Loan Value (inc.costs)</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Total Loan Value (inc.costs)</label>
+          <input type="text" id="total_loan_value_ip7" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="total_loan_value_ip7" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Rent</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Estimated Rent</label>
+          <input type="text" id="estimated_rent_ip7" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="estimated_rent_ip7" >
         </div>
           <br/>
          <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Outgoings</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs" name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Estimated Outgoings</label>
+          <input type="text" id="estimated_outgoing_ip7" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="estimated_outgoing_ip7" >
         </div>
           <br/>
         <div class="w-full">
-          <label class="block text-[11px] text-gray-500 font-semibold mb-1">Estimated Annual Interest Cost (Yr1)</label>
-          <input type="text" class="form-input w-[170px] bg-amber-50 border-amber-300 font-semibold text-amber-950 rounded p-2 text-left text-xs"  name="" >
+          <label class="block text-[11px] text-gray-500  mb-1">Estimated Annual Interest Cost (Yr1)</label>
+          <input type="text" id="estimated_annual_interest_ip7" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs"  name="estimated_annual_interest_ip7" >
         </div>
       </div>
 
@@ -2313,21 +2321,13 @@
         
       @section('scripts')
 <script>
-  $(document).ready(function(){
+//   $(document).ready(function(){
     
 
+// console.log("Form rate: " + invstment_portfolio_rate);
 
-
-    $('#ip-1').on('change input', function() {
-        calculateTimeline();
-    });
-    $('[id*="property_purchase_ip"]').on('change input', function() {
-        calculatePurchaseCosts();
-    });
-      $(".btn-close").click(function(){
-            window.close();
-         })
-  });
+  
+//   });
 </script>
 <style>
   .autofill-label {

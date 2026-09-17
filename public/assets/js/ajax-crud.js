@@ -76,7 +76,7 @@ var annual_growth_rate_invest_assets = 0;
 var income_investment_portfolio_assets = 0;
 var annual_inflation_rate = 0;
 
-
+var invstment_portfolio_rate = 0;
 /***************Get Assumption Rates*************************/
 $.ajax({
   url: appURL + "/details",
@@ -92,9 +92,16 @@ $.ajax({
    $('.mortgage_new_investment_properties').val(annual_interest_rate_mortgages);
    income_investment_portfolio_assets = response[0]['income_investment_portfolio_assets'];
    annual_inflation_rate = response[0]['annual_inflation_rate'];
-  
+
+  $('.income_interest_rate_for_rent').val(response[0]['income_investment_portfolio_assets'])
+  $('.annual_interest_rate_for_estimating').val(response[0]['annual_interest_rate_mortgages']);
+
+ 
 }
+
 });
+
+
 
 /*****************Save Details********************** */
  $(".btn-details").click(function(event){

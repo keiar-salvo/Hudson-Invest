@@ -486,5 +486,34 @@ $('.div-add-mortgage-investment-property,.div-mortgage').on('keyup input change'
             row.find('.mortgage_investment_partner')
         );
 });
+  $('#ip-1').on('change input', function() {
+        calculateTimeline();
+    });
+    $('[id*="property_purchase_ip"]').on('change input', function() {
+        calculatePurchaseCosts();
+        calculateEstimatedRent();
+      
+    });
+    $('[id*="lvr_ip"] , [id*="property_purchase_ip"]').on('change input keyup keydown', function() {
+        calculateLoanDetails();
+         let fieldId = $(this).attr('id'); 
+    
+    if (fieldId) {
+        // Extract the trailing number from the ID string using a regular expression match
+        let match = fieldId.match(/\d+/); 
+        if (match) {
+            let columnNumber = parseInt(match[0], 10);
+            
+            // EXECUTE ONLY FOR THIS SPECIFIC COLUMN!
+            calculatePropertyHoldingCosts(columnNumber);
+        }
+    }
+      
+    });
+      $(".btn-close").click(function(){
+            window.close();
+         })
+
+
    
 });

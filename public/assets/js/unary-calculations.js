@@ -1151,14 +1151,12 @@ function calculateTimeline() {
     let year = Number(parts[0]);
     let monthIndex = Number(parts[1]) - 1;
 
-  
     $('.ip2-date').val(getCalculatedMonthStr(year, monthIndex, 24));  
     $('.ip3-date').val(getCalculatedMonthStr(year, monthIndex, 48));  
     $('.ip4-date').val(getCalculatedMonthStr(year, monthIndex, 72));  
     $('.ip5-date').val(getCalculatedMonthStr(year, monthIndex, 96));  
     $('.ip6-date').val(getCalculatedMonthStr(year, monthIndex, 120)); 
     $('.ip7-date').val(getCalculatedMonthStr(year, monthIndex, 144)); 
-
    
     let dates = [
         new Date(startVal + "-01"),
@@ -1170,21 +1168,15 @@ function calculateTimeline() {
         new Date($('.ip7-date').val() + "-01")
     ];
 
-  
     for (let i = 1; i < dates.length; i++) {
         if (!isNaN(dates[i]) && !isNaN(dates[i - 1])) {
             let monthsDiff = (dates[i].getFullYear() - dates[i - 1].getFullYear()) * 12;
             monthsDiff += dates[i].getMonth() - dates[i - 1].getMonth();
-            
-         
             $(`.months_last_acq_ip${i + 1}`).val(monthsDiff);
         }
     }
 
-
     let baseRetirementYears = Number($('.retired_age_ip1').val()) || 0; 
-
-  
     for (let i = 1; i < dates.length; i++) {
         if (!isNaN(dates[i]) && !isNaN(dates[0])) {
             let cumulativeMonths = (dates[i].getFullYear() - dates[0].getFullYear()) * 12;
@@ -1197,36 +1189,110 @@ function calculateTimeline() {
 }
 
 function calculatePurchaseCosts() {
-    // Loop cleanly through properties 1 to 7 using an index loop
+
     for (let i = 1; i <= 7; i++) {
-        // Read value safely from target input class element matching your layout
+    
         let rawValue = $(`#property_purchase_ip${i}`).val() || "0";
-        
-        // Ensure commas, spaces, and currency symbols are completely stripped before calculating math
         let propertyValue = Number(String(rawValue).replace(/[^0-9.]/g, "")) || 0;
         let calculatedCost = 0;
-
         if (propertyValue > 0) {
-            // UNIFIED SPREADSHEET FORMULA:
-            // This flat linear calculation handles all price thresholds perfectly:
-            // 1,150,000 * 0.045 - 4510 = 47,240
-            // 1,250,000 * 0.045 - 4510 = 51,740
             calculatedCost = (propertyValue * 0.045) - 4510;
         }
 
-        // Format raw outputs back into readable, clean currency strings
         let formattedCost = "";
         if (propertyValue > 0 && calculatedCost > 0) {
-            formattedCost = "$" + Math.round(calculatedCost).toLocaleString();
+            formattedCost =  Math.round(calculatedCost).toLocaleString();
         } else {
-            formattedCost = "$0"; // Fallback placeholder if empty
+            formattedCost = "0"; 
         }
 
-        // Inject the corrected dollar value directly back into your display column class
+     
         $(`#stamp_duty_ip${i}`).val(formattedCost);
     }
 }
-    calculateTimeline();
+function calculateLoanDetails() {
+  
+    for (let i = 1; i <= 7; i++) {
+        let rawPrice = $(`#property_purchase_ip${i}`).val() || "0";
+        let propertyPrice = Number(String(rawPrice).replace(/[^0-9.]/g, "")) || 0;
+        let rawLVR = $(`#lvr_ip${i}`).val() || "0";
+        let lvrPercentage = Number(String(rawLVR).replace(/[^0-9.]/g, "")) || 0;
+        let lvrMultiplier = lvrPercentage / 100;
+        let rawOtherCosts = $(`#other_purchased_cost_ip${i}`).val() || "0";
+        let otherCosts = Number(String(rawOtherCosts).replace(/[^0-9.]/g, "")) || 0;
+        let loanValue = 0;
+        let stampDuty = 0;
+        let totalLoanValue = 0;
+
+        if (propertyPrice > 0) {
+            loanValue = propertyPrice * lvrMultiplier;
+            stampDuty = (propertyPrice * 0.045) - 4510;
+            totalLoanValue = loanValue + stampDuty + otherCosts;
+        }
+        let formattedLoanBase = loanValue > 0 ?  Math.round(loanValue).toLocaleString() : "0";
+        let formattedTotalLoan = totalLoanValue > 0 ?  Math.round(totalLoanValue).toLocaleString() : "0";
+
+        $(`#loan_value_based_ip${i}`).val(formattedLoanBase);
+        $(`#total_loan_value_ip${i}`).val(formattedTotalLoan);
+    }
+}
+
+function calculateEstimatedRent() {
+
+    let globalYieldPercent = parseFloat($('.income_interest_rate_for_rent').val());
+    let yieldMultiplier = globalYieldPercent / 100; 
+  
+    for (let i = 1; i <= 7; i++) {
+        let rawPrice = $(`#property_purchase_ip${i}`).val() || "0";
+        let propertyPrice = Number(String(rawPrice).replace(/[^0-9.]/g, "")) || 0;
+        let estimatedRent = propertyPrice * yieldMultiplier;
+        let formattedRent = estimatedRent > 0 ?  Math.round(estimatedRent).toLocaleString() : "0";
+        $(`#estimated_rent_ip${i}`).val(formattedRent);
+    }
+   
+}
+
+function calculatePropertyHoldingCosts(i) {
+   
+    let rawPrice = $(`#property_purchase_ip${i}`).val() || "0";
+    let propertyPrice = Number(String(rawPrice).replace(/[^0-9.]/g, "")) || 0;
+    let rawRent = $(`#estimated_rent_ip${i}`).val() || "0";
+    let estimatedRent = Number(String(rawRent).replace(/[^0-9.]/g, "")) || 0;
+    let outgoings = 0;
+
+    if (propertyPrice > 0) {
+        outgoings = (estimatedRent * 0.06) + (propertyPrice * 0.008);
+    }
+    
+    let formattedOutgoings = outgoings > 0 ? Math.round(outgoings).toLocaleString() : "0";
+    $(`#estimated_outgoing_ip${i}`).val(formattedOutgoings);
+    let rawLVR = $(`#lvr_ip${i}`).val() || "0";
+    let lvrPercentage = Number(String(rawLVR).replace(/[^0-9.]/g, "")) || 0;
+    let baseLoanValue = propertyPrice * (lvrPercentage / 100);
+    let interestCosts = 0;
+    if (baseLoanValue > 0) {
+      
+        let rawRateStr = $('.annual_interest_rate_for_estimating').val() || "4.50";
+        let parsedRateNum = parseFloat(String(rawRateStr).replace(/[^0-9.]/g, "")) || 4.50;
+        let annualRate = parsedRateNum / 100; 
+        let monthlyRate = annualRate / 12;
+        let totalMonths = 25 * 12; 
+        let monthlyPayment = baseLoanValue * monthlyRate / (1 - Math.pow(1 + monthlyRate, -totalMonths));
+        let balance = baseLoanValue;
+        for (let month = 1; month <= 12; month++) {
+            let interestForMonth = balance * monthlyRate;
+            let principalForMonth = monthlyPayment - interestForMonth;
+            
+            interestCosts += interestForMonth;
+            balance -= principalForMonth;
+        }
+    }
+    
+    let formattedInterest = interestCosts > 0 ? Math.round(interestCosts).toLocaleString() : "0";
+    $(`#estimated_annual_interest_ip${i}`).val(formattedInterest);
+}
+
+calculateTimeline();
 
    
 
