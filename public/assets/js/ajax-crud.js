@@ -141,9 +141,9 @@ $.ajax({
     draggable: true
     });
     $('.details_id').val(transactionID());
-       setTimeout(function () {
-                window.location.href='/clientlist';
-            }, 2000);
+      //  setTimeout(function () {
+      //           window.location.href='/clientlist';
+      //       }, 2000);
       },  
   error: function(xhr) 
         {

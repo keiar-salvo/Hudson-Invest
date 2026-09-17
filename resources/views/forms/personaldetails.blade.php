@@ -1836,7 +1836,7 @@
         
         <div class="mb-4 w-full">
           <label class="block text-[11px] text-gray-500  mb-1">Purchase Date</label>
-          <input type="month" class="form-input w-full bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs " id="ip-1" name="" >
+          <input type="month" class="form-input w-full bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs " id="ip-1" name="ip_1" >
         </div>
         
         <div class="w-full">
@@ -1909,7 +1909,7 @@
         
         <div class="mb-4 w-full">
           <label class="block text-[11px] text-gray-500  mb-1">Purchase Date</label>
-          <input type="month" class="ip2-date form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs " data-type="future-date" name="" >
+          <input type="month" class="ip2-date form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs " data-type="future-date" name="ip2_date" >
         </div>
         
         <div class="w-full">
@@ -1974,7 +1974,7 @@
         
         <div class="mb-4 w-full">
           <label class="block text-[11px] text-gray-500  mb-1">Purchase Date</label>
-          <input type="month" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs ip3-date" data-type="future-date" name="" >
+          <input type="month" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs ip3-date" data-type="future-date" name="ip3_date" >
         </div>
         
            <div class="w-full">
@@ -2039,7 +2039,7 @@
         
         <div class="mb-4 w-full">
           <label class="block text-[11px] text-gray-500  mb-1">Purchase Date</label>
-          <input type="month" class="property_purchase_ip4 form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs ip4-date" data-type="future-date" name="property_purchase_ip4" >
+          <input type="month" class="form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs ip4-date" data-type="future-date" name="ip4_date" >
         </div>
         
         <div class="w-full">
@@ -2105,7 +2105,7 @@
         
         <div class="mb-4 w-full">
           <label class="block text-[11px] text-gray-500  mb-1">Purchase Date</label>
-          <input type="month" class=" form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs ip5-date" data-type="future-date" name="months_last_acq_ip5" >
+          <input type="month" class=" form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs ip5-date" data-type="future-date" name="ip5_date" >
         </div>
         
            <div class="w-full">
@@ -2170,7 +2170,7 @@
         
         <div class="mb-4 w-full">
           <label class="block text-[11px] text-gray-500  mb-1">Purchase Date</label>
-          <input type="month" class=" form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs ip6-date" data-type="future-date" name="" >
+          <input type="month" class=" form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs ip6-date" data-type="future-date" name="ip6_date" >
         </div>
         
         <div class="w-full">
@@ -2235,7 +2235,7 @@
         
         <div class="mb-4 w-full">
           <label class="block text-[11px] text-gray-500  mb-1">Purchase Date</label>
-          <input type="month" class="form-input w-[170px] bg-amber-50 border-amber-300  text-left text-xs ip7-date" data-type="future-date"  name="" >
+          <input type="month" class="form-input w-[170px] bg-amber-50 border-amber-300  text-left text-xs ip7-date" data-type="future-date"  name="ip7_date" >
         </div>
         
       <div class="w-full">

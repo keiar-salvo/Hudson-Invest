@@ -569,6 +569,104 @@ class PersonalDetails extends Model
                     'value' =>  number_format($yearlyValue, 0, '.', ',')
                     ];
                 }
+
+                if($request->input('ip_1') !== null && $request->input('retired_age_ip1') !== null && $request->input('property_purchase_ip1') && $request->input('lvr_ip1') && $request->input('other_purchased_cost_ip1')){
+                    $proposednewIp = new ProposedNewInvestmentProp;
+                    $proposednewIp->details_id   = $request->input('details_id');
+                    $proposednewIp->ip_1   = $request->input('ip_1');
+                    $proposednewIp->ip2_date   = $request->input('ip2_date');
+                    $proposednewIp->ip3_date   = $request->input('ip3_date');
+                    $proposednewIp->ip4_date   = $request->input('ip4_date');
+                    $proposednewIp->ip5_date   = $request->input('ip5_date');
+                    $proposednewIp->ip6_date   = $request->input('ip6_date');
+                    $proposednewIp->ip7_date   = $request->input('ip7_date');
+
+                    $proposednewIp->months_last_acq_ip1   = $request->input('months_last_acq_ip1');
+                    $proposednewIp->months_last_acq_ip2   = $request->input('months_last_acq_ip2');
+                    $proposednewIp->months_last_acq_ip3   = $request->input('months_last_acq_ip3');
+                    $proposednewIp->months_last_acq_ip4   = $request->input('months_last_acq_ip4');
+                    $proposednewIp->months_last_acq_ip5   = $request->input('months_last_acq_ip5');
+                    $proposednewIp->months_last_acq_ip6   = $request->input('months_last_acq_ip6');
+                    $proposednewIp->months_last_acq_ip7   = $request->input('months_last_acq_ip7');
+
+                    $proposednewIp->retired_age_ip1   = $request->input('retired_age_ip1');
+                    $proposednewIp->retired_age_ip2   = $request->input('retired_age_ip2');
+                    $proposednewIp->retired_age_ip3   = $request->input('retired_age_ip3');
+                    $proposednewIp->retired_age_ip4   = $request->input('retired_age_ip4');
+                    $proposednewIp->retired_age_ip5   = $request->input('retired_age_ip5');
+                    $proposednewIp->retired_age_ip6   = $request->input('retired_age_ip6');
+                    $proposednewIp->retired_age_ip7   = $request->input('retired_age_ip7');
+
+                    $proposednewIp->property_purchase_ip1   = $request->input('property_purchase_ip1');
+                    $proposednewIp->property_purchase_ip2   = $request->input('property_purchase_ip2');
+                    $proposednewIp->property_purchase_ip3   = $request->input('property_purchase_ip3');
+                    $proposednewIp->property_purchase_ip4   = $request->input('property_purchase_ip4');
+                    $proposednewIp->property_purchase_ip5   = $request->input('property_purchase_ip5');
+                    $proposednewIp->property_purchase_ip6   = $request->input('property_purchase_ip6');
+                    $proposednewIp->property_purchase_ip7   = $request->input('property_purchase_ip7');
+
+                    $proposednewIp->lvr_ip1   = $request->input('lvr_ip1');
+                    $proposednewIp->lvr_ip2   = $request->input('lvr_ip2');
+                    $proposednewIp->lvr_ip3   = $request->input('lvr_ip3');
+                    $proposednewIp->lvr_ip4   = $request->input('lvr_ip4');
+                    $proposednewIp->lvr_ip5   = $request->input('lvr_ip5');
+                    $proposednewIp->lvr_ip6   = $request->input('lvr_ip6');
+                    $proposednewIp->lvr_ip7   = $request->input('lvr_ip7');
+
+                    $proposednewIp->other_purchased_cost_ip1   = $request->input('other_purchased_cost_ip1');
+                    $proposednewIp->other_purchased_cost_ip2   = $request->input('other_purchased_cost_ip2');
+                    $proposednewIp->other_purchased_cost_ip3   = $request->input('other_purchased_cost_ip3');
+                    $proposednewIp->other_purchased_cost_ip4   = $request->input('other_purchased_cost_ip4');
+                    $proposednewIp->other_purchased_cost_ip5   = $request->input('other_purchased_cost_ip5');
+                    $proposednewIp->other_purchased_cost_ip6   = $request->input('other_purchased_cost_ip6');
+                    $proposednewIp->other_purchased_cost_ip7   = $request->input('other_purchased_cost_ip7');
+
+                    $proposednewIp->loan_value_based_ip1   = $request->input('loan_value_based_ip1');
+                    $proposednewIp->loan_value_based_ip2   = $request->input('loan_value_based_ip2');
+                    $proposednewIp->loan_value_based_ip3   = $request->input('loan_value_based_ip3');
+                    $proposednewIp->loan_value_based_ip4   = $request->input('loan_value_based_ip4');
+                    $proposednewIp->loan_value_based_ip5   = $request->input('loan_value_based_ip5');
+                    $proposednewIp->loan_value_based_ip6   = $request->input('loan_value_based_ip6');
+                    $proposednewIp->loan_value_based_ip7   = $request->input('loan_value_based_ip7');
+
+                    $proposednewIp->total_loan_value_ip1   = $request->input('total_loan_value_ip1');
+                    $proposednewIp->total_loan_value_ip2   = $request->input('total_loan_value_ip2');
+                    $proposednewIp->total_loan_value_ip3   = $request->input('total_loan_value_ip3');
+                    $proposednewIp->total_loan_value_ip4   = $request->input('total_loan_value_ip4');
+                    $proposednewIp->total_loan_value_ip5   = $request->input('total_loan_value_ip5');
+                    $proposednewIp->total_loan_value_ip6   = $request->input('total_loan_value_ip6');
+                    $proposednewIp->total_loan_value_ip7   = $request->input('total_loan_value_ip7');
+
+                    $proposednewIp->estimated_rent_ip1   = $request->input('estimated_rent_ip1');
+                    $proposednewIp->estimated_rent_ip2   = $request->input('estimated_rent_ip2');
+                    $proposednewIp->estimated_rent_ip3   = $request->input('estimated_rent_ip3');
+                    $proposednewIp->estimated_rent_ip4   = $request->input('estimated_rent_ip4');
+                    $proposednewIp->estimated_rent_ip5   = $request->input('estimated_rent_ip5');
+                    $proposednewIp->estimated_rent_ip6   = $request->input('estimated_rent_ip6');
+                    $proposednewIp->estimated_rent_ip7   = $request->input('estimated_rent_ip7');
+
+                    $proposednewIp->estimated_outgoing_ip1   = $request->input('estimated_outgoing_ip1');
+                    $proposednewIp->estimated_outgoing_ip2   = $request->input('estimated_outgoing_ip2');
+                    $proposednewIp->estimated_outgoing_ip3   = $request->input('estimated_outgoing_ip3');
+                    $proposednewIp->estimated_outgoing_ip4   = $request->input('estimated_outgoing_ip4');
+                    $proposednewIp->estimated_outgoing_ip5   = $request->input('estimated_outgoing_ip5');
+                    $proposednewIp->estimated_outgoing_ip6   = $request->input('estimated_outgoing_ip6');
+                    $proposednewIp->estimated_outgoing_ip7   = $request->input('estimated_outgoing_ip7');
+
+                    $proposednewIp->estimated_annual_interest_ip1   = $request->input('estimated_annual_interest_ip1');
+                    $proposednewIp->estimated_annual_interest_ip2   = $request->input('estimated_annual_interest_ip2');
+                    $proposednewIp->estimated_annual_interest_ip3   = $request->input('estimated_annual_interest_ip3');
+                    $proposednewIp->estimated_annual_interest_ip4   = $request->input('estimated_annual_interest_ip4');
+                    $proposednewIp->estimated_annual_interest_ip5   = $request->input('estimated_annual_interest_ip5');
+                    $proposednewIp->estimated_annual_interest_ip6   = $request->input('estimated_annual_interest_ip6');
+                    $proposednewIp->estimated_annual_interest_ip7   = $request->input('estimated_annual_interest_ip7');
+                
+              
+
+                    $proposednewIp->encoded_by   = $request->input('encoded_by');
+                    $proposednewIp->date_encoded = Carbon::now()->toDateString();
+                    $proposednewIp->save();
+                }
       
         // $portfolio_yearly = Yearly_Investment_Portfolio::updateOrCreate(
         //     ['details_id' => $request->input('details_id')],
