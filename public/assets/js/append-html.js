@@ -204,46 +204,47 @@ function Add_Credit_Card_HTML(){
 let mortgageIdx = 1;
 let mortgageNumber = 2;
 function Add_Mortgage_Investment_Property(){
-  var add_mortgage = `<br/><div class="form-row-mortgage-investment grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
-
+  var add_mortgage = `<br/><div class="form-row-mortgage-investment div-mortgage grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
 <div>
- 
        <label >Mortgage - Investment Property ${mortgageNumber}</label>
-    <select  id="mortgage_investment" name="mortgageInvestment[${mortgageIdx}][mortgage_investment]" class="mortgage_investment block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
+    <select  id="mortgage_investment" name="mortgageInvestment[0][mortgage_investment]" class="mortgage_investment block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
     <option selected disabled>Select</option>
-    <option value="client">Client</option>
-    <option value="partner">Partner</option>
-    <option value="joint">Joint</option>
+    <option value="Client">Client</option>
+    <option value="Partner">Partner</option>
+    <option value="Joint">Joint</option>
     <option value="Other">Other</option>
   </select>
   </div>
   
   <div>
    <label >Client Percentage</label>
-    <input type="text"  class="mt-1 form-input mortgage_investment_client_percentage" name="mortgageInvestment[${mortgageIdx}][mortgage_investment_client_percentage]"  placeholder="0%">
+    <input type="text"  class="mt-1 form-input mortgage_investment_client_percentage" name="mortgageInvestment${mortgageIdx}[mortgage_investment_client_percentage]"  placeholder="0%">
   </div>
 
  <div>
    <label >Partner Percentage</label>
-    <input type="email"  class="mt-1 form-input mortgage_investment_partner_percentage" name="mortgageInvestment[${mortgageIdx}][mortgage_investment_partner_percentage]" placeholder="0%">
+    <input type="email"  class="mt-1 form-input mortgage_investment_partner_percentage" name="mortgageInvestment${mortgageIdx}[mortgage_investment_partner_percentage]" placeholder="0%">
   </div>
 
  <div>
    <label >Market Value</label>
-    <input type="tel"  class="mt-1 form-input mortgage_investment_market_value" name="mortgageInvestment[${mortgageIdx}][mortgage_investment_market_value]" placeholder="0.00">
+    <input type="tel"  class="mt-1 form-input mortgage_investment_market_value" name="mortgageInvestment${mortgageIdx}[mortgage_investment_market_value]" placeholder="0.00">
   </div>
 
  <div>
    <label >Client </label>
-    <input type="text" class="mt-1 form-input mortgage_investment_client" name="mortgageInvestment[${mortgageIdx}][mortgage_investment_client]"   placeholder="0.00">
+    <input type="text" class="mt-1 form-input mortgage_investment_client" name="mortgageInvestment${mortgageIdx}[mortgage_investment_client]"   placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
   <div>
    <label >Partner</label>
-    <input type="text" class="mt-1 form-input mortgage_investment_partner" name="mortgageInvestment[${mortgageIdx}][mortgage_investment_partner]" placeholder="0.00">
+    <input type="text" class="mt-1 form-input mortgage_investment_partner" name="mortgageInvestment${mortgageIdx}[mortgage_investment_partner]" placeholder="0.00">
+     <span class="autofill-label block text-center text-red-600 mt-1">(Auto Fill)</span>
   </div>
+
     <div style="display:none;">
    <label >ID</label>
-    <input type="text" class="mt-1 form-input mortgage_investment_id" name="mortgageInvestment[${mortgageIdx}][mortgage_investment_id]" placeholder="0.00">
+    <input type="text" class="mt-1 form-input mortgage_investment_id" name="mortgageInvestment${mortgageIdx}[mortgage_investment_id]" placeholder="0.00">
   </div>
 
   </div> <br/>`;

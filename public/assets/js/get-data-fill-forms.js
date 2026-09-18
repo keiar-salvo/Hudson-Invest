@@ -22,6 +22,7 @@ function filldataforms(response)
   const netasset = response['NetAssets'];
   const financialindependence = response['financialIndependance'];
   const assumptionsData = response['assumptionData'];
+  const proposenewip = response['ProposeNewIP'];
 
   // Personal Details
   $('.name').val(personal?.['name'] ?? '');
@@ -215,6 +216,10 @@ $('.total_asset_partner').val(invest?.['total_asset_partner'] ?? '');
   $('.business_loans_client').val(investLiab?.['business_loans_client'] ?? '');
   $('.business_loans_partner').val(investLiab?.['business_loans_partner'] ?? '');
 
+  $('.total_related_liabilities_market_value').val(investLiab?.['total_related_liabilities_market_value'] ?? '');
+  $('.total_related_liabilities_client').val(investLiab?.['total_related_liabilities_client'] ?? '');
+  $('.total_related_liabilities_partner').val(investLiab?.['total_related_liabilities_partner'] ?? '');
+
   // PayG Estimation
   $('.payg_estimation_client').val(payg?.['payg_estimation_client'] ?? '');
   $('.payg_estimation_partner').val(payg?.['payg_estimation_partner'] ?? '');
@@ -236,6 +241,102 @@ $('.total_asset_partner').val(invest?.['total_asset_partner'] ?? '');
   $('.net_assets_market_value').val(netasset?.['net_assets_market_value'] ?? '0');
   $('.net_assets_client').val(netasset?.['net_assets_client'] ?? '0');
   $('.net_assets_partner').val(netasset?.['net_assets_partner'] ?? '0');
+
+    $('#ip-1').val(proposenewip?.['ip_1'] ?? '');
+    $('.ip2-date').val(proposenewip?.['ip2_date'] ?? '');
+    $('.ip3-date').val(proposenewip?.['ip3_date'] ?? '');
+    $('.ip4-date').val(proposenewip?.['ip4_date'] ?? '');
+    $('.ip5-date').val(proposenewip?.['ip5_date'] ?? '');
+    $('.ip6-date').val(proposenewip?.['ip6_date'] ?? '');
+    $('.ip7-date').val(proposenewip?.['ip7_date'] ?? '');
+
+    $('.months_last_acq_ip1').val(proposenewip?.['months_last_acq_ip1'] ?? '');
+    $('.months_last_acq_ip2').val(proposenewip?.['months_last_acq_ip2'] ?? '');
+    $('.months_last_acq_ip3').val(proposenewip?.['months_last_acq_ip3'] ?? '');
+    $('.months_last_acq_ip4').val(proposenewip?.['months_last_acq_ip4'] ?? '');
+    $('.months_last_acq_ip5').val(proposenewip?.['months_last_acq_ip5'] ?? '');
+    $('.months_last_acq_ip6').val(proposenewip?.['months_last_acq_ip6'] ?? '');
+    $('.months_last_acq_ip7').val(proposenewip?.['months_last_acq_ip7'] ?? '');
+
+    $('.retired_age_ip1').val(proposenewip?.['retired_age_ip1'] ?? '');
+    $('.retired_age_ip2').val(proposenewip?.['retired_age_ip2'] ?? '');
+    $('.retired_age_ip3').val(proposenewip?.['retired_age_ip3'] ?? '');
+    $('.retired_age_ip4').val(proposenewip?.['retired_age_ip4'] ?? '');
+    $('.retired_age_ip5').val(proposenewip?.['retired_age_ip5'] ?? '');
+    $('.retired_age_ip6').val(proposenewip?.['retired_age_ip6'] ?? '');
+    $('.retired_age_ip7').val(proposenewip?.['retired_age_ip7'] ?? '');
+
+    $('#property_purchase_ip1').val(proposenewip?.['property_purchase_ip1'] ?? '');
+    $('#property_purchase_ip2').val(proposenewip?.['property_purchase_ip2'] ?? '');
+    $('#property_purchase_ip3').val(proposenewip?.['property_purchase_ip3'] ?? '');
+    $('#property_purchase_ip4').val(proposenewip?.['property_purchase_ip4'] ?? '');
+    $('#property_purchase_ip5').val(proposenewip?.['property_purchase_ip5'] ?? '');
+    $('#property_purchase_ip6').val(proposenewip?.['property_purchase_ip6'] ?? '');
+    $('#property_purchase_ip7').val(proposenewip?.['property_purchase_ip7'] ?? '');
+
+    $('#stamp_duty_ip1').val(proposenewip?.['stamp_duty_ip1'] ?? '');
+    $('#stamp_duty_ip2').val(proposenewip?.['stamp_duty_ip2'] ?? '');
+    $('#stamp_duty_ip3').val(proposenewip?.['stamp_duty_ip3'] ?? '');
+    $('#stamp_duty_ip4').val(proposenewip?.['stamp_duty_ip4'] ?? '');
+    $('#stamp_duty_ip5').val(proposenewip?.['stamp_duty_ip5'] ?? '');
+    $('#stamp_duty_ip6').val(proposenewip?.['stamp_duty_ip6'] ?? '');
+    $('#stamp_duty_ip7').val(proposenewip?.['stamp_duty_ip7'] ?? '');
+
+    $('#other_purchased_cost_ip1').val(proposenewip?.['other_purchased_cost_ip1'] ?? '');
+    $('#other_purchased_cost_ip2').val(proposenewip?.['other_purchased_cost_ip2'] ?? '');
+    $('#other_purchased_cost_ip3').val(proposenewip?.['other_purchased_cost_ip3'] ?? '');
+    $('#other_purchased_cost_ip4').val(proposenewip?.['other_purchased_cost_ip4'] ?? '');
+    $('#other_purchased_cost_ip5').val(proposenewip?.['other_purchased_cost_ip5'] ?? '');
+    $('#other_purchased_cost_ip6').val(proposenewip?.['other_purchased_cost_ip6'] ?? '');
+    $('#other_purchased_cost_ip7').val(proposenewip?.['other_purchased_cost_ip7'] ?? '');
+
+    $('#lvr_ip1').val(proposenewip?.['lvr_ip1'] ?? '');
+    $('#lvr_ip2').val(proposenewip?.['lvr_ip2'] ?? '');
+    $('#lvr_ip3').val(proposenewip?.['lvr_ip3'] ?? '');
+    $('#lvr_ip4').val(proposenewip?.['lvr_ip4'] ?? '');
+    $('#lvr_ip5').val(proposenewip?.['lvr_ip5'] ?? '');
+    $('#lvr_ip6').val(proposenewip?.['lvr_ip6'] ?? '');
+    $('#lvr_ip7').val(proposenewip?.['lvr_ip7'] ?? '');
+
+    $('#loan_value_based_ip1').val(proposenewip?.['loan_value_based_ip1'] ?? '');
+    $('#loan_value_based_ip2').val(proposenewip?.['loan_value_based_ip2'] ?? '');
+    $('#loan_value_based_ip3').val(proposenewip?.['loan_value_based_ip3'] ?? '');
+    $('#loan_value_based_ip4').val(proposenewip?.['loan_value_based_ip4'] ?? '');
+    $('#loan_value_based_ip5').val(proposenewip?.['loan_value_based_ip5'] ?? '');
+    $('#loan_value_based_ip6').val(proposenewip?.['loan_value_based_ip6'] ?? '');
+    $('#loan_value_based_ip7').val(proposenewip?.['loan_value_based_ip7'] ?? '');
+
+    $('#total_loan_value_ip1').val(proposenewip?.['total_loan_value_ip1'] ?? '');
+    $('#total_loan_value_ip2').val(proposenewip?.['total_loan_value_ip2'] ?? '');
+    $('#total_loan_value_ip3').val(proposenewip?.['total_loan_value_ip3'] ?? '');
+    $('#total_loan_value_ip4').val(proposenewip?.['total_loan_value_ip4'] ?? '');
+    $('#total_loan_value_ip5').val(proposenewip?.['total_loan_value_ip5'] ?? '');
+    $('#total_loan_value_ip6').val(proposenewip?.['total_loan_value_ip6'] ?? '');
+    $('#total_loan_value_ip7').val(proposenewip?.['total_loan_value_ip7'] ?? '');
+
+    $('#estimated_rent_ip1').val(proposenewip?.['estimated_rent_ip1'] ?? '');
+    $('#estimated_rent_ip2').val(proposenewip?.['estimated_rent_ip2'] ?? '');
+    $('#estimated_rent_ip3').val(proposenewip?.['estimated_rent_ip3'] ?? '');
+    $('#estimated_rent_ip4').val(proposenewip?.['estimated_rent_ip4'] ?? '');
+    $('#estimated_rent_ip5').val(proposenewip?.['estimated_rent_ip5'] ?? '');
+    $('#estimated_rent_ip6').val(proposenewip?.['estimated_rent_ip6'] ?? '');
+    $('#estimated_rent_ip7').val(proposenewip?.['estimated_rent_ip7'] ?? '');
+
+    $('#estimated_outgoing_ip1').val(proposenewip?.['estimated_outgoing_ip1'] ?? '');
+    $('#estimated_outgoing_ip2').val(proposenewip?.['estimated_outgoing_ip2'] ?? '');
+    $('#estimated_outgoing_ip3').val(proposenewip?.['estimated_outgoing_ip3'] ?? '');
+    $('#estimated_outgoing_ip4').val(proposenewip?.['estimated_outgoing_ip4'] ?? '');
+    $('#estimated_outgoing_ip5').val(proposenewip?.['estimated_outgoing_ip5'] ?? '');
+    $('#estimated_outgoing_ip6').val(proposenewip?.['estimated_outgoing_ip6'] ?? '');
+    $('#estimated_outgoing_ip7').val(proposenewip?.['estimated_outgoing_ip7'] ?? ''); 
+
+    $('#estimated_annual_interest_ip1').val(proposenewip?.['estimated_annual_interest_ip1'] ?? '');
+    $('#estimated_annual_interest_ip2').val(proposenewip?.['estimated_annual_interest_ip2'] ?? '');
+    $('#estimated_annual_interest_ip3').val(proposenewip?.['estimated_annual_interest_ip3'] ?? '');
+    $('#estimated_annual_interest_ip4').val(proposenewip?.['estimated_annual_interest_ip4'] ?? '');
+    $('#estimated_annual_interest_ip5').val(proposenewip?.['estimated_annual_interest_ip5'] ?? '');
+    $('#estimated_annual_interest_ip6').val(proposenewip?.['estimated_annual_interest_ip6'] ?? '');
+    $('#estimated_annual_interest_ip7').val(proposenewip?.['estimated_annual_interest_ip7'] ?? '');
 
 }
 
@@ -295,6 +396,7 @@ $('.annual_interest_rate_mortgages').val(response?.assumptionsData?.[0]?.['annua
 $('.annual_contribution_superannuation').val(response?.assumptionsData?.[0]?.['annual_contribution_superannuation'] ?? '');
 
 }
+
 
 
  

@@ -141,9 +141,9 @@ $.ajax({
     draggable: true
     });
     $('.details_id').val(transactionID());
-      //  setTimeout(function () {
-      //           window.location.href='/clientlist';
-      //       }, 2000);
+       setTimeout(function () {
+                window.location.href='/clientlist';
+            }, 2000);
       },  
   error: function(xhr) 
         {
@@ -240,7 +240,7 @@ $.ajax({
   type: "GET",
   dataType: "json",
   success: function(response) {   
-  // console.log(response);
+  console.log(response);
   if(response.status == 'no data available')
   {
     $('.btn-update-details').css('display','none');

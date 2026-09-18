@@ -475,7 +475,7 @@ $('#business_loans,.business_loans_client_percentage,.business_loans_partner_per
 });
 
 $('.div-add-mortgage-investment-property,.div-mortgage').on('keyup input change','#mortgage_investment,.mortgage_investment_client_percentage,.mortgage_investment_partner_percentage,.mortgage_investment_market_value',function(){
-     let row = $(this).closest('.form-row-mortgage-investment ');
+     let row = $(this).closest('.form-row-mortgage-investment');
 
         calculateInvestmentLiabilities(
             row.find('.mortgage_investment'),

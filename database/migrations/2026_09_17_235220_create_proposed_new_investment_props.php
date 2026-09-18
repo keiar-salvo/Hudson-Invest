@@ -44,6 +44,14 @@ return new class extends Migration
             $table->text('property_purchase_ip5')->nullable();
             $table->text('property_purchase_ip6')->nullable();
             $table->text('property_purchase_ip7')->nullable();
+
+            $table->text('stamp_duty_ip1')->nullable();
+            $table->text('stamp_duty_ip2')->nullable();
+            $table->text('stamp_duty_ip3')->nullable();
+            $table->text('stamp_duty_ip4')->nullable();
+            $table->text('stamp_duty_ip5')->nullable();
+            $table->text('stamp_duty_ip6')->nullable();
+            $table->text('stamp_duty_ip7')->nullable();
             
             $table->text('lvr_ip1')->nullable();
             $table->text('lvr_ip2')->nullable();
