@@ -1489,9 +1489,7 @@
   </div>
   <br/>
   <div class="form-row-mortgage-investment div-mortgage grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-6">
-
 <div>
- 
        <label >Mortgage - Investment Property 1</label>
     <select  id="mortgage_investment" name="mortgageInvestment[0][mortgage_investment]" class="mortgage_investment block w-full bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs form-select ">
     <option selected disabled>Select</option>

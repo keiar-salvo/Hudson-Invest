@@ -34,7 +34,7 @@
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
                     Current Value
                 </label>
-                <input type="text" id="" class="form-input w-full long_term_saving_current_value" placeholder="0.00" name="">
+                <input type="text" id="" class="form-input w-full long_term_saving_current_value" placeholder="0.00" name="long_term_saving_current_value">
             </div>
             
             <!-- Second Input Group -->
@@ -42,7 +42,7 @@
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                     At Desired Age
                 </label>
-                <input type="text" id="" class="form-input w-full long_term_saving_retirement_value" placeholder="0.00" name="retirement_value">
+                <input type="text" id="" class="form-input w-full long_term_saving_retirement_value" placeholder="0.00" name="long_term_saving_retirement_value">
             </div>
         </div>
     </div>
@@ -61,7 +61,7 @@
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
               
                 </label>
-                <input type="text" id="" class="form-input w-full superannuation_client_current_value" placeholder="0.00" name="">
+                <input type="text" id="" class="form-input w-full superannuation_client_current_value" placeholder="0.00" name="superannuation_client_current_value">
             </div>
             
             <!-- Second Input Group -->
@@ -69,7 +69,7 @@
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                   
                 </label>
-                <input type="text" id="" class="form-input w-full superannuation_client_retirement_value" placeholder="0.00" name="retirement_value">
+                <input type="text" id="" class="form-input w-full superannuation_client_retirement_value" placeholder="0.00" name="superannuation_client_retirement_value">
             </div>
         </div>
     </div>
@@ -88,7 +88,7 @@
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
                 
                 </label>
-                <input type="text" id="" class="form-input w-full superannuation_partner_current_value" placeholder="0.00" name="">
+                <input type="text" id="" class="form-input w-full superannuation_partner_current_value" placeholder="0.00" name="superannuation_partner_current_value">
             </div>
             
             <!-- Second Input Group -->
@@ -96,7 +96,7 @@
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
         
                 </label>
-                <input type="text" id="" class="form-input w-full superannuation_partner_retirement_value" placeholder="0.00" name="retirement_value">
+                <input type="text" id="" class="form-input w-full superannuation_partner_retirement_value" placeholder="0.00" name="superannuation_partner_retirement_value">
             </div>
         </div>
     </div>
@@ -116,7 +116,7 @@
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
                 
                 </label>
-                <input type="text" id="" class="form-input w-full shares_current_value" placeholder="0.00" name="">
+                <input type="text" id="" class="form-input w-full shares_current_value" placeholder="0.00" name="shares_current_value">
             </div>
             
             <!-- Second Input Group -->
@@ -124,7 +124,7 @@
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                
                 </label>
-                <input type="text" id="" class="form-input w-full shares_retirement_value" placeholder="0.00" name="retirement_value">
+                <input type="text" id="" class="form-input w-full shares_retirement_value" placeholder="0.00" name="shares_retirement_value">
             </div>
         </div>
     </div>
@@ -143,7 +143,7 @@
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
               
                 </label>
-                <input type="text" id="" class="form-input w-full business_current_value" placeholder="0.00" name="">
+                <input type="text" id="" class="form-input w-full business_current_value" placeholder="0.00" name="business_current_value">
             </div>
             
             <!-- Second Input Group -->
@@ -151,7 +151,7 @@
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
               
                 </label>
-                <input type="text" id="" class="form-input w-full business_retirement_value" placeholder="0.00" name="retirement_value">
+                <input type="text" id="" class="form-input w-full business_retirement_value" placeholder="0.00" name="business_retirement_value">
             </div>
         </div>
     </div>
@@ -168,7 +168,7 @@
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
                
                 </label>
-                <input type="text" id="" class="form-input w-full investment__portfolio_current_value" placeholder="0.00" name="">
+                <input type="text" id="" class="form-input w-full investment__portfolio_current_value" placeholder="0.00" name="investment__portfolio_current_value">
             </div>
             
             <!-- Second Input Group -->
@@ -176,7 +176,7 @@
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
               
                 </label>
-                <input type="text" id="" class="form-input w-full investment__portfolio_retirement_value" placeholder="0.00" name="retirement_value">
+                <input type="text" id="" class="form-input w-full investment__portfolio_retirement_value" placeholder="0.00" name="investment__portfolio_retirement_value">
             </div>
         </div>
     </div>
@@ -194,7 +194,7 @@
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
                  
                 </label>
-                <input type="text" id="" class="form-input w-full existing_investment_current_value" placeholder="0.00" name="">
+                <input type="text" id="" class="form-input w-full existing_investment_current_value" placeholder="0.00" name="existing_investment_current_value">
             </div>
             
             <!-- Second Input Group -->
@@ -202,7 +202,7 @@
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                   
                 </label>
-                <input type="text" id="" class="form-input w-full existing_investment_retirement_value" placeholder="0.00" name="retirement_value">
+                <input type="text" id="" class="form-input w-full existing_investment_retirement_value" placeholder="0.00" name="existing_investment_retirement_value">
             </div>
         </div>
     </div>
@@ -220,7 +220,7 @@
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
                  
                 </label>
-                <input type="text" id="" class="form-input w-full less_existing_investment_mortgage_current_value" placeholder="0.00" name="">
+                <input type="text" id="" class="form-input w-full less_existing_investment_mortgage_current_value" placeholder="0.00" name="less_existing_investment_mortgage_current_value">
             </div>
             
             <!-- Second Input Group -->
@@ -228,7 +228,7 @@
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                
                 </label>
-                <input type="text" id="" class="form-input w-full less_existing_investment_mortgage_retirement_value" placeholder="0.00" name="retirement_value">
+                <input type="text" id="" class="form-input w-full less_existing_investment_mortgage_retirement_value" placeholder="0.00" name="less_existing_investment_mortgage_retirement_value">
             </div>
         </div>
     </div>
@@ -246,7 +246,7 @@
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
            
                 </label>
-                <input type="text" id="" class="form-input w-full equity_existing_property_current_value" placeholder="0.00" name="">
+                <input type="text" id="" class="form-input w-full equity_existing_property_current_value" placeholder="0.00" name="equity_existing_property_current_value">
             </div>
             
             <!-- Second Input Group -->
@@ -254,7 +254,7 @@
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                   
                 </label>
-                <input type="text" id="" class="form-input w-full equity_existing_property_retirement_value" placeholder="0.00" name="retirement_value">
+                <input type="text" id="" class="form-input w-full equity_existing_property_retirement_value" placeholder="0.00" name="equity_existing_property_retirement_value">
             </div>
         </div>
     </div>
@@ -271,7 +271,7 @@
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
              
                 </label>
-                <input type="text" id="" class="form-input w-full new_investment_property_current_value" placeholder="0.00" name="">
+                <input type="text" id="" class="form-input w-full new_investment_property_current_value" placeholder="0.00" name="new_investment_property_current_value">
             </div>
             
             <!-- Second Input Group -->
@@ -279,7 +279,7 @@
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                 
                 </label>
-                <input type="text" id="" class="form-input w-full new_investment_property_retirement_value" placeholder="0.00" name="retirement_value">
+                <input type="text" id="" class="form-input w-full new_investment_property_retirement_value" placeholder="0.00" name="new_investment_property_retirement_value">
             </div>
         </div>
     </div>
@@ -296,7 +296,7 @@ Less: Investment Property 1 Mortgage
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
              
                 </label>
-                <input type="text" id="" class="form-input w-full less_investment_prop_mortgage_current_value" placeholder="0.00" name="">
+                <input type="text" id="" class="form-input w-full less_investment_prop_mortgage_current_value" placeholder="0.00" name="less_investment_prop_mortgage_current_value">
             </div>
             
             <!-- Second Input Group -->
@@ -304,7 +304,7 @@ Less: Investment Property 1 Mortgage
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                    
                 </label>
-                <input type="text" id="" class="form-input w-full less_investment_prop_mortgage_retirement_value" placeholder="0.00" name="retirement_value">
+                <input type="text" id="" class="form-input w-full less_investment_prop_mortgage_retirement_value" placeholder="0.00" name="less_investment_prop_mortgage_retirement_value">
             </div>
         </div>
     </div>
@@ -321,7 +321,7 @@ Equity in Investment Property 1
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
                
                 </label>
-                <input type="text" id="" class="form-input w-full equity_investment_current_value" placeholder="0.00" name="">
+                <input type="text" id="" class="form-input w-full equity_investment_current_value" placeholder="0.00" name="equity_investment_current_value">
             </div>
             
             <!-- Second Input Group -->
@@ -329,7 +329,7 @@ Equity in Investment Property 1
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                   
                 </label>
-                <input type="text" id="" class="form-input w-full equity_investment_retirement_value" placeholder="0.00" name="retirement_value">
+                <input type="text" id="" class="form-input w-full equity_investment_retirement_value" placeholder="0.00" name="equity_investment_retirement_value">
             </div>
         </div>
     </div>
@@ -346,7 +346,7 @@ Total Investment Property Value
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
              
                 </label>
-                <input type="text" id="" class="form-input w-full total_investment_property_value" placeholder="0.00" name="">
+                <input type="text" id="" class="form-input w-full total_investment_property_value" placeholder="0.00" name="total_investment_property_value">
             </div>
             
             <!-- Second Input Group -->
@@ -354,7 +354,7 @@ Total Investment Property Value
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                  
                 </label>
-                <input type="text" id="" class="form-input w-full total_investment_property_retirement_value" placeholder="0.00" name="retirement_value">
+                <input type="text" id="" class="form-input w-full total_investment_property_retirement_value" placeholder="0.00" name="total_investment_property_retirement_value">
             </div>
         </div>
     </div>
@@ -371,7 +371,7 @@ Less: Total Investment Property Mortgage
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
            
                 </label>
-                <input type="text" id="" class="form-input w-full total_less_investment_prop_mortgage_value" placeholder="0.00" name="">
+                <input type="text" id="" class="form-input w-full total_less_investment_prop_mortgage_value" placeholder="0.00" name="total_less_investment_prop_mortgage_value">
             </div>
             
             <!-- Second Input Group -->
@@ -379,7 +379,7 @@ Less: Total Investment Property Mortgage
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                   
                 </label>
-                <input type="text" id="" class="form-input w-full total_less_investment_prop_mortgage_retirement_value" placeholder="0.00" name="retirement_value">
+                <input type="text" id="" class="form-input w-full total_less_investment_prop_mortgage_retirement_value" placeholder="0.00" name="total_less_investment_prop_mortgage_retirement_value">
             </div>
         </div>
     </div>
@@ -396,7 +396,7 @@ Equity in Investment Property Portfolio
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
                
                 </label>
-                <input type="text" id="" class="form-input w-full equity_investment_prop_port_current_value" placeholder="0.00" name="">
+                <input type="text" id="" class="form-input w-full equity_investment_prop_port_current_value" placeholder="0.00" name="equity_investment_prop_port_current_value">
             </div>
             
             <!-- Second Input Group -->
@@ -404,7 +404,7 @@ Equity in Investment Property Portfolio
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                 
                 </label>
-                <input type="text" id="" class="form-input w-full equity_investment_prop_port_retirement_value" placeholder="0.00" name="retirement_value">
+                <input type="text" id="" class="form-input w-full equity_investment_prop_port_retirement_value" placeholder="0.00" name="equity_investment_prop_port_retirement_value">
             </div>
         </div>
     </div>
@@ -421,7 +421,7 @@ Total Investment Portfolio
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
                
                 </label>
-                <input type="text" id="" class="form-input w-full total_investment_value" placeholder="0.00" name="">
+                <input type="text" id="" class="form-input w-full total_investment_value" placeholder="0.00" name="total_investment_value">
             </div>
             
             <!-- Second Input Group -->
@@ -429,7 +429,7 @@ Total Investment Portfolio
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                    
                 </label>
-                <input type="text" id="" class="form-input w-full total_investment_retirement_value" placeholder="0.00" name="retirement_value">
+                <input type="text" id="" class="form-input w-full total_investment_retirement_value" placeholder="0.00" name="total_investment_retirement_value">
             </div>
         </div>
     </div>
@@ -447,7 +447,7 @@ Investment Portfolio Target <i>(as calculated in Financial Independence)</i>
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
                
                 </label>
-                <input type="text" id="" class="form-input w-full investment_portfolio_target_current_value" placeholder="0.00" name="">
+                <input type="text" id="" class="form-input w-full investment_portfolio_target_current_value" placeholder="0.00" name="investment_portfolio_target_current_value">
             </div>
             
             <!-- Second Input Group -->
@@ -455,7 +455,7 @@ Investment Portfolio Target <i>(as calculated in Financial Independence)</i>
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                   
                 </label>
-                <input type="text" id="" class="form-input w-full investment_portfolio_target_retirement_value" placeholder="0.00" name="retirement_value">
+                <input type="text" id="" class="form-input w-full investment_portfolio_target_retirement_value" placeholder="0.00" name="investment_portfolio_target_retirement_value">
             </div>
         </div>
     </div>
@@ -472,7 +472,7 @@ Total <span style="color:#bd0c1d;">(Shortfall)</span> / Surplus
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
               
                 </label>
-                <input type="text" id="" class="form-input w-full total_shortfall_value" placeholder="0.00" name="">
+                <input type="text" id="" class="form-input w-full total_shortfall_value" placeholder="0.00" name="total_shortfall_value">
             </div>
             
             <!-- Second Input Group -->
@@ -480,7 +480,7 @@ Total <span style="color:#bd0c1d;">(Shortfall)</span> / Surplus
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                    
                 </label>
-                <input type="text" id="" class="form-input w-full total_shortfall_retirement_value" placeholder="0.00" name="retirement_value">
+                <input type="text" id="" class="form-input w-full total_shortfall_retirement_value" placeholder="0.00" name="total_shortfall_retirement_value">
             </div>
         </div>
     </div>
@@ -497,7 +497,7 @@ Household Income Target (as calculated in Financial Independence)
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
               
                 </label>
-                <input type="text" id="" class="form-input w-full houesehold_income_target_current_value" placeholder="0.00" name="">
+                <input type="text" id="" class="form-input w-full houesehold_income_target_current_value" placeholder="0.00" name="houesehold_income_target_current_value">
             </div>
             
             <!-- Second Input Group -->
@@ -505,7 +505,7 @@ Household Income Target (as calculated in Financial Independence)
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                 
                 </label>
-                <input type="text" id="" class="form-input w-full houesehold_income_target_retirement_value" placeholder="0.00" name="retirement_value">
+                <input type="text" id="" class="form-input w-full houesehold_income_target_retirement_value" placeholder="0.00" name="houesehold_income_target_retirement_value">
             </div>
         </div>
     </div>
@@ -522,7 +522,7 @@ Estimated Income From Net Investments
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
                
                 </label>
-                <input type="text" id="" class="form-input w-full estimated_income_current_value" placeholder="0.00" name="">
+                <input type="text" id="" class="form-input w-full estimated_income_current_value" placeholder="0.00" name="estimated_income_current_value">
             </div>
             
             <!-- Second Input Group -->
@@ -530,7 +530,7 @@ Estimated Income From Net Investments
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                     
                 </label>
-                <input type="text" id="" class="form-input w-full estimated_income_retirement_value" placeholder="0.00" name="retirement_value">
+                <input type="text" id="" class="form-input w-full estimated_income_retirement_value" placeholder="0.00" name="estimated_income_retirement_value">
             </div>
         </div>
     </div>
@@ -547,7 +547,7 @@ Estimated Total Income <span style="color:#bd0c1d;">(Shortfall)</span> / Surplus
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
                
                 </label>
-                <input type="text" id="" class="form-input w-full estimated_total_income_value" placeholder="0.00" name="">
+                <input type="text" id="" class="form-input w-full estimated_total_income_value" placeholder="0.00" name="estimated_total_income_value">
             </div>
             
             <!-- Second Input Group -->
@@ -555,7 +555,7 @@ Estimated Total Income <span style="color:#bd0c1d;">(Shortfall)</span> / Surplus
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                   
                 </label>
-                <input type="text" id="" class="form-input w-full estimated_total_income_retirement_value" placeholder="0.00" name="retirement_value">
+                <input type="text" id="" class="form-input w-full estimated_total_income_retirement_value" placeholder="0.00" name="estimated_total_income_retirement_value">
             </div>
         </div>
     </div>

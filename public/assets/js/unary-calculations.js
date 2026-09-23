@@ -1296,7 +1296,7 @@ calculateTimeline();
 
    
 
-function currentPosition_and_financial_independance(formData,annual_growth_rate_invest_assets,income_investment_portfolio_assets,annual_inflation_rate){
+function currentPosition_and_financial_independance(formData,annual_growth_rate_invest_assets,income_investment_portfolio_assets,annual_inflation_rate,annual_compound_growth_rate_investment_assets){
     
     // Get Total House Hold Income
     var gross_annual_income_client = parseFloat($('.total_income_client_annual').val()?.replace(/[^0-9.-]/g, '')) || 0;
@@ -1505,6 +1505,7 @@ function currentPosition_and_financial_independance(formData,annual_growth_rate_
           maximumFractionDigits: 2 
     });
 
+
     // Future Value for Business
     let clean_pv = parseFloat($('.business_market_value').val()?.replace(/,/g, '')) || 0;
     let clean_business_loan_decution = parseFloat($('.business_loans_market_value').val()?.replace(/,/g, '')) || 0;
@@ -1527,6 +1528,69 @@ function currentPosition_and_financial_independance(formData,annual_growth_rate_
           minimumFractionDigits: 2, 
           maximumFractionDigits: 2 
     });
+
+    // Adding New IP Long Term Savings
+    // let clean_annual_compound_rate = parseFloat(annual_compound_growth_rate_investment_assets?.replace(/,/g, '')) || 0;
+    let decimal_annual_compound_rate = annual_compound_growth_rate_investment_assets / 100;
+    let clean_long_term_share_funds = -parseFloat(formatted_investment_long_term_savings?.replace(/,/g, '')) || 0;
+    let add_ip_pmt = 0;
+    console.log("Rate: " + decimal_annual_compound_rate);
+    console.log("Share: " + clean_long_term_share_funds );
+    console.log("Period: " + periods);
+    console.log("PMT: " + pmt);
+    console.log("Type: " + type);
+
+    let long_term_adding_new_ip_future_value = calculateFV(decimal_annual_compound_rate,periods,add_ip_pmt,clean_long_term_share_funds,type);
+     let formatted_long_term_adding_new_ip_future_value = long_term_adding_new_ip_future_value.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    });
+
+    // Superannuation Client
+    let add_new_ip_periods_for_sup_client = periods * 4;
+    let add_new_ip_rate_for_sup_client =  decimal_annual_compound_rate / 4;
+    let clean_client_quartery_contri = -parseFloat($('.quarterly_contribution').val()?.replace(/,/g, '')) || 0;
+    let clean_client_market_value =  -parseFloat($('.superannuation_client_client').val()?.replace(/,/g, '')) || 0;
+    let sup_client_adding_new_ip_futute_value = calculateFV(add_new_ip_rate_for_sup_client,add_new_ip_periods_for_sup_client,clean_client_quartery_contri,clean_client_market_value,type);
+    let formatted_sup_client_adding_new_ip_futute_value = sup_client_adding_new_ip_futute_value.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    });
+
+    let add_new_ip_periods_for_sup_partner = periods * 4;
+    let add_new_ip_rate_for_sup_partner =  decimal_annual_compound_rate / 4;
+    let clean_partner_quartery_contri = -parseFloat($('.partner_quarterly_contribution').val()?.replace(/,/g, '')) || 0;
+    let clean_partner_market_value =  -parseFloat($('.superannuation_partner_partner').val()?.replace(/,/g, '')) || 0;
+    let sup_partner_adding_new_ip_futute_value = calculateFV(add_new_ip_rate_for_sup_partner,add_new_ip_periods_for_sup_partner,clean_partner_quartery_contri,clean_partner_market_value,type);
+    let formatted_sup_partner_adding_new_ip_futute_value = sup_partner_adding_new_ip_futute_value.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    });
+
+    // Total All add new ip Current Value 
+    let clean_adding_new_ip_long_term_savings = parseFloat(formatted_investment_long_term_savings?.replace(/,/g, '')) || 0;
+    let clean_adding_new_ip_sup_client = parseFloat($('.superannuation_client_client').val()?.replace(/,/g, '')) || 0;
+    let clean_adding_new_ip_sup_partner = parseFloat($('.superannuation_partner_partner').val()?.replace(/,/g, '')) || 0;
+    let clean_adding_new_ip_shares = parseFloat(formatted_investment_portfolio_shares_net_value?.replace(/,/g, '')) || 0;
+    let clean_adding_new_ip_business = parseFloat(formatted_investment_portfolio_business_net_value?.replace(/,/g, '')) || 0;
+    let total_investment_porfolio_current_val = clean_adding_new_ip_long_term_savings + clean_adding_new_ip_sup_client + clean_adding_new_ip_sup_partner + clean_adding_new_ip_shares + clean_adding_new_ip_business;
+    let formatted_total_investment_porfolio_current_val = total_investment_porfolio_current_val.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    });
+    
+    // Total All Add New IP Retirement Value
+    let clean_long_ter_fv = parseFloat(formatted_long_term_adding_new_ip_future_value?.replace(/,/g, '')) || 0;
+    let clean_sup_client_fv = parseFloat(formatted_sup_client_adding_new_ip_futute_value?.replace(/,/g, '')) || 0;
+    let clean_sup_partner_fv = parseFloat(formatted_sup_partner_adding_new_ip_futute_value?.replace(/,/g, '')) || 0;
+    let clean_share_net_fv = parseFloat(share_net_future_value?.replace(/,/g, '')) || 0;
+    let clean_business_net_fv = parseFloat(formatted_business_future_value?.replace(/,/g, '')) || 0;
+    let total_investment_portfolio_retirement_val = clean_long_ter_fv + clean_sup_client_fv + clean_sup_partner_fv + clean_share_net_fv + clean_business_net_fv;
+    let formatted_total_investment_portfolio_retirement_val = total_investment_portfolio_retirement_val.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    });
+    // End Adding New IP
    
 let superannuation_net_value_fv = parseFloat(supper_annuation_futureValue?.replace(/,/g, '')) || 0; 
 let long_term_savings_fv = parseFloat(long_term_total_future_value?.replace(/,/g, '')) || 0;  
@@ -1694,6 +1758,37 @@ var formatted_weekly_increase_net_financial_asset = weekly_increase_net_financia
     formData.append('total_investment_portfolio_achieve_annual_household_today',formatted_total_invesemtment_porfolio);
     formData.append('present_value_required',formatted_total_present_value_required);
     formData.append('annual_inflation_rate',raw_rate);
+
+    //adding new investment property
+    formData.append('long_term_saving_current_value',formatted_investment_long_term_savings);
+    formData.append('long_term_saving_retirement_value',formatted_long_term_adding_new_ip_future_value);
+    formData.append('superannuation_client_current_value',$('.superannuation_client_client').val());
+    formData.append('superannuation_client_retirement_value',formatted_sup_client_adding_new_ip_futute_value);
+    formData.append('superannuation_partner_current_value',$('.superannuation_partner_partner').val());
+    formData.append('superannuation_partner_retirement_value',formatted_sup_partner_adding_new_ip_futute_value);
+    
+    formData.append('shares_current_value',formatted_investment_portfolio_shares_net_value);
+    formData.append('shares_retirement_value',share_net_future_value);
+    
+    formData.append('business_current_value',formatted_investment_portfolio_business_net_value);
+    formData.append('business_retirement_value',formatted_business_future_value);
+    formData.append('investment__portfolio_current_value',formatted_total_investment_porfolio_current_val);
+    formData.append('investment__portfolio_retirement_value',formatted_total_investment_portfolio_retirement_val);
+    
+    formData.append('existing_investment_current_value',formatted_investment_portfolio_existing_investment_property);
+    formData.append('new_investment_property_current_value',$('#property_purchase_ip1').val());
+
+
+    
+
+    
+
+    
+    
+    
+    
+
+
      
     
 

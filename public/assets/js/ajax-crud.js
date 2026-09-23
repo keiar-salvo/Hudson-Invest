@@ -75,6 +75,7 @@ $('.details_id').val(transactionID());
 var annual_growth_rate_invest_assets = 0;
 var income_investment_portfolio_assets = 0;
 var annual_inflation_rate = 0;
+var annual_compound_growth_rate_investment_assets = 0;
 
 var invstment_portfolio_rate = 0;
 /***************Get Assumption Rates*************************/
@@ -86,6 +87,7 @@ $.ajax({
   console.log(response[0]);
   annual_growth_rate_invest_assets = response[0]['annual_compound_growth_rate_investment_assets'];
   annual_interest_rate_mortgages = response[0]['annual_interest_rate_mortgages'];
+  annual_compound_growth_rate_investment_assets = response[0]['annual_compound_growth_rate_investment_assets'];
   $('.personal_debt_rate_mortgage_rates').val(annual_interest_rate_mortgages);
   $('.mortgage_existing_investment_properties').val(annual_interest_rate_mortgages);
   $('.mortgage_new_investment_properties').val(annual_interest_rate_mortgages);
@@ -111,7 +113,7 @@ $.ajax({
     var formData = new FormData($('.clientdetails').get(0))   
 
     // Calculate Future Values for Current Position Page
-    currentPosition_and_financial_independance(formData,annual_growth_rate_invest_assets,income_investment_portfolio_assets,annual_inflation_rate);
+    currentPosition_and_financial_independance(formData,annual_growth_rate_invest_assets,income_investment_portfolio_assets,annual_inflation_rate,annual_compound_growth_rate_investment_assets);
 
     // console.log(formData);
 
@@ -141,9 +143,9 @@ $.ajax({
     draggable: true
     });
     $('.details_id').val(transactionID());
-       setTimeout(function () {
-                window.location.href='/clientlist';
-            }, 2000);
+      //  setTimeout(function () {
+      //           window.location.href='/clientlist';
+      //       }, 2000);
       },  
   error: function(xhr) 
         {
@@ -185,7 +187,7 @@ $(".btn-update-details").click(function(event){
     event.preventDefault();
     var formData = new FormData($('.clientdetails').get(0));
     formData.append('_method','POST');
-    currentPosition_and_financial_independance(formData,annual_growth_rate_invest_assets,income_investment_portfolio_assets,annual_inflation_rate);
+    currentPosition_and_financial_independance(formData,annual_growth_rate_invest_assets,income_investment_portfolio_assets,annual_inflation_rate,annual_compound_growth_rate_investment_assets);
     $.ajax({
     headers: {
       'X-CSRF-TOKEN': "{{ csrf_token() }}"

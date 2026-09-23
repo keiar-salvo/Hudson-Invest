@@ -675,7 +675,54 @@ class PersonalDetails extends Model
                     $proposednewIp->date_encoded = Carbon::now()->toDateString();
                     $proposednewIp->save();
                 }
-      
+
+                $addingNewIP = new AddingNewInvestmentProp;
+                $addingNewIP->details_id   = $request->input('details_id');
+                $addingNewIP->long_term_saving_current_value   = $request->input('long_term_saving_current_value');
+                $addingNewIP->long_term_saving_retirement_value = $request->input('long_term_saving_retirement_value');
+                $addingNewIP->superannuation_client_current_value   = $request->input('superannuation_client_current_value');
+                $addingNewIP->superannuation_client_retirement_value = $request->input('superannuation_client_retirement_value');
+                $addingNewIP->superannuation_partner_current_value   = $request->input('superannuation_partner_current_value');
+                $addingNewIP->superannuation_partner_retirement_value = $request->input('superannuation_partner_retirement_value');
+                $addingNewIP->shares_current_value   = $request->input('shares_current_value');
+                $addingNewIP->shares_retirement_value   = $request->input('shares_retirement_value');
+                $addingNewIP->business_current_value   = $request->input('business_current_value');
+                $addingNewIP->business_retirement_value   = $request->input('business_retirement_value');
+                $addingNewIP->investment__portfolio_current_value   = $request->input('investment__portfolio_current_value');
+                $addingNewIP->investment__portfolio_retirement_value   = $request->input('investment__portfolio_retirement_value');
+                $addingNewIP->existing_investment_current_value   = $request->input('existing_investment_current_value');
+                $addingNewIP->existing_investment_retirement_value   = $request->input('existing_investment_retirement_value');
+                $addingNewIP->less_existing_investment_mortgage_current_value   = $request->input('less_existing_investment_mortgage_current_value');
+                $addingNewIP->less_existing_investment_mortgage_retirement_value   = $request->input('less_existing_investment_mortgage_retirement_value');
+                $addingNewIP->equity_existing_property_current_value   = $request->input('equity_existing_property_current_value');
+                $addingNewIP->equity_existing_property_retirement_value   = $request->input('equity_existing_property_retirement_value');
+                $addingNewIP->new_investment_property_current_value   = $request->input('new_investment_property_current_value');
+                $addingNewIP->new_investment_property_retirement_value   = $request->input('new_investment_property_retirement_value');
+                $addingNewIP->less_investment_prop_mortgage_current_value   = $request->input('less_investment_prop_mortgage_current_value');
+                $addingNewIP->less_investment_prop_mortgage_retirement_value   = $request->input('less_investment_prop_mortgage_retirement_value');
+                $addingNewIP->equity_investment_current_value   = $request->input('equity_investment_current_value');
+                $addingNewIP->equity_investment_retirement_value   = $request->input('equity_investment_retirement_value');
+                $addingNewIP->total_investment_property_value   = $request->input('total_investment_property_value');
+                $addingNewIP->total_less_investment_prop_mortgage_value   = $request->input('total_less_investment_prop_mortgage_value');
+                $addingNewIP->total_less_investment_prop_mortgage_retirement_value   = $request->input('total_less_investment_prop_mortgage_retirement_value');
+                $addingNewIP->equity_investment_prop_port_current_value   = $request->input('equity_investment_prop_port_current_value');
+                $addingNewIP->equity_investment_prop_port_retirement_value   = $request->input('equity_investment_prop_port_retirement_value');
+                $addingNewIP->total_investment_value   = $request->input('total_investment_value');
+                $addingNewIP->total_investment_retirement_value   = $request->input('total_investment_retirement_value');
+                $addingNewIP->investment_portfolio_target_current_value   = $request->input('investment_portfolio_target_current_value');
+                $addingNewIP->investment_portfolio_target_retirement_value   = $request->input('investment_portfolio_target_retirement_value');
+                $addingNewIP->total_shortfall_value   = $request->input('total_shortfall_value');
+                $addingNewIP->total_shortfall_retirement_value   = $request->input('total_shortfall_retirement_value');
+                $addingNewIP->houesehold_income_target_current_value   = $request->input('houesehold_income_target_current_value');
+                $addingNewIP->houesehold_income_target_retirement_value   = $request->input('houesehold_income_target_retirement_value');
+                $addingNewIP->estimated_income_current_value   = $request->input('estimated_income_current_value');
+                $addingNewIP->estimated_income_retirement_value   = $request->input('estimated_income_retirement_value');
+                $addingNewIP->estimated_total_income_value   = $request->input('estimated_total_income_value');
+                $addingNewIP->estimated_total_income_retirement_value   = $request->input('estimated_total_income_retirement_value');
+                $addingNewIP->encoded_by   = $request->input('encoded_by');
+                $addingNewIP->date_encoded = Carbon::now()->toDateString();
+                $addingNewIP->save();
+
         // $portfolio_yearly = Yearly_Investment_Portfolio::updateOrCreate(
         //     ['details_id' => $request->input('details_id')],
         //     [
