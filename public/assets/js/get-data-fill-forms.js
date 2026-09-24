@@ -371,29 +371,29 @@ $('.your_home_value_of_your_home').val(response['your_home_value_of_your_home'])
 function fillFinancialIndependaceAssumptionsDataForms(response){
 $('.gross_household_income_per_annum').val(response?.financialIndependance?.['gross_household_income_per_annum'] ?? '');
 
-$('.desired_current_income_required_retirement').val(response?.financialindependence?.['desired_current_income_required_retirement'] ?? '');
-$('.annual_gross_houshold_income_required_in_retirement').val(response?.financialindependence?.['annual_gross_houshold_income_required_in_retirement'] ?? '');
-$('.weekly_gross_household_income').val(response?.financialindependence?.['weekly_gross_household_income'] ?? '');
-$('.age_this_year').val(response?.financialindependence?.['age_this_year'] ?? '');
+$('.desired_current_income_required_retirement').val(response?.financialIndependance?.['desired_current_income_required_retirement'] ?? '');
+$('.annual_gross_houshold_income_required_in_retirement').val(response?.financialIndependance?.['annual_gross_houshold_income_required_in_retirement'] ?? '');
+$('.weekly_gross_household_income').val(response?.financialIndependance?.['weekly_gross_household_income'] ?? '');
+$('.age_this_year').val(response?.financialIndependance?.['age_this_year'] ?? '');
 $('.prefer_retirement_age').val(response?.financialIndependance?.['prefer_retirement_age'] ?? '');
-$('.years_to_achieve_financial_independence').val(response?.financialindependence?.['years_to_achieve_financial_independence'] ?? '');
-$('.net_financial_assets').val(response?.financialindependence?.['net_financial_assets'] ?? '');
-$('.total_investment_portfolio_required').val(response?.financialindependence?.['total_investment_portfolio_required'] ?? '');
-$('.total_annual_household_income_retirement').val(response?.financialindependence?.['total_annual_household_income_retirement'] ?? '');
-$('.equivalent_value_of_annual_household').val(response?.financialindependence?.['equivalent_value_of_annual_household'] ?? '');
-$('.your_current_net_financial_assets_value').val(response?.financialindependence?.['your_current_net_financial_assets_value'] ?? '');
-$('.annual_increase_in_net_financial_assets').val(response?.financialindependence?.['annual_increase_in_net_financial_assets'] ?? '');
-$('.monthly_increase_in_net_financial_assets').val(response?.financialindependence?.['monthly_increase_in_net_financial_assets'] ?? '');
-$('.weekly_increase_in_net_financial_assets').val(response?.financialindependence?.['weekly_increase_in_net_financial_assets'] ?? '');
-$('.current_level_of_income_and_expenses').val(response?.financialindependence?.['current_level_of_income_and_expenses'] ?? '');
-$('.total_investment_portfolio_achieve_annual_household_today').val(response?.financialindependence?.['total_investment_portfolio_achieve_annual_household_today'] ?? '');
-$('.present_value_required').val(response?.financialindependence?.['present_value_required'] ?? '');
+$('.years_to_achieve_financial_independence').val(response?.financialIndependance?.['years_to_achieve_financial_independence'] ?? '');
+$('.net_financial_assets').val(response?.financialIndependance?.['net_financial_assets'] ?? '');
+$('.total_investment_portfolio_required').val(response?.financialIndependance?.['total_investment_portfolio_required'] ?? '');
+$('.total_annual_household_income_retirement').val(response?.financialIndependance?.['total_annual_household_income_retirement'] ?? '');
+$('.equivalent_value_of_annual_household').val(response?.financialIndependance?.['equivalent_value_of_annual_household'] ?? '');
+$('.your_current_net_financial_assets_value').val(response?.financialIndependance?.['your_current_net_financial_assets_value'] ?? '');
+$('.annual_increase_in_net_financial_assets').val(response?.financialIndependance?.['annual_increase_in_net_financial_assets'] ?? '');
+$('.monthly_increase_in_net_financial_assets').val(response?.financialIndependance?.['monthly_increase_in_net_financial_assets'] ?? '');
+$('.weekly_increase_in_net_financial_assets').val(response?.financialIndependance?.['weekly_increase_in_net_financial_assets'] ?? '');
+$('.current_level_of_income_and_expenses').val(response?.financialIndependance?.['current_level_of_income_and_expenses'] ?? '');
+$('.total_investment_portfolio_achieve_annual_household_today').val(response?.financialIndependance?.['total_investment_portfolio_achieve_annual_household_today'] ?? '');
+$('.present_value_required').val(response?.financialIndependance?.['present_value_required'] ?? '');
 
-$('.annual_compound_growth_rate_investment_assets').val(response?.assumptionsData?.[0]?.['annual_compound_growth_rate_investment_assets'] ?? '');
-$('.annual_inflation_rate').val(response?.assumptionsData?.[0]?.['annual_inflation_rate'] ?? '');
-$('.income_investment_portfolio_assets').val(response?.assumptionsData?.[0]?.['income_investment_portfolio_assets'] ?? '');
-$('.annual_interest_rate_mortgages').val(response?.assumptionsData?.[0]?.['annual_interest_rate_mortgages'] ??  '');
-$('.annual_contribution_superannuation').val(response?.assumptionsData?.[0]?.['annual_contribution_superannuation'] ?? '');
+$('.annual_compound_growth_rate_investment_assets').val(response['assumptionData'][0]?.['annual_compound_growth_rate_investment_assets'] ?? '');
+$('.annual_inflation_rate').val(response['assumptionData'][0]?.['annual_inflation_rate'] ?? '');
+$('.income_investment_portfolio_assets').val(response['assumptionData'][0]?.['income_investment_portfolio_assets'] ?? '');
+$('.annual_interest_rate_mortgages').val(response['assumptionData'][0]?.['annual_interest_rate_mortgages'] ??  '');
+$('.annual_contribution_superannuation').val(response['assumptionData'][0]?.['annual_contribution_superannuation'] ?? '');
 
 }
 

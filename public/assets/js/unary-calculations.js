@@ -1672,13 +1672,17 @@ let fomatted_total_loan_value_ip1 = total_loan_value_ip1.toLocaleString('en-US',
 
     /***********Check */
     let clean_investment_portfolio_mortgage = parseFloat(formatted_investment_portfolio_mortgage?.replace(/,/g, '')) || 0;
+    console.log("clean_investment_portfolio_mortgage: " + clean_investment_portfolio_mortgage);
+    console.log("clean_total_loan_value_ip1: " + clean_total_loan_value_ip1);
+    
     let total_less_investment_prop_mortgage_value =  clean_investment_portfolio_mortgage + clean_total_loan_value_ip1;
-    let final_total_less_investment_prop_mortgage_value = total_less_investment_prop_mortgage_value + clean_total_loan_value_ip1;
-    let formatted_total_less_investment_prop_mortgage_value = final_total_less_investment_prop_mortgage_value.toLocaleString('en-US', { 
+
+    // let final_total_less_investment_prop_mortgage_value = total_less_investment_prop_mortgage_value + clean_total_loan_value_ip1;
+    let formatted_total_less_investment_prop_mortgage_value = total_less_investment_prop_mortgage_value.toLocaleString('en-US', { 
           minimumFractionDigits: 2, 
           maximumFractionDigits: 2 
     });
-   
+   console.log("formatted_total_less_investment_prop_mortgage_value: " + formatted_total_less_investment_prop_mortgage_value);
     let total_less_investment_prop_mortgage_retirement_value = clean_total_loan_value_ip1 + clean_investment_portfolio_mortgage;
     let formatted_total_less_investment_prop_mortgage_retirement_value = total_less_investment_prop_mortgage_retirement_value.toLocaleString('en-US', { 
           minimumFractionDigits: 2, 
@@ -1701,6 +1705,24 @@ let fomatted_total_loan_value_ip1 = total_loan_value_ip1.toLocaleString('en-US',
           minimumFractionDigits: 2, 
           maximumFractionDigits: 2 
     });
+
+    let clean_total_investment_porfolio_current_val = parseFloat(formatted_total_investment_porfolio_current_val?.replace(/,/g, '')) || 0;
+    let clean_total_equity_investment_prop_port_current_value = parseFloat(formatted_total_equity_investment_prop_port_current_value?.replace(/,/g, '')) || 0;
+    let total_investment_value = clean_total_investment_porfolio_current_val + clean_total_equity_investment_prop_port_current_value;
+    let formatted_total_investment_value= total_investment_value.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    });
+
+    let clean_total_investment_portfolio_retirement_val = parseFloat(formatted_total_investment_portfolio_retirement_val?.replace(/,/g, '')) || 0;
+    let clean_total_equity_investment_prop_port_retirement_value = parseFloat(formatted_total_equity_investment_prop_port_retirement_value?.replace(/,/g, '')) || 0;
+    let total_investment_retirement_value = clean_total_investment_portfolio_retirement_val + clean_total_equity_investment_prop_port_retirement_value;
+    let formatted_total_investment_retirement_value= total_investment_retirement_value.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    });
+
+
     // End Adding New IP
    
 let superannuation_net_value_fv = parseFloat(supper_annuation_futureValue?.replace(/,/g, '')) || 0; 
@@ -1737,7 +1759,7 @@ var formatted_weekly_gross_household_income = Math.round(weekly_gross_household_
 let agethisyear = parseFloat($('.age_average').val());
 let retirementage =  parseFloat($('.target_age').val());
 let years_to_achive_financial_independence =  retirementage - agethisyear;
-console.log("Age: " + years_to_achive_financial_independence);
+
 
 let get_income_investment_portfolio_assets = parseFloat(income_investment_portfolio_assets) / 100;
 let clean_annual_gross_household = parseFloat(formatted_annual_gross_household?.replace(/,/g, '')) || 0; 
@@ -1747,10 +1769,33 @@ var formatted_total_invesemtment_porfolio = total_invesemtment_porfolio.toLocale
           maximumFractionDigits: 2 
     });
 
+    /******************Continue on Adding New IP Total Shortfall********************* */
+    let clean_total_investment_value = parseFloat(formatted_total_investment_value?.replace(/,/g, '')) || 0;
+    let clean_total_invesemtment_porfolio = parseFloat(formatted_total_invesemtment_porfolio?.replace(/,/g, '')) || 0;
+
+    let total_shortfall_value = clean_total_investment_value - clean_total_invesemtment_porfolio;
+    let abs_total_shortfall_value = Math.abs(total_shortfall_value);
+    let formatted_total_shortfall_value= abs_total_shortfall_value.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    });
+  
+   
+    let estimated_income_current_value = clean_total_investment_value * get_income_investment_portfolio_assets;
+    let formatted_estimated_income_current_value =Math.round(estimated_income_current_value).toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    });
+
+    let estimated_total_income_value = clean_annual_gross_household - estimated_income_current_value;
+    let formatted_estimated_total_income_value =Math.round(estimated_total_income_value).toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    });
+
+ /******************End  Adding New IP Total Shortfall********************* */
 let raw_rate = parseFloat(annual_inflation_rate) || 0;
-console.log("Inflation: " + annual_inflation_rate);
-console.log("years: " + years_to_achive_financial_independence);
-console.log("Investment: " + formatted_total_invesemtment_porfolio);
+
 let fin_rate = raw_rate > 1 ? raw_rate / 100 : raw_rate;
 
 let fi_nper = parseFloat(years_to_achive_financial_independence) || 0; // Test for exact 
@@ -1773,12 +1818,44 @@ let formatted_total_investment_portfolio_desired_retirement_age = Math.round(tot
 //           minimumFractionDigits: 2, 
 //           maximumFractionDigits: 2 
 //     });
+
+/*************************Total Short fall retirement value************************** */
+    let clean_shortfall_total_investment_portfolio_desired_retirement_age = parseFloat(formatted_total_investment_portfolio_desired_retirement_age?.replace(/,/g, '')) || 0;
+    let clean_total_investment_retirement_value = parseFloat(formatted_total_investment_retirement_value?.replace(/,/g, '')) || 0;
+    let total_shortfall_retirement_value = clean_total_investment_retirement_value - clean_shortfall_total_investment_portfolio_desired_retirement_age;
+    let abs_total_shortfall_retirement_value = Math.abs(total_shortfall_retirement_value);
+    let formatted_abs_total_shortfall_retirement_value= abs_total_shortfall_retirement_value.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    });
+
+    let estimated_income_retirement_value = clean_total_investment_retirement_value * get_income_investment_portfolio_assets;
+    let formatted_estimated_income_retirement_value= estimated_income_retirement_value.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    });
+
+  
+    
+
+    /*************************End Total Short fall retirement value************************** */
+
 let clean_total_investment_portfolio_desired_retirement_age =  parseFloat(formatted_total_investment_portfolio_desired_retirement_age?.replace(/,/g, '')) || 0;
 let equivalent_value_annual_household =  clean_total_investment_portfolio_desired_retirement_age * get_income_investment_portfolio_assets;
 var formatted_equivalent_value_of_annual_household = equivalent_value_annual_household.toLocaleString('en-US', { 
           minimumFractionDigits: 2, 
           maximumFractionDigits: 2 
     });
+
+    /**********************Total Estiamted Income Retirement Value************************** */
+    let clean_equivalent_value_of_annual_household = parseFloat(formatted_equivalent_value_of_annual_household?.replace(/,/g, '')) || 0;
+    let estimated_total_income_retirement_value = clean_equivalent_value_of_annual_household - estimated_income_retirement_value;
+    var formatted_estimated_total_income_retirement_value = estimated_total_income_retirement_value.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    });
+
+    /**********************End Total Estiamted Income Retirement Value************************** */
 
 let clean_net_financial_assets = parseFloat(formatted_cuurent_net_financial_assets?.replace(/,/g, '')) || 0;
 let your_current_net_financial_asset_value = clean_total_investment_portfolio_desired_retirement_age - clean_net_financial_assets;
@@ -1901,10 +1978,12 @@ var formatted_weekly_increase_net_financial_asset = weekly_increase_net_financia
     formData.append('equity_investment_retirement_value',formatted_total_equity_invstmt_retirement_val);
     formData.append('total_investment_property_value',formatted_total_invstmt_prop_val);
     formData.append('total_investment_property_retirement_value',formatted_total_new_investment_prop_retirement_val);
-    formData.append('total_less_investment_prop_mortgage_value',formatted_total_less_investment_prop_mortgage_retirement_value);
-    formData.append('total_less_investment_prop_mortgage_retirement_value',formatted_total_less_investment_prop_mortgage_retirement_value);
+    formData.append('total_less_investment_prop_mortgage_value',formatted_total_less_investment_prop_mortgage_value);
+    formData.append('total_less_investment_prop_mortgage_retirement_value',formatted_total_less_investment_prop_mortgage_value);
     
     formData.append('investment_portfolio_target_current_value',formatted_total_invesemtment_porfolio);
+    formData.append('investment_portfolio_target_retirement_value',formatted_total_investment_portfolio_desired_retirement_age);
+
     formData.append('houesehold_income_target_current_value',formatted_annual_gross_household);
     formData.append('houesehold_income_target_retirement_value',formatted_equivalent_value_of_annual_household);
     formData.append('less_investment_prop_mortgage_current_value',fomatted_total_loan_value_ip1);
@@ -1912,6 +1991,21 @@ var formatted_weekly_increase_net_financial_asset = weekly_increase_net_financia
     formData.append('less_investment_prop_mortgage_retirement_value',fomatted_total_loan_value_ip1);
     formData.append('equity_investment_prop_port_current_value',formatted_total_equity_investment_prop_port_current_value);
     formData.append('equity_investment_prop_port_retirement_value',formatted_total_equity_investment_prop_port_retirement_value);
+    formData.append('total_investment_value',formatted_total_investment_value);
+    formData.append('total_investment_retirement_value',formatted_total_investment_retirement_value);
+    formData.append('total_shortfall_value',formatted_total_shortfall_value);
+    formData.append('total_shortfall_retirement_value',formatted_abs_total_shortfall_retirement_value);
+    formData.append('estimated_income_current_value',formatted_estimated_income_current_value);
+    formData.append('estimated_total_income_value',formatted_estimated_total_income_value);
+    formData.append('estimated_income_retirement_value',formatted_estimated_income_retirement_value);
+    formData.append('estimated_total_income_retirement_value',formatted_estimated_total_income_retirement_value);
+    
+    
+
+   
+    
+   
+    
     
     
 
