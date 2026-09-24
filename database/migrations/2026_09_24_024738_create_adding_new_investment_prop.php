@@ -38,6 +38,7 @@ return new class extends Migration
             $table->string('equity_investment_current_value')->nullable();
             $table->string('equity_investment_retirement_value')->nullable();
             $table->string('total_investment_property_value')->nullable();
+            $table->string('total_investment_property_retirement_value')->nullable();
             $table->string('total_less_investment_prop_mortgage_value')->nullable();
             $table->string('total_less_investment_prop_mortgage_retirement_value')->nullable();
             $table->string('equity_investment_prop_port_current_value')->nullable();

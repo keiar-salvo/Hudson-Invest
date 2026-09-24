@@ -703,6 +703,7 @@ class PersonalDetails extends Model
                 $addingNewIP->equity_investment_current_value   = $request->input('equity_investment_current_value');
                 $addingNewIP->equity_investment_retirement_value   = $request->input('equity_investment_retirement_value');
                 $addingNewIP->total_investment_property_value   = $request->input('total_investment_property_value');
+                $addingNewIP->total_investment_property_retirement_value   = $request->input('total_investment_property_retirement_value');
                 $addingNewIP->total_less_investment_prop_mortgage_value   = $request->input('total_less_investment_prop_mortgage_value');
                 $addingNewIP->total_less_investment_prop_mortgage_retirement_value   = $request->input('total_less_investment_prop_mortgage_retirement_value');
                 $addingNewIP->equity_investment_prop_port_current_value   = $request->input('equity_investment_prop_port_current_value');
