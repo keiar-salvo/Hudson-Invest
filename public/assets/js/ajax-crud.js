@@ -143,9 +143,9 @@ $.ajax({
     draggable: true
     });
     $('.details_id').val(transactionID());
-      //  setTimeout(function () {
-      //           window.location.href='/clientlist';
-      //       }, 2000);
+       setTimeout(function () {
+                window.location.href='/clientlist';
+            }, 2000);
       },  
   error: function(xhr) 
         {
@@ -391,6 +391,20 @@ $.ajax({
   success: function(response) {   
   console.log(response);
  fillFinancialIndependaceAssumptionsDataForms(response);
+  console.log(response);
+    },
+    error: function(error) {
+    console.error("AJAX Error: " + error);
+    }
+    });
+
+$.ajax({
+  url: appURL + "/addingnewinvestmentproperty/" + product,
+  type: "GET",
+  dataType: "json",
+  success: function(response) {   
+  console.log(response);
+FillAddNewIPForm(response);
   console.log(response);
     },
     error: function(error) {

@@ -242,6 +242,7 @@ $('.total_asset_partner').val(invest?.['total_asset_partner'] ?? '');
   $('.net_assets_client').val(netasset?.['net_assets_client'] ?? '0');
   $('.net_assets_partner').val(netasset?.['net_assets_partner'] ?? '0');
 
+  // Proposesd New IP
     $('#ip-1').val(proposenewip?.['ip_1'] ?? '');
     $('.ip2-date').val(proposenewip?.['ip2_date'] ?? '');
     $('.ip3-date').val(proposenewip?.['ip3_date'] ?? '');
@@ -395,6 +396,51 @@ $('.income_investment_portfolio_assets').val(response['assumptionData'][0]?.['in
 $('.annual_interest_rate_mortgages').val(response['assumptionData'][0]?.['annual_interest_rate_mortgages'] ??  '');
 $('.annual_contribution_superannuation').val(response['assumptionData'][0]?.['annual_contribution_superannuation'] ?? '');
 
+}
+
+function FillAddNewIPForm(response){
+  $('.long_term_saving_current_value').val(response['long_term_saving_current_value']);
+  $('.long_term_saving_retirement_value').val(response['long_term_saving_retirement_value']);
+  $('.superannuation_client_current_value').val(response['superannuation_client_current_value']);
+  $('.superannuation_client_retirement_value').val(response['superannuation_client_retirement_value']);
+  $('.superannuation_partner_current_value').val(response['superannuation_partner_current_value']);
+  $('.superannuation_partner_retirement_value').val(response['superannuation_partner_retirement_value']);
+  $('.shares_current_value').val(response['shares_current_value']);
+  $('.shares_retirement_value').val(response['shares_retirement_value']);
+  $('.business_current_value').val(response['business_current_value']);
+  $('.business_retirement_value').val(response['business_retirement_value']);
+  $('.investment__portfolio_current_value').val(response['investment__portfolio_current_value']);
+  $('.investment__portfolio_retirement_value').val(response['investment__portfolio_retirement_value']);
+  $('.existing_investment_current_value').val(response['existing_investment_current_value']);
+  $('.existing_investment_retirement_value').val(response['existing_investment_retirement_value']);
+  $('.less_existing_investment_mortgage_current_value').val(response['less_existing_investment_mortgage_current_value']);
+  $('.less_existing_investment_mortgage_retirement_value').val(response['less_existing_investment_mortgage_retirement_value']);
+  $('.equity_existing_property_current_value').val(response['equity_existing_property_current_value']);
+  $('.equity_existing_property_retirement_value').val(response['equity_existing_property_retirement_value']);
+  $('.new_investment_property_current_value').val(response['new_investment_property_current_value']);
+  $('.new_investment_property_retirement_value').val(response['new_investment_property_retirement_value']);
+  $('.less_investment_prop_mortgage_current_value').val(response['less_investment_prop_mortgage_current_value']);
+  $('.less_investment_prop_mortgage_retirement_value').val(response['less_investment_prop_mortgage_retirement_value']);
+  $('.equity_investment_current_value').val(response['equity_investment_current_value']);
+  $('.equity_investment_retirement_value').val(response['equity_investment_retirement_value']);
+  $('.total_investment_property_value').val(response['total_investment_property_value']);
+  $('.total_investment_property_retirement_value').val(response['total_investment_property_retirement_value']);
+  $('.total_less_investment_prop_mortgage_value').val(response['total_less_investment_prop_mortgage_value']);
+  $('.total_less_investment_prop_mortgage_retirement_value').val(response['total_less_investment_prop_mortgage_retirement_value']);
+  $('.equity_investment_prop_port_current_value').val(response['equity_investment_prop_port_current_value']);
+  $('.equity_investment_prop_port_retirement_value').val(response['equity_investment_prop_port_retirement_value']);
+  $('.total_investment_value').val(response['total_investment_value']);
+  $('.total_investment_retirement_value').val(response['total_investment_retirement_value']);
+  $('.investment_portfolio_target_current_value').val(response['investment_portfolio_target_current_value']);
+  $('.investment_portfolio_target_retirement_value').val(response['investment_portfolio_target_retirement_value']);
+  $('.total_shortfall_value').val(response['total_shortfall_value']);
+  $('.total_shortfall_retirement_value').val(response['total_shortfall_retirement_value']);
+  $('.houesehold_income_target_current_value').val(response['houesehold_income_target_current_value']);
+  $('.houesehold_income_target_retirement_value').val(response['houesehold_income_target_retirement_value']);
+  $('.estimated_income_current_value').val(response['estimated_income_current_value']);
+  $('.estimated_income_retirement_value').val(response['estimated_income_retirement_value']);
+  $('.estimated_total_income_value').val(response['estimated_total_income_value']);
+  $('.estimated_total_income_retirement_value').val(response['estimated_total_income_retirement_value']);
 }
 
 

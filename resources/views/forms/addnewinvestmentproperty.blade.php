@@ -5,7 +5,7 @@
         <div x-data="personaldetails">
             <ul class="flex space-x-2 rtl:space-x-reverse">
                 <li>
-                    <a href="javascript:;" class="text-primary hover:underline"><b>View / Investment Property Today</b></a>
+                    <a href="javascript:;" class="text-primary hover:underline"><b>View / Investing In Property Today</b></a>
                 </li>
         
             </ul>

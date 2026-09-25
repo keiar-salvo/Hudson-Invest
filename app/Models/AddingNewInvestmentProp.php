@@ -53,4 +53,13 @@ class AddingNewInvestmentProp extends Model
         'encoded_by',
         'date_encoded'
     ];
+
+     public function collectionAddNewIP($id)
+    {
+        $collection = AddingNewInvestmentProp::where('details_id',$id)->first();
+        
+        return response()->json($collection);
+
+     
+    }
 }

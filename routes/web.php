@@ -81,6 +81,7 @@ Route::group(['namespace' => 'App\Http\Controllers'],function()
        });
         Route::controller(AddingNewInvestmentPropController ::class)->group(function () {
             Route::get('addingnewinvestmentproperty', 'addnewinvestmentproperties')->name('addingnewinvestmentproperty');
+            Route::get('addingnewinvestmentproperty/{id}','getAddNewIPColl')->name('addingnewinvestmentproperty');
         
             //  Route::get('newinvestmentproperty/{id}','financialIndependanceCollection')->name('newinvestmentproperty');
             

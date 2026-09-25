@@ -15,17 +15,15 @@ class AddingNewInvestmentPropController extends Controller
        
         return view('forms.addnewinvestmentproperty');
     }
-    public function getYearlyInvestmentPortfolio($id)
+    public function getAddNewIPColl($id)
     {
-         try {
-          
-            // $data = new AddingNewInvestmentProp();
-            // return $data->getAssumptionsData($id);
-         
-         
-        } catch (Exception $e) {
-        
-            return response()->json(['Something went wrong!']);
-        }
+      
+        try {
+                $getCurrentNewIP = new AddingNewInvestmentProp();
+                return $getCurrentNewIP->collectionAddNewIP($id);
+            } catch (Exception $e) {
+                return response()->json(['Something went wrong!']);
+            }
+    
     }
 }
