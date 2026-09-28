@@ -17,7 +17,7 @@ class PersonalDetails extends Model
 
        protected $fillable = [
         'name','residential_address','phone_home','phone_mobile','email','age_client','age_partner','age_average','amount_per_week','initial_appointment_date',
-        'desired_retirement_age','in_seven_years','in_fourteen_years','in_twenty_one_years'
+        'desired_retirement_age','in_seven_years','in_fourteen_years','in_twenty_one_years,years_to_target_age'
     ];
    
     public function savePersonDetails(Request $request)

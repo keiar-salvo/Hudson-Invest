@@ -83,6 +83,7 @@
                             '<li><a href="/investmentportfolio?id='+ element.details_id +'" target="_blank">Invt Portfolio Graph</a></li>'+ 
                             '<li><a href="/initialclientpograph?id='+ element.details_id +'" target="_blank">Initial IP Graph</a></li>'+ 
                             '<li><a href="/addingnewinvestmentproperty?id='+ element.details_id +'" target="_blank">Adding New IP</a></li>'+ 
+                            '<li><a href="/clientnewgraph?id='+ element.details_id +'" target="_blank">Client PO Graph</a></li>'+ 
                             '</ul></div>' 
                         ]).draw(false); 
                     });        

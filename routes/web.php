@@ -86,12 +86,18 @@ Route::group(['namespace' => 'App\Http\Controllers'],function()
             //  Route::get('newinvestmentproperty/{id}','financialIndependanceCollection')->name('newinvestmentproperty');
             
        });
-           Route::controller(NewIPController ::class)->group(function () {
+       
+        Route::controller(NewIPController ::class)->group(function () {
             Route::get('newinvestmentproperty', 'newinvestmentproperties')->name('newinvestmentproperty');
         
             //  Route::get('newinvestmentproperty/{id}','financialIndependanceCollection')->name('newinvestmentproperty');
             
        });
+        Route::controller(ClientNewGraphController::class)->group(function () {
+            Route::get('clientnewgraph', 'clientnewgraph')->name('clientnewgraph');
+            Route::get('clientnewgraph/{id}','getChartInitalData')->name('clientnewgraph'); 
+       });
+ 
         Route::controller(IncomeController::class)->group(function () {
              Route::get('income', 'income')->name('income');
        });
