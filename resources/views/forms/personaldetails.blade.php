@@ -1879,11 +1879,11 @@
                <br/>
         <div class="w-full" style="display:none;">
           <label class="block text-[11px] text-gray-500  mb-1">Total Loan Value (inc.costs)</label>
-          <input type="text"  class="income_interest_rate_for_rent form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="total_loan_value_ip1" >
+          <input type="text"  class="income_interest_rate_for_rent form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="" >
         </div>
             <div class="w-full" style="display:none;">
           <label class="block text-[11px] text-gray-500  mb-1">Total Loan Value (inc.costs)</label>
-          <input type="text"  class="annual_interest_rate_for_estimating form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="total_loan_value_ip1" >
+          <input type="text"  class="annual_interest_rate_for_estimating form-input w-[170px] bg-amber-50 border-amber-300  text-amber-950 rounded p-2 text-left text-xs" name="" >
         </div>
         <div class="w-full">
           <label class="block text-[11px] text-gray-500  mb-1">Estimated Rent</label>

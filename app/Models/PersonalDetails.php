@@ -724,6 +724,46 @@ class PersonalDetails extends Model
                 $addingNewIP->date_encoded = Carbon::now()->toDateString();
                 $addingNewIP->save();
 
+                $addingnewmultiip = new MultipleNewIP;
+                $addingnewmultiip->details_id   = $request->input('details_id');
+                $addingnewmultiip->new_investment_property1_current_value   = $request->input('new_investment_property1_current_value');
+                $addingnewmultiip->new_investment_property1_retirement_value   = $request->input('new_investment_property1_retirement_value');
+                $addingnewmultiip->less_investment_prop1_mortgage_current_value   = $request->input('less_investment_prop1_mortgage_current_value');
+                $addingnewmultiip->less_investment_prop1_mortgage_retirement_value   = $request->input('less_investment_prop1_mortgage_retirement_value');
+                $addingnewmultiip->equity_investment1_current_value   = $request->input('equity_investment1_current_value');
+                $addingnewmultiip->equity_investment1_retirement_value   = $request->input('equity_investment1_retirement_value');
+                $addingnewmultiip->new_investment_property2_current_value   = $request->input('new_investment_property2_current_value');
+                $addingnewmultiip->new_investment_property2_retirement_value   = $request->input('new_investment_property2_retirement_value');
+                $addingnewmultiip->less_investment_prop2_mortgage_current_value   = $request->input('less_investment_prop2_mortgage_current_value');
+                $addingnewmultiip->less_investment_prop2_mortgage_retirement_value   = $request->input('less_investment_prop2_mortgage_retirement_value');
+                $addingnewmultiip->equity_investment2_current_value   = $request->input('equity_investment2_current_value');
+                $addingnewmultiip->equity_investment2_retirement_value   = $request->input('equity_investment2_retirement_value');
+                $addingnewmultiip->new_investment_property3_current_value   = $request->input('new_investment_property3_current_value');
+                $addingnewmultiip->new_investment_property3_retirement_value   = $request->input('new_investment_property3_retirement_value');
+                $addingnewmultiip->less_investment_prop3_mortgage_current_value   = $request->input('less_investment_prop3_mortgage_current_value');
+                $addingnewmultiip->less_investment_prop3_mortgage_retirement_value   = $request->input('less_investment_prop3_mortgage_retirement_value');
+                $addingnewmultiip->equity_investment3_current_value   = $request->input('equity_investment3_current_value');
+                $addingnewmultiip->equity_investment3_retirement_value   = $request->input('equity_investment3_retirement_value');
+                $addingnewmultiip->multi_ip_total_investment_property_value   = $request->input('multi_ip_total_investment_property_value');
+                $addingnewmultiip->multi_ip_total_less_investment_prop_mortgage_value   = $request->input('multi_ip_total_less_investment_prop_mortgage_value');
+                $addingnewmultiip->multi_ip_total_less_investment_prop_mortgage_retirement_value   = $request->input('multi_ip_total_less_investment_prop_mortgage_retirement_value');
+                $addingnewmultiip->multi_ip_equity_investment_prop_port_current_value   = $request->input('multi_ip_equity_investment_prop_port_current_value');
+                $addingnewmultiip->multi_ip_equity_investment_prop_port_retirement_value   = $request->input('multi_ip_equity_investment_prop_port_retirement_value');
+                $addingnewmultiip->multi_ip_total_investment_value   = $request->input('multi_ip_total_investment_value');
+                $addingnewmultiip->multi_ip_total_investment_retirement_value   = $request->input('multi_ip_total_investment_retirement_value');
+                $addingnewmultiip->multi_ip_investment_portfolio_target_current_value   = $request->input('multi_ip_investment_portfolio_target_current_value');
+                $addingnewmultiip->multi_ip_total_shortfall_value   = $request->input('multi_ip_total_shortfall_value');
+                $addingnewmultiip->multi_ip_total_shortfall_retirement_value   = $request->input('multi_ip_total_shortfall_retirement_value');
+                $addingnewmultiip->multi_ip_houesehold_income_target_current_value   = $request->input('multi_ip_houesehold_income_target_current_value');
+                $addingnewmultiip->multi_ip_houesehold_income_target_retirement_value   = $request->input('multi_ip_houesehold_income_target_retirement_value');
+                $addingnewmultiip->multi_ip_estimated_income_current_value   = $request->input('multi_ip_estimated_income_current_value');
+                $addingnewmultiip->multi_ip_estimated_income_retirement_value   = $request->input('multi_ip_estimated_income_retirement_value');
+                $addingnewmultiip->multi_ip_estimated_total_income_value   = $request->input('multi_ip_estimated_total_income_value');
+                $addingnewmultiip->multi_ip_estimated_total_income_retirement_value   = $request->input('multi_ip_estimated_total_income_retirement_value');
+                $addingnewmultiip->encoded_by   = $request->input('encoded_by');
+                $addingnewmultiip->date_encoded = Carbon::now()->toDateString();
+                $addingnewmultiip->save();
+
         // $portfolio_yearly = Yearly_Investment_Portfolio::updateOrCreate(
         //     ['details_id' => $request->input('details_id')],
         //     [
@@ -1584,8 +1624,8 @@ class PersonalDetails extends Model
                             'equity_existing_property_current_value' => $request->input('equity_existing_property_current_value'),
                             'equity_existing_property_retirement_value' => $request->input('equity_existing_property_retirement_value'),
                             'new_investment_property_current_value' => $request->input('new_investment_property_current_value'),
-                            'new_investment_property_retirement_value' => $request->input('retired_age_ip6'),
-                            'retired_age_ip7' => $request->input('new_investment_property_retirement_value'),
+                            'new_investment_property_retirement_value' => $request->input('new_investment_property_retirement_value'),
+                           
                             'less_investment_prop_mortgage_current_value' => $request->input('less_investment_prop_mortgage_current_value'),
                             'less_investment_prop_mortgage_retirement_value' => $request->input('less_investment_prop_mortgage_retirement_value'),
                             'equity_investment_current_value' => $request->input('equity_investment_current_value'),
@@ -1663,6 +1703,87 @@ class PersonalDetails extends Model
                     $addingNewIP->save();
                     }
                
+                    $verifyAddNewMultiIP = MultipleNewIP::where('details_id',$id)->first();
+                    if($verifyAddNewMultiIP !== null){
+                         $updateAddNewMultiIP = MultipleNewIP::where('details_id',$id)->update([
+                            'new_investment_property1_current_value' => $request->input('new_investment_property1_current_value'),
+                            'new_investment_property1_retirement_value' => $request->input('new_investment_property1_retirement_value'),
+                            'less_investment_prop1_mortgage_current_value' => $request->input('less_investment_prop1_mortgage_current_value'),
+                            'less_investment_prop1_mortgage_retirement_value' => $request->input('less_investment_prop1_mortgage_retirement_value'),
+                            'equity_investment1_current_value' => $request->input('equity_investment1_current_value'),
+                            'equity_investment1_retirement_value' => $request->input('equity_investment1_retirement_value'),
+                            'new_investment_property2_current_value' => $request->input('new_investment_property2_current_value'),
+                            'new_investment_property2_retirement_value' => $request->input('new_investment_property2_retirement_value'),
+                            'less_investment_prop2_mortgage_current_value' => $request->input('less_investment_prop2_mortgage_current_value'),
+                            'less_investment_prop2_mortgage_retirement_value' => $request->input('less_investment_prop2_mortgage_retirement_value'),
+                            'equity_investment2_current_value' => $request->input('equity_investment2_current_value'),
+                            'equity_investment2_retirement_value' => $request->input('equity_investment2_retirement_value'),
+                            'new_investment_property3_current_value' => $request->input('new_investment_property3_current_value'),
+                            'new_investment_property3_retirement_value' => $request->input('new_investment_property3_retirement_value'),
+                            'less_investment_prop3_mortgage_current_value' => $request->input('less_investment_prop3_mortgage_current_value'),
+                            'less_investment_prop3_mortgage_retirement_value' => $request->input('less_investment_prop3_mortgage_retirement_value'),
+                            'equity_investment3_current_value' => $request->input('equity_investment3_current_value'),
+                            'equity_investment3_retirement_value' => $request->input('equity_investment3_retirement_value'),
+                            'multi_ip_total_investment_property_value' => $request->input('multi_ip_total_investment_property_value'),
+                            'multi_ip_total_less_investment_prop_mortgage_value' => $request->input('multi_ip_total_less_investment_prop_mortgage_value'),
+                            'multi_ip_total_less_investment_prop_mortgage_retirement_value' => $request->input('multi_ip_total_less_investment_prop_mortgage_retirement_value'),
+                            'multi_ip_equity_investment_prop_port_current_value' => $request->input('multi_ip_equity_investment_prop_port_current_value'),
+                            'multi_ip_equity_investment_prop_port_retirement_value' => $request->input('multi_ip_equity_investment_prop_port_retirement_value'),
+                            'multi_ip_total_investment_value' => $request->input('multi_ip_total_investment_value'),
+                            'multi_ip_total_investment_retirement_value' => $request->input('multi_ip_total_investment_retirement_value'),
+                            'multi_ip_investment_portfolio_target_current_value' => $request->input('multi_ip_investment_portfolio_target_current_value'),
+                            'multi_ip_investment_portfolio_target_retirement_value' => $request->input('multi_ip_investment_portfolio_target_retirement_value'),
+                            'multi_ip_total_shortfall_value' => $request->input('multi_ip_total_shortfall_value'),
+                            'multi_ip_total_shortfall_retirement_value' => $request->input('multi_ip_total_shortfall_retirement_value'),
+                            'multi_ip_houesehold_income_target_current_value' => $request->input('multi_ip_houesehold_income_target_current_value'),
+                            'multi_ip_houesehold_income_target_retirement_value' => $request->input('multi_ip_houesehold_income_target_retirement_value'),
+                            'multi_ip_estimated_income_current_value' => $request->input('multi_ip_estimated_income_current_value'),
+                            'multi_ip_estimated_income_retirement_value' => $request->input('multi_ip_estimated_income_retirement_value'),
+                            'multi_ip_estimated_total_income_value' => $request->input('multi_ip_estimated_total_income_value'),
+                            'multi_ip_estimated_total_income_retirement_value' => $request->input('multi_ip_estimated_total_income_retirement_value'),
+                         ]);
+                    }
+                    else{
+                      $addingnewmultiip = new MultipleNewIP;
+                $addingnewmultiip->details_id   = $request->input('details_id');
+                $addingnewmultiip->new_investment_property1_current_value   = $request->input('new_investment_property1_current_value');
+                $addingnewmultiip->new_investment_property1_retirement_value   = $request->input('new_investment_property1_retirement_value');
+                $addingnewmultiip->less_investment_prop1_mortgage_current_value   = $request->input('less_investment_prop1_mortgage_current_value');
+                $addingnewmultiip->less_investment_prop1_mortgage_retirement_value   = $request->input('less_investment_prop1_mortgage_retirement_value');
+                $addingnewmultiip->equity_investment1_current_value   = $request->input('equity_investment1_current_value');
+                $addingnewmultiip->equity_investment1_retirement_value   = $request->input('equity_investment1_retirement_value');
+                $addingnewmultiip->new_investment_property2_current_value   = $request->input('new_investment_property2_current_value');
+                $addingnewmultiip->new_investment_property2_retirement_value   = $request->input('new_investment_property2_retirement_value');
+                $addingnewmultiip->less_investment_prop2_mortgage_current_value   = $request->input('less_investment_prop2_mortgage_current_value');
+                $addingnewmultiip->less_investment_prop2_mortgage_retirement_value   = $request->input('less_investment_prop2_mortgage_retirement_value');
+                $addingnewmultiip->equity_investment2_current_value   = $request->input('equity_investment2_current_value');
+                $addingnewmultiip->equity_investment2_retirement_value   = $request->input('equity_investment2_retirement_value');
+                $addingnewmultiip->new_investment_property3_current_value   = $request->input('new_investment_property3_current_value');
+                $addingnewmultiip->new_investment_property3_retirement_value   = $request->input('new_investment_property3_retirement_value');
+                $addingnewmultiip->less_investment_prop3_mortgage_current_value   = $request->input('less_investment_prop3_mortgage_current_value');
+                $addingnewmultiip->less_investment_prop3_mortgage_retirement_value   = $request->input('less_investment_prop3_mortgage_retirement_value');
+                $addingnewmultiip->equity_investment3_current_value   = $request->input('equity_investment3_current_value');
+                $addingnewmultiip->equity_investment3_retirement_value   = $request->input('equity_investment3_retirement_value');
+                $addingnewmultiip->multi_ip_total_investment_property_value   = $request->input('multi_ip_total_investment_property_value');
+                $addingnewmultiip->multi_ip_total_less_investment_prop_mortgage_value   = $request->input('multi_ip_total_less_investment_prop_mortgage_value');
+                $addingnewmultiip->multi_ip_total_less_investment_prop_mortgage_retirement_value   = $request->input('multi_ip_total_less_investment_prop_mortgage_retirement_value');
+                $addingnewmultiip->multi_ip_equity_investment_prop_port_current_value   = $request->input('multi_ip_equity_investment_prop_port_current_value');
+                $addingnewmultiip->multi_ip_equity_investment_prop_port_retirement_value   = $request->input('multi_ip_equity_investment_prop_port_retirement_value');
+                $addingnewmultiip->multi_ip_total_investment_value   = $request->input('multi_ip_total_investment_value');
+                $addingnewmultiip->multi_ip_total_investment_retirement_value   = $request->input('multi_ip_total_investment_retirement_value');
+                $addingnewmultiip->multi_ip_investment_portfolio_target_current_value   = $request->input('multi_ip_investment_portfolio_target_current_value');
+                $addingnewmultiip->multi_ip_total_shortfall_value   = $request->input('multi_ip_total_shortfall_value');
+                $addingnewmultiip->multi_ip_total_shortfall_retirement_value   = $request->input('multi_ip_total_shortfall_retirement_value');
+                $addingnewmultiip->multi_ip_houesehold_income_target_current_value   = $request->input('multi_ip_houesehold_income_target_current_value');
+                $addingnewmultiip->multi_ip_houesehold_income_target_retirement_value   = $request->input('multi_ip_houesehold_income_target_retirement_value');
+                $addingnewmultiip->multi_ip_estimated_income_current_value   = $request->input('multi_ip_estimated_income_current_value');
+                $addingnewmultiip->multi_ip_estimated_income_retirement_value   = $request->input('multi_ip_estimated_income_retirement_value');
+                $addingnewmultiip->multi_ip_estimated_total_income_value   = $request->input('multi_ip_estimated_total_income_value');
+                $addingnewmultiip->multi_ip_estimated_total_income_retirement_value   = $request->input('multi_ip_estimated_total_income_retirement_value');
+                $addingnewmultiip->encoded_by   = $request->input('encoded_by');
+                $addingnewmultiip->date_encoded = Carbon::now()->toDateString();
+                $addingnewmultiip->save();
+                    }
 
            
                 foreach ($request->input('debt', []) as $value) {

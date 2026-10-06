@@ -1210,33 +1210,27 @@ function calculatePurchaseCosts() {
         $(`#stamp_duty_ip${i}`).val(formattedCost);
     }
 }
-function calculateLoanDetails() {
-  
-    for (let i = 1; i <= 7; i++) {
-        let rawPrice = $(`#property_purchase_ip${i}`).val() || "0";
-        let propertyPrice = Number(String(rawPrice).replace(/[^0-9.]/g, "")) || 0;
-        let rawLVR = $(`#lvr_ip${i}`).val() || "0";
-        let lvrPercentage = Number(String(rawLVR).replace(/[^0-9.]/g, "")) || 0;
-        let lvrMultiplier = lvrPercentage / 100;
-        let rawOtherCosts = $(`#other_purchased_cost_ip${i}`).val() || "0";
-        let otherCosts = Number(String(rawOtherCosts).replace(/[^0-9.]/g, "")) || 0;
-        let loanValue = 0;
-        let stampDuty = 0;
-        let totalLoanValue = 0;
 
+function calculateLoanDetails() {
+    for (let i = 1; i <= 7; i++) {
+    
+        let propertyPrice = Number(String($(`#property_purchase_ip${i}`).val()).replace(/[^0-9.]/g, "")) || 0;
+        let lvrPercentage = Number(String($(`#lvr_ip${i}`).val()).replace(/[^0-9.]/g, "")) || 0;
+        let otherCosts    = Number(String($(`#other_purchased_cost_ip${i}`).val()).replace(/[^0-9.]/g, "")) || 0;
+        let loanValue = 0;
+        let totalLoanValue = 0;
         if (propertyPrice > 0) {
+            let lvrMultiplier = lvrPercentage / 100;
             loanValue = propertyPrice * lvrMultiplier;
-            stampDuty = (propertyPrice * 0.045) - 4510;
+            let stampDuty = Math.max(0, (propertyPrice * 0.045) - 4510); 
             totalLoanValue = loanValue + stampDuty + otherCosts;
         }
-        let formattedLoanBase = loanValue > 0 ?  Math.round(loanValue).toLocaleString() : "0";
-        let formattedTotalLoan = totalLoanValue > 0 ?  Math.round(totalLoanValue).toLocaleString() : "0";
-
-        $(`#loan_value_based_ip${i}`).val(formattedLoanBase);
-        $(`#total_loan_value_ip${i}`).val(formattedTotalLoan);
+        let formattedLoanBase = loanValue > 0 ? Math.round(loanValue).toLocaleString('en-US') : "0";
+        let formattedTotalLoan = totalLoanValue > 0 ?  Math.round(totalLoanValue).toLocaleString('en-US') : "0";
+    $(`#loan_value_based_ip${i}`).val(formattedLoanBase);
+    $(`#total_loan_value_ip${i}`).val(formattedTotalLoan);
     }
 }
-
 function calculateEstimatedRent() {
 
     let globalYieldPercent = parseFloat($('.income_interest_rate_for_rent').val());
@@ -1893,9 +1887,52 @@ var formatted_weekly_increase_net_financial_asset = weekly_increase_net_financia
           maximumFractionDigits: 2 
     });
 
-    
+    // adding new multiple IP's
+    let clean_new_ip1 = parseFloat(formatted_new_ip_retirement_val?.replace(/,/g, '')) || 0;
+    let total_new_ip2 = clean_new_ip1 * 1.045;
+    var formatted_new_ip2 = total_new_ip2.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
 
 
+    let ip2_date_val = $('.ip2-date').val();
+    let initial_appointment_date_val = $('.initial_appointment_date').val();
+    let prop_purchase_ip2_val = $('#property_purchase_ip2').val();
+    let propertyDate = new Date(ip2_date_val);
+
+    let personalDetailsDate = new Date(initial_appointment_date_val);
+    let personalDatePlusYear = personalDetailsDate.getTime() + (365 * 24 * 60 * 60 * 1000);
+    let new_ip2_current_value = (propertyDate.getTime() < personalDatePlusYear) ? prop_purchase_ip2_val : 0;
+    let formatted_new_ip2_current_value = new_ip2_current_value.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+
+    let clean_total_loan_value_ip2 = parseFloat($('#total_loan_value_ip2').val()?.replace(/,/g, '')) || 0;
+    let clean_new_ip_current_value = parseFloat(formatted_new_ip2_current_value?.replace(/,/g, '')) || 0;
+    let less_prop2_mortgage = (clean_total_loan_value_ip2 > 0) ? -clean_new_ip_current_value : 0;
+    let formatted_less_prop2_mortgage = less_prop2_mortgage.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+
+    let clean_formatted_new_ip2 = parseFloat(formatted_new_ip2?.replace(/,/g, '')) || 0;
+    let total_equity_investment2_retirement_value = clean_formatted_new_ip2 - clean_total_loan_value_ip2;
+    let abs_total_equity_investment2_retirement_value = Math.abs(total_equity_investment2_retirement_value);
+    let formatted_total_equity_investment2_retirement_value = abs_total_equity_investment2_retirement_value.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+
+    let clean_new_investment_property2_current_value = parseFloat(formatted_new_ip2_current_value?.replace(/,/g, '')) || 0;
+    let clean_less_investment_prop2_mortgage_current_value = parseFloat(formatted_less_prop2_mortgage?.replace(/,/g, '')) || 0;
+    let total_equity_investment2_current_value = clean_new_investment_property2_current_value - clean_less_investment_prop2_mortgage_current_value;
+    let abs_total_equity_investment2_current_value = Math.abs(total_equity_investment2_current_value);
+    let formatted_equity_investment2_current_value = abs_total_equity_investment2_current_value.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
 
     formData.append('_method','POST');
     formData.append('gross_anual_income_client',$('.total_income_client_annual').val());
@@ -1954,24 +1991,18 @@ var formatted_weekly_increase_net_financial_asset = weekly_increase_net_financia
     formData.append('superannuation_client_retirement_value',formatted_sup_client_adding_new_ip_futute_value);
     formData.append('superannuation_partner_current_value',$('.superannuation_partner_partner').val());
     formData.append('superannuation_partner_retirement_value',formatted_sup_partner_adding_new_ip_futute_value);
-    
     formData.append('shares_current_value',formatted_investment_portfolio_shares_net_value);
     formData.append('shares_retirement_value',share_net_future_value);
-    
     formData.append('business_current_value',formatted_investment_portfolio_business_net_value);
     formData.append('business_retirement_value',formatted_business_future_value);
     formData.append('investment__portfolio_current_value',formatted_total_investment_porfolio_current_val);
     formData.append('investment__portfolio_retirement_value',formatted_total_investment_portfolio_retirement_val);
-    
     formData.append('existing_investment_current_value',formatted_investment_portfolio_existing_investment_property);
     formData.append('existing_investment_retirement_value',formattaed_adding_new_ip_existing_investment_prop);
-
     formData.append('less_existing_investment_mortgage_current_value',formatted_investment_portfolio_mortgage);
     formData.append('less_existing_investment_mortgage_retirement_value',formatted_investment_portfolio_mortgage);
-
     formData.append('equity_existing_property_current_value',formatted_equity_existing_property_current_value);
     formData.append('equity_existing_property_retirement_value',formatted_equity_existing_property_retirement_value);
-
     formData.append('new_investment_property_current_value',formatted_purchase_ip);
     formData.append('equity_investment_current_value',formatted_equity_investment_current_value);
     formData.append('new_investment_property_retirement_value',formatted_new_ip_retirement_val);
@@ -1980,14 +2011,11 @@ var formatted_weekly_increase_net_financial_asset = weekly_increase_net_financia
     formData.append('total_investment_property_retirement_value',formatted_total_new_investment_prop_retirement_val);
     formData.append('total_less_investment_prop_mortgage_value',formatted_total_less_investment_prop_mortgage_value);
     formData.append('total_less_investment_prop_mortgage_retirement_value',formatted_total_less_investment_prop_mortgage_value);
-    
     formData.append('investment_portfolio_target_current_value',formatted_total_invesemtment_porfolio);
     formData.append('investment_portfolio_target_retirement_value',formatted_total_investment_portfolio_desired_retirement_age);
-
     formData.append('houesehold_income_target_current_value',formatted_annual_gross_household);
     formData.append('houesehold_income_target_retirement_value',formatted_equivalent_value_of_annual_household);
     formData.append('less_investment_prop_mortgage_current_value',fomatted_total_loan_value_ip1);
-
     formData.append('less_investment_prop_mortgage_retirement_value',fomatted_total_loan_value_ip1);
     formData.append('equity_investment_prop_port_current_value',formatted_total_equity_investment_prop_port_current_value);
     formData.append('equity_investment_prop_port_retirement_value',formatted_total_equity_investment_prop_port_retirement_value);
@@ -1999,6 +2027,27 @@ var formatted_weekly_increase_net_financial_asset = weekly_increase_net_financia
     formData.append('estimated_total_income_value',formatted_estimated_total_income_value);
     formData.append('estimated_income_retirement_value',formatted_estimated_income_retirement_value);
     formData.append('estimated_total_income_retirement_value',formatted_estimated_total_income_retirement_value);
+
+    // adding new multiple ip's    
+    formData.append('new_investment_property1_current_value',formatted_purchase_ip);
+    formData.append('new_investment_property1_retirement_value',formatted_new_ip_retirement_val);
+    formData.append('less_investment_prop1_mortgage_current_value',fomatted_total_loan_value_ip1);
+    formData.append('less_investment_prop1_mortgage_retirement_value',fomatted_total_loan_value_ip1);
+    formData.append('equity_investment1_current_value',formatted_equity_investment_current_value);
+    formData.append('equity_investment1_retirement_value',formatted_total_equity_invstmt_retirement_val);
+    formData.append('new_investment_property2_current_value',formatted_new_ip2_current_value);
+    formData.append('new_investment_property2_retirement_value',formatted_new_ip2);
+    formData.append('less_investment_prop2_mortgage_current_value',formatted_less_prop2_mortgage);
+    formData.append('less_investment_prop2_mortgage_retirement_value',$('#total_loan_value_ip2').val());
+    formData.append('equity_investment2_retirement_value',formatted_total_equity_investment2_retirement_value);
+    formData.append('equity_investment2_current_value',formatted_equity_investment2_current_value);
+    
+    
+    
+
+    
+   
+    
     
     
 

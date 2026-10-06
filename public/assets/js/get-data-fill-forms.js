@@ -443,6 +443,33 @@ function FillAddNewIPForm(response){
   $('.estimated_total_income_retirement_value').val(response['estimated_total_income_retirement_value']);
 }
 
+function FillMultipleNewIP(response){
+  $('.long_term_saving_current_value').val(response['AddNewIP']['long_term_saving_current_value']);
+  $('.long_term_saving_retirement_value').val(response['AddNewIP']['long_term_saving_retirement_value']);
+  $('.superannuation_client_current_value').val(response['AddNewIP']['superannuation_client_current_value']);
+  $('.superannuation_client_retirement_value').val(response['AddNewIP']['superannuation_client_retirement_value']);
+  $('.superannuation_partner_current_value').val(response['AddNewIP']['superannuation_partner_current_value']);
+  $('.superannuation_partner_retirement_value').val(response['AddNewIP']['superannuation_partner_retirement_value']);
+  $('.shares_current_value').val(response['AddNewIP']['shares_current_value']);
+  $('.shares_retirement_value').val(response['AddNewIP']['shares_retirement_value']);
+  $('.business_current_value').val(response['AddNewIP']['business_current_value']);
+  $('.business_retirement_value').val(response['AddNewIP']['business_retirement_value']);
+  $('.investment__portfolio_current_value').val(response['AddNewIP']['investment__portfolio_current_value']);
+  $('.investment__portfolio_retirement_value').val(response['AddNewIP']['investment__portfolio_retirement_value']);
+  $('.existing_investment_current_value').val(response['AddNewIP']['existing_investment_current_value']);
+  $('.existing_investment_retirement_value').val(response['AddNewIP']['existing_investment_retirement_value']);
+  $('.less_existing_investment_mortgage_current_value').val(response['AddNewIP']['less_existing_investment_mortgage_current_value']);
+  $('.less_existing_investment_mortgage_retirement_value').val(response['AddNewIP']['less_existing_investment_mortgage_retirement_value']);
+  $('.equity_existing_property_current_value').val(response['AddNewIP']['equity_existing_property_current_value']);
+  $('.equity_existing_property_retirement_value').val(response['AddNewIP']['equity_existing_property_retirement_value']);
+  $('.new_investment_property1_current_value').val(response['AddNewIP']['new_investment_property_current_value']);
+  $('.new_investment_property1_retirement_value').val(response['AddNewIP']['new_investment_property_retirement_value']);
+  $('.less_investment_prop1_mortgage_current_value').val(response['AddNewIP']['less_investment_prop_mortgage_current_value']);
+  $('.less_investment_prop1_mortgage_retirement_value').val(response['AddNewIP']['less_investment_prop_mortgage_retirement_value']);
+  $('.equity_investment1_current_value').val(response['AddNewIP']['equity_investment_current_value']);
+  $('.equity_investment1_retirement_value').val(response['AddNewIP']['equity_investment_retirement_value']);
+}
+
 
 
  
