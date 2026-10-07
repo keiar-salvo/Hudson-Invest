@@ -764,6 +764,32 @@ class PersonalDetails extends Model
                 $addingnewmultiip->date_encoded = Carbon::now()->toDateString();
                 $addingnewmultiip->save();
 
+                $addingNewIPGrowth = new NewIPGrwowth;
+                $addingNewIPGrowth->details_id = $request->input('details_id');
+                $addingNewIPGrowth->existing_investment_mortgage = $request->input('existing_investment_mortgage');
+                $addingNewIPGrowth->new_ip1_mortgage = $request->input('new_ip1_mortgage');
+                $addingNewIPGrowth->new_ip2_mortgage = $request->input('new_ip2_mortgage');
+                $addingNewIPGrowth->new_ip3_mortgage = $request->input('new_ip3_mortgage');
+                $addingNewIPGrowth->new_ip4_mortgage = $request->input('new_ip4_mortgage');
+                $addingNewIPGrowth->new_ip5_mortgage = $request->input('new_ip5_mortgage');
+                $addingNewIPGrowth->new_ip6_mortgage = $request->input('new_ip6_mortgage');
+                $addingNewIPGrowth->new_ip7_mortgage = $request->input('new_ip7_mortgage');
+                $addingNewIPGrowth->total_propeties_mortgage = $request->input('total_propeties_mortgage');
+                $addingNewIPGrowth->grand_total_propeties_mortgage = $request->input('grand_total_propeties_mortgage');
+                $addingNewIPGrowth->existing_investment = $request->input('existing_investment');
+                $addingNewIPGrowth->new_ip1   = $request->input('new_ip1');
+                $addingNewIPGrowth->new_ip2   = $request->input('new_ip2');
+                $addingNewIPGrowth->new_ip3   = $request->input('new_ip3');
+                $addingNewIPGrowth->new_ip4   = $request->input('new_ip4');
+                $addingNewIPGrowth->new_ip5   = $request->input('new_ip5');
+                $addingNewIPGrowth->new_ip6   = $request->input('new_ip6');
+                $addingNewIPGrowth->new_ip7   = $request->input('new_ip7');
+                $addingNewIPGrowth->total_properties_value   = $request->input('total_properties_value');
+                $addingNewIPGrowth->grand_properties_value   = $request->input('grand_properties_value');
+                $addingNewIPGrowth->encoded_by   = $request->input('encoded_by');
+                $addingNewIPGrowth->date_encoded = Carbon::now()->toDateString();
+
+
         // $portfolio_yearly = Yearly_Investment_Portfolio::updateOrCreate(
         //     ['details_id' => $request->input('details_id')],
         //     [
@@ -1496,7 +1522,7 @@ class PersonalDetails extends Model
                           ]);
                     }
                     else{
-                          $proposednewIp = new ProposedNewInvestmentProp;
+                    $proposednewIp = new ProposedNewInvestmentProp;
                     $proposednewIp->details_id   = $request->input('details_id');
                     $proposednewIp->ip_1   = $request->input('ip_1');
                     $proposednewIp->ip2_date   = $request->input('ip2_date');
@@ -1783,6 +1809,59 @@ class PersonalDetails extends Model
                 $addingnewmultiip->encoded_by   = $request->input('encoded_by');
                 $addingnewmultiip->date_encoded = Carbon::now()->toDateString();
                 $addingnewmultiip->save();
+                    }
+                    
+                    $verifyNewIPGrowth = NewIPGrwowth::where('details_id',$id)->first();
+                    if($verifyNewIPGrowth !== null){
+                         $updateAddNewIPGrowth = NewIPGrwowth::where('details_id',$id)->update([
+                            'existing_investment_mortgage' =>  $request->input('existing_investment_mortgage'),
+                            'new_ip1_mortgage' =>  $request->input('new_ip1_mortgage'),
+                            'new_ip2_mortgage' =>  $request->input('new_ip2_mortgage'),
+                            'new_ip3_mortgage' =>  $request->input('new_ip3_mortgage'),
+                            'new_ip4_mortgage' =>  $request->input('new_ip4_mortgage'),
+                            'new_ip5_mortgage' =>  $request->input('new_ip5_mortgage'),
+                            'new_ip6_mortgage' =>  $request->input('new_ip6_mortgage'),
+                            'new_ip7_mortgage' =>  $request->input('new_ip7_mortgage'),
+                            'total_propeties_mortgage' =>  $request->input('total_propeties_mortgage'),
+                            'grand_total_propeties_mortgage' =>  $request->input('grand_total_propeties_mortgage'),
+                            'existing_investment' => $request->input('existing_investment'),
+                            'new_ip1' => $request->input('new_ip1'),
+                            'new_ip2' => $request->input('new_ip2'),
+                            'new_ip3' => $request->input('new_ip3'),
+                            'new_ip4' => $request->input('new_ip4'),
+                            'new_ip5' => $request->input('new_ip5'),
+                            'new_ip6' => $request->input('new_ip6'),
+                            'new_ip7' => $request->input('new_ip7'),
+                            'total_properties_value' => $request->input('new_ip7'),
+                            'grand_properties_value' => $request->input('new_ip7'),
+                        ]);
+                    }
+                    else{
+                        $addingNewIPGrowth = new NewIPGrwowth;
+                     
+                        $addingNewIPGrowth->details_id = $request->input('details_id');
+                        $addingNewIPGrowth->existing_investment_mortgage = $request->input('existing_investment_mortgage');
+                        $addingNewIPGrowth->new_ip1_mortgage = $request->input('new_ip1_mortgage');
+                        $addingNewIPGrowth->new_ip2_mortgage = $request->input('new_ip2_mortgage');
+                        $addingNewIPGrowth->new_ip3_mortgage = $request->input('new_ip3_mortgage');
+                        $addingNewIPGrowth->new_ip4_mortgage = $request->input('new_ip4_mortgage');
+                        $addingNewIPGrowth->new_ip5_mortgage = $request->input('new_ip5_mortgage');
+                        $addingNewIPGrowth->new_ip6_mortgage = $request->input('new_ip6_mortgage');
+                        $addingNewIPGrowth->new_ip7_mortgage = $request->input('new_ip7_mortgage');
+                        $addingNewIPGrowth->total_propeties_mortgage = $request->input('total_propeties_mortgage');
+                        $addingNewIPGrowth->grand_total_propeties_mortgage = $request->input('grand_total_propeties_mortgage');
+                        $addingNewIPGrowth->existing_investment = $request->input('existing_investment');
+                        $addingNewIPGrowth->new_ip1   = $request->input('new_ip1');
+                        $addingNewIPGrowth->new_ip2   = $request->input('new_ip2');
+                        $addingNewIPGrowth->new_ip3   = $request->input('new_ip3');
+                        $addingNewIPGrowth->new_ip4   = $request->input('new_ip4');
+                        $addingNewIPGrowth->new_ip5   = $request->input('new_ip5');
+                        $addingNewIPGrowth->new_ip6   = $request->input('new_ip6');
+                        $addingNewIPGrowth->new_ip7   = $request->input('new_ip7');
+                        $addingNewIPGrowth->total_properties_value   = $request->input('total_properties_value');
+                        $addingNewIPGrowth->grand_properties_value   = $request->input('grand_properties_value');
+                        $addingNewIPGrowth->encoded_by   = $request->input('encoded_by');
+                        $addingNewIPGrowth->date_encoded = Carbon::now()->toDateString();
                     }
 
            

@@ -1933,6 +1933,92 @@ var formatted_weekly_increase_net_financial_asset = weekly_increase_net_financia
           minimumFractionDigits: 2, 
           maximumFractionDigits: 2 
     }); 
+    let int_rate = 0.10605; 
+    // let total_new_investment_property3_retirement_value = total_equity_investment2_retirement_value * Math.pow((1 + int_rate), periods)
+
+      // end adding new multiple IP's
+
+
+      //New IP Growth Table
+
+    function calculateNewIPGrowth(initialValue, rate, years) {
+        return Math.round(initialValue * Math.pow(1 + rate, years)).toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+    }
+
+    let clean_existing_prop = parseFloat($('.investment_portfolio_existing_investment_property').val()?.replace(/,/g, '')) || 0;
+    let clean_prop1 = parseFloat($('#property_purchase_ip1').val()?.replace(/,/g, '')) || 0;
+    let clean_prop2 = parseFloat($('#property_purchase_ip2').val()?.replace(/,/g, '')) || 0;
+    let clean_prop3 = parseFloat($('#property_purchase_ip3').val()?.replace(/,/g, '')) || 0;
+    let clean_prop4 = parseFloat($('#property_purchase_ip4').val()?.replace(/,/g, '')) || 0;
+    let clean_prop5 = parseFloat($('#property_purchase_ip5').val()?.replace(/,/g, '')) || 0;
+    let clean_prop6 = parseFloat($('#property_purchase_ip6').val()?.replace(/,/g, '')) || 0;
+    let clean_prop7 = parseFloat($('#property_purchase_ip7').val()?.replace(/,/g, '')) || 0;
+    let clean_prop7_year = parseInt($('.retired_age_ip7').val()?.replace(/,/g, '')) || 0;
+    let clean_prop6_year = parseInt($('.retired_age_ip6').val()?.replace(/,/g, '')) || 0;
+    let clean_prop5_year = parseInt($('.retired_age_ip5').val()?.replace(/,/g, '')) || 0;
+    let clean_prop4_year = parseInt($('.retired_age_ip4').val()?.replace(/,/g, '')) || 0;
+    let clean_prop3_year = parseInt($('.retired_age_ip3').val()?.replace(/,/g, '')) || 0;
+    let clean_prop2_year = parseInt($('.retired_age_ip2').val()?.replace(/,/g, '')) || 0;
+    let clean_prop1_year = parseInt($('.retired_age_ip1').val()?.replace(/,/g, '')) || 0;
+
+    let existing_prop = calculateNewIPGrowth(clean_existing_prop,decimal_annual_compound_rate,clean_prop1_year);
+    let prop1 = calculateNewIPGrowth(clean_prop1,decimal_annual_compound_rate,clean_prop1_year);
+    let prop2 = calculateNewIPGrowth(clean_prop2,decimal_annual_compound_rate,clean_prop2_year);
+    let prop3 = calculateNewIPGrowth(clean_prop3,decimal_annual_compound_rate,clean_prop3_year);
+    let prop4 = calculateNewIPGrowth(clean_prop4,decimal_annual_compound_rate,clean_prop4_year);
+    let prop5 = calculateNewIPGrowth(clean_prop5,decimal_annual_compound_rate,clean_prop5_year);
+    let prop6 = calculateNewIPGrowth(clean_prop6,decimal_annual_compound_rate,clean_prop6_year);
+    let prop7 = calculateNewIPGrowth(clean_prop7,decimal_annual_compound_rate,clean_prop7_year);
+
+    let clean_exiting_inv = parse(existing_prop?.replace(/,/g, '')) || 0;
+    let clean_total_prop1 = parseFloat(prop1?.replace(/,/g, '')) || 0;
+    let clean_total_prop2 = parseFloat(prop2?.replace(/,/g, '')) || 0;
+    let clean_total_prop3 = parseFloat(prop3?.replace(/,/g, '')) || 0;
+    let clean_total_prop4 = parseFloat(prop4?.replace(/,/g, '')) || 0;
+    let clean_total_prop5 = parseFloat(prop5?.replace(/,/g, '')) || 0;
+    let clean_total_prop6 = parseFloat(prop6?.replace(/,/g, '')) || 0;
+    let clean_total_prop7 = parseFloat(prop7?.replace(/,/g, '')) || 0;
+
+    let total_properties_val =  clean_total_prop3 + clean_total_prop4 + clean_total_prop5 + clean_total_prop6 + clean_total_prop7;
+    let formatted_total_properties_val =  total_properties_val.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+
+    let grand_total_props_val = clean_exiting_inv + clean_total_prop1 + clean_total_prop2 + clean_total_prop3 + clean_total_prop4 + clean_total_prop5 + clean_total_prop6 + clean_total_prop7;
+    let formatted_grand_total_props_val = grand_total_props_val.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+
+let formatted_withTotalInvestmentLiabilieitsMarketVal = withTotalInvestmentLiabilieitsMarketVal.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+
+    let clean_total_loan_prop1_mortgage = parseFloat($('#total_loan_value_ip1').val()?.replace(/,/g, '')) || 0;
+    let clean_total_loan_prop2_mortgage = parseFloat($('#total_loan_value_ip2').val()?.replace(/,/g, '')) || 0;
+    let clean_total_loan_prop3_mortgage = parseFloat($('#total_loan_value_ip3').val()?.replace(/,/g, '')) || 0;
+    let clean_total_loan_prop4_mortgage = parseFloat($('#total_loan_value_ip4').val()?.replace(/,/g, '')) || 0;
+    let clean_total_loan_prop5_mortgage = parseFloat($('#total_loan_value_ip5').val()?.replace(/,/g, '')) || 0;
+    let clean_total_loan_prop6_mortgage = parseFloat($('#total_loan_value_ip6').val()?.replace(/,/g, '')) || 0;
+    let clean_total_loan_prop7_mortgage = parseFloat($('#total_loan_value_ip6=7').val()?.replace(/,/g, '')) || 0;
+    let total_prop_mortgate_val = clean_total_loan_prop3_mortgage + clean_total_loan_prop4_mortgage + clean_total_loan_prop5_mortgage + clean_total_loan_prop6_mortgage + clean_total_loan_prop7_mortgage;
+    let formatted_total_prop_mortgate_val = total_prop_mortgate_val.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+
+    let grand_total_prop_mortgage_val = withTotalInvestmentLiabilieitsMarketVal + clean_total_loan_prop1_mortgage + clean_total_loan_prop2_mortgage + clean_total_loan_prop3_mortgage + clean_total_loan_prop4_mortgage + clean_total_loan_prop5_mortgage + clean_total_loan_prop6_mortgage + clean_total_loan_prop7_mortgage;
+    let formatted_grand_total_prop_mortgage_val = grand_total_prop_mortgage_val.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+    // End New IP Growth
+
 
     formData.append('_method','POST');
     formData.append('gross_anual_income_client',$('.total_income_client_annual').val());
@@ -2041,6 +2127,33 @@ var formatted_weekly_increase_net_financial_asset = weekly_increase_net_financia
     formData.append('less_investment_prop2_mortgage_retirement_value',$('#total_loan_value_ip2').val());
     formData.append('equity_investment2_retirement_value',formatted_total_equity_investment2_retirement_value);
     formData.append('equity_investment2_current_value',formatted_equity_investment2_current_value);
+    formData.append('new_investment_property3_retirement_value',formatted_total_properties_val);
+    
+
+
+    // New IP Growth
+    formData.append('existing_investment',$('.investment_portfolio_existing_investment_property').val());
+    formData.append('existing_investment_mortgage',formatted_withTotalInvestmentLiabilieitsMarketVal);
+    formData.append('new_ip1_mortgage',$('#total_loan_value_ip1').val());
+    formData.append('new_ip2_mortgage',$('#total_loan_value_ip2').val());
+    formData.append('new_ip3_mortgage',$('#total_loan_value_ip3').val());
+    formData.append('new_ip4_mortgage',$('#total_loan_value_ip4').val());
+    formData.append('new_ip5_mortgage',$('#total_loan_value_ip5').val());
+    formData.append('new_ip6_mortgage',$('#total_loan_value_ip6').val());
+    formData.append('new_ip7_mortgage',$('#total_loan_value_ip7').val());
+    formData.append('total_propeties_mortgage',formatted_total_prop_mortgate_val);
+    formData.append('grand_total_propeties_mortgage',formatted_grand_total_prop_mortgage_val);
+    
+    formData.append('new_ip1',prop1);
+    formData.append('new_ip2',prop2);
+    formData.append('new_ip3',prop3);
+    formData.append('new_ip4',prop4);
+    formData.append('new_ip5',prop5);
+    formData.append('new_ip6',prop6);
+    formData.append('new_ip7',prop7);
+    formData.append('total_properties_value',formatted_total_properties_val);
+    formData.append('grand_properties_value',formatted_grand_total_props_val);
+
     
     
     
