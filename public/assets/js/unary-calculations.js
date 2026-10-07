@@ -1294,7 +1294,7 @@ function calculatePropertyHoldingCosts(i) {
 
    
 
-function currentPosition_and_financial_independance(formData,annual_growth_rate_invest_assets,income_investment_portfolio_assets,annual_inflation_rate,annual_compound_growth_rate_investment_assets){
+function currentPosition_and_financial_independance(formData,annual_growth_rate_invest_assets,income_investment_portfolio_assets,annual_inflation_rate,annual_compound_growth_rate_investment_assets,annual_interest_rate_mortgages){
     
     // Get Total House Hold Income
     var gross_annual_income_client = parseFloat($('.total_income_client_annual').val()?.replace(/[^0-9.-]/g, '')) || 0;
@@ -1384,10 +1384,11 @@ function currentPosition_and_financial_independance(formData,annual_growth_rate_
     // Get Total Porfolio Mortgage
     var total_investment_portfolio_mortgage = 0;
     var formatted_investment_portfolio_mortgage = 0;
+    var mortgageMarketVal = 0;
       $('.form-row-mortgage-investment').each(function() {
         let row = $(this);
         
-        let mortgageMarketVal = parseFloat(row.find('.mortgage_investment_market_value').val()?.replace(/,/g, '')) || 0;
+        mortgageMarketVal = parseFloat(row.find('.mortgage_investment_market_value').val()?.replace(/,/g, '')) || 0;
         let mortgageClientVal = parseFloat(row.find('.mortgage_investment_client').val()?.replace(/,/g, '')) || 0;
         let mortgagePartnerVal = parseFloat(row.find('.mortgage_investment_partner').val()?.replace(/,/g, '')) || 0;
 
@@ -1887,56 +1888,7 @@ var formatted_weekly_increase_net_financial_asset = weekly_increase_net_financia
           maximumFractionDigits: 2 
     });
 
-    // adding new multiple IP's
-    let clean_new_ip1 = parseFloat(formatted_new_ip_retirement_val?.replace(/,/g, '')) || 0;
-    let total_new_ip2 = clean_new_ip1 * 1.045;
-    var formatted_new_ip2 = total_new_ip2.toLocaleString('en-US', { 
-          minimumFractionDigits: 2, 
-          maximumFractionDigits: 2 
-    }); 
-
-
-    let ip2_date_val = $('.ip2-date').val();
-    let initial_appointment_date_val = $('.initial_appointment_date').val();
-    let prop_purchase_ip2_val = $('#property_purchase_ip2').val();
-    let propertyDate = new Date(ip2_date_val);
-
-    let personalDetailsDate = new Date(initial_appointment_date_val);
-    let personalDatePlusYear = personalDetailsDate.getTime() + (365 * 24 * 60 * 60 * 1000);
-    let new_ip2_current_value = (propertyDate.getTime() < personalDatePlusYear) ? prop_purchase_ip2_val : 0;
-    let formatted_new_ip2_current_value = new_ip2_current_value.toLocaleString('en-US', { 
-          minimumFractionDigits: 2, 
-          maximumFractionDigits: 2 
-    }); 
-
-    let clean_total_loan_value_ip2 = parseFloat($('#total_loan_value_ip2').val()?.replace(/,/g, '')) || 0;
-    let clean_new_ip_current_value = parseFloat(formatted_new_ip2_current_value?.replace(/,/g, '')) || 0;
-    let less_prop2_mortgage = (clean_total_loan_value_ip2 > 0) ? -clean_new_ip_current_value : 0;
-    let formatted_less_prop2_mortgage = less_prop2_mortgage.toLocaleString('en-US', { 
-          minimumFractionDigits: 2, 
-          maximumFractionDigits: 2 
-    }); 
-
-    let clean_formatted_new_ip2 = parseFloat(formatted_new_ip2?.replace(/,/g, '')) || 0;
-    let total_equity_investment2_retirement_value = clean_formatted_new_ip2 - clean_total_loan_value_ip2;
-    let abs_total_equity_investment2_retirement_value = Math.abs(total_equity_investment2_retirement_value);
-    let formatted_total_equity_investment2_retirement_value = abs_total_equity_investment2_retirement_value.toLocaleString('en-US', { 
-          minimumFractionDigits: 2, 
-          maximumFractionDigits: 2 
-    }); 
-
-    let clean_new_investment_property2_current_value = parseFloat(formatted_new_ip2_current_value?.replace(/,/g, '')) || 0;
-    let clean_less_investment_prop2_mortgage_current_value = parseFloat(formatted_less_prop2_mortgage?.replace(/,/g, '')) || 0;
-    let total_equity_investment2_current_value = clean_new_investment_property2_current_value - clean_less_investment_prop2_mortgage_current_value;
-    let abs_total_equity_investment2_current_value = Math.abs(total_equity_investment2_current_value);
-    let formatted_equity_investment2_current_value = abs_total_equity_investment2_current_value.toLocaleString('en-US', { 
-          minimumFractionDigits: 2, 
-          maximumFractionDigits: 2 
-    }); 
-    let int_rate = 0.10605; 
-    // let total_new_investment_property3_retirement_value = total_equity_investment2_retirement_value * Math.pow((1 + int_rate), periods)
-
-      // end adding new multiple IP's
+ 
 
 
       //New IP Growth Table
@@ -1973,7 +1925,7 @@ var formatted_weekly_increase_net_financial_asset = weekly_increase_net_financia
     let prop6 = calculateNewIPGrowth(clean_prop6,decimal_annual_compound_rate,clean_prop6_year);
     let prop7 = calculateNewIPGrowth(clean_prop7,decimal_annual_compound_rate,clean_prop7_year);
 
-    let clean_exiting_inv = parse(existing_prop?.replace(/,/g, '')) || 0;
+    let clean_exiting_inv = parseFloat(existing_prop?.replace(/,/g, '')) || 0;
     let clean_total_prop1 = parseFloat(prop1?.replace(/,/g, '')) || 0;
     let clean_total_prop2 = parseFloat(prop2?.replace(/,/g, '')) || 0;
     let clean_total_prop3 = parseFloat(prop3?.replace(/,/g, '')) || 0;
@@ -1994,7 +1946,7 @@ var formatted_weekly_increase_net_financial_asset = weekly_increase_net_financia
           maximumFractionDigits: 2 
     }); 
 
-let formatted_withTotalInvestmentLiabilieitsMarketVal = withTotalInvestmentLiabilieitsMarketVal.toLocaleString('en-US', { 
+let formatted_withTotalInvestmentLiabilieitsMarketVal = mortgageMarketVal.toLocaleString('en-US', { 
           minimumFractionDigits: 2, 
           maximumFractionDigits: 2 
     }); 
@@ -2005,7 +1957,7 @@ let formatted_withTotalInvestmentLiabilieitsMarketVal = withTotalInvestmentLiabi
     let clean_total_loan_prop4_mortgage = parseFloat($('#total_loan_value_ip4').val()?.replace(/,/g, '')) || 0;
     let clean_total_loan_prop5_mortgage = parseFloat($('#total_loan_value_ip5').val()?.replace(/,/g, '')) || 0;
     let clean_total_loan_prop6_mortgage = parseFloat($('#total_loan_value_ip6').val()?.replace(/,/g, '')) || 0;
-    let clean_total_loan_prop7_mortgage = parseFloat($('#total_loan_value_ip6=7').val()?.replace(/,/g, '')) || 0;
+    let clean_total_loan_prop7_mortgage = parseFloat($('#total_loan_value_ip7').val()?.replace(/,/g, '')) || 0;
     let total_prop_mortgate_val = clean_total_loan_prop3_mortgage + clean_total_loan_prop4_mortgage + clean_total_loan_prop5_mortgage + clean_total_loan_prop6_mortgage + clean_total_loan_prop7_mortgage;
     let formatted_total_prop_mortgate_val = total_prop_mortgate_val.toLocaleString('en-US', { 
           minimumFractionDigits: 2, 
@@ -2019,6 +1971,198 @@ let formatted_withTotalInvestmentLiabilieitsMarketVal = withTotalInvestmentLiabi
     }); 
     // End New IP Growth
 
+       // adding new multiple IP's
+    let clean_new_ip1 = parseFloat(formatted_new_ip_retirement_val?.replace(/,/g, '')) || 0;
+    let total_new_ip2 = clean_new_ip1 * 1.045;
+    var formatted_new_ip2 = total_new_ip2.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+
+
+    let ip2_date_val = $('.ip2-date').val();
+    let initial_appointment_date_val = $('.initial_appointment_date').val();
+    let prop_purchase_ip2_val = $('#property_purchase_ip2').val();
+    let propertyDate = new Date(ip2_date_val);
+    let prop_purchase_ip3_val= $('#property_purchase_ip3').val();
+
+    let personalDetailsDate = new Date(initial_appointment_date_val);
+    let personalDatePlusYear = personalDetailsDate.getTime() + (365 * 24 * 60 * 60 * 1000);
+    let new_ip2_current_value = (propertyDate.getTime() < personalDatePlusYear) ? prop_purchase_ip2_val : 0;
+    let formatted_new_ip2_current_value = new_ip2_current_value.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+
+    let new_ip3_current_value = (propertyDate.getTime() < personalDatePlusYear) ? prop_purchase_ip3_val : 0;
+    let formatted_new_ip3_current_value = new_ip3_current_value.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+
+    let clean_total_loan_value_ip2 = parseFloat($('#total_loan_value_ip2').val()?.replace(/,/g, '')) || 0;
+    let clean_new_ip_current_value = parseFloat(formatted_new_ip2_current_value?.replace(/,/g, '')) || 0;
+    let less_prop2_mortgage = (clean_total_loan_value_ip2 > 0) ? -clean_new_ip_current_value : 0;
+    let formatted_less_prop2_mortgage = less_prop2_mortgage.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+
+    let clean_total_loan_value_ip3 = parseFloat($('#total_loan_value_ip3').val()?.replace(/,/g, '')) || 0;
+    let less_prop3_mortgage = (clean_total_loan_value_ip3 > 0) ? -new_ip3_current_value : 0;
+    let formatted_less_prop3_mortgage = less_prop3_mortgage.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+
+
+    let clean_formatted_new_ip2 = parseFloat(formatted_new_ip2?.replace(/,/g, '')) || 0;
+    let total_equity_investment2_retirement_value = clean_formatted_new_ip2 - clean_total_loan_value_ip2;
+    let abs_total_equity_investment2_retirement_value = Math.abs(total_equity_investment2_retirement_value);
+    let formatted_total_equity_investment2_retirement_value = abs_total_equity_investment2_retirement_value.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+
+    let clean_new_investment_property2_current_value = parseFloat(formatted_new_ip2_current_value?.replace(/,/g, '')) || 0;
+    let clean_less_investment_prop2_mortgage_current_value = parseFloat(formatted_less_prop2_mortgage?.replace(/,/g, '')) || 0;
+
+    let total_equity_investment2_current_value = clean_new_investment_property2_current_value - clean_less_investment_prop2_mortgage_current_value;
+    let abs_total_equity_investment2_current_value = Math.abs(total_equity_investment2_current_value);
+    let formatted_equity_investment2_current_value = abs_total_equity_investment2_current_value.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+
+    let clean_total_properties_val = parseFloat(formatted_total_properties_val?.replace(/,/g, '')) || 0;
+    let clean_total_prop_mortgate_val = parseFloat(formatted_total_prop_mortgate_val?.replace(/,/g, ''));
+    let total_equity_invsmt3_prop_val = clean_total_properties_val - clean_total_prop_mortgate_val ;
+    let formatted_total_equity_invsmt3_prop_val = Math.abs(total_equity_invsmt3_prop_val).toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+ 
+    let total_equi_instmt3_current_val = new_ip3_current_value - less_prop3_mortgage;
+    let formatted_total_equi_instmt3_current_val = Math.abs(total_equi_instmt3_current_val).toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+
+    // Total Investment Prop Value
+    let clean_for_existing_investment_current_value = parseFloat(formatted_investment_portfolio_existing_investment_property?.replace(/,/g, '')) || 0;
+    let clean_for_new_investment_property1_current_value = parseFloat(formatted_purchase_ip?.replace(/,/g, '')) || 0;
+    let clean_for_new_investment_property2_current_value = parseFloat(formatted_new_ip2_current_value?.replace(/,/g, '')) || 0;
+    let clean_for_new_investment_property3_current_value = parseFloat(formatted_new_ip3_current_value?.replace(/,/g, '')) || 0;
+    let total_invsmt_portfolio = clean_for_existing_investment_current_value + clean_for_new_investment_property1_current_value + clean_for_new_investment_property2_current_value + clean_for_new_investment_property3_current_value;
+    let formatted_total_invsmt_portfolio = total_invsmt_portfolio.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+
+    // Total Investment Property Mortgage 
+    let clean_less_investment_prop_mortgage_current_value = parseFloat(formatted_investment_portfolio_mortgage?.replace(/,/g, '')) || 0;
+    let clean_less_investment_prop1_mortgage_current_value = parseFloat(fomatted_total_loan_value_ip1?.replace(/,/g, '')) || 0;
+    let clean_for_less_investment_prop2_mortgage_current_value = parseFloat(formatted_less_prop2_mortgage?.replace(/,/g, '')) || 0;
+    let clean_less_investment_prop3_mortgage_current_value = parseFloat(formatted_less_prop3_mortgage?.replace(/,/g, '')) || 0;
+    let total_less_invstmt_prop_mortgage = clean_less_investment_prop_mortgage_current_value + clean_less_investment_prop1_mortgage_current_value + clean_for_less_investment_prop2_mortgage_current_value + clean_less_investment_prop3_mortgage_current_value;
+    let formatted_total_less_invstmt_prop_mortgage = total_less_invstmt_prop_mortgage.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+
+
+    let total_equi_prop_portfolio = total_invsmt_portfolio - total_less_invstmt_prop_mortgage
+    let formatted_total_equi_prop_portfolio = Math.abs(total_equi_prop_portfolio).toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+    let clean_investment__portfolio_current_value = parseFloat(formatted_total_investment_porfolio_current_val?.replace(/,/g, '')) || 0;
+    let total_invstm_portfolio_val = total_equi_prop_portfolio + clean_investment__portfolio_current_value;
+    let formatted_total_invstm_portfolio_val = parseFloat(total_invstm_portfolio_val).toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+
+    let clean_existing_investment_retirement_value = parseFloat(formattaed_adding_new_ip_existing_investment_prop?.replace(/,/g, '')) || 0;
+    let clean_new_investment_property1_retirement_value = parseFloat(formatted_new_ip_retirement_val?.replace(/,/g, '')) || 0;
+    let clean_new_investment_property2_retirement_value = parseFloat(formatted_new_ip2?.replace(/,/g, '')) || 0;
+    let clean_new_investment_property3_retirement_value = parseFloat(formatted_total_properties_val?.replace(/,/g, '')) || 0;
+    let grand_multi_ip_total_investment_property_retirement_value = clean_existing_investment_retirement_value + clean_new_investment_property1_retirement_value + clean_new_investment_property2_retirement_value + clean_new_investment_property3_retirement_value;
+    let formatted_grand_multi_ip_total_investment_property_retirement_value = grand_multi_ip_total_investment_property_retirement_value.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+
+    let clean_less_existing_investment_mortgage_retirement_value = parseFloat(formatted_investment_portfolio_mortgage?.replace(/,/g, '')) || 0;
+    let clean_less_investment_prop1_mortgage_retirement_value = parseFloat(fomatted_total_loan_value_ip1?.replace(/,/g, '')) || 0;
+    let clean_less_investment_prop2_mortgage_retirement_value = parseFloat($('#total_loan_value_ip2').val()?.replace(/,/g, '')) || 0;
+    let clean_less_investment_prop3_mortgage_retirement_value = parseFloat(formatted_total_prop_mortgate_val?.replace(/,/g, '')) || 0;
+    let grand_multi_ip_total_less_investment_prop_mortgage_retirement_value = clean_less_existing_investment_mortgage_retirement_value + clean_less_investment_prop1_mortgage_retirement_value + clean_less_investment_prop2_mortgage_retirement_value + clean_less_investment_prop3_mortgage_retirement_value;
+    let formatted_grand_multi_ip_total_less_investment_prop_mortgage_retirement_value = grand_multi_ip_total_less_investment_prop_mortgage_retirement_value.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+    let equity_investment_prop_port_retirement_value = grand_multi_ip_total_investment_property_retirement_value - grand_multi_ip_total_less_investment_prop_mortgage_retirement_value
+    let formatted_equity_investment_prop_port_retirement_value = Math.abs(equity_investment_prop_port_retirement_value).toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+
+    let clean_investment__portfolio_retirement_value = parseFloat(formatted_total_investment_portfolio_retirement_val?.replace(/,/g, '')) || 0;
+    let multi_ip_total_investment_retirement_value = clean_investment__portfolio_retirement_value + equity_investment_prop_port_retirement_value;
+    let formatted_multi_ip_total_investment_retirement_value = multi_ip_total_investment_retirement_value.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+
+    let clean_total_investment_portfolio_required = parseFloat(formatted_total_invesemtment_porfolio?.replace(/,/g, '')) || 0;
+
+    let multi_ip_total_shortfall_value = total_invstm_portfolio_val - clean_total_investment_portfolio_required;
+    let formatted_multi_ip_total_shortfall_value = multi_ip_total_shortfall_value.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+    
+    let multi_ip_total_shortfall_retirement_value = total_investment_portfolio_desired_retirement_age - multi_ip_total_investment_retirement_value
+    let formatted_multi_ip_total_shortfall_retirement_value = Math.abs(multi_ip_total_shortfall_retirement_value).toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+
+   
+    // let multi_ip_estimated_income_current_value =  total_invstm_portfolio_val * decimal_annual_interest_rate_mortgage;
+    // let formatted_multi_ip_estimated_income_current_value = multi_ip_estimated_income_current_value.toLocaleString('en-US', { 
+    //       minimumFractionDigits: 2, 
+    //       maximumFractionDigits: 2 
+    // }); 
+
+    let multi_ip_estimated_income_current_value = parseFloat(formatted_total_invstm_portfolio_val?.replace(/,/g, '')) * get_income_investment_portfolio_assets
+    let formatted_multi_ip_estimated_income_current_value =  multi_ip_estimated_income_current_value.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+
+    let multi_ip_estimated_total_income_value = annual_gross_household - multi_ip_estimated_income_current_value;
+    let formatted_multi_ip_estimated_total_income_value = multi_ip_estimated_total_income_value.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+
+    let decimal_income_investment_portfolio_assets = parseFloat(income_investment_portfolio_assets) / 100;
+    let multi_ip_estimated_income_retirement_value =  multi_ip_total_investment_retirement_value * decimal_income_investment_portfolio_assets;
+    let formatted_multi_ip_estimated_income_retirement_value = multi_ip_estimated_income_retirement_value.toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+
+    let multi_ip_estimated_total_income_retirement_value = clean_equivalent_value_of_annual_household - parseFloat(multi_ip_estimated_income_retirement_value) ;
+    let formatted_multi_ip_estimated_total_income_retirement_value = Math.abs(multi_ip_estimated_total_income_retirement_value).toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+
+
+      // end adding new multiple IP's
 
     formData.append('_method','POST');
     formData.append('gross_anual_income_client',$('.total_income_client_annual').val());
@@ -2128,11 +2272,41 @@ let formatted_withTotalInvestmentLiabilieitsMarketVal = withTotalInvestmentLiabi
     formData.append('equity_investment2_retirement_value',formatted_total_equity_investment2_retirement_value);
     formData.append('equity_investment2_current_value',formatted_equity_investment2_current_value);
     formData.append('new_investment_property3_retirement_value',formatted_total_properties_val);
+    formData.append('less_investment_prop3_mortgage_retirement_value',formatted_total_prop_mortgate_val);
+    formData.append('equity_investment3_retirement_value',formatted_total_equity_invsmt3_prop_val);
+    formData.append('new_investment_property3_current_value',formatted_new_ip3_current_value);
+    formData.append('less_investment_prop3_mortgage_current_value',formatted_less_prop3_mortgage);
+    formData.append('equity_investment3_current_value',formatted_total_equi_instmt3_current_val);
+    formData.append('multi_ip_total_investment_property_current_value',formatted_total_invsmt_portfolio);
+    formData.append('multi_ip_total_less_investment_prop_mortgage_value',formatted_total_less_invstmt_prop_mortgage);
+    formData.append('multi_ip_equity_investment_prop_port_current_value',formatted_total_equi_prop_portfolio);
+    formData.append('multi_ip_total_investment_value',formatted_total_invstm_portfolio_val);
+    formData.append('multi_ip_total_investment_property_retirement_value',formatted_grand_multi_ip_total_investment_property_retirement_value);
+    formData.append('multi_ip_total_less_investment_prop_mortgage_retirement_value',formatted_grand_multi_ip_total_less_investment_prop_mortgage_retirement_value);
+    formData.append('multi_ip_equity_investment_prop_port_retirement_value',formatted_equity_investment_prop_port_retirement_value);
+    formData.append('multi_ip_total_investment_retirement_value',formatted_multi_ip_total_investment_retirement_value);
+    formData.append('multi_ip_investment_portfolio_target_current_value',formatted_total_invesemtment_porfolio);
+    formData.append('multi_ip_total_shortfall_value',formatted_multi_ip_total_shortfall_value);
+    formData.append('multi_ip_investment_portfolio_target_retirement_value',formatted_total_investment_portfolio_desired_retirement_age);
+    formData.append('multi_ip_total_shortfall_retirement_value',formatted_multi_ip_total_shortfall_retirement_value);
+    formData.append('multi_ip_houesehold_income_target_current_value',formatted_annual_gross_household);
+    formData.append('multi_ip_estimated_income_current_value',formatted_multi_ip_estimated_income_current_value);
+    formData.append('multi_ip_estimated_total_income_value',formatted_multi_ip_estimated_total_income_value);
+    formData.append('multi_ip_houesehold_income_target_retirement_value',formatted_equivalent_value_of_annual_household);
+    formData.append('multi_ip_estimated_income_retirement_value',formatted_multi_ip_estimated_income_retirement_value);
+    formData.append('multi_ip_estimated_total_income_retirement_value',formatted_multi_ip_estimated_total_income_retirement_value);
+    
+
     
 
 
+
+    
+    
+    
+    
     // New IP Growth
-    formData.append('existing_investment',$('.investment_portfolio_existing_investment_property').val());
+    formData.append('existing_investment',formatted_investment_portfolio_existing_investment_property);
     formData.append('existing_investment_mortgage',formatted_withTotalInvestmentLiabilieitsMarketVal);
     formData.append('new_ip1_mortgage',$('#total_loan_value_ip1').val());
     formData.append('new_ip2_mortgage',$('#total_loan_value_ip2').val());

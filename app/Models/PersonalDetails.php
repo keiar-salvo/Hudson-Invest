@@ -744,7 +744,8 @@ class PersonalDetails extends Model
                 $addingnewmultiip->less_investment_prop3_mortgage_retirement_value   = $request->input('less_investment_prop3_mortgage_retirement_value');
                 $addingnewmultiip->equity_investment3_current_value   = $request->input('equity_investment3_current_value');
                 $addingnewmultiip->equity_investment3_retirement_value   = $request->input('equity_investment3_retirement_value');
-                $addingnewmultiip->multi_ip_total_investment_property_value   = $request->input('multi_ip_total_investment_property_value');
+                $addingnewmultiip->multi_ip_total_investment_property_current_value   = $request->input('multi_ip_total_investment_property_current_value');
+                $addingnewmultiip->multi_ip_total_investment_property_retirement_value   = $request->input('multi_ip_total_investment_property_retirement_value');
                 $addingnewmultiip->multi_ip_total_less_investment_prop_mortgage_value   = $request->input('multi_ip_total_less_investment_prop_mortgage_value');
                 $addingnewmultiip->multi_ip_total_less_investment_prop_mortgage_retirement_value   = $request->input('multi_ip_total_less_investment_prop_mortgage_retirement_value');
                 $addingnewmultiip->multi_ip_equity_investment_prop_port_current_value   = $request->input('multi_ip_equity_investment_prop_port_current_value');
@@ -752,6 +753,7 @@ class PersonalDetails extends Model
                 $addingnewmultiip->multi_ip_total_investment_value   = $request->input('multi_ip_total_investment_value');
                 $addingnewmultiip->multi_ip_total_investment_retirement_value   = $request->input('multi_ip_total_investment_retirement_value');
                 $addingnewmultiip->multi_ip_investment_portfolio_target_current_value   = $request->input('multi_ip_investment_portfolio_target_current_value');
+                $addingnewmultiip->multi_ip_investment_portfolio_target_retirement_value   = $request->input('multi_ip_investment_portfolio_target_retirement_value');
                 $addingnewmultiip->multi_ip_total_shortfall_value   = $request->input('multi_ip_total_shortfall_value');
                 $addingnewmultiip->multi_ip_total_shortfall_retirement_value   = $request->input('multi_ip_total_shortfall_retirement_value');
                 $addingnewmultiip->multi_ip_houesehold_income_target_current_value   = $request->input('multi_ip_houesehold_income_target_current_value');
@@ -788,7 +790,7 @@ class PersonalDetails extends Model
                 $addingNewIPGrowth->grand_properties_value   = $request->input('grand_properties_value');
                 $addingNewIPGrowth->encoded_by   = $request->input('encoded_by');
                 $addingNewIPGrowth->date_encoded = Carbon::now()->toDateString();
-
+                $addingNewIPGrowth->save();
 
         // $portfolio_yearly = Yearly_Investment_Portfolio::updateOrCreate(
         //     ['details_id' => $request->input('details_id')],
@@ -1750,7 +1752,8 @@ class PersonalDetails extends Model
                             'less_investment_prop3_mortgage_retirement_value' => $request->input('less_investment_prop3_mortgage_retirement_value'),
                             'equity_investment3_current_value' => $request->input('equity_investment3_current_value'),
                             'equity_investment3_retirement_value' => $request->input('equity_investment3_retirement_value'),
-                            'multi_ip_total_investment_property_value' => $request->input('multi_ip_total_investment_property_value'),
+                            'multi_ip_total_investment_property_current_value' => $request->input('multi_ip_total_investment_property_current_value'),
+                            'multi_ip_total_investment_property_retirement_value' => $request->input('multi_ip_total_investment_property_retirement_value'),
                             'multi_ip_total_less_investment_prop_mortgage_value' => $request->input('multi_ip_total_less_investment_prop_mortgage_value'),
                             'multi_ip_total_less_investment_prop_mortgage_retirement_value' => $request->input('multi_ip_total_less_investment_prop_mortgage_retirement_value'),
                             'multi_ip_equity_investment_prop_port_current_value' => $request->input('multi_ip_equity_investment_prop_port_current_value'),
@@ -1790,7 +1793,8 @@ class PersonalDetails extends Model
                 $addingnewmultiip->less_investment_prop3_mortgage_retirement_value   = $request->input('less_investment_prop3_mortgage_retirement_value');
                 $addingnewmultiip->equity_investment3_current_value   = $request->input('equity_investment3_current_value');
                 $addingnewmultiip->equity_investment3_retirement_value   = $request->input('equity_investment3_retirement_value');
-                $addingnewmultiip->multi_ip_total_investment_property_value   = $request->input('multi_ip_total_investment_property_value');
+                $addingnewmultiip->multi_ip_total_investment_property_current_value   = $request->input('multi_ip_total_investment_property_current_value');
+                $addingnewmultiip->multi_ip_total_investment_property_retirement_value   = $request->input('multi_ip_total_investment_property_retirement_value');
                 $addingnewmultiip->multi_ip_total_less_investment_prop_mortgage_value   = $request->input('multi_ip_total_less_investment_prop_mortgage_value');
                 $addingnewmultiip->multi_ip_total_less_investment_prop_mortgage_retirement_value   = $request->input('multi_ip_total_less_investment_prop_mortgage_retirement_value');
                 $addingnewmultiip->multi_ip_equity_investment_prop_port_current_value   = $request->input('multi_ip_equity_investment_prop_port_current_value');
@@ -1862,6 +1866,7 @@ class PersonalDetails extends Model
                         $addingNewIPGrowth->grand_properties_value   = $request->input('grand_properties_value');
                         $addingNewIPGrowth->encoded_by   = $request->input('encoded_by');
                         $addingNewIPGrowth->date_encoded = Carbon::now()->toDateString();
+                        $addingNewIPGrowth->save();
                     }
 
            

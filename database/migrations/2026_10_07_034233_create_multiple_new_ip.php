@@ -31,7 +31,8 @@ return new class extends Migration
             $table->string('less_investment_prop3_mortgage_retirement_value')->nullable();
             $table->string('equity_investment3_current_value')->nullable();
             $table->string('equity_investment3_retirement_value')->nullable();
-            $table->string('multi_ip_total_investment_property_value')->nullable();
+            $table->string('multi_ip_total_investment_property_current_value')->nullable();
+            $table->string('multi_ip_total_investment_property_retirement_value')->nullable();
             $table->string('multi_ip_total_less_investment_prop_mortgage_value')->nullable();
             $table->string('multi_ip_total_less_investment_prop_mortgage_retirement_value')->nullable();
             $table->string('multi_ip_equity_investment_prop_port_current_value')->nullable();

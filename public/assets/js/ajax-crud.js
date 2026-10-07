@@ -113,7 +113,7 @@ $.ajax({
     var formData = new FormData($('.clientdetails').get(0))   
 
     // Calculate Future Values for Current Position Page
-    currentPosition_and_financial_independance(formData,annual_growth_rate_invest_assets,income_investment_portfolio_assets,annual_inflation_rate,annual_compound_growth_rate_investment_assets);
+    currentPosition_and_financial_independance(formData,annual_growth_rate_invest_assets,income_investment_portfolio_assets,annual_inflation_rate,annual_compound_growth_rate_investment_assets,annual_interest_rate_mortgages);
 
     // console.log(formData);
 
@@ -143,9 +143,9 @@ $.ajax({
     draggable: true
     });
     $('.details_id').val(transactionID());
-       setTimeout(function () {
-                window.location.href='/clientlist';
-            }, 2000);
+      //  setTimeout(function () {
+      //           window.location.href='/clientlist';
+      //       }, 2000);
       },  
   error: function(xhr) 
         {
@@ -187,7 +187,7 @@ $(".btn-update-details").click(function(event){
     event.preventDefault();
     var formData = new FormData($('.clientdetails').get(0));
     formData.append('_method','POST');
-   currentPosition_and_financial_independance(formData,annual_growth_rate_invest_assets,income_investment_portfolio_assets,annual_inflation_rate,annual_compound_growth_rate_investment_assets);
+   currentPosition_and_financial_independance(formData,annual_growth_rate_invest_assets,income_investment_portfolio_assets,annual_inflation_rate,annual_compound_growth_rate_investment_assets,annual_interest_rate_mortgages);
     $.ajax({
     headers: {
       'X-CSRF-TOKEN': "{{ csrf_token() }}"
