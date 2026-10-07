@@ -468,6 +468,36 @@ function FillMultipleNewIP(response){
   $('.less_investment_prop1_mortgage_retirement_value').val(response['AddNewIP']['less_investment_prop_mortgage_retirement_value']);
   $('.equity_investment1_current_value').val(response['AddNewIP']['equity_investment_current_value']);
   $('.equity_investment1_retirement_value').val(response['AddNewIP']['equity_investment_retirement_value']);
+  $('.new_investment_property2_current_value').val(response['MultipleIP']['new_investment_property2_current_value']);
+  $('.new_investment_property2_retirement_value').val(response['MultipleIP']['new_investment_property2_retirement_value']);
+  $('.less_investment_prop2_mortgage_current_value').val(response['MultipleIP']['less_investment_prop2_mortgage_current_value']);
+  $('.less_investment_prop2_mortgage_retirement_value').val(response['MultipleIP']['less_investment_prop2_mortgage_retirement_value']);
+  $('.equity_investment2_current_value').val(response['MultipleIP']['equity_investment2_current_value']);
+  $('.equity_investment2_retirement_value').val(response['MultipleIP']['equity_investment2_retirement_value']);
+  $('.new_investment_property3_current_value').val(response['MultipleIP']['new_investment_property3_current_value']);
+  $('.new_investment_property3_retirement_value').val(response['MultipleIP']['new_investment_property3_retirement_value']);
+  $('.less_investment_prop3_mortgage_current_value').val(response['MultipleIP']['less_investment_prop3_mortgage_current_value']);
+  $('.less_investment_prop3_mortgage_retirement_value').val(response['MultipleIP']['less_investment_prop3_mortgage_retirement_value']);
+  $('.equity_investment3_current_value').val(response['MultipleIP']['equity_investment3_current_value']);
+  $('.equity_investment3_retirement_value').val(response['MultipleIP']['equity_investment3_retirement_value']);
+  $('.multi_ip_total_investment_property_current_value').val(response['MultipleIP']['multi_ip_total_investment_property_current_value']);
+  $('.multi_ip_total_investment_property_retirement_value').val(response['MultipleIP']['multi_ip_total_investment_property_retirement_value']);
+  $('.multi_ip_total_less_investment_prop_mortgage_value').val(response['MultipleIP']['multi_ip_total_less_investment_prop_mortgage_value']);
+  $('.multi_ip_total_less_investment_prop_mortgage_retirement_value').val(response['MultipleIP']['multi_ip_total_less_investment_prop_mortgage_retirement_value']);
+  $('.multi_ip_equity_investment_prop_port_current_value').val(response['MultipleIP']['multi_ip_equity_investment_prop_port_current_value']);
+  $('.multi_ip_equity_investment_prop_port_retirement_value').val(response['MultipleIP']['multi_ip_equity_investment_prop_port_retirement_value']);
+  $('.multi_ip_total_investment_value').val(response['MultipleIP']['multi_ip_total_investment_value']);
+  $('.multi_ip_total_investment_retirement_value').val(response['MultipleIP']['multi_ip_total_investment_retirement_value']);
+  $('.multi_ip_investment_portfolio_target_current_value').val(response['MultipleIP']['multi_ip_investment_portfolio_target_current_value']);
+  $('.multi_ip_investment_portfolio_target_retirement_value').val(response['MultipleIP']['multi_ip_investment_portfolio_target_retirement_value']);
+  $('.multi_ip_total_shortfall_value').val(response['MultipleIP']['multi_ip_total_shortfall_value']);
+  $('.multi_ip_total_shortfall_retirement_value').val(response['MultipleIP']['multi_ip_total_shortfall_retirement_value']);
+  $('.multi_ip_houesehold_income_target_current_value').val(response['MultipleIP']['multi_ip_houesehold_income_target_current_value']);
+  $('.multi_ip_houesehold_income_target_retirement_value').val(response['MultipleIP']['multi_ip_houesehold_income_target_retirement_value']);
+  $('.multi_ip_estimated_income_current_value').val(response['MultipleIP']['multi_ip_estimated_income_current_value']);
+  $('.multi_ip_estimated_income_retirement_value').val(response['MultipleIP']['multi_ip_estimated_income_retirement_value']);
+  $('.multi_ip_estimated_total_income_value').val(response['MultipleIP']['multi_ip_estimated_total_income_value']);
+  $('.multi_ip_estimated_total_income_retirement_value').val(response['MultipleIP']['multi_ip_estimated_total_income_retirement_value']);
 }
 
 

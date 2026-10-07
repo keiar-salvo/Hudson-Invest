@@ -853,6 +853,7 @@ class PersonalDetails extends Model
             $getTotalLiabilities = TotalLiabilities::where('details_id',$id)->first();
             $getProposedNewIP = ProposedNewInvestmentProp::where('details_id',$id)->first();
             $getAddNewIP = AddingNewInvestmentProp::where('details_id',$id)->first();
+            $getMultiNewIP = MultipleNewIP::where('details_id',$id)->first();
             $result = [];
                 if(is_null($getPersonalDetails ) && is_null($getFinancialDetails))
                     {
@@ -882,7 +883,8 @@ class PersonalDetails extends Model
                             "InvestmentDebtRates" => $getInvestmentDebtRates,
                             "TotalLiabilitites" => $getTotalLiabilities,
                             "ProposeNewIP" => $getProposedNewIP,
-                            "AddNewIP" => $getAddNewIP
+                            "AddNewIP" => $getAddNewIP,
+                            "MultiNewIP" => $getMultiNewIP
                             
 
                      ];
