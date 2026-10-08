@@ -86,6 +86,7 @@
                             '<li><a href="/clientnewgraph?id='+ element.details_id +'" target="_blank">Client PO Graph</a></li>'+ 
                             '<li><a href="/multiplenewinvestmentproperty?id='+ element.details_id +'" target="_blank">Multiple New IP</a></li>'+ 
                             '<li><a href="/clientpowithipgraph?id='+ element.details_id +'" target="_blank">Client PO w/ IP Graph </a></li>'+ 
+                            '<li><a href="/newipmultiextension?id='+ element.details_id +'" target="_blank">Multiple New IP Ext</a></li>'+ 
                             '</ul></div>' 
                         ]).draw(false); 
                     });        

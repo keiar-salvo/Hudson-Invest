@@ -483,6 +483,306 @@ Equity in Investment Property 3
             </div>
         </div>
     </div>
+          <div class="flex flex-col md:flex-row md:items-center gap-4 mb-4">
+       <!-- Left Side: Main Label -->
+        <label class="w-full md:w-1/2 text-left font-bold text-gray-800">
+  New Investment Property 4
+        </label>
+        
+        <!-- Right Side: Both inputs side-by-side within the exact 370px maximum width -->
+    <div class="w-full md:w-1/2 max-w-[370px] grid grid-cols-2 gap-3">
+            <!-- First Input Group -->
+            <div class="flex flex-col gap-1">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
+             
+                </label>
+                <input type="text" id="" class="form-input w-full new_investment_property4_current_value" placeholder="0.00" name="new_investment_property4_current_value">
+            </div>
+            
+            <!-- Second Input Group -->
+            <div class="flex flex-col gap-1">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
+                
+                </label>
+                <input type="text" id="" class="form-input w-full new_investment_property4_retirement_value" placeholder="0.00" name="new_investment_property4_retirement_value">
+            </div>
+        </div>
+    </div>
+      <div class="flex flex-col md:flex-row md:items-center gap-4 mb-4">
+       <!-- Left Side: Main Label -->
+        <label class="w-full md:w-1/2 text-left font-bold text-gray-800">
+Less: Investment Property 4 Mortgage
+        </label>
+        
+        <!-- Right Side: Both inputs side-by-side within the exact 370px maximum width -->
+    <div class="w-full md:w-1/2 max-w-[370px] grid grid-cols-2 gap-3">
+            <!-- First Input Group -->
+            <div class="flex flex-col gap-1">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
+             
+                </label>
+                <input type="text" id="" class="form-input w-full less_investment_prop4_mortgage_current_value" placeholder="0.00" name="less_investment_prop4_mortgage_current_value">
+            </div>
+            
+            <!-- Second Input Group -->
+            <div class="flex flex-col gap-1">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
+                   
+                </label>
+                <input type="text" id="" class="form-input w-full less_investment_prop4_mortgage_retirement_value" placeholder="0.00" name="less_investment_prop4_mortgage_retirement_value">
+            </div>
+        </div>
+    </div>
+     <div class="flex flex-col md:flex-row md:items-center gap-4 mb-4">
+       <!-- Left Side: Main Label -->
+        <label class="w-full md:w-1/2 text-left font-bold text-gray-800">
+Equity in Investment Property 4
+        </label>
+        
+        <!-- Right Side: Both inputs side-by-side within the exact 370px maximum width -->
+    <div class="w-full md:w-1/2 max-w-[370px] grid grid-cols-2 gap-3">
+            <!-- First Input Group -->
+            <div class="flex flex-col gap-1">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
+               
+                </label>
+                <input type="text" id="" class="form-input w-full equity_investment3_current_value" placeholder="0.00" name="equity_investment3_current_value">
+            </div>
+            
+            <!-- Second Input Group -->
+            <div class="flex flex-col gap-1">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
+                  
+                </label>
+                <input type="text" id="" class="form-input w-full equity_investment4_retirement_value" placeholder="0.00" name="equity_investment4_retirement_value">
+            </div>
+        </div>
+    </div>
+          <div class="flex flex-col md:flex-row md:items-center gap-4 mb-4">
+       <!-- Left Side: Main Label -->
+        <label class="w-full md:w-1/2 text-left font-bold text-gray-800">
+  New Investment Property 5
+        </label>
+        
+        <!-- Right Side: Both inputs side-by-side within the exact 370px maximum width -->
+    <div class="w-full md:w-1/2 max-w-[370px] grid grid-cols-2 gap-3">
+            <!-- First Input Group -->
+            <div class="flex flex-col gap-1">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
+             
+                </label>
+                <input type="text" id="" class="form-input w-full new_investment_property5_current_value" placeholder="0.00" name="new_investment_property5_current_value">
+            </div>
+            
+            <!-- Second Input Group -->
+            <div class="flex flex-col gap-1">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
+                
+                </label>
+                <input type="text" id="" class="form-input w-full new_investment_property5_retirement_value" placeholder="0.00" name="new_investment_property5_retirement_value">
+            </div>
+        </div>
+    </div>
+      <div class="flex flex-col md:flex-row md:items-center gap-4 mb-4">
+       <!-- Left Side: Main Label -->
+        <label class="w-full md:w-1/2 text-left font-bold text-gray-800">
+Less: Investment Property 5 Mortgage
+        </label>
+        
+        <!-- Right Side: Both inputs side-by-side within the exact 370px maximum width -->
+    <div class="w-full md:w-1/2 max-w-[370px] grid grid-cols-2 gap-3">
+            <!-- First Input Group -->
+            <div class="flex flex-col gap-1">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
+             
+                </label>
+                <input type="text" id="" class="form-input w-full less_investment_prop5_mortgage_current_value" placeholder="0.00" name="less_investment_prop5_mortgage_current_value">
+            </div>
+            
+            <!-- Second Input Group -->
+            <div class="flex flex-col gap-1">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
+                   
+                </label>
+                <input type="text" id="" class="form-input w-full less_investment_prop5_mortgage_retirement_value" placeholder="0.00" name="less_investment_prop5_mortgage_retirement_value">
+            </div>
+        </div>
+    </div>
+     <div class="flex flex-col md:flex-row md:items-center gap-4 mb-4">
+       <!-- Left Side: Main Label -->
+        <label class="w-full md:w-1/2 text-left font-bold text-gray-800">
+Equity in Investment Property 5
+        </label>
+        
+        <!-- Right Side: Both inputs side-by-side within the exact 370px maximum width -->
+    <div class="w-full md:w-1/2 max-w-[370px] grid grid-cols-2 gap-3">
+            <!-- First Input Group -->
+            <div class="flex flex-col gap-1">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
+               
+                </label>
+                <input type="text" id="" class="form-input w-full equity_investment5_current_value" placeholder="0.00" name="equity_investment5_current_value">
+            </div>
+            
+            <!-- Second Input Group -->
+            <div class="flex flex-col gap-1">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
+                  
+                </label>
+                <input type="text" id="" class="form-input w-full equity_investment5_retirement_value" placeholder="0.00" name="equity_investment5_retirement_value">
+            </div>
+        </div>
+    </div>
+          <div class="flex flex-col md:flex-row md:items-center gap-4 mb-4">
+       <!-- Left Side: Main Label -->
+        <label class="w-full md:w-1/2 text-left font-bold text-gray-800">
+  New Investment Property 6
+        </label>
+        
+        <!-- Right Side: Both inputs side-by-side within the exact 370px maximum width -->
+    <div class="w-full md:w-1/2 max-w-[370px] grid grid-cols-2 gap-3">
+            <!-- First Input Group -->
+            <div class="flex flex-col gap-1">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
+             
+                </label>
+                <input type="text" id="" class="form-input w-full new_investment_property6_current_value" placeholder="0.00" name="new_investment_property6_current_value">
+            </div>
+            
+            <!-- Second Input Group -->
+            <div class="flex flex-col gap-1">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
+                
+                </label>
+                <input type="text" id="" class="form-input w-full new_investment_property6_retirement_value" placeholder="0.00" name="new_investment_property6_retirement_value">
+            </div>
+        </div>
+    </div>
+      <div class="flex flex-col md:flex-row md:items-center gap-4 mb-4">
+       <!-- Left Side: Main Label -->
+        <label class="w-full md:w-1/2 text-left font-bold text-gray-800">
+Less: Investment Property 6 Mortgage
+        </label>
+        
+        <!-- Right Side: Both inputs side-by-side within the exact 370px maximum width -->
+    <div class="w-full md:w-1/2 max-w-[370px] grid grid-cols-2 gap-3">
+            <!-- First Input Group -->
+            <div class="flex flex-col gap-1">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
+             
+                </label>
+                <input type="text" id="" class="form-input w-full less_investment_prop6_mortgage_current_value" placeholder="0.00" name="less_investment_prop6_mortgage_current_value">
+            </div>
+            
+            <!-- Second Input Group -->
+            <div class="flex flex-col gap-1">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
+                   
+                </label>
+                <input type="text" id="" class="form-input w-full less_investment_prop6_mortgage_retirement_value" placeholder="0.00" name="less_investment_prop6_mortgage_retirement_value">
+            </div>
+        </div>
+    </div>
+     <div class="flex flex-col md:flex-row md:items-center gap-4 mb-4">
+       <!-- Left Side: Main Label -->
+        <label class="w-full md:w-1/2 text-left font-bold text-gray-800">
+Equity in Investment Property 6
+        </label>
+        
+        <!-- Right Side: Both inputs side-by-side within the exact 370px maximum width -->
+    <div class="w-full md:w-1/2 max-w-[370px] grid grid-cols-2 gap-3">
+            <!-- First Input Group -->
+            <div class="flex flex-col gap-1">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
+               
+                </label>
+                <input type="text" id="" class="form-input w-full equity_investment6_current_value" placeholder="0.00" name="equity_investment6_current_value">
+            </div>
+            
+            <!-- Second Input Group -->
+            <div class="flex flex-col gap-1">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
+                  
+                </label>
+                <input type="text" id="" class="form-input w-full equity_investment6_retirement_value" placeholder="0.00" name="equity_investment6_retirement_value">
+            </div>
+        </div>
+    </div>
+          <div class="flex flex-col md:flex-row md:items-center gap-4 mb-4">
+       <!-- Left Side: Main Label -->
+        <label class="w-full md:w-1/2 text-left font-bold text-gray-800">
+  New Investment Property 7
+        </label>
+        
+        <!-- Right Side: Both inputs side-by-side within the exact 370px maximum width -->
+    <div class="w-full md:w-1/2 max-w-[370px] grid grid-cols-2 gap-3">
+            <!-- First Input Group -->
+            <div class="flex flex-col gap-1">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
+             
+                </label>
+                <input type="text" id="" class="form-input w-full new_investment_property7_current_value" placeholder="0.00" name="new_investment_property7_current_value">
+            </div>
+            
+            <!-- Second Input Group -->
+            <div class="flex flex-col gap-1">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
+                
+                </label>
+                <input type="text" id="" class="form-input w-full new_investment_property7_retirement_value" placeholder="0.00" name="new_investment_property7_retirement_value">
+            </div>
+        </div>
+    </div>
+      <div class="flex flex-col md:flex-row md:items-center gap-4 mb-4">
+       <!-- Left Side: Main Label -->
+        <label class="w-full md:w-1/2 text-left font-bold text-gray-800">
+Less: Investment Property 7 Mortgage
+        </label>
+        
+        <!-- Right Side: Both inputs side-by-side within the exact 370px maximum width -->
+    <div class="w-full md:w-1/2 max-w-[370px] grid grid-cols-2 gap-3">
+            <!-- First Input Group -->
+            <div class="flex flex-col gap-1">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
+             
+                </label>
+                <input type="text" id="" class="form-input w-full less_investment_prop7_mortgage_current_value" placeholder="0.00" name="less_investment_prop7_mortgage_current_value">
+            </div>
+            
+            <!-- Second Input Group -->
+            <div class="flex flex-col gap-1">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
+                   
+                </label>
+                <input type="text" id="" class="form-input w-full less_investment_prop7_mortgage_retirement_value" placeholder="0.00" name="less_investment_prop7_mortgage_retirement_value">
+            </div>
+        </div>
+    </div>
+     <div class="flex flex-col md:flex-row md:items-center gap-4 mb-4">
+       <!-- Left Side: Main Label -->
+        <label class="w-full md:w-1/2 text-left font-bold text-gray-800">
+Equity in Investment Property 7
+        </label>
+        
+        <!-- Right Side: Both inputs side-by-side within the exact 370px maximum width -->
+    <div class="w-full md:w-1/2 max-w-[370px] grid grid-cols-2 gap-3">
+            <!-- First Input Group -->
+            <div class="flex flex-col gap-1">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
+               
+                </label>
+                <input type="text" id="" class="form-input w-full equity_investment7_current_value" placeholder="0.00" name="equity_investment7_current_value">
+            </div>
+            
+            <!-- Second Input Group -->
+            <div class="flex flex-col gap-1">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
+                  
+                </label>
+                <input type="text" id="" class="form-input w-full equity_investment7_retirement_value" placeholder="0.00" name="equity_investment7_retirement_value">
+            </div>
+        </div>
+    </div>
      <div class="flex flex-col md:flex-row md:items-center gap-4 mb-4">
        <!-- Left Side: Main Label -->
         <label class="w-full md:w-1/2 text-left font-bold text-gray-800">
@@ -496,7 +796,7 @@ Total Investment Property Value
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
              
                 </label>
-                <input type="text" id="" class="form-input w-full multi_ip_total_investment_property_value" placeholder="0.00" name="multi_ip_total_investment_property_value">
+                <input type="text" id="" class="form-input w-full multi_ext_total_investment_property_value" placeholder="0.00" name="multi_ext_total_investment_property_value">
             </div>
             
             <!-- Second Input Group -->
@@ -504,7 +804,7 @@ Total Investment Property Value
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                  
                 </label>
-                <input type="text" id="" class="form-input w-full multi_ip_total_investment_property_retirement_value" placeholder="0.00" name="multi_ip_total_investment_property_retirement_value">
+                <input type="text" id="" class="form-input w-full multi_ext_total_investment_property_retirement_value" placeholder="0.00" name="multi_ext_total_investment_property_retirement_value">
             </div>
         </div>
     </div>
@@ -521,7 +821,7 @@ Less: Total Investment Property Mortgage
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
            
                 </label>
-                <input type="text" id="" class="form-input w-full multi_ip_total_less_investment_prop_mortgage_value" placeholder="0.00" name="multi_ip_total_less_investment_prop_mortgage_value">
+                <input type="text" id="" class="form-input w-full multi_ext_total_less_investment_prop_mortgage_value" placeholder="0.00" name="multi_ext_total_less_investment_prop_mortgage_value">
             </div>
             
             <!-- Second Input Group -->
@@ -529,7 +829,7 @@ Less: Total Investment Property Mortgage
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                   
                 </label>
-                <input type="text" id="" class="form-input w-full multi_ip_total_less_investment_prop_mortgage_retirement_value" placeholder="0.00" name="multi_ip_total_less_investment_prop_mortgage_retirement_value">
+                <input type="text" id="" class="form-input w-full multi_ext_total_less_investment_prop_mortgage_retirement_value" placeholder="0.00" name="multi_ext_total_less_investment_prop_mortgage_retirement_value">
             </div>
         </div>
     </div>
@@ -546,7 +846,7 @@ Equity in Investment Property Portfolio
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
                
                 </label>
-                <input type="text" id="" class="form-input w-full multi_ip_equity_investment_prop_port_current_value" placeholder="0.00" name="multi_ip_equity_investment_prop_port_current_value">
+                <input type="text" id="" class="form-input w-full multi_ext_equity_investment_prop_port_current_value" placeholder="0.00" name="multi_ext_equity_investment_prop_port_current_value">
             </div>
             
             <!-- Second Input Group -->
@@ -554,7 +854,7 @@ Equity in Investment Property Portfolio
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                 
                 </label>
-                <input type="text" id="" class="form-input w-full multi_ip_equity_investment_prop_port_retirement_value" placeholder="0.00" name="multi_ip_equity_investment_prop_port_retirement_value">
+                <input type="text" id="" class="form-input w-full multi_ext_equity_investment_prop_port_retirement_value" placeholder="0.00" name="multi_ext_equity_investment_prop_port_retirement_value">
             </div>
         </div>
     </div>
@@ -571,7 +871,7 @@ Total Investment Portfolio
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
                
                 </label>
-                <input type="text" id="" class="form-input w-full multi_ip_total_investment_value" placeholder="0.00" name="multi_ip_total_investment_value">
+                <input type="text" id="" class="form-input w-full multi_ext_total_investment_value" placeholder="0.00" name="multi_ext_total_investment_value">
             </div>
             
             <!-- Second Input Group -->
@@ -579,7 +879,7 @@ Total Investment Portfolio
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                    
                 </label>
-                <input type="text" id="" class="form-input w-full multi_ip_total_investment_retirement_value" placeholder="0.00" name="multi_ip_total_investment_retirement_value">
+                <input type="text" id="" class="form-input w-full multi_ext_total_investment_retirement_value" placeholder="0.00" name="multi_ext_total_investment_retirement_value">
             </div>
         </div>
     </div>
@@ -597,7 +897,7 @@ Investment Portfolio Target <i>(as calculated in Financial Independence)</i>
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
                
                 </label>
-                <input type="text" id="" class="form-input w-full multi_ip_investment_portfolio_target_current_value" placeholder="0.00" name="multi_ip_investment_portfolio_target_current_value">
+                <input type="text" id="" class="form-input w-full multi_ext_investment_portfolio_target_current_value" placeholder="0.00" name="multi_ext_investment_portfolio_target_current_value">
             </div>
             
             <!-- Second Input Group -->
@@ -605,7 +905,7 @@ Investment Portfolio Target <i>(as calculated in Financial Independence)</i>
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                   
                 </label>
-                <input type="text" id="" class="form-input w-full multi_ip_investment_portfolio_target_retirement_value" placeholder="0.00" name="multi_ip_investment_portfolio_target_retirement_value">
+                <input type="text" id="" class="form-input w-full multi_ext_investment_portfolio_target_retirement_value" placeholder="0.00" name="multi_ext_investment_portfolio_target_retirement_value">
             </div>
         </div>
     </div>
@@ -622,7 +922,7 @@ Total <span style="color:#bd0c1d;">(Shortfall)</span> / Surplus
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
               
                 </label>
-                <input type="text" id="" class="form-input w-full multi_ip_total_shortfall_value" placeholder="0.00" name="multi_ip_total_shortfall_value">
+                <input type="text" id="" class="form-input w-full multi_ext_total_shortfall_value" placeholder="0.00" name="multi_ext_total_shortfall_value">
             </div>
             
             <!-- Second Input Group -->
@@ -630,7 +930,7 @@ Total <span style="color:#bd0c1d;">(Shortfall)</span> / Surplus
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                    
                 </label>
-                <input type="text" id="" class="form-input w-full multi_ip_total_shortfall_retirement_value" placeholder="0.00" name="multi_ip_total_shortfall_retirement_value">
+                <input type="text" id="" class="form-input w-full multi_ext_total_shortfall_retirement_value" placeholder="0.00" name="multi_ext_total_shortfall_retirement_value">
             </div>
         </div>
     </div>
@@ -647,7 +947,7 @@ Household Income Target (as calculated in Financial Independence)
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
               
                 </label>
-                <input type="text" id="" class="form-input w-full multi_ip_houesehold_income_target_current_value" placeholder="0.00" name="multi_ip_houesehold_income_target_current_value">
+                <input type="text" id="" class="form-input w-full multi_ext_houesehold_income_target_current_value" placeholder="0.00" name="multi_ext_houesehold_income_target_current_value">
             </div>
             
             <!-- Second Input Group -->
@@ -655,7 +955,7 @@ Household Income Target (as calculated in Financial Independence)
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                 
                 </label>
-                <input type="text" id="" class="form-input w-full multi_ip_houesehold_income_target_retirement_value" placeholder="0.00" name="multi_ip_houesehold_income_target_retirement_value">
+                <input type="text" id="" class="form-input w-full multi_ext_houesehold_income_target_retirement_value" placeholder="0.00" name="multi_ext_houesehold_income_target_retirement_value">
             </div>
         </div>
     </div>
@@ -672,7 +972,7 @@ Estimated Income From Net Investments
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
                
                 </label>
-                <input type="text" id="" class="form-input w-full multi_ip_estimated_income_current_value" placeholder="0.00" name="multi_ip_estimated_income_current_value">
+                <input type="text" id="" class="form-input w-full multi_ext_estimated_income_current_value" placeholder="0.00" name="multi_ext_estimated_income_current_value">
             </div>
             
             <!-- Second Input Group -->
@@ -680,7 +980,7 @@ Estimated Income From Net Investments
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                     
                 </label>
-                <input type="text" id="" class="form-input w-full multi_ip_estimated_income_retirement_value" placeholder="0.00" name="multi_ip_estimated_income_retirement_value">
+                <input type="text" id="" class="form-input w-full multi_ext_estimated_income_retirement_value" placeholder="0.00" name="multi_ext_estimated_income_retirement_value">
             </div>
         </div>
     </div>
@@ -697,7 +997,7 @@ Estimated Total Income <span style="color:#bd0c1d;">(Shortfall)</span> / Surplus
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="">
                
                 </label>
-                <input type="text" id="" class="form-input w-full multi_ip_estimated_total_income_value" placeholder="0.00" name="multi_ip_estimated_total_income_value">
+                <input type="text" id="" class="form-input w-full multi_ext_estimated_total_income_value" placeholder="0.00" name="multi_ext_estimated_total_income_value">
             </div>
             
             <!-- Second Input Group -->
@@ -705,7 +1005,7 @@ Estimated Total Income <span style="color:#bd0c1d;">(Shortfall)</span> / Surplus
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                   
                 </label>
-                <input type="text" id="" class="form-input w-full multi_ip_estimated_total_income_retirement_value" placeholder="0.00" name="multi_ip_estimated_total_income_retirement_value">
+                <input type="text" id="" class="form-input w-full multi_ext_estimated_total_income_retirement_value" placeholder="0.00" name="multi_ext_estimated_total_income_retirement_value">
             </div>
         </div>
     </div>
@@ -713,10 +1013,7 @@ Estimated Total Income <span style="color:#bd0c1d;">(Shortfall)</span> / Surplus
              
 </fieldset>
 
-
-
-
-    
+ 
     
 </form>
 <br/>
@@ -744,12 +1041,12 @@ const product = urlParams.get('id')
             window.close();
          })
            $.ajax({
-            url: appURL + "/multiplenewinvestmentproperty/" + product,
+            url: appURL + "/newipmultiextension/" + product,
             type: "GET",
             dataType: "json",
             success: function(response) {   
             console.log(response);
-            FillMultipleNewIP(response);
+            FillNewIPExtension(response);
             },
                 error: function(error) {
                 console.error("AJAX Error: " + error);

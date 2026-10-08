@@ -86,9 +86,17 @@ Route::group(['namespace' => 'App\Http\Controllers'],function()
             //  Route::get('newinvestmentproperty/{id}','financialIndependanceCollection')->name('newinvestmentproperty');
             
        });
-            Route::controller(MultipleNewIPController ::class)->group(function () {
+        Route::controller(MultipleNewIPController ::class)->group(function () {
                 Route::get('multiplenewinvestmentproperty', 'multiplenewinvestmentproperties')->name('multiplenewinvestmentproperty');
                 Route::get('multiplenewinvestmentproperty/{id}', 'getMultipleNewIPColl')->name('multiplenewinvestmentproperty');
+            // Route::get('addingnewinvestmentproperty/{id}','getAddNewIPColl')->name('addingnewinvestmentproperty');
+        
+            //  Route::get('newinvestmentproperty/{id}','financialIndependanceCollection')->name('newinvestmentproperty');
+            
+       });
+        Route::controller(NewIPMultipleExtensionsController ::class)->group(function () {
+                Route::get('newipmultiextension', 'newipsmutltiext')->name('newipmultiextension');
+                Route::get('newipmultiextension/{id}', 'getNewIpMultiExt')->name('newipmultiextension');
             // Route::get('addingnewinvestmentproperty/{id}','getAddNewIPColl')->name('addingnewinvestmentproperty');
         
             //  Route::get('newinvestmentproperty/{id}','financialIndependanceCollection')->name('newinvestmentproperty');
