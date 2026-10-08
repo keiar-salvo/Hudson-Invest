@@ -105,6 +105,11 @@ Route::group(['namespace' => 'App\Http\Controllers'],function()
             Route::get('clientnewgraph', 'clientnewgraph')->name('clientnewgraph');
             Route::get('clientnewgraph/{id}','getChartInitalData')->name('clientnewgraph'); 
        });
+
+        Route::controller(ClientPOWithIPGraphController::class)->group(function () {
+            Route::get('clientpowithipgraph', 'clientpowithipgraph')->name('clientpowithipgraph');
+            Route::get('clientpowithipgraph/{id}','getChartPOWithGraphData')->name('clientpowithipgraph'); 
+       });
  
         Route::controller(IncomeController::class)->group(function () {
              Route::get('income', 'income')->name('income');
