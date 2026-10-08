@@ -532,11 +532,12 @@ function FillNewIPExtension(response){
   $('.equity_investment2_current_value').val(response['MultipleIP']['equity_investment2_current_value']);
   $('.equity_investment2_retirement_value').val(response['MultipleIP']['equity_investment2_retirement_value']);
   $('.new_investment_property3_current_value').val(response['MultipleIP']['new_investment_property3_current_value']);
-  $('.new_investment_property3_retirement_value').val(response['NewIPGrowth']['new_ip3']);
+  $('.multi_ext_new_investment_property3_retirement_value').val(response['NewIPGrowth']['new_ip3']);
   $('.less_investment_prop3_mortgage_current_value').val(response['MultipleIP']['less_investment_prop3_mortgage_current_value']);
-  $('.less_investment_prop3_mortgage_retirement_value').val(response['MultipleIP']['less_investment_prop3_mortgage_retirement_value']);
+
+  $('.multi_ext_less_investment_prop3_mortgage_retirement_value').val(response['MultiExt']['multi_ext_less_investment_prop3_mortgage_retirement_value']);
   $('.equity_investment3_current_value').val(response['MultipleIP']['equity_investment3_current_value']);
-  $('.equity_investment3_retirement_value').val(response['MultipleIP']['equity_investment3_retirement_value']);
+  $('.multi_ext_equity_investment3_retirement_value').val(response['MultiExt']['multi_ext_equity_investment3_retirement_value']);
 
   $('.new_investment_property4_current_value').val(response['MultiExt']['new_investment_property4_current_value']);
   $('.new_investment_property4_retirement_value').val(response['NewIPGrowth']['new_ip4']);

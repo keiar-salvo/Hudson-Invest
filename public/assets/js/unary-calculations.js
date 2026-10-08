@@ -2376,7 +2376,7 @@ let formatted_withTotalInvestmentLiabilieitsMarketVal = mortgageMarketVal.toLoca
     let clean_ext_less_existing_investment_mortgage_retirement_value = parseFloat(formatted_investment_portfolio_mortgage?.replace(/,/g, '')) || 0;
     let clean_ext_investment_prop1_mortgage_retirement_value = parseFloat(fomatted_total_loan_value_ip1?.replace(/,/g, '')) || 0;
     let clean_ext_investment_prop2_mortgage_retirement_value = parseFloat($('#total_loan_value_ip2').val()?.replace(/,/g, '')) || 0;
-    let clean_ext_investment_prop3_mortgage_retirement_value = parseFloat(formatted_total_prop_mortgate_val?.replace(/,/g, '')) || 0;
+    let clean_ext_investment_prop3_mortgage_retirement_value = parseFloat($('#total_loan_value_ip3').val()?.replace(/,/g, '')) || 0;
     let clean_ext_investment_prop4_mortgage_retirement_value = parseFloat($('#total_loan_value_ip4').val()?.replace(/,/g, '')) || 0;
     let clean_ext_investment_prop5_mortgage_retirement_value = parseFloat($('#total_loan_value_ip5').val()?.replace(/,/g, '')) || 0;
     let clean_ext_investment_prop6_mortgage_retirement_value = parseFloat($('#total_loan_value_ip6').val()?.replace(/,/g, '')) || 0;
@@ -2430,7 +2430,10 @@ let formatted_withTotalInvestmentLiabilieitsMarketVal = mortgageMarketVal.toLoca
 
     let clean_ext__annual_gross_household = parseFloat(formatted_annual_gross_household?.replace(/,/g, '')) || 0;
     let multi_ext_estimated_total_income_value = clean_ext__annual_gross_household - parseFloat(multi_ext_estimated_income_current_value);
-    let formatted_multi_ext_estimated_total_income_value = Math.abs(multi_ext_estimated_total_income_value);
+    let formatted_multi_ext_estimated_total_income_value = Math.abs(multi_ext_estimated_total_income_value).toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); ;
 
     let multi_ext_estimated_income_retirement_value = parseFloat(formatted_multi_ext_total_investment_retirement_value?.replace(/,/g, '')) * get_income_investment_portfolio_assets;
     let formatted_multi_ext_estimated_income_retirement_value = multi_ext_estimated_income_retirement_value.toLocaleString('en-US', { 
@@ -2440,6 +2443,12 @@ let formatted_withTotalInvestmentLiabilieitsMarketVal = mortgageMarketVal.toLoca
 
     let multi_ext_estimated_total_income_retirement_value = parseFloat(formatted_equivalent_value_of_annual_household?.replace(/,/g, '')) - parseFloat(formatted_multi_ext_estimated_income_retirement_value?.replace(/,/g, ''));
     let formatted_multi_ext_estimated_total_income_retirement_value = Math.abs(multi_ext_estimated_total_income_retirement_value).toLocaleString('en-US', { 
+          minimumFractionDigits: 2, 
+          maximumFractionDigits: 2 
+    }); 
+
+    let equity_ext_investment3_retirement_value = parseFloat(prop3?.replace(/,/g, '')) - clean_ext_investment_prop3_mortgage_retirement_value;
+    let formatted_equity_investment3_retirement_value = equity_ext_investment3_retirement_value.toLocaleString('en-US', { 
           minimumFractionDigits: 2, 
           maximumFractionDigits: 2 
     }); 
@@ -2603,6 +2612,10 @@ let formatted_withTotalInvestmentLiabilieitsMarketVal = mortgageMarketVal.toLoca
 
     
 // New Multiple IP Extension
+    formData.append('multi_ext_new_investment_property3_retirement_value',prop3);
+    formData.append('multi_ext_less_investment_prop3_mortgage_retirement_value',$('#total_loan_value_ip3').val());
+    formData.append('multi_ext_equity_investment3_retirement_value',formatted_equity_investment3_retirement_value);
+    
     formData.append('new_investment_property4_current_value',formatted_new_investment_property4_current_value);
     formData.append('new_investment_property4_retirement_value',prop4);
     formData.append('less_investment_prop4_mortgage_current_value',formatted_less_investment_prop4_mortgage_current_value);

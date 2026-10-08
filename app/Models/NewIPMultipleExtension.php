@@ -7,8 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class NewIPMultipleExtension extends Model
 {
    protected $table = 'multiple_ip_extension';
-   protected $fillable = [
+ protected $fillable = [
         'details_id',
+		'multi_ext_new_investment_property3_retirement_value',
+		'multi_ext_less_investment_prop3_mortgage_retirement_value',
+		'multi_ext_equity_investment3_retirement_value',
         'new_investment_property4_current_value',
         'new_investment_property4_retirement_value',
         'less_investment_prop4_mortgage_current_value',
@@ -27,7 +30,7 @@ class NewIPMultipleExtension extends Model
         'less_investment_prop6_mortgage_retirement_value',
         'equity_investment6_current_value',
         'equity_investment6_retirement_value',
-        'new_investment_property7_current_value',
+         'new_investment_property7_current_value',
         'new_investment_property7_retirement_value',
         'less_investment_prop7_mortgage_current_value',
         'less_investment_prop7_mortgage_retirement_value',
@@ -54,19 +57,20 @@ class NewIPMultipleExtension extends Model
         'encoded_by',
         'date_encoded'
     ];
-
     public function collectionNewIPMultiExt($id){
         $addnewipcoll = AddingNewInvestmentProp::where('details_id',$id)->first();
         $multipleIP = MultipleNewIP::where('details_id',$id)->first();
         $newipgrowth = NewIPGrwowth::where('details_id',$id)->first();
         $multiext = NewIPMultipleExtension::where('details_id',$id)->first();
+        $proposednewip = ProposedNewInvestmentProp::where('details_id',$id)->first();
         
         
         $collection = [
             "AddNewIP" => $addnewipcoll,
             "MultipleIP" => $multipleIP,
             "NewIPGrowth" => $newipgrowth,
-            "MultiExt" =>  $multiext
+            "MultiExt" =>  $multiext,
+            "ProposedNewIP" =>$proposednewip
             ];
         return response()->json($collection);
     }

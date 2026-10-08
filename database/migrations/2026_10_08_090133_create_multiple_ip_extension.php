@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('multiple_ip_extension', function (Blueprint $table) {
-            $table->string('details_id')->unique();
+           $table->string('details_id')->unique();
+            $table->string('multi_ext_new_investment_property3_retirement_value')->nullable();
+            $table->string('multi_ext_less_investment_prop3_mortgage_retirement_value')->nullable();
+            $table->string('multi_ext_equity_investment3_retirement_value')->nullable();
             $table->string('new_investment_property4_current_value')->nullable();
             $table->string('new_investment_property4_retirement_value')->nullable();
             $table->string('less_investment_prop4_mortgage_current_value')->nullable();

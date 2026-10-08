@@ -797,6 +797,9 @@ class PersonalDetails extends Model
 
                 $addingMultiIPExtension = new NewIPMultipleExtension;
                 $addingMultiIPExtension->details_id = $request->input('details_id');
+                $addingMultiIPExtension->multi_ext_new_investment_property3_retirement_value = $request->input('multi_ext_new_investment_property3_retirement_value');
+                $addingMultiIPExtension->multi_ext_less_investment_prop3_mortgage_retirement_value = $request->input('multi_ext_less_investment_prop3_mortgage_retirement_value');
+                 $addingMultiIPExtension->multi_ext_equity_investment3_retirement_value = $request->input('multi_ext_equity_investment3_retirement_value');
                 $addingMultiIPExtension->new_investment_property4_current_value = $request->input('new_investment_property4_current_value');
                 $addingMultiIPExtension->new_investment_property4_retirement_value = $request->input('new_investment_property4_retirement_value');
                 $addingMultiIPExtension->less_investment_prop4_mortgage_current_value = $request->input('less_investment_prop4_mortgage_current_value');
@@ -1928,6 +1931,9 @@ class PersonalDetails extends Model
                 $verifyNewIPMultipleExtension = NewIPMultipleExtension::where('details_id',$id)->first();
                 if($verifyNewIPMultipleExtension !== null){
                       $updateNewIPMultipleExtension = NewIPMultipleExtension::where('details_id',$id)->update([
+                        'multi_ext_new_investment_property3_retirement_value' => $request->input('multi_ext_new_investment_property3_retirement_value'),
+                        'multi_ext_less_investment_prop3_mortgage_retirement_value' => $request->input('multi_ext_less_investment_prop3_mortgage_retirement_value'),
+                        'equity_investment3_retirement_value' => $request->input('equity_investment3_retirement_value'),
                             'new_investment_property4_current_value' => $request->input('new_investment_property4_current_value'),
                             'new_investment_property4_retirement_value' => $request->input('new_investment_property4_retirement_value'),
                             'less_investment_prop4_mortgage_current_value' => $request->input('less_investment_prop4_mortgage_current_value'),
@@ -1976,8 +1982,12 @@ class PersonalDetails extends Model
                 }
 
                 else{
+             
                 $addingMultiIPExtension = new NewIPMultipleExtension;
                 $addingMultiIPExtension->details_id = $request->input('details_id');
+                $addingMultiIPExtension->multi_ext_new_investment_property3_retirement_value = $request->input('multi_ext_new_investment_property3_retirement_value');
+                $addingMultiIPExtension->multi_ext_less_investment_prop3_mortgage_retirement_value = $request->input('multi_ext_less_investment_prop3_mortgage_retirement_value');
+                 $addingMultiIPExtension->multi_ext_equity_investment3_retirement_value = $request->input('multi_ext_equity_investment3_retirement_value');
                 $addingMultiIPExtension->new_investment_property4_current_value = $request->input('new_investment_property4_current_value');
                 $addingMultiIPExtension->new_investment_property4_retirement_value = $request->input('new_investment_property4_retirement_value');
                 $addingMultiIPExtension->less_investment_prop4_mortgage_current_value = $request->input('less_investment_prop4_mortgage_current_value');

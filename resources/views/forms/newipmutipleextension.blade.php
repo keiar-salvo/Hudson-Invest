@@ -429,7 +429,7 @@ Equity in Investment Property 2
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                 
                 </label>
-                <input type="text" id="" class="form-input w-full new_investment_property3_retirement_value" placeholder="0.00" name="new_investment_property3_retirement_value">
+                <input type="text" id="" class="form-input w-full multi_ext_new_investment_property3_retirement_value" placeholder="0.00" name="multi_ext_new_investment_property3_retirement_value">
             </div>
         </div>
     </div>
@@ -454,7 +454,7 @@ Less: Investment Property 3 Mortgage
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                    
                 </label>
-                <input type="text" id="" class="form-input w-full less_investment_prop3_mortgage_retirement_value" placeholder="0.00" name="less_investment_prop3_mortgage_retirement_value">
+                <input type="text" id="" class="form-input w-full multi_ext_less_investment_prop3_mortgage_retirement_value" placeholder="0.00" name="multi_ext_less_investment_prop3_mortgage_retirement_value">
             </div>
         </div>
     </div>
@@ -479,7 +479,7 @@ Equity in Investment Property 3
                 <label class="text-xs font-semibold text-gray-600 uppercase tracking-wider" for="retirement_value">
                   
                 </label>
-                <input type="text" id="" class="form-input w-full equity_investment3_retirement_value" placeholder="0.00" name="equity_investment3_retirement_value">
+                <input type="text" id="" class="form-input w-full multi_ext_equity_investment3_retirement_value" placeholder="0.00" name="multi_ext_equity_investment3_retirement_value">
             </div>
         </div>
     </div>
