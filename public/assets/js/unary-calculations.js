@@ -1591,12 +1591,19 @@ function currentPosition_and_financial_independance(formData,annual_growth_rate_
     });
 
     let adding_new_ip_existing_investment_prop = parseFloat(formatted_investment_portfolio_existing_investment_property?.replace(/,/g, '')) || 0;
-    let annaul_inf_rate = annual_inflation_rate / 100;
+    let annaul_inf_rate = annual_compound_growth_rate_investment_assets / 100;
     let total_adding_new_ip_existing_investment_prop = calculateFV(annaul_inf_rate,periods,0,-adding_new_ip_existing_investment_prop,type);
     let formattaed_adding_new_ip_existing_investment_prop = total_adding_new_ip_existing_investment_prop.toLocaleString('en-US', { 
           minimumFractionDigits: 2, 
           maximumFractionDigits: 2 
     });
+
+
+
+    console.log("Check: " + formatted_investment_portfolio_existing_investment_property)
+    console.log("Annual Inflation Rate: " + annual_inflation_rate);
+    console.log("Existing period: " + periods);
+    
 
     let adding_invstment_existing_prop = parseFloat(formatted_investment_portfolio_existing_investment_property?.replace(/,/g, '')) || 0
     let adding_invsmt_portf_mortgage = parseFloat(formatted_investment_portfolio_mortgage?.replace(/,/g, '')) || 0;
@@ -1751,9 +1758,9 @@ var formatted_weekly_gross_household_income = Math.round(weekly_gross_household_
           maximumFractionDigits: 2 
     });
 
-let agethisyear = parseFloat($('.age_average').val());
-let retirementage =  parseFloat($('.target_age').val());
-let years_to_achive_financial_independence =  retirementage - agethisyear;
+// let agethisyear = parseFloat($('.age_average').val());
+// let retirementage =  parseFloat($('.target_age').val());
+let years_to_achive_financial_independence =  $('.years_to_target_age').val();
 
 
 let get_income_investment_portfolio_assets = parseFloat(income_investment_portfolio_assets) / 100;
@@ -1789,25 +1796,21 @@ var formatted_total_invesemtment_porfolio = total_invesemtment_porfolio.toLocale
     });
 
  /******************End  Adding New IP Total Shortfall********************* */
-let raw_rate = parseFloat(annual_inflation_rate) || 0;
+    let raw_rate = parseFloat(annual_inflation_rate) / 100;
+    let fi_nper = parseFloat($('.years_to_target_age').val()) || 0; // Test for exact 
+    let raw_fi_pv = parseFloat(formatted_total_invesemtment_porfolio?.replace(/,/g, ''));
 
-let fin_rate = raw_rate > 1 ? raw_rate / 100 : raw_rate;
-
-let fi_nper = parseFloat(years_to_achive_financial_independence) || 0; // Test for exact 
-
-let raw_fi_pv = 0;
-if (formatted_total_invesemtment_porfolio) {
-    let cleanString = formatted_total_invesemtment_porfolio.toString().replace(/,/g, '');
-    raw_fi_pv = parseFloat(cleanString) || 0;
-}
-
-let fi_pmt = 0;
-let fi_pv  = -raw_fi_pv; 
-let fi_type = 1;        
+    let fi_pmt = 0;
+    let fi_pv  = -raw_fi_pv; 
+    let fi_type = 1;        
 
 
-let total_investment_portfolio_desired_retirement_age = calculateFV(fin_rate, fi_nper, fi_pmt, fi_pv, fi_type);
-let formatted_total_investment_portfolio_desired_retirement_age = Math.round(total_investment_portfolio_desired_retirement_age).toLocaleString('en-US');
+    let total_investment_portfolio_desired_retirement_age = calculateFV(raw_rate, periods, fi_pmt, -raw_fi_pv, fi_type);
+    let formatted_total_investment_portfolio_desired_retirement_age = Math.round(total_investment_portfolio_desired_retirement_age).toLocaleString('en-US');
+console.log("Fin Rate: " + raw_rate);
+console.log("Fin Period: " + periods);
+console.log("Fin PV: " + raw_fi_pv);
+// console.log("Fin PMT: " + formatted_total_invesemtment_porfolio);
 
 // var formatted_total_investment_portfolio_desired_retirement_age = Math.round(total_investment_portfolio_desired_retirement_age).toLocaleString('en-US', { 
 //           minimumFractionDigits: 2, 
@@ -1876,13 +1879,13 @@ var formatted_weekly_increase_net_financial_asset = weekly_increase_net_financia
           minimumFractionDigits: 2, 
           maximumFractionDigits: 2 
     });
-    fin_rate;
+    // fin_rate;
     years_to_achive_financial_independence;
     let pv_pmt = 0;
     clean_total_investment_portfolio_desired_retirement_age;
     let pv_type = 0;
 
-    let total_present_value_required = calculatePV(fin_rate,years_to_achive_financial_independence,pv_pmt,-clean_total_investment_portfolio_desired_retirement_age,pv_type);
+    let total_present_value_required = calculatePV(raw_rate,years_to_achive_financial_independence,pv_pmt,-clean_total_investment_portfolio_desired_retirement_age,pv_type);
     var formatted_total_present_value_required =Math.round(total_present_value_required).toLocaleString('en-US', { 
           minimumFractionDigits: 2, 
           maximumFractionDigits: 2 
@@ -1900,21 +1903,27 @@ var formatted_weekly_increase_net_financial_asset = weekly_increase_net_financia
     }); 
     }
 
-    let clean_existing_prop = parseFloat($('.investment_portfolio_existing_investment_property').val()?.replace(/,/g, '')) || 0;
+
+
+
+    let clean_existing_prop = parseFloat(formatted_investment_portfolio_existing_investment_property?.replace(/,/g, '')) || 0;
     let clean_prop1 = parseFloat($('#property_purchase_ip1').val()?.replace(/,/g, '')) || 0;
     let clean_prop2 = parseFloat($('#property_purchase_ip2').val()?.replace(/,/g, '')) || 0;
     let clean_prop3 = parseFloat($('#property_purchase_ip3').val()?.replace(/,/g, '')) || 0;
     let clean_prop4 = parseFloat($('#property_purchase_ip4').val()?.replace(/,/g, '')) || 0;
     let clean_prop5 = parseFloat($('#property_purchase_ip5').val()?.replace(/,/g, '')) || 0;
     let clean_prop6 = parseFloat($('#property_purchase_ip6').val()?.replace(/,/g, '')) || 0;
-    let clean_prop7 = parseFloat($('#property_purchase_ip7').val()?.replace(/,/g, '')) || 0;
+    let clean_prop7 = parseFloat($('#total_loan_value_ip1').val()?.replace(/,/g, '')) || 0;
     let clean_prop7_year = parseInt($('.retired_age_ip7').val()?.replace(/,/g, '')) || 0;
+    // let clean_prop7_year = parseInt($('.years_to_target_age').val());
     let clean_prop6_year = parseInt($('.retired_age_ip6').val()?.replace(/,/g, '')) || 0;
     let clean_prop5_year = parseInt($('.retired_age_ip5').val()?.replace(/,/g, '')) || 0;
     let clean_prop4_year = parseInt($('.retired_age_ip4').val()?.replace(/,/g, '')) || 0;
     let clean_prop3_year = parseInt($('.retired_age_ip3').val()?.replace(/,/g, '')) || 0;
     let clean_prop2_year = parseInt($('.retired_age_ip2').val()?.replace(/,/g, '')) || 0;
     let clean_prop1_year = parseInt($('.retired_age_ip1').val()?.replace(/,/g, '')) || 0;
+
+
 
     let existing_prop = calculateNewIPGrowth(clean_existing_prop,decimal_annual_compound_rate,clean_prop1_year);
     let prop1 = calculateNewIPGrowth(clean_prop1,decimal_annual_compound_rate,clean_prop1_year);
@@ -1924,6 +1933,9 @@ var formatted_weekly_increase_net_financial_asset = weekly_increase_net_financia
     let prop5 = calculateNewIPGrowth(clean_prop5,decimal_annual_compound_rate,clean_prop5_year);
     let prop6 = calculateNewIPGrowth(clean_prop6,decimal_annual_compound_rate,clean_prop6_year);
     let prop7 = calculateNewIPGrowth(clean_prop7,decimal_annual_compound_rate,clean_prop7_year);
+
+    // delay calculation interest for property 7
+    
 
     let clean_exiting_inv = parseFloat(existing_prop?.replace(/,/g, '')) || 0;
     let clean_total_prop1 = parseFloat(prop1?.replace(/,/g, '')) || 0;
@@ -1972,12 +1984,12 @@ let formatted_withTotalInvestmentLiabilieitsMarketVal = mortgageMarketVal.toLoca
     // End New IP Growth
 
        // adding new multiple IP's
-    let clean_new_ip1 = parseFloat(formatted_new_ip_retirement_val?.replace(/,/g, '')) || 0;
-    let total_new_ip2 = clean_new_ip1 * 1.045;
-    var formatted_new_ip2 = total_new_ip2.toLocaleString('en-US', { 
-          minimumFractionDigits: 2, 
-          maximumFractionDigits: 2 
-    }); 
+    // let clean_new_ip1 = parseFloat(formatted_new_ip_retirement_val?.replace(/,/g, '')) || 0;
+    // let total_new_ip2 = clean_new_ip1 * 1.045;
+    // var formatted_new_ip2 = total_new_ip2.toLocaleString('en-US', { 
+    //       minimumFractionDigits: 2, 
+    //       maximumFractionDigits: 2 
+    // }); 
 
             // Generic Date
     let initial_appointment_date_val = $('.initial_appointment_date').val();
@@ -2024,7 +2036,7 @@ let formatted_withTotalInvestmentLiabilieitsMarketVal = mortgageMarketVal.toLoca
     }); 
 
 
-    let clean_formatted_new_ip2 = parseFloat(formatted_new_ip2?.replace(/,/g, '')) || 0;
+    let clean_formatted_new_ip2 = parseFloat(prop2?.replace(/,/g, '')) || 0;
     let total_equity_investment2_retirement_value = clean_formatted_new_ip2 - clean_total_loan_value_ip2;
     let abs_total_equity_investment2_retirement_value = Math.abs(total_equity_investment2_retirement_value);
     let formatted_total_equity_investment2_retirement_value = abs_total_equity_investment2_retirement_value.toLocaleString('en-US', { 
@@ -2093,7 +2105,7 @@ let formatted_withTotalInvestmentLiabilieitsMarketVal = mortgageMarketVal.toLoca
 
     let clean_existing_investment_retirement_value = parseFloat(formattaed_adding_new_ip_existing_investment_prop?.replace(/,/g, '')) || 0;
     let clean_new_investment_property1_retirement_value = parseFloat(formatted_new_ip_retirement_val?.replace(/,/g, '')) || 0;
-    let clean_new_investment_property2_retirement_value = parseFloat(formatted_new_ip2?.replace(/,/g, '')) || 0;
+    let clean_new_investment_property2_retirement_value = parseFloat(prop2?.replace(/,/g, '')) || 0;
     let clean_new_investment_property3_retirement_value = parseFloat(formatted_total_properties_val?.replace(/,/g, '')) || 0;
     let grand_multi_ip_total_investment_property_retirement_value = clean_existing_investment_retirement_value + clean_new_investment_property1_retirement_value + clean_new_investment_property2_retirement_value + clean_new_investment_property3_retirement_value;
     let formatted_grand_multi_ip_total_investment_property_retirement_value = grand_multi_ip_total_investment_property_retirement_value.toLocaleString('en-US', { 
@@ -2455,6 +2467,8 @@ let formatted_withTotalInvestmentLiabilieitsMarketVal = mortgageMarketVal.toLoca
 
       //End Multiple IP Extension
 
+      console.log("Re-check: " + $('.investment_portfolio_existing_investment_property').val());
+
     formData.append('_method','POST');
     formData.append('gross_anual_income_client',$('.total_income_client_annual').val());
     formData.append('gross_anual_income_partner',$('.total_income_partner_annual').val());
@@ -2491,7 +2505,7 @@ let formatted_withTotalInvestmentLiabilieitsMarketVal = mortgageMarketVal.toLoca
     formData.append('weekly_gross_household_income',formatted_weekly_gross_household_income);
     formData.append('age_this_year',$('.age_average').val());
     formData.append('prefer_retirement_age',$('.target_age').val());
-    formData.append('years_to_achieve_financial_independence',years_to_achive_financial_independence);
+    formData.append('years_to_achieve_financial_independence',$('.years_to_target_age').val());
     formData.append('net_financial_assets',formatted_cuurent_net_financial_assets);
     formData.append('total_investment_portfolio_required',formatted_total_invesemtment_porfolio);
     formData.append('total_annual_household_income_retirement',formatted_total_investment_portfolio_desired_retirement_age);
@@ -2506,7 +2520,7 @@ let formatted_withTotalInvestmentLiabilieitsMarketVal = mortgageMarketVal.toLoca
     formData.append('annual_inflation_rate',raw_rate);
     
     // New IP Growth
-    formData.append('existing_investment',formatted_investment_portfolio_existing_investment_property);
+    formData.append('existing_investment',existing_prop);
     formData.append('existing_investment_mortgage',formatted_withTotalInvestmentLiabilieitsMarketVal);
     formData.append('new_ip1_mortgage',$('#total_loan_value_ip1').val());
     formData.append('new_ip2_mortgage',$('#total_loan_value_ip2').val());
@@ -2579,7 +2593,7 @@ let formatted_withTotalInvestmentLiabilieitsMarketVal = mortgageMarketVal.toLoca
     formData.append('equity_investment1_current_value',formatted_equity_investment_current_value);
     formData.append('equity_investment1_retirement_value',formatted_total_equity_invstmt_retirement_val);
     formData.append('new_investment_property2_current_value',formatted_new_ip2_current_value);
-    formData.append('new_investment_property2_retirement_value',formatted_new_ip2);
+    formData.append('new_investment_property2_retirement_value',prop2);
     formData.append('less_investment_prop2_mortgage_current_value',formatted_less_prop2_mortgage);
     formData.append('less_investment_prop2_mortgage_retirement_value',$('#total_loan_value_ip2').val());
     formData.append('equity_investment2_retirement_value',formatted_total_equity_investment2_retirement_value);
