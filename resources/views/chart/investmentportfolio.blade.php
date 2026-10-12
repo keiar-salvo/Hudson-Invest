@@ -43,10 +43,10 @@
     @section('scripts')
     <script>
 $(document).ready(function($) {
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const product = urlParams.get('id');
-var appURL = window.location.origin;
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const product = urlParams.get('id');
+    var appURL = window.location.origin;
 
     let currentRecordId = null; 
     let financialChartInstance = null; 
@@ -56,104 +56,106 @@ var appURL = window.location.origin;
         headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') }
     });
 
-  $.ajax({
-  url: appURL + "/investmentportfolio/" + product,
-  type: "GET",
-  dataType: "json",
-  success: function(response) {   
-  console.log(response);
- 
-           let rawArray = response['investmentportfolio'].yearly_value; 
-    currentRecordId = response['investmentportfolio'].details_id; 
+    $.ajax({
+        url: appURL + "/investmentportfolio/" + product,
+        type: "GET",
+        dataType: "json",
+        success: function(response) {   
+            console.log(response);
+            
+            let rawArray = response['investmentportfolio'].yearly_value; 
+            currentRecordId = response['investmentportfolio'].details_id; 
 
-    let labels = [];
-    let dataValues = [];
+            let labels = [];
+            let dataValues = [];
 
-   
-    rawArray.forEach(function(item) {
-        labels.push(item.year); 
+            rawArray.forEach(function(item) {
+                labels.push(item.year); 
+                
+                // Keep parsing as integer to feed the chart data
+                let cleanNumericValue = parseInt(item.value.replace(/[\$,]/g, ''), 10);
+                dataValues.push(cleanNumericValue);
+            });
 
-     
-        let cleanNumericValue = parseInt(item.value.replace(/[\$,]/g, ''), 10);
-        dataValues.push(cleanNumericValue);
-    });
+            let targetAmount = rawArray[rawArray.length - 1].value; 
+            $('.target_value').html('Target Value: <strong>' + response['financialIndependance'].total_annual_household_income_retirement + '</strong>');
+            $('.inflation_rate').html('Inflation Rate: <strong>' + parseFloat(response["assumptionData"][0]["annual_inflation_rate"]).toFixed(1) + '%</strong>');
+            $('.target_retirement').html('Years to Target Retirement: <strong>' + response["financialIndependance"].years_to_achieve_financial_independence + '</strong>');
+            $('.present_value').html('Present Value: <strong>' + response["financialIndependance"].present_value_required + '</strong>');
 
-  
-    let targetAmount = rawArray[rawArray.length - 1].value; 
-    $('.target_value').html('Target Value: <strong>' + response['financialIndependance'].total_annual_household_income_retirement + '</strong>');
-    $('.inflation_rate').html('Inflation Rate: <strong>' + parseFloat(response["assumptionData"][0]["annual_inflation_rate"]).toFixed(1) + '%</strong>');
-    $('.target_retirement').html('Years to Target Retirement: <strong>' + response["financialIndependance"].years_to_achieve_financial_independence + '</strong>');
-    $('.present_value').html('Present Value: <strong>' + response["financialIndependance"].present_value_required + '</strong>');
-
-  
-    if (financialChartInstance !== null) {
-        financialChartInstance.destroy();
-    }
-
-    $('#chart_wrapper').show();
-
-    const ctx = $('#financialChart')[0].getContext('2d');
-    let maxChartValue = Math.max(...dataValues);
-
-   
-    financialChartInstance = new window.Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: labels, 
-            datasets: [{
-                label: 'Required Value ($)',
-                data: dataValues, 
-                backgroundColor: 'rgba(54, 162, 235, 0.75)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 1,
-                barPercentage: 0.7
-            }]
-        },
-        options: {
-            indexAxis: 'y', 
-            responsive: true,
-            layout: { padding: { right: 90 } },
-            scales: {
-                x: {
-                    beginAtZero: true,
-                    max: Math.ceil(maxChartValue * 1.15), 
-                    ticks: {
-                        callback: function(value) { return value.toLocaleString(); }
-                    },
-                    grid: { color: '#eaeaea' }
-                },
-                y: {
-                    reverse: true, 
-                    grid: { display: false }
-                }
-            },
-            plugins: {
-                legend: { display: false },
-                tooltip: {
-                    callbacks: {
-                        label: function(context) { return 'Value: ' + context.raw.toLocaleString(); }
-                    }
-                },
-                datalabels: {
-                    anchor: 'end',
-                    align: 'right',
-                    color: '#444',
-                    font: { weight: 'bold', size: 11 },
-                    formatter: function(value) { return value.toLocaleString(); }
-                }
+            if (financialChartInstance !== null) {
+                financialChartInstance.destroy();
             }
+
+            $('#chart_wrapper').show();
+
+            const ctx = $('#financialChart')[0].getContext('2d');
+            let maxChartValue = Math.max(...dataValues);
+
+            financialChartInstance = new window.Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels, 
+                    datasets: [{
+                        label: 'Required Value ($)',
+                        data: dataValues, 
+                        backgroundColor: 'rgba(54, 162, 235, 0.75)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1,
+                        barPercentage: 0.7
+                    }]
+                },
+                options: {
+                    indexAxis: 'y', 
+                    responsive: true,
+                    layout: { padding: { right: 90 } },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            max: Math.ceil(maxChartValue * 1.15), 
+                            ticks: {
+                                // FIXED: Adds the $ prefix to the X-axis labels
+                                callback: function(value) { 
+                                    return '$' + value.toLocaleString(); 
+                                }
+                            },
+                            grid: { color: '#eaeaea' }
+                        },
+                        y: {
+                            reverse: true, 
+                            grid: { display: false }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                // FIXED: Adds the $ prefix to tooltips when hovering over bars
+                                label: function(context) { 
+                                    return 'Value: $' + context.raw.toLocaleString(); 
+                                }
+                            }
+                        },
+                        datalabels: {
+                            anchor: 'end',
+                            align: 'right',
+                            color: '#444',
+                            font: { weight: 'bold', size: 11 },
+                            // FIXED: Adds the $ prefix to the labels sitting on the right edge of the bars
+                            formatter: function(value) { 
+                                return '$' + value.toLocaleString(); 
+                            }
+                        }
+                    }
+                }
+            });
+        },
+        error: function(error) {
+            console.error("AJAX Error: " + error);
         }
     });
-    },
-    error: function(error) {
-    console.error("AJAX Error: " + error);
-    }
-    });
-     
-
-        
-   
 });
+
       
 </script>
 <style>

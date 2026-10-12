@@ -1,5 +1,6 @@
 
 
+
 $(document).ready(function(){
    
 $('.age_client').keypress(function (e) {
@@ -512,8 +513,174 @@ $('.div-add-mortgage-investment-property,.div-mortgage').on('keyup input change'
     });
       $(".btn-close").click(function(){
             window.close();
-         })
+         });
 
+  $('.sg_rate,.partner_sg_rate,.principle_client_percentage,.principle_partner_percentage,.cash_client_percentage,.cash_partner_percentage,.non_investment_asset_client_percentage,.non_investment_asset_partner_percentage').on('keydown', function(e){
+      const val = $(this).val();
+        const key = e.key;
 
+        if (
+            ['Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 'ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(key) ||
+            (e.ctrlKey === true || e.metaKey === true) 
+        ) {
+            return; 
+        }
+
+  
+        if (/^[0-9]$/.test(key)) {
+     
+            if (val.includes('%')) {
+                e.preventDefault();
+            }
+            return;
+        }
+
+    
+        if (key === '.') {
+            if (val.includes('.') || val.includes('%')) {
+                e.preventDefault();
+            }
+            return;
+        }
+
+    
+        if (key === '%') {
+            if (val.includes('%')) {
+                e.preventDefault();
+            }
+            return;
+        }
+
+    
+        e.preventDefault();
+  });
+
+$('.long_term_client_percentage,.long_term_partner_percentage,.superannuation_client_client_percentage,.superannuation_client_partner_percentage,.superannuation_partner_client_percentage,.superannuation_partner_parnter_percentage,.shares_fund_client_percentage,.shares_fund_partner_percentage,.business_client_percentage,.business_partner_percentage,.client_percentage,.partner_percentage').on('keydown', function(e){
+      const val = $(this).val();
+        const key = e.key;
+
+        if (
+            ['Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 'ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(key) ||
+            (e.ctrlKey === true || e.metaKey === true) 
+        ) {
+            return; 
+        }
+
+  
+        if (/^[0-9]$/.test(key)) {
+     
+            if (val.includes('%')) {
+                e.preventDefault();
+            }
+            return;
+        }
+
+    
+        if (key === '.') {
+            if (val.includes('.') || val.includes('%')) {
+                e.preventDefault();
+            }
+            return;
+        }
+
+    
+        if (key === '%') {
+            if (val.includes('%')) {
+                e.preventDefault();
+            }
+            return;
+        }
+
+    
+        e.preventDefault();
+  });
    
+  $('.total_investment_asset_market_value,.total_investment_asset_client,.total_investment_asset_partner,.total_asset_market_value,.total_asset_client,.total_asset_partner').on('keydown',function(e){
+     return false;
+  });
+
+  $('.grand_total_annual,.grand_total_quarterly').on('keydown',function(){
+    return false;
+  });
+
+  $('.mortgage_client_percentage,.mortgage_partner_percentage,.personal_loans_client_percentage,.personal_loans_partner_percentage,.car_loans_client_percentage,.car_loans_partner_percentage,.other_debt_client_percentage,.other_debt_partner_percentage,.credit_card_client_percentage,.credit_card_partner_percentage').on('keydown', function(e){
+      const val = $(this).val();
+        const key = e.key;
+
+        if (
+            ['Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 'ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(key) ||
+            (e.ctrlKey === true || e.metaKey === true) 
+        ) {
+            return; 
+        }
+        if (/^[0-9]$/.test(key)) {
+     
+            if (val.includes('%')) {
+                e.preventDefault();
+            }
+            return;
+        }    
+        if (key === '.') {
+            if (val.includes('.') || val.includes('%')) {
+                e.preventDefault();
+            }
+            return;
+        }
+
+        if (key === '%') {
+            if (val.includes('%')) {
+                e.preventDefault();
+            }
+            return;
+        }
+        e.preventDefault();
+          });
+
+$('.total_non_invesment_liabilities_market_value,.total_non_invesment_liabilities_client,.total_non_invesment_liabilities_partner').on('keydown',function(){
+    return false;
+});
+
+$('.margin_investment_client_percentage,.margin_investment_partner_percentage,.business_loans_client_percentage,.business_loans_partner_percentage,.mortgage_investment_client_percentage,.mortgage_investment_partner_percentage').on('keydown', function(e){
+      const val = $(this).val();
+        const key = e.key;
+
+        if (
+            ['Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 'ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(key) ||
+            (e.ctrlKey === true || e.metaKey === true) 
+        ) {
+            return; 
+        }
+
+  
+        if (/^[0-9]$/.test(key)) {
+     
+            if (val.includes('%')) {
+                e.preventDefault();
+            }
+            return;
+        }
+
+    
+        if (key === '.') {
+            if (val.includes('.') || val.includes('%')) {
+                e.preventDefault();
+            }
+            return;
+        }
+
+    
+        if (key === '%') {
+            if (val.includes('%')) {
+                e.preventDefault();
+            }
+            return;
+        }
+
+    
+        e.preventDefault();
+  });
+
+  $('.total_related_liabilities_market_value,.total_related_liabilities_client,.total_related_liabilities_partner,.total_liabilities_market_value,.total_liabilities_client,.total_liabilities_partner,.net_assets_market_value,.net_assets_client,.net_assets_partner').on('keydown',function(){
+    return false;
+  });
 });

@@ -1913,7 +1913,7 @@ var formatted_weekly_increase_net_financial_asset = weekly_increase_net_financia
     let clean_prop4 = parseFloat($('#property_purchase_ip4').val()?.replace(/,/g, '')) || 0;
     let clean_prop5 = parseFloat($('#property_purchase_ip5').val()?.replace(/,/g, '')) || 0;
     let clean_prop6 = parseFloat($('#property_purchase_ip6').val()?.replace(/,/g, '')) || 0;
-    let clean_prop7 = parseFloat($('#total_loan_value_ip1').val()?.replace(/,/g, '')) || 0;
+    let clean_prop7 = parseFloat($('#loan_value_based_ip6').val()?.replace(/,/g, '')) || 0;
     let clean_prop7_year = parseInt($('.retired_age_ip7').val()?.replace(/,/g, '')) || 0;
     // let clean_prop7_year = parseInt($('.years_to_target_age').val());
     let clean_prop6_year = parseInt($('.retired_age_ip6').val()?.replace(/,/g, '')) || 0;
@@ -2517,7 +2517,7 @@ let formatted_withTotalInvestmentLiabilieitsMarketVal = mortgageMarketVal.toLoca
     formData.append('current_level_of_income_and_expenses',$('.amount_per_week').val());
     formData.append('total_investment_portfolio_achieve_annual_household_today',formatted_total_invesemtment_porfolio);
     formData.append('present_value_required',formatted_total_present_value_required);
-    formData.append('annual_inflation_rate',raw_rate);
+    formData.append('annual_inflation_rate',annual_inflation_rate);
     
     // New IP Growth
     formData.append('existing_investment',existing_prop);

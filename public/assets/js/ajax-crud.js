@@ -143,9 +143,9 @@ $.ajax({
     draggable: true
     });
     $('.details_id').val(transactionID());
-      //  setTimeout(function () {
-      //           window.location.href='/clientlist';
-      //       }, 2000);
+       setTimeout(function () {
+                window.location.href='/clientlist';
+            }, 2000);
       },  
   error: function(xhr) 
         {
@@ -219,11 +219,11 @@ $(".btn-update-details").click(function(event){
       error: function(error)
       {
         console.log(error);
-        $('input').each(function(){
-        if($(this).val() == ""){
-        $(this).css('border-color','red');
-           }          
-          });
+        // $('input').each(function(){
+        // if($(this).val() == ""){
+        // $(this).css('border-color','red');
+        //    }          
+        //   });
         Swal.fire({
         icon: "error",
         title: "Please provide all requested details",

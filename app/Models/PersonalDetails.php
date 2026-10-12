@@ -556,10 +556,13 @@ class PersonalDetails extends Model
                     $financial_independance->save();
 
                     $rawPvString = $request->input('present_value_required');
+                    // $rawPvString = ' 3750000';
                     $cleanPv = str_replace(['$', ','], '', $rawPvString);
                     $pv = (float) $cleanPv;
                     $rate = (float) $request->input('annual_inflation_rate') / 100;
-                    $years = (int) $request->input('years_to_achieve_financial_independence');
+                    // $rate = 3 / 100;
+                    
+                   $years = (int) $request->input('years_to_achieve_financial_independence');
                     $breakdown = [];
 
                     for ($i = 1; $i <= $years; $i++) {
@@ -860,6 +863,10 @@ class PersonalDetails extends Model
         //         'date_encoded' => Carbon::now()->toDateString(),
         //     ]
         // );
+        
+        
+       
+
     $portfolio_yearly = Yearly_Investment_Portfolio::create([
         'details_id'   => $request->input('details_id'),
         'year'         => $years,
@@ -1933,7 +1940,7 @@ class PersonalDetails extends Model
                       $updateNewIPMultipleExtension = NewIPMultipleExtension::where('details_id',$id)->update([
                         'multi_ext_new_investment_property3_retirement_value' => $request->input('multi_ext_new_investment_property3_retirement_value'),
                         'multi_ext_less_investment_prop3_mortgage_retirement_value' => $request->input('multi_ext_less_investment_prop3_mortgage_retirement_value'),
-                        'equity_investment3_retirement_value' => $request->input('equity_investment3_retirement_value'),
+                        'multi_ext_equity_investment3_retirement_value' => $request->input('multi_ext_equity_investment3_retirement_value'),
                             'new_investment_property4_current_value' => $request->input('new_investment_property4_current_value'),
                             'new_investment_property4_retirement_value' => $request->input('new_investment_property4_retirement_value'),
                             'less_investment_prop4_mortgage_current_value' => $request->input('less_investment_prop4_mortgage_current_value'),
@@ -2485,6 +2492,8 @@ class PersonalDetails extends Model
                     'yearly_value' => $breakdown,
                   
                     ]);
+            
+
 
                 $updatedRows = FinancialIndependenceTarget::where('details_id', $request->input('details_id'))->update([
                     'current_net_financial_assets'             => $request->input('investment_portfolio_net_financial_assets'),
