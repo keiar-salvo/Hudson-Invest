@@ -172,7 +172,7 @@ $.ajax({
         
             Swal.fire({
                 icon: "error",
-                title: "Form Validation Failed",
+                title: "Please provide all requested details",
                 html: errorMessageHtml, 
                 confirmButtonColor: "#3085d6"
             });

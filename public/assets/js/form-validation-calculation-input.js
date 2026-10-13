@@ -683,4 +683,237 @@ $('.margin_investment_client_percentage,.margin_investment_partner_percentage,.b
   $('.total_related_liabilities_market_value,.total_related_liabilities_client,.total_related_liabilities_partner,.total_liabilities_market_value,.total_liabilities_client,.total_liabilities_partner,.net_assets_market_value,.net_assets_client,.net_assets_partner').on('keydown',function(){
     return false;
   });
-});
+
+  $('.phone_home,.phone_mobile').on('keydown', function(e) {
+  
+    if ($.inArray(e.keyCode, [46, 8, 9, 27, 13]) !== -1 ||
+     
+        (e.ctrlKey === true || e.metaKey === true) ||
+     
+        (e.keyCode >= 35 && e.keyCode <= 39)) {
+          return;
+    }
+    
+
+    if (e.keyCode === 189 || e.keyCode === 109) {
+      return;
+    }
+
+  
+    if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+        e.preventDefault();
+    }
+  }).on('paste', function(e) {
+
+    var pastedData = (e.originalEvent || e).clipboardData.getData('text');
+    
+   
+    if (/[^0-9-]/.test(pastedData)) {
+      e.preventDefault();
+    }
+  });
+
+  $('.principle_market_value,.cash_market_value,.non_investment_asset_market_value,.long_term_market_value,.superannuation_client_market_value,.superannuation_partner_market_value,.shares_fund_market_value,.business_market_value,.market_value').on('keydown', function(e) {
+    
+    if (
+      $.inArray(e.keyCode, [46, 8, 9, 27, 13]) !== -1 ||
+      (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) || 
+      (e.keyCode === 67 && (e.ctrlKey === true || e.metaKey === true)) || 
+      (e.keyCode === 86 && (e.ctrlKey === true || e.metaKey === true)) || 
+      (e.keyCode >= 35 && e.keyCode <= 40) 
+    ) {
+      return; 
+    }
+
+    if (e.keyCode === 188 && !e.shiftKey) {
+      return;
+    }
+   
+    if ((e.keyCode === 190 || e.keyCode === 110) && !e.shiftKey) {
+      return;
+    }
+
+    if ((!e.shiftKey && (e.keyCode >= 48 && e.keyCode <= 57)) || (e.keyCode >= 96 && e.keyCode <= 105)) {
+      return;
+    }
+
+  
+    e.preventDefault();
+  });
+
+  $('.mortgage_market_value,.personal_loans_market_value,.car_loans_market_value,.other_debt_market_value,.credit_card_market_value').on('keydown', function(e) {
+    
+    if (
+      $.inArray(e.keyCode, [46, 8, 9, 27, 13]) !== -1 ||
+      (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) || 
+      (e.keyCode === 67 && (e.ctrlKey === true || e.metaKey === true)) || 
+      (e.keyCode === 86 && (e.ctrlKey === true || e.metaKey === true)) || 
+      (e.keyCode >= 35 && e.keyCode <= 40) 
+    ) {
+      return; 
+    }
+
+    if (e.keyCode === 188 && !e.shiftKey) {
+      return;
+    }
+   
+    if ((e.keyCode === 190 || e.keyCode === 110) && !e.shiftKey) {
+      return;
+    }
+
+    if ((!e.shiftKey && (e.keyCode >= 48 && e.keyCode <= 57)) || (e.keyCode >= 96 && e.keyCode <= 105)) {
+      return;
+    }
+
+    e.preventDefault();
+  });
+
+$('.margin_investment_market_value,.business_loans_market_value,.mortgage_investment_market_value').on('keydown', function(e) {
+    
+    if (
+      $.inArray(e.keyCode, [46, 8, 9, 27, 13]) !== -1 ||
+      (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) || 
+      (e.keyCode === 67 && (e.ctrlKey === true || e.metaKey === true)) || 
+      (e.keyCode === 86 && (e.ctrlKey === true || e.metaKey === true)) || 
+      (e.keyCode >= 35 && e.keyCode <= 40) 
+    ) {
+      return; 
+    }
+
+    if (e.keyCode === 188 && !e.shiftKey) {
+      return;
+    }
+   
+    if ((e.keyCode === 190 || e.keyCode === 110) && !e.shiftKey) {
+      return;
+    }
+
+    if ((!e.shiftKey && (e.keyCode >= 48 && e.keyCode <= 57)) || (e.keyCode >= 96 && e.keyCode <= 105)) {
+      return;
+    }
+
+    e.preventDefault();
+  });
+
+$('#property_purchase_ip1,#property_purchase_ip2,#property_purchase_ip3,#property_purchase_ip4,#property_purchase_ip5,#property_purchase_ip6,#property_purchase_ip7').on('keydown', function(e) {
+    
+    if (
+      $.inArray(e.keyCode, [46, 8, 9, 27, 13]) !== -1 ||
+      (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) || 
+      (e.keyCode === 67 && (e.ctrlKey === true || e.metaKey === true)) || 
+      (e.keyCode === 86 && (e.ctrlKey === true || e.metaKey === true)) || 
+      (e.keyCode >= 35 && e.keyCode <= 40) 
+    ) {
+      return; 
+    }
+
+    if (e.keyCode === 188 && !e.shiftKey) {
+      return;
+    }
+   
+    if ((e.keyCode === 190 || e.keyCode === 110) && !e.shiftKey) {
+      return;
+    }
+
+    if ((!e.shiftKey && (e.keyCode >= 48 && e.keyCode <= 57)) || (e.keyCode >= 96 && e.keyCode <= 105)) {
+      return;
+    }
+
+    e.preventDefault();
+  });
+
+  $('#other_purchased_cost_ip1,#other_purchased_cost_ip2,#other_purchased_cost_ip3,#other_purchased_cost_ip4,#other_purchased_cost_ip5,#other_purchased_cost_ip6,#other_purchased_cost_ip7').on('keydown', function(e) {
+    
+    if (
+      $.inArray(e.keyCode, [46, 8, 9, 27, 13]) !== -1 ||
+      (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) || 
+      (e.keyCode === 67 && (e.ctrlKey === true || e.metaKey === true)) || 
+      (e.keyCode === 86 && (e.ctrlKey === true || e.metaKey === true)) || 
+      (e.keyCode >= 35 && e.keyCode <= 40) 
+    ) {
+      return; 
+    }
+
+    if (e.keyCode === 188 && !e.shiftKey) {
+      return;
+    }
+   
+    if ((e.keyCode === 190 || e.keyCode === 110) && !e.shiftKey) {
+      return;
+    }
+
+    if ((!e.shiftKey && (e.keyCode >= 48 && e.keyCode <= 57)) || (e.keyCode >= 96 && e.keyCode <= 105)) {
+      return;
+    }
+
+    e.preventDefault();
+  });
+
+  $('#lvr_ip1,#lvr_ip3,#lvr_ip3,#lvr_ip4,#lvr_ip5,#lvr_ip6,#lvr_ip7').on('keydown', function(e){
+      const val = $(this).val();
+        const key = e.key;
+
+        if (
+            ['Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 'ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(key) ||
+            (e.ctrlKey === true || e.metaKey === true) 
+        ) {
+            return; 
+        }
+
+  
+        if (/^[0-9]$/.test(key)) {
+     
+            if (val.includes('%')) {
+                e.preventDefault();
+            }
+            return;
+        }
+
+    
+        if (key === '.') {
+            if (val.includes('.') || val.includes('%')) {
+                e.preventDefault();
+            }
+            return;
+        }
+
+    
+        if (key === '%') {
+            if (val.includes('%')) {
+                e.preventDefault();
+            }
+            return;
+        }
+
+    
+        e.preventDefault();
+  });
+  $('.months_last_acq_ip1,.months_last_acq_ip2,.months_last_acq_ip3,.months_last_acq_ip4,.months_last_acq_ip5,.months_last_acq_ip6,.months_last_acq_ip7').on('keydown',function(){
+        return false;
+  });
+
+  $('.retired_age_ip1,.retired_age_ip2,.retired_age_ip3,.retired_age_ip4,.retired_age_ip5,.retired_age_ip6,.retired_age_ip7').on('keydown',function(){
+        return false;
+  });
+
+  $('#loan_value_based_ip1,#loan_value_based_ip2,#loan_value_based_ip3,#loan_value_based_ip4,#loan_value_based_ip5,#loan_value_based_ip6,#loan_value_based_ip7').on('keydown',function(){
+        return false;
+  });
+
+  $('#total_loan_value_ip1,#total_loan_value_ip2,#total_loan_value_ip3,#total_loan_value_ip4,#total_loan_value_ip5,#total_loan_value_ip6,#total_loan_value_ip7').on('keydown',function(){
+        return false;
+  });
+
+  $('#estimated_rent_ip1,#estimated_rent_ip2,#estimated_rent_ip3,#estimated_rent_ip4,#estimated_rent_ip5,#estimated_rent_ip6,#estimated_rent_ip7').on('keydown',function(){
+        return false;
+  });
+
+  $('#estimated_outgoing_ip1,#estimated_outgoing_ip2,#estimated_outgoing_ip3,#estimated_outgoing_ip4,#estimated_outgoing_ip5,#estimated_outgoing_ip6,#estimated_outgoing_ip7').on('keydown',function(){
+        return false;
+  });
+
+  $('#estimated_annual_interest_ip1,#estimated_annual_interest_ip2,#estimated_annual_interest_ip3,#estimated_annual_interest_ip4,#estimated_annual_interest_ip5,#estimated_annual_interest_ip6,#estimated_annual_interest_ip7').on('keydown',function(){
+        return false;
+  });
+
+}); //end document
