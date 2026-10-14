@@ -588,7 +588,10 @@ Estimated Total Income <span style="color:#bd0c1d;">(Shortfall)</span> / Surplus
        $(document).ready(function(){
          $(".btn-close").click(function(){
             window.close();
-         })
+         });
+        $('input[type="text"]').on('keydown',function(){
+            return false;
+         });
          });
       </script>
       @endsection

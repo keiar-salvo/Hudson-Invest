@@ -755,6 +755,10 @@ const product = urlParams.get('id')
                 console.error("AJAX Error: " + error);
             }
                 });
+
+        $('input[type="text"]').on('keydown',function(){
+            return false;
+         });
          });
       </script>
       @endsection
